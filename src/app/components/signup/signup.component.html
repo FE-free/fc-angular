@@ -1,0 +1,25 @@
+<div class="fc-signup-wrap">
+    <div style="position:absolute;left:0;top:0;">
+        <img alt="Brand" *ngIf="false" src="assets/img/logo.png" width="50" />
+        <i class="anticon anticon-api" style="font-size: 30px;
+                        color: #333;
+                        margin-left: 30px;
+                        margin-top: 30px;"></i>
+        <span style="color:#333;font-size:30px;">{{_projectName}}</span>
+    </div>
+    <div class="fc-signup">
+        <div class="fc-signup-module">
+            <h2 class="fc-signup-title">注册开发者账号</h2>
+            <form>
+                <div>
+                    <fc-text fcType="search" fcPlaceHolder="用户名" style="display:block;margin-top:24px;"></fc-text>
+                    <fc-text fcType="search" fcPlaceHolder="密码" style="display:block;margin-top:24px;"></fc-text>
+                </div>
+                <div class="has-account">
+                    <span>我有账号，立即
+                        <a href="javascript:;" routerLink="/signin">登录</a>.</span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

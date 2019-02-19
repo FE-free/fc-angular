@@ -1,0 +1,66 @@
+<nz-layout class="layout">
+  <nz-header>
+    <div class="logo">
+      <i class="icon iconfont icon yt-icon-logo"></i>
+      <span class="logo-text">东软越通后台管理系统</span>
+    </div>
+    <!-- <ul nz-menu [nzTheme]="'dark'" [nzMode]="'horizontal'" style="line-height: 64px;">
+      <li nz-menu-item>nav 1</li>
+      <li nz-menu-item>nav 2</li>
+      <li nz-menu-item>nav 3</li>
+    </ul> -->
+    <div class="yt-header-right">
+      <i class="icon iconfont yt-header-icon yt-icon-xitongxiaoxi"></i>
+      <i class="icon iconfont yt-header-icon yt-icon-shezhi"></i>
+      <i class="icon iconfont yt-header-icon yt-icon-tuichu"></i>
+    </div>
+  </nz-header>
+  <nz-layout style="width: 100%;
+  height: calc(100% - 64px);">
+    <nz-sider [nzWidth]="200" style="background:#fff">
+      <ul nz-menu [nzMode]="'inline'" style="height:100%">
+        <li nz-submenu>
+          <span title><i nz-icon type="user"></i>subnav 1</span>
+          <ul>
+            <li nz-menu-item>option1</li>
+            <li nz-menu-item>option2</li>
+            <li nz-menu-item>option3</li>
+            <li nz-menu-item>option4</li>
+          </ul>
+        </li>
+        <li nz-submenu>
+          <span title><i nz-icon type="laptop"></i>subnav 2</span>
+          <ul>
+            <li nz-menu-item>option5</li>
+            <li nz-menu-item>option6</li>
+            <li nz-menu-item>option7</li>
+            <li nz-menu-item>option8</li>
+          </ul>
+        </li>
+        <li nz-submenu>
+          <span title><i nz-icon type="notification"></i>subnav 3</span>
+          <ul>
+            <li nz-menu-item>option9</li>
+            <li nz-menu-item>option10</li>
+            <li nz-menu-item>option11</li>
+            <li nz-menu-item>option12</li>
+          </ul>
+        </li>
+      </ul>
+    </nz-sider>
+    <nz-layout style="padding:0 24px 24px">
+      <nz-tabset [nzType]="'card'" [nzSelectedIndex]="index">
+        <nz-tab *ngFor="let tab of tabs" [nzTitle]="titleTemplate">
+          <ng-template #titleTemplate>
+            <div>{{ tab }}<i nz-icon type="close" class="ant-tabs-close-x" (click)="closeTab(tab)"></i></div>
+          </ng-template>
+        </nz-tab>
+      </nz-tabset>
+      <nz-content style="background:#fff; padding: 24px; min-height: 280px;height: 500px;overflow: auto;">
+        <div style="color: red;font-size:100px;">
+          内容区
+        </div>
+      </nz-content>
+    </nz-layout>
+  </nz-layout>
+</nz-layout>

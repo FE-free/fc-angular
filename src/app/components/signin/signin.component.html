@@ -1,0 +1,91 @@
+<div class="sigin-wrap">
+  <div class="sigin">
+    <div class="sigin-topbar">
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="javascript:;">
+              <img alt="Brand" *ngIf="false" src="assets/img/logo.png" width="50" />
+              <i class="icon iconfont fc-logo" style="font-size: 30px;
+              color: #fff;
+              margin-left: 30px;
+              margin-top: 30px;"></i>
+              <span style="color:#ffffff;font-size:30px;">{{_projectName}}</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="sigin-body">
+      <div class="sigin-body-box">
+        <div class="sigin-body-txt-box">
+          <h3 style="color:#ffffff;font-size:28px;">FAST CORE</h3>
+          <p>快速开发平台</p>
+          <p>近一年的中后台设计实践，积累了大量的优秀案例。</p>
+          <p>总结中后台设计中反复出现的问题，并提供相应的解决方案。</p>
+          <p>丰富、灵活、实用的基础组件，为业务产品提供强有力的设计支持。</p>
+          <p class="start-button">
+            <fc-button fcLabel="设计规范" style="margin-right:10px;" fcType="primary"></fc-button>
+            <fc-button fcLabel="开发指引" fcType="primary"></fc-button>
+          </p>
+        </div>
+        <div class="sigin-module">
+          <h2>登录</h2>
+          <div class="sigin-error">
+            <div class="sigin-error-in" *ngIf="hasError">
+              <i class="icon iconfont icon-error"></i>
+              <span>{{msg}}</span>
+            </div>
+          </div>
+          <form class="sigin-form">
+            <div class="form-group">
+              <fc-text fcShowLabel="N" [(ngModel)]="userId" fcSize="large" fcPlaceHolder="请输入用户名" name="userId"
+                fcPrefixIcon="icon iconfont fc-icon-name"></fc-text>
+              <!--  没有单独的验证组件 -->
+            </div>
+            <div class="form-group">
+              <fc-text fcShowLabel="N" fcType="password" [(ngModel)]="password" fcSize="large" fcPlaceHolder="请输入密码"
+                name="password" fcPrefixIcon="icon iconfont fc-icon-lock"></fc-text>
+              <!-- 没有单独的验证组件 -->
+            </div>
+            <div class="sigin-submit">
+              <fc-button fcLabel="登陆" fcType="primary" (click)="login()" fcBlock="Y" fcToolTip="点击进入"></fc-button>
+            </div>
+            <div class="sigin-other">
+              <span>
+                <a href="javascript:;" class="sigin-other-link">忘记密码</a>
+              </span>
+              <span>
+                <a href="javascript:;" class="sigin-other-link">忘记用户名</a>
+              </span>
+              <span>
+                <a href="javascript:;" class="sigin-other-link" routerLink="/signup">我要注册</a>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fc-copyright">
+    <div class="fc-copyright-in">
+      <p class="big">
+        <a href="">关于我们</a>
+        <a href="">法律声明及隐私权政策</a>
+        <a href="">廉正举报</a>
+        <a href="">友情链接</a>
+      </p>
+      <p class="link-wrap">
+        <a class="link-item">基础服务平台</a>
+        <a class="link-item">全面预算管理系统</a>
+        <a class="link-item">高铁设备管理系统</a>
+        <a class="link-item">利息资本化</a>
+        <a class="link-item">债权债务系统</a>
+      </p>
+      <p class="copyright">
+        © 2007-2018
+        <a href="https://github.com/panlihai/fcpro2" target="_blank">https://github.com/panlihai/fcpro2</a> 版权所有
+      </p>
+    </div>
+  </div>
+</div>

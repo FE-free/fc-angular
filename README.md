@@ -1,10 +1,10 @@
 # AngularYyt
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.
+基于angular、antdesign的后台管理系统.
 
-## Development server
+## 开发环境
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+输入 `ng serve` 后显示 `succesful`. 在浏览器输入 `http://localhost:8200/`. 即成功运行项目
 
 ## Code scaffolding
 

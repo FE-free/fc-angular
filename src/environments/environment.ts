@@ -3,8 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
-};
+  production: true,
+  pid: 'SYSTEM',
+  projectName: 'FC快速开发平台',
+  systemurl: 'http://pcorp.cn/server/',
+  apiurl: 'http://pcorp.cn/server/api/',
+  logurl: 'http://pcorp.cn/server/api/',
+  authurl: 'http://pcorp.cn/server/api/',
+  wsurl: 'ws://pcorp.cn/server/msg',
+  license: ''
+}
 
 /*
  * For easier debugging in development mode, you can import the following file
