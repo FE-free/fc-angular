@@ -16,7 +16,7 @@ import SystemBusiness from 'fccore2/classes/system.business';
       overflow: auto;
       float: left;
     }
-    .yt-logo {
+    .yt-icon-logo {
       color: #fff;
       font-size: 30px;
       float: left;
