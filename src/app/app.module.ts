@@ -1,32 +1,52 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { HashLocationStrategy, LocationStrategy, registerLocaleData } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import zh from '@angular/common/locales/zh';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouteReuseStrategy } from '@angular/router';
+import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { CoreModule } from 'src/core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { registerLocaleData } from '@angular/common';
-import zh from '@angular/common/locales/zh';
-import { LayoutComponent } from './components/layout/layout.component';
-import { RouterModule } from '@angular/router';
 import { ErrorComponent } from './components/error/error.component';
-registerLocaleData(zh);
+import { ForgotComponent } from './components/forgot/forgot.component';
+import { LayoutComponent } from './components/layout/layout.component';
+import { LockscreenComponent } from './components/lockscreen/lockscreen.component';
+import { SigninComponent } from './components/signin/signin.component';
+import { FcRouterService } from './service/router.service';
+import { SystemService } from './service/services.services';
+import { UserService } from './service/user.service';
+registerLocaleData(zh)
 @NgModule({
-  declarations: [
-    AppComponent,
-    LayoutComponent,
-    ErrorComponent
-  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgZorroAntdModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CoreModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: zh_CN }],
+  declarations: [
+    AppComponent,
+    LayoutComponent,
+    ErrorComponent,
+    SigninComponent,
+    ForgotComponent,
+    LockscreenComponent
+  ],
+  providers: [
+    UserService,
+    { provide: RouteReuseStrategy, useClass: FcRouterService },
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
+    }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(public systemService: SystemService) {}
+}

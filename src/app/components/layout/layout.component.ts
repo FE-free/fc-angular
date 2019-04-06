@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 // import { FcnavmenuComponent, FcnavtabComponent, NavsideOptions, MenuOptions } from 'fccomponent2';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../environments/environment.dev';
 import { CommonService } from 'fccore2/common/common';
 // import LayoutBusiness from '../../business/layout.business';
 import SystemBusiness from 'fccore2/classes/system.business';
