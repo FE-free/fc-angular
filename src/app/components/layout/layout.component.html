@@ -1,64 +1,75 @@
 <nz-layout class="layout">
   <nz-header>
     <div class="logo">
-      <i class="icon iconfont icon yt-icon-logo"></i>
+      <i class="icon iconfont fc-icon-tielu"></i>
       <span class="logo-text">东软越通后台管理系统</span>
     </div>
-    <!-- <ul nz-menu [nzTheme]="'dark'" [nzMode]="'horizontal'" style="line-height: 64px;">
-      <li nz-menu-item>nav 1</li>
-      <li nz-menu-item>nav 2</li>
-      <li nz-menu-item>nav 3</li>
-    </ul> -->
     <div class="yt-header-right">
-      <i class="icon iconfont yt-header-icon yt-icon-xitongxiaoxi"></i>
-      <i class="icon iconfont yt-header-icon yt-icon-shezhi"></i>
-      <i class="icon iconfont yt-header-icon yt-icon-tuichu"></i>
+      <a class="text">{{companyName}}</a>
+      <i class="icon iconfont yt-header-icon fc-icon-information" nzTitle="消息" nzPlacement="bottomRight" nz-tooltip></i>
+      <i class="icon iconfont yt-header-icon fc-icon-peizhi" nzTitle="设置" nzPlacement="bottomRight" nz-tooltip></i>
+      <i class="icon iconfont yt-header-icon fc-icon-wode" nzTitle="我的" nzPlacement="bottomRight" nz-tooltip></i>
+      <i class="icon iconfont yt-header-icon fc-icon-tuichu" nzTitle="退出" nzPlacement="bottomRight" nz-tooltip></i>
     </div>
   </nz-header>
-  <nz-layout style="width: 100%;
-  height: calc(100% - 64px);">
+  <nz-layout style="width: 100%;">
     <nz-sider [nzWidth]="200" style="background:#fff">
       <ul nz-menu [nzMode]="'inline'" style="height:100%">
-        <li nz-submenu>
-          <span title><i nz-icon type="user"></i>subnav 1</span>
-          <ul>
-            <li nz-menu-item>option1</li>
-            <li nz-menu-item>option2</li>
-            <li nz-menu-item>option3</li>
-            <li nz-menu-item>option4</li>
-          </ul>
-        </li>
-        <li nz-submenu>
-          <span title><i nz-icon type="laptop"></i>subnav 2</span>
-          <ul>
-            <li nz-menu-item>option5</li>
-            <li nz-menu-item>option6</li>
-            <li nz-menu-item>option7</li>
-            <li nz-menu-item>option8</li>
-          </ul>
-        </li>
-        <li nz-submenu>
-          <span title><i nz-icon type="notification"></i>subnav 3</span>
-          <ul>
-            <li nz-menu-item>option9</li>
-            <li nz-menu-item>option10</li>
-            <li nz-menu-item>option11</li>
-            <li nz-menu-item>option12</li>
-          </ul>
-        </li>
+        <ng-container *ngFor="let menu of _menus">
+          <!-- 一级菜单，没有下级 -->
+          <li nz-menu-item *ngIf="menu.HASCHILD==='N'" (click)="selectedMenu(menu)">
+            <span title><i nz-icon type="user"></i>{{menu.MENUNAME}}</span>
+          </li>
+          <!-- 一级菜单，有下级 -->
+          <li nz-submenu *ngIf="menu.HASCHILD==='Y' && menu.P_CHILDMENUS && menu.P_CHILDMENUS.length!==0">
+            <span title><i nz-icon type="user"></i>{{menu.MENUNAME}}</span>
+            <ul>
+              <ng-container *ngFor="let childMenu of menu.P_CHILDMENUS">
+                <!-- 二级菜单，没有下级 -->
+                <li nz-menu-item *ngIf="childMenu.HASCHILD==='N'" (click)="selectedMenu(childMenu);">
+                  <span title><i nz-icon type="user"></i>{{childMenu.MENUNAME}}</span>
+                </li>
+                <!-- 二级菜单，有下级 -->
+                <li nz-submenu
+                  *ngIf="childMenu.HASCHILD==='Y' && childMenu.P_CHILDMENUS && childMenu.P_CHILDMENUS.length!==0">
+                  <span title><i nz-icon type="user"></i>{{childMenu.MENUNAME}}</span>
+                  <ul>
+                    <ng-container *ngFor="let grandSonMenu of childMenu.P_CHILDMENUS">
+                      <!-- 三级级菜单，没有下级 -->
+                      <li nz-menu-item *ngIf="grandSonMenu.HASCHILD==='N'" (click)="selectedMenu(grandSonMenu);">
+                        <span title><i nz-icon type="user"></i>{{grandSonMenu.MENUNAME}}</span>
+                      </li>
+                      <!-- 三级菜单，有下级 -->
+                      <li nz-submenu
+                        *ngIf="grandSonMenu.HASCHILD==='Y' && grandSonMenu.P_CHILDMENUS && grandSonMenu.P_CHILDMENUS.length!==0">
+                        <span title><i nz-icon type="user"></i>{{grandSonMenu.MENUNAME}}</span>
+                        <ul>
+                          <li nz-menu-item *ngFor="let lastChidMenu of grandSonMenu.P_CHILDMENUS"
+                            (click)="selectedMenu(lastChidMenu)">
+                            <span title><i nz-icon type="user"></i>{{lastChidMenu.MENUNAME}}</span>
+                          </li>
+                        </ul>
+                      </li>
+                    </ng-container>
+                  </ul>
+                </li>
+              </ng-container>
+            </ul>
+          </li>
+        </ng-container>
       </ul>
     </nz-sider>
     <nz-layout style="padding:0 24px 24px">
       <nz-tabset [nzType]="'card'" [nzSelectedIndex]="index">
-        <nz-tab *ngFor="let tab of tabs" [nzTitle]="titleTemplate">
+        <nz-tab *ngFor="let tab of fcTabs" (click)="selectedTabMenu(tab)" [nzTitle]="titleTemplate">
           <ng-template #titleTemplate>
-            <div>{{ tab }}<i nz-icon type="close" class="ant-tabs-close-x" (click)="closeTab(tab)"></i></div>
+            <div>{{ tab.name }}<i nz-icon type="close" class="ant-tabs-close-x" (click)="closeTab(tab)"></i></div>
           </ng-template>
         </nz-tab>
       </nz-tabset>
       <nz-content style="background:#fff; padding: 24px; min-height: 280px;height: 500px;overflow: auto;">
         <div style="color: red;font-size:100px;">
-          内容区
+          <router-outlet [ngStyle]="{'height':'100%'}"></router-outlet>
         </div>
       </nz-content>
     </nz-layout>
@@ -67,9 +78,11 @@
 
 
 
+
 <th nzCustomFilter> Name <nz-dropdown nzTrigger="click" [nzClickHide]="false" #dropdown> <i nz-icon type="smile-o"
       class="ant-table-filter-icon" [class.ant-table-filter-open]="dropdown.nzVisible" nz-dropdown></i>
-    <div class="custom-filter-dropdown"> <input type="text" nz-input placeholder="Search name" [(ngModel)]="searchValue">
+    <div class="custom-filter-dropdown"> <input type="text" nz-input placeholder="Search name"
+        [(ngModel)]="searchValue">
       <button nz-button [nzType]="'primary'" (click)="search()">Search</button> </div>
   </nz-dropdown>
 </th>

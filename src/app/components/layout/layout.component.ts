@@ -1,58 +1,67 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-// import { FcnavmenuComponent, FcnavtabComponent, NavsideOptions, MenuOptions } from 'fccomponent2';
-import { environment } from '../../../environments/environment.dev';
-import { CommonService } from 'fccore2/common/common';
-// import LayoutBusiness from '../../business/layout.business';
-import SystemBusiness from 'fccore2/classes/system.business';
+import { Component, OnInit } from '@angular/core'
+import { Router } from '@angular/router'
+import { LayoutService } from 'src/app/service/layout.service'
+import { environment } from '../../../environments/environment.dev'
+import { CommonService } from 'src/core/service/common.service'
 @Component({
   selector: 'layout',
   templateUrl: './layout.component.html',
-  styles: [`
-    .layout {
-      width: 100%;
-      height: 100%;
-    }
-    .logo {
-      overflow: auto;
-      float: left;
-    }
-    .yt-icon-logo {
-      color: #fff;
-      font-size: 30px;
-      float: left;
-      margin-right: 10px;
-    }
-    .logo-text {
-      color: #fff;
-      float: left;
-      font-size: 20px;
-    }
-    .yt-header-right {
-      float: right;
-    }
-    .yt-header-right .yt-header-icon {
-      font-size: 20px;
-      color: #fff;
-      margin-right: 10px;
-      cursor: pointer;
-    }
-  `]
+  styles: [
+    `
+      .layout {
+        width: 100%;
+        height: 100%;
+      }
+      .logo {
+        overflow: auto;
+        float: left;
+      }
+      .logo .iconfont {
+        color: #fff;
+        font-size: 30px;
+        float: left;
+        margin-right: 10px;
+      }
+      .logo-text {
+        color: #fff;
+        float: left;
+        font-size: 20px;
+      }
+      .yt-header-right {
+        float: right;
+      }
+      .yt-header-right .yt-header-icon {
+        font-size: 26px;
+        color: #fff;
+        margin-right: 15px;
+        cursor: pointer;
+        float: left;
+      }
+      .yt-header-right .text {
+        font-size: 16px;
+        color: #fff;
+        margin-right: 15px;
+        cursor: pointer;
+        float: left;
+      }
+    `
+  ]
 })
 export class LayoutComponent implements OnInit {
   // 当前产品
-  productObj: any = { DISPLAYMODE: 'TAB' };
+  productObj: any = { DISPLAYMODE: 'TAB' }
   // @ViewChild('fcnavmenu')
   // fcnavmenu: FcnavmenuComponent;
   // @ViewChild('fcnavtab')
   // fcnavtab: FcnavtabComponent;
   // @ViewChild('confirmmodal')
-  // confirmmodal: FcmodalconfirmComponent; 
+  // confirmmodal: FcmodalconfirmComponent;
   //导航栏状态
-  _navbarStatus = "closed";
+  _navbarStatus = 'closed'
   //菜单栏状态
-  _navmenuStatus = "opened";
+  _navmenuStatus = 'opened'
   //是否被选中
-  _navmenuSelected: boolean;
+  _navmenuSelected: boolean
   //侧边栏配置
   // _navSideOption: NavsideOptions;
   //按钮配置
@@ -61,29 +70,54 @@ export class LayoutComponent implements OnInit {
   //   fcPid: environment.pid
   // };
   //路由打开记录
-  selectMenu = {};
+  selectMenu = {}
   // 当前所有菜单
-  _menus: any = [];
+  _menus: any = []
   //子菜单
-  _childMenus: any = [];
+  _childMenus: any = []
   //布局比例
-  _layoutSpans: string = "0,1";
+  _layoutSpans: string = '0,1'
   //子菜单默认选择第一个选项卡
-  childTabSelectedIndex: number;
+  childTabSelectedIndex: number
   //主题颜色,默认为大屏
-  theme: string;
-  index = 0;
-  tabs = [ 'Tab 1', 'Tab 2' ];
-
+  theme: string
+  fcSelectedIndex = 0
+  fcTabs = []
+  // 单位名称
+  companyName = '总公司'
   closeTab(tab: string): void {
-    this.tabs.splice(this.tabs.indexOf(tab), 1);
+    this.fcTabs.splice(this.fcTabs.indexOf(tab), 1)
   }
-
-  newTab(): void {
-    this.tabs.push('New Tab');
-    this.index = this.tabs.length - 1;
-  }
-  constructor() {
+  constructor(private router: Router, private mainService: LayoutService) {
+    this.fcTabs = []
+    CommonService.subscribe('selectedMenu', (event: any) => {
+      if (event) {
+        let selectMenu_1 = event.param
+        let tabOne = this.fcTabs.filter(tab => tab.content.MENUID === selectMenu_1.MENUID)
+        if (tabOne.length > 0) {
+          this.fcSelectedIndex = tabOne[0].index
+          this.selectedTabMenu(tabOne[0])
+        } else {
+          let tab = {
+            id: selectMenu_1.ID,
+            index: this.fcTabs.length,
+            enabled: false,
+            name: selectMenu_1.MENUNAME,
+            close: true,
+            icon: selectMenu_1.MENUICON,
+            content: selectMenu_1,
+            refresh: 'Y'
+          }
+          if (this.fcTabs.length === 0) {
+            tab.enabled = true
+            tab.close = false
+          }
+          this.fcTabs.push(tab)
+          this.fcSelectedIndex = this.fcTabs.length - 1
+          this.selectedTabMenu(tab)
+        }
+      }
+    })
     //初始化消息配置
     // this._navSideOption = LayoutBusiness.initNavSideOptions();
     // 初始化消息
@@ -111,38 +145,51 @@ export class LayoutComponent implements OnInit {
    * 显示时加载
    */
   ngOnInit() {
+    this._menus = this.mainService.getMenus().P_MENUS[0].P_CHILDMENUS
     //默认选中第一个选项卡
-    this.childTabSelectedIndex = 0;
+    this.childTabSelectedIndex = 0
     // 默认选择某个菜单
     CommonService.event('selectedMenu', {
-      ID: '0', MENUID: 'HOME', ROUTER: 'home',
-      PID: environment.pid, MENUTYPE: 'INURL', MENUNAME: '首页', MENUICON: 'fc-icon-home'
-    });
+      ID: '0',
+      MENUID: 'HOME',
+      ROUTER: 'home',
+      PID: environment.pid,
+      MENUTYPE: 'INURL',
+      MENUNAME: '首页',
+      MENUICON: 'fc-icon-home'
+    })
     // 事件订阅，点击tab的时候
-    CommonService.subscribe('tabClicked', (result) => {
+    CommonService.subscribe('tabClicked', result => {
       if (result) {
         // let menu = LayoutBusiness.findMenuByRouter(this.fcnavmenu.fcMenus, result.param.ROUTER);
         // if (menu && !menu.select) {
         //   menu.select = true;
         // }
       }
-    });
+    })
     // 获取当前消息
-    this.getMessage();
+    this.getMessage()
     //导航选项卡
-    // if (this.fcnavtab) {
-    //   this.fcnavtab.fcTabs = [];
-    //   this.fcnavtab.fcSelectedIndex = 0;
-    //   //把弹出确认框变量存入到服务里
-    //   // MessageService.confirmModal = this.confirmmodal;
-    //   if (this.fcnavtab.fcTabs.length === 0) {
-    //     this.fcnavtab.fcTabs.push({
-    //       id: '0', index: 0, enabled: true, name: '首页', close: false, icon: 'fc-icon-home', refresh: 'Y', content:
-    //         { ID: '0', MENUID: 'HOME', ROUTER: 'home', PID: environment.pid, MENUTYPE: 'INURL' }
-    //     });
-    //   }
-    // }
-    // SystemBusiness.navigate(["/" + environment.pid.toLocaleLowerCase() + "/home"]);
+    if (this.fcTabs) {
+      this.fcTabs = []
+      this.fcSelectedIndex = 0
+      //把弹出确认框变量存入到服务里
+      // MessageService.confirmModal = this.confirmmodal;
+      if (this.fcTabs.length === 0) {
+        this.fcTabs.push({
+          id: '0',
+          index: 0,
+          enabled: true,
+          name: '首页',
+          close: false,
+          icon: 'fc-icon-home',
+          refresh: 'Y',
+          content: { ID: '0', MENUID: 'HOME', ROUTER: 'home', PID: environment.pid, MENUTYPE: 'INURL' }
+        })
+        console.log(this.fcTabs)
+      }
+    }
+    this.router.navigate(['/' + 'budget' + '/home'])
   }
   /**
    * 获取当前消息
@@ -168,6 +215,19 @@ export class LayoutComponent implements OnInit {
     // });
   }
   /**
+   * 选中
+   * @param menu
+   */
+  selectedMenu(menu: any) {
+    menu.select = true
+    CommonService.event('selectedMenu', menu)
+    console.log(menu)
+  }
+  selectedTabMenu(tab: any) {
+    CommonService.event('tabClicked', tab)
+    this.mainService.navMenu(this.router, tab)
+  }
+  /**
    * 导航栏事件
    * @param event
    */
@@ -177,7 +237,7 @@ export class LayoutComponent implements OnInit {
   //       this._navbarStatus = event.param;
   //       break;
   //     case 'selectDropdown'://下拉菜单
-  //     case 'selectMenu'://下拉菜单 
+  //     case 'selectMenu'://下拉菜单
   //       if (undefined !== this.productObj && '' !== this.productObj && null !== this.productObj) {
   //         // 切换布局 有选项卡模式和左侧菜单模式
   //         if (this.productObj.DISPLAYMODE === 'TAB') {
@@ -246,26 +306,27 @@ export class LayoutComponent implements OnInit {
   // }
   /**
    * 导航父级选项卡跳转路由
-   * @param menu 
+   * @param menu
    */
   selectedtabmain(menu: any, refresh?: string) {
     if (refresh === undefined) {
-      refresh = 'Y';
+      refresh = 'Y'
     }
-    this.childTabSelectedIndex = 0;
+    this.childTabSelectedIndex = 0
     if (menu.P_CHILDMENUS && menu.P_CHILDMENUS.length !== 0) {
-      this._childMenus = Object.assign([], menu.P_CHILDMENUS);
-      this.selectedtabsub(this._childMenus[0]);
+      this._childMenus = Object.assign([], menu.P_CHILDMENUS)
+      this.selectedtabsub(this._childMenus[0])
     } else {
-      this._childMenus.length = 0;
+      this._childMenus.length = 0
       // SystemBusiness.navigate(["/" + environment.pid.toLocaleLowerCase() + "/" + menu.ROUTER], {
       //   queryParams: { refresh: refresh, MENUICON: menu.MENUICON }
       // });
     }
   }
+
   /**
    * 导航子级选项卡跳转路由
-   * @param menu 
+   * @param menu
    */
   selectedtabsub(menu: any) {
     // SystemBusiness.navigate(["/" + environment.pid.toLocaleLowerCase() + "/" + menu.ROUTER], { queryParams: { refresh: 'Y', MENUICON: menu.MENUICON } });
@@ -286,8 +347,8 @@ export class LayoutComponent implements OnInit {
   //       break;
   //     case 'select':
   //       //导航并存储列表
-  //       event.param.refresh = 'Y';        
-  //       CommonService.event('selectedMenu', event.param);        
+  //       event.param.refresh = 'Y';
+  //       CommonService.event('selectedMenu', event.param);
   //       break;
   //   }
   // }
@@ -311,9 +372,9 @@ export class LayoutComponent implements OnInit {
   //   }
   // }
   /**
-    * 侧边栏页面事件
-    * @param event tab页面事件
-    */
+   * 侧边栏页面事件
+   * @param event tab页面事件
+   */
   // navsideEvent(event: FCEVENT): void {
   //   switch (event.eventName) {
   //     case 'closed':

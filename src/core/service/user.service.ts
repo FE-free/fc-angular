@@ -1,8 +1,13 @@
+import { Injectable } from '@angular/core'
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router'
 import { Observable } from 'rxjs'
+import { CacheService } from 'src/core/service/cache.service'
 import { CommonService } from 'src/core/service/common.service'
 import { InterfaceMethod } from 'src/core/service/constant'
-import { CacheService } from 'src/core/service/cache.service'
+// @Injectable() 装饰器会接受该服务的元数据对象
+@Injectable({
+  providedIn: 'root'
+})
 export class UserService implements CanActivate {
   private daoService
   private logService
@@ -20,6 +25,7 @@ export class UserService implements CanActivate {
    */
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     var user = this.getUserInfo()
+    // 判断是否登录成功
     if (user && user.USERCODE !== undefined) {
       return true
     } else {

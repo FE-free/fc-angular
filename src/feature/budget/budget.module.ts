@@ -12,7 +12,7 @@ import { Routers } from './budget.route';
     RouterModule.forChild(Routers),
   ],
   declarations: [
-    HomeComponent,
+    HomeComponent
   ],
   providers: [
    

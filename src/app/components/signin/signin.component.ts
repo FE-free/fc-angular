@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core'
-import { Router } from '@angular/router'
-import { ProvidersService } from 'fccore2'
-import { environment } from 'src/environments/environment.dev'
-import { Observable } from 'rxjs'
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CacheService } from 'src/core/service/cache.service';
+import { environment } from 'src/environments/environment.dev';
 
 @Component({
   selector: 'signin',
@@ -18,8 +17,7 @@ export class SigninComponent implements OnInit {
   constructor(private router: Router) {}
   ngOnInit() {
     if (this.loginValid(this.userId, this.password)) {
-      this.router.navigate(['/budget/home'])
-      // this.router.navigate(['/' + environment.pid.toLocaleLowerCase() + '/home'])
+      this.router.navigate(['/' + 'budget' + '/home'])
     }
   }
   /**
@@ -27,7 +25,10 @@ export class SigninComponent implements OnInit {
    */
   login() {
     if (this.loginValid(this.userId, this.password)) {
-      this.router.navigate(['/budget/home'])
+      this.hasError = false
+      CacheService.setS("userinfo",{USERCODE:'admin'});
+      CacheService.setS("token", 'ab2be4ef08c0418bab13a6a88c9772e7');
+      this.router.navigate(['/' + 'budget' + '/home'])
     } else {
       this.hasError = true
     }

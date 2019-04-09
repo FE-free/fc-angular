@@ -5,28 +5,28 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouteReuseStrategy } from '@angular/router';
+import { RouteReuseStrategy, RouterModule } from '@angular/router';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { CoreModule } from 'src/core/core.module';
-import { AppRoutingModule } from './app-routing.module';
+import { UserService } from 'src/core/service/user.service';
+import { AppRoutes } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ErrorComponent } from './components/error/error.component';
-import { ForgotComponent } from './components/forgot/forgot.component';
 import { LayoutComponent } from './components/layout/layout.component';
-import { LockscreenComponent } from './components/lockscreen/lockscreen.component';
 import { SigninComponent } from './components/signin/signin.component';
+import { LayoutService } from './service/layout.service';
 import { FcRouterService } from './service/router.service';
 import { SystemService } from './service/services.services';
-import { UserService } from './service/user.service';
+import { BuildingComponent } from './components/building/building.component';
 registerLocaleData(zh)
 @NgModule({
   imports: [
     BrowserModule,
-    AppRoutingModule,
     NgZorroAntdModule,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    RouterModule.forRoot(AppRoutes),
     CoreModule
   ],
   declarations: [
@@ -34,11 +34,13 @@ registerLocaleData(zh)
     LayoutComponent,
     ErrorComponent,
     SigninComponent,
-    ForgotComponent,
-    LockscreenComponent
+    BuildingComponent,
+    // ForgotComponent,
+    // LockscreenComponent
   ],
   providers: [
     UserService,
+    LayoutService,
     { provide: RouteReuseStrategy, useClass: FcRouterService },
     {
       provide: LocationStrategy,
