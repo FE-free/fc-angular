@@ -1,6 +1,6 @@
 # AngularYyt
 
-基于angular、antdesign的后台管理系统.
+基于angular、antdesign的后台管理系统,全面预算管理系统-前端搭建.
 
 ## 开发环境
 
