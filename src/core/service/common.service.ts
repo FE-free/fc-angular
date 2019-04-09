@@ -1,5 +1,5 @@
 import { EventEmitter } from '@angular/core'
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/internal/Observable';
 export class CommonService {
   static eventEmit: EventEmitter<any> = new EventEmitter()
   static base64encode: any
@@ -887,7 +887,7 @@ export class CommonService {
    * @param obs1 Observable
    * @param obs2 Observable
    */
-  static createObservableConcat(obs1: Observable<any>, obs2: Observable<any>): Observable<any> {
+   createObservableConcat(obs1: Observable<any>, obs2: Observable<any>): Observable<any> {
     return Observable.concat(obs1, obs2)
   }
   /**
@@ -895,7 +895,7 @@ export class CommonService {
    * @param obs1 Observable
    * @param obs2 Observable
    */
-  static createObservableJoin(obs1: Observable<any>[]): Observable<any> {
+   createObservableJoin(obs1: Observable<any>[]): Observable<any> {
     return Observable.forkJoin(obs1)
   }
   /**

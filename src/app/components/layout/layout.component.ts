@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { Router } from '@angular/router'
+import { Router, NavigationEnd, ActivatedRoute, NavigationStart, NavigationCancel, NavigationError, RoutesRecognized } from '@angular/router'
 import { LayoutService } from 'src/app/service/layout.service'
 import { environment } from '../../../environments/environment.dev'
 import { CommonService } from 'src/core/service/common.service'
@@ -85,10 +85,32 @@ export class LayoutComponent implements OnInit {
   fcTabs = []
   // 单位名称
   companyName = '总公司'
+  // 退出登录文字提示是否显示
+  siginoutVisible:boolean
   closeTab(tab: string): void {
     this.fcTabs.splice(this.fcTabs.indexOf(tab), 1)
   }
-  constructor(private router: Router, private mainService: LayoutService) {
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private mainService: LayoutService
+  ) {
+    this.siginoutVisible = false;
+    //监听路由变化
+    router.events.subscribe(event => {
+      if(event instanceof NavigationStart) {
+        //
+      } else if(event instanceof NavigationEnd) {
+        //
+        this.siginoutVisible = false;
+      } else if(event instanceof NavigationCancel) {
+        //
+      } else if(event instanceof NavigationError) {
+        //
+      } else if(event instanceof RoutesRecognized) {
+        //
+      }
+    })
     this.fcTabs = []
     CommonService.subscribe('selectedMenu', (event: any) => {
       if (event) {
@@ -225,7 +247,15 @@ export class LayoutComponent implements OnInit {
   }
   selectedTabMenu(tab: any) {
     CommonService.event('tabClicked', tab)
-    this.mainService.navMenu(this.router, tab)
+    this.mainService.navMenu(this.router, tab.content, tab.refresh)
+  }
+
+  /**
+   * 退出登录
+   */
+  siginout() {
+    this.siginoutVisible = false
+    this.router.navigate(['/signin'])
   }
   /**
    * 导航栏事件

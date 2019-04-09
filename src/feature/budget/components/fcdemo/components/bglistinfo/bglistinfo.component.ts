@@ -5,6 +5,12 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './bglistinfo.component.html',
   styles: [
     `
+    .toolbar {
+      
+    }
+    .toolbar button{
+      margin-right: 10px;
+    }
     `
   ]
 })

@@ -22,7 +22,7 @@ registerLocaleData(zh)
 @NgModule({
   imports: [
     BrowserModule,
-    NgZorroAntdModule,
+    NgZorroAntdModule.forRoot(),
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
