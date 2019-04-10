@@ -3,6 +3,7 @@ import { BglistinfoComponent } from './components/bglistinfo/bglistinfo.componen
 import { BgcreateComponent } from './components/bgcreate/bgcreate.component'
 import { BgupdateComponent } from './components/bgupdate/bgupdate.component'
 import { BgremoveComponent } from './components/bgremove/bgremove.component'
+import { BgspreadComponent } from './components/bgspread/bgspread.component';
 
 export const Routers: Routes = [
   {
@@ -20,5 +21,9 @@ export const Routers: Routes = [
   {
     path: 'bgremoveList', // 删除
     component: BgremoveComponent
+  },
+  {
+    path: 'bgspreadList', // spread报表
+    component: BgspreadComponent
   }
 ]

@@ -1,5 +1,13 @@
 import { Component, OnInit } from '@angular/core'
-import { Router, NavigationEnd, ActivatedRoute, NavigationStart, NavigationCancel, NavigationError, RoutesRecognized } from '@angular/router'
+import {
+  Router,
+  NavigationEnd,
+  ActivatedRoute,
+  NavigationStart,
+  NavigationCancel,
+  NavigationError,
+  RoutesRecognized
+} from '@angular/router'
 import { LayoutService } from 'src/app/service/layout.service'
 import { environment } from '../../../environments/environment.dev'
 import { CommonService } from 'src/core/service/common.service'
@@ -27,48 +35,63 @@ import { CommonService } from 'src/core/service/common.service'
         float: left;
         font-size: 20px;
       }
-      .yt-header-right {
+      .fc-header-right {
         float: right;
       }
-      .yt-header-right .yt-header-icon {
+      .fc-header-right .yt-header-icon {
         font-size: 26px;
         color: #fff;
         margin-right: 15px;
         cursor: pointer;
         float: left;
       }
-      .yt-header-right .text {
+      .fc-header-right .text {
         font-size: 16px;
         color: #fff;
         margin-right: 15px;
         cursor: pointer;
         float: left;
       }
+      .sidebar-nav {
+        position: relative;
+      }
+      .layout-toggle {
+        positon: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background-color: #f5f5f5;
+      }
+      .layout-toggle .iconfont {
+        color: #333333;
+        font-size: 18px;
+        cursor: pointer;
+      }
+      .layout-toggle .iconfont:hover {
+        color: #000000;
+        font-weight: bold;
+      }
+      ::ng-deep .navside.ant-drawer-content-wrapper {
+        background-color: #ffffff;
+        top: 64px;
+        height: calc(100% - 64px);
+      }
+      ::ng-deep .navside .ant-drawer-body {
+        padding: 0;
+      }
     `
   ]
 })
 export class LayoutComponent implements OnInit {
-  // 当前产品
-  productObj: any = { DISPLAYMODE: 'TAB' }
-  // @ViewChild('fcnavmenu')
-  // fcnavmenu: FcnavmenuComponent;
-  // @ViewChild('fcnavtab')
-  // fcnavtab: FcnavtabComponent;
-  // @ViewChild('confirmmodal')
-  // confirmmodal: FcmodalconfirmComponent;
   //导航栏状态
   _navbarStatus = 'closed'
   //菜单栏状态
   _navmenuStatus = 'opened'
   //是否被选中
   _navmenuSelected: boolean
-  //侧边栏配置
-  // _navSideOption: NavsideOptions;
-  //按钮配置
-  // _menuOptions: MenuOptions = {
-  //   //所在产品优先级最高，当有产品时其它条件忽略
-  //   fcPid: environment.pid
-  // };
   //路由打开记录
   selectMenu = {}
   // 当前所有菜单
@@ -85,33 +108,37 @@ export class LayoutComponent implements OnInit {
   fcTabs = []
   // 单位名称
   companyName = '总公司'
+  //
+  menuIsCollapsed = false
   // 退出登录文字提示是否显示
-  siginoutVisible:boolean
-  closeTab(tab: string): void {
-    this.fcTabs.splice(this.fcTabs.indexOf(tab), 1)
-  }
+  siginoutVisible: boolean
+  // 消息侧边栏
+  navsideVisible = false
+  // 菜单导航的宽度
+  menuWidth = 200
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private mainService: LayoutService
   ) {
-    this.siginoutVisible = false;
+    this.siginoutVisible = false
     //监听路由变化
     router.events.subscribe(event => {
-      if(event instanceof NavigationStart) {
+      if (event instanceof NavigationStart) {
         //
-      } else if(event instanceof NavigationEnd) {
+      } else if (event instanceof NavigationEnd) {
         //
-        this.siginoutVisible = false;
-      } else if(event instanceof NavigationCancel) {
+        this.siginoutVisible = false
+      } else if (event instanceof NavigationCancel) {
         //
-      } else if(event instanceof NavigationError) {
+      } else if (event instanceof NavigationError) {
         //
-      } else if(event instanceof RoutesRecognized) {
+      } else if (event instanceof RoutesRecognized) {
         //
       }
     })
     this.fcTabs = []
+    // 点击左侧导航
     CommonService.subscribe('selectedMenu', (event: any) => {
       if (event) {
         let selectMenu_1 = event.param
@@ -180,17 +207,6 @@ export class LayoutComponent implements OnInit {
       MENUNAME: '首页',
       MENUICON: 'fc-icon-home'
     })
-    // 事件订阅，点击tab的时候
-    CommonService.subscribe('tabClicked', result => {
-      if (result) {
-        // let menu = LayoutBusiness.findMenuByRouter(this.fcnavmenu.fcMenus, result.param.ROUTER);
-        // if (menu && !menu.select) {
-        //   menu.select = true;
-        // }
-      }
-    })
-    // 获取当前消息
-    this.getMessage()
     //导航选项卡
     if (this.fcTabs) {
       this.fcTabs = []
@@ -214,27 +230,23 @@ export class LayoutComponent implements OnInit {
     this.router.navigate(['/' + 'budget' + '/home'])
   }
   /**
-   * 获取当前消息
+   * 切换布局
    */
-  getMessage() {
-    // LayoutBusiness.getMessage().subscribe(res => {
-    //   if (res[0].CODE === '0') {
-    //     this._navSideOption.fcValues1 = res[1].DATA;
-    //     this._navSideOption.fcValues1.forEach(element => {
-    //       if (element.TS !== null && element.TS !== '') {
-    //         element.TS = CommonService.timestampFormat(Number.parseInt(element.TS) * 1000, 'yyyy-MM-dd hh:mm:ss') + "";
-    //       }
-    //     })
-    //   }
-    //   if (res[1].CODE === '0') {
-    //     this._navSideOption.fcValues2 = res[0].DATA;
-    //     this._navSideOption.fcValues2.forEach(element => {
-    //       if (element.TS !== null && element.TS !== '') {
-    //         element.TS = CommonService.timestampFormat(Number.parseInt(element.TS) * 1000, 'yyyy-MM-dd hh:mm:ss') + "";
-    //       }
-    //     })
-    //   }
-    // });
+  toggleLayout() {
+    this.menuWidth = this.menuWidth === 50 ? 200 : 50
+    this.menuIsCollapsed = this.menuIsCollapsed === true ? false : true
+  }
+  /**
+   * 打开或者关闭侧边栏
+   */
+  toggleSidebar() {
+    this.navsideVisible = this.navsideVisible === false ? true : false
+  }
+  /**
+   * 关闭侧边栏
+   */
+  closeNavSide() {
+    this.navsideVisible = false
   }
   /**
    * 选中
@@ -245,11 +257,17 @@ export class LayoutComponent implements OnInit {
     CommonService.event('selectedMenu', menu)
     console.log(menu)
   }
-  selectedTabMenu(tab: any) {
-    CommonService.event('tabClicked', tab)
-    this.mainService.navMenu(this.router, tab.content, tab.refresh)
+  selectedTabMenu(tabMenu: any) {
+    CommonService.event('tabClicked', tabMenu)
+    this.mainService.navMenu(this.router, tabMenu.content, tabMenu.refresh)
   }
-
+  /**
+   * 关闭
+   * @param tabMenu
+   */
+  closeTabMenu(tabMenu: string): void {
+    this.fcTabs.splice(this.fcTabs.indexOf(tabMenu), 1)
+  }
   /**
    * 退出登录
    */

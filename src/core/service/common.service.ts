@@ -887,17 +887,17 @@ export class CommonService {
    * @param obs1 Observable
    * @param obs2 Observable
    */
-   createObservableConcat(obs1: Observable<any>, obs2: Observable<any>): Observable<any> {
-    return Observable.concat(obs1, obs2)
-  }
+  //  createObservableConcat(obs1: Observable<any>, obs2: Observable<any>): Observable<any> {
+  //   return Observable.concat(obs1, obs2)
+  // }
   /**
    * 并行执行多个订阅任务
    * @param obs1 Observable
    * @param obs2 Observable
    */
-   createObservableJoin(obs1: Observable<any>[]): Observable<any> {
-    return Observable.forkJoin(obs1)
-  }
+  //  createObservableJoin(obs1: Observable<any>[]): Observable<any> {
+  //   return Observable.forkJoin(obs1)
+  // }
   /**
    * 复制对象
    * @param obj 复制对象

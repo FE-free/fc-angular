@@ -15,9 +15,9 @@ import { ErrorComponent } from './components/error/error.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { LayoutService } from './service/layout.service';
-import { FcRouterService } from './service/router.service';
 import { SystemService } from './service/services.services';
 import { BuildingComponent } from './components/building/building.component';
+import { FcRouteReuseStrategy } from './service/routereusestrategy.service';
 registerLocaleData(zh)
 @NgModule({
   imports: [
@@ -41,7 +41,7 @@ registerLocaleData(zh)
   providers: [
     UserService,
     LayoutService,
-    { provide: RouteReuseStrategy, useClass: FcRouterService },
+    { provide: RouteReuseStrategy, useClass: FcRouteReuseStrategy },
     {
       provide: LocationStrategy,
       useClass: HashLocationStrategy

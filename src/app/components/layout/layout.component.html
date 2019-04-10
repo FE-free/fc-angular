@@ -1,20 +1,22 @@
 <nz-layout class="layout">
+  <!-- 顶部工具栏 -->
   <nz-header>
     <div class="logo">
       <i class="icon iconfont fc-icon-tielu"></i>
       <span class="logo-text">东软越通后台管理系统</span>
     </div>
-    <div class="yt-header-right">
+    <div class="fc-header-right">
       <a class="text">{{companyName}}</a>
-      <i class="icon iconfont yt-header-icon fc-icon-information" title="消息"></i>
+      <i class="icon iconfont yt-header-icon fc-icon-information" (click)="toggleSidebar()" title="消息"></i>
       <i class="icon iconfont yt-header-icon fc-icon-peizhi" title="设置"></i>
       <i class="icon iconfont yt-header-icon fc-icon-wode" title="我的"></i>
-      <i class="icon iconfont yt-header-icon fc-icon-tuichu" (click)="siginout()"  title="退出"></i>
+      <i class="icon iconfont yt-header-icon fc-icon-tuichu" (click)="siginout()" title="退出"></i>
     </div>
   </nz-header>
   <nz-layout style="width: 100%;">
-    <nz-sider [nzWidth]="200" style="background:#fff">
-      <ul nz-menu [nzMode]="'inline'" style="height:100%">
+    <!-- 菜单导航 -->
+    <nz-sider [(nzWidth)]="menuWidth" class="sidebar-menu" style="background:#fff;">
+      <ul nz-menu [nzMode]="'inline'" style="height: calc(100% - 40px);" [nzInlineCollapsed]="menuIsCollapsed">
         <ng-container *ngFor="let menu of _menus">
           <!-- 一级菜单，没有下级 -->
           <li nz-menu-item *ngIf="menu.HASCHILD==='N'" (click)="selectedMenu(menu)">
@@ -58,10 +60,16 @@
           </li>
         </ng-container>
       </ul>
+      <!-- 切换布局控制按钮 -->
+      <div class="layout-toggle">
+        <i class="icon iconfont fc-icon-arrowleft" (click)="toggleLayout()">
+        </i>
+      </div>
     </nz-sider>
     <nz-layout style="padding:0 24px 24px">
+      <!-- 选项卡导航 -->
       <nz-tabset [nzType]="'card'" [nzSelectedIndex]="index">
-        <nz-tab *ngFor="let tab of fcTabs" (click)="selectedTabMenu(tab)" [nzTitle]="titleTemplate">
+        <nz-tab *ngFor="let tab of fcTabs" (nzClick)="selectedTabMenu(tab)" [nzTitle]="titleTemplate">
           <ng-template #titleTemplate>
             <div>{{ tab.name }}<i nz-icon type="close" class="ant-tabs-close-x" (click)="closeTab(tab)"></i></div>
           </ng-template>
@@ -69,20 +77,26 @@
       </nz-tabset>
       <nz-content style="background:#fff; padding: 24px; min-height: 280px;height: 500px;overflow: auto;">
         <div style="color: red;font-size:100px;">
+          <!-- 内容区 -->
           <router-outlet [ngStyle]="{'height':'100%'}"></router-outlet>
         </div>
       </nz-content>
     </nz-layout>
   </nz-layout>
 </nz-layout>
-
-
-
-
-<th nzCustomFilter> Name <nz-dropdown nzTrigger="click" [nzClickHide]="false" #dropdown> <i nz-icon type="smile-o"
-      class="ant-table-filter-icon" [class.ant-table-filter-open]="dropdown.nzVisible" nz-dropdown></i>
-    <div class="custom-filter-dropdown"> <input type="text" nz-input placeholder="Search name"
-        [(ngModel)]="searchValue">
-      <button nz-button [nzType]="'primary'" (click)="search()">Search</button> </div>
-  </nz-dropdown>
-</th>
+<!-- 消息侧边栏 -->
+<nz-drawer [nzWidth]="300" [nzMaskStyle]="{'top': '64px','background':'red'}"nzWrapClassName="navside" [nzMask]="false" [nzClosable]="false" [nzVisible]="navsideVisible"
+  nzPlacement="right" nzTitle="" (nzOnClose)="closeNavSide()">
+  <nz-tabset>
+    <nz-tab [nzTitle]="titleTemplate">
+      <ng-template #titleTemplate>未读消息</ng-template>
+      <div>
+        content1
+      </div>
+    </nz-tab>
+    <nz-tab [nzTitle]="titleTemplate">
+      <ng-template #titleTemplate>已读消息</ng-template>
+      content2
+    </nz-tab>
+  </nz-tabset>
+</nz-drawer>
