@@ -9,11 +9,6 @@ import { Routers } from './budget.route';
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(Routers),
-  ],
-  declarations: [
-  ],
-  providers: [
-   
   ]
 })
 export class BudgetModule { }

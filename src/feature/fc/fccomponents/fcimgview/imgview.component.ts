@@ -1,9 +1,9 @@
-import { AfterContentInit, Component, ElementRef, Input, OnInit, Renderer2, ViewChild, OnChanges } from '@angular/core';
+import { Component, ElementRef, Input, OnChanges, Renderer2, ViewChild } from '@angular/core';
 import { EventManager } from '@angular/platform-browser';
 @Component({
   selector: 'img-view',
   templateUrl: './imgview.component.html',
-  styleUrls: ['./imgview.component.css']
+  styleUrls: ['./imgview.component.less']
 })
 export class ImgviewComponent implements OnChanges {
   // 图片的路径

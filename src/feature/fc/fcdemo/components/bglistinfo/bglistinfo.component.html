@@ -8,7 +8,7 @@
     <div nz-row [nzGutter]="24">
       <div nz-col [nzSpan]="8">
         <nz-form-item nzFlex>
-          <nz-form-label [nzFor]="taskCode">任务代码</nz-form-label>
+          <nz-form-label nzFor="taskCode">任务代码</nz-form-label>
           <nz-form-control>
             <input nz-input placeholder="请输入任务代码" [(ngModel)]="searchObj.taskCode" name="taskCode" />
           </nz-form-control>
@@ -16,7 +16,7 @@
       </div>
       <div nz-col [nzSpan]="8">
         <nz-form-item nzFlex>
-          <nz-form-label [nzFor]="taskName">任务名称</nz-form-label>
+          <nz-form-label nzFor="taskName">任务名称</nz-form-label>
           <nz-form-control>
             <input nz-input placeholder="请输入任务名称" [(ngModel)]="searchObj.taskName" name="taskName" />
           </nz-form-control>
