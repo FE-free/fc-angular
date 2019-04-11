@@ -17,7 +17,7 @@ export class SigninComponent implements OnInit {
   constructor(private router: Router) {}
   ngOnInit() {
     if (this.loginValid(this.userId, this.password)) {
-      this.router.navigate(['/' + 'budget' + '/home'])
+      this.router.navigate(['/' + environment.pid.toLocaleLowerCase() + '/home'])
     }
   }
   /**
@@ -28,7 +28,7 @@ export class SigninComponent implements OnInit {
       this.hasError = false
       CacheService.setS("userinfo",{USERCODE:'admin'});
       CacheService.setS("token", 'ab2be4ef08c0418bab13a6a88c9772e7');
-      this.router.navigate(['/' + 'budget' + '/home'])
+      this.router.navigate(['/' + environment.pid.toLocaleLowerCase() + '/home'])
     } else {
       this.hasError = true
     }

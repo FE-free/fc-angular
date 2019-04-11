@@ -6,49 +6,65 @@
       <span class="logo-text">东软越通后台管理系统</span>
     </div>
     <div class="fc-header-right">
-      <a class="text">{{companyName}}</a>
       <i class="icon iconfont yt-header-icon fc-icon-information" (click)="toggleSidebar()" title="消息"></i>
       <i class="icon iconfont yt-header-icon fc-icon-peizhi" title="设置"></i>
       <i class="icon iconfont yt-header-icon fc-icon-wode" title="我的"></i>
       <i class="icon iconfont yt-header-icon fc-icon-tuichu" (click)="siginout()" title="退出"></i>
+      <nz-avatar class="avatar" [nzSize]="32" nzIcon="user"></nz-avatar>
+      <a class="text">{{companyName}}</a>
     </div>
   </nz-header>
   <nz-layout style="width: 100%;">
     <!-- 菜单导航 -->
     <nz-sider [(nzWidth)]="menuWidth" class="sidebar-menu" style="background:#fff;">
-      <ul nz-menu [nzMode]="'inline'" style="height: calc(100% - 40px);" [nzInlineCollapsed]="menuIsCollapsed">
+      <ul nz-menu [nzMode]="'inline'" style="height: calc(100% - 40px);overflow: auto;" 
+        [nzInlineCollapsed]="menuIsCollapsed" >
         <ng-container *ngFor="let menu of _menus">
           <!-- 一级菜单，没有下级 -->
           <li nz-menu-item *ngIf="menu.HASCHILD==='N'" (click)="selectedMenu(menu)">
-            <span title><i nz-icon type="user"></i>{{menu.MENUNAME}}</span>
+            <span title>
+              <i class="icon iconfont menu-icon" [ngClass]="menu.MENUICON"></i>
+              <span class="first-level-title">{{menu.MENUNAME}}</span>
+            </span>
           </li>
           <!-- 一级菜单，有下级 -->
-          <li nz-submenu *ngIf="menu.HASCHILD==='Y' && menu.P_CHILDMENUS && menu.P_CHILDMENUS.length!==0">
-            <span title><i nz-icon type="user"></i>{{menu.MENUNAME}}</span>
+          <li nz-submenu [nzOpen]="true" *ngIf="menu.HASCHILD==='Y' && menu.P_CHILDMENUS && menu.P_CHILDMENUS.length!==0">
+            <span title>
+              <i class="icon iconfont menu-icon" [ngClass]="menu.MENUICON"></i>
+              <span class="first-level-title">{{menu.MENUNAME}}</span></span>
             <ul>
               <ng-container *ngFor="let childMenu of menu.P_CHILDMENUS">
                 <!-- 二级菜单，没有下级 -->
                 <li nz-menu-item *ngIf="childMenu.HASCHILD==='N'" (click)="selectedMenu(childMenu);">
-                  <span title><i nz-icon type="user"></i>{{childMenu.MENUNAME}}</span>
+                  <span title>
+                    <span>{{childMenu.MENUNAME}}</span>
+                  </span>
                 </li>
                 <!-- 二级菜单，有下级 -->
                 <li nz-submenu
                   *ngIf="childMenu.HASCHILD==='Y' && childMenu.P_CHILDMENUS && childMenu.P_CHILDMENUS.length!==0">
-                  <span title><i nz-icon type="user"></i>{{childMenu.MENUNAME}}</span>
+                  <span title>
+                    <i nz-icon [type]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></i>
+                    <span >{{childMenu.MENUNAME}}</span>
+                  </span>
                   <ul>
                     <ng-container *ngFor="let grandSonMenu of childMenu.P_CHILDMENUS">
                       <!-- 三级级菜单，没有下级 -->
                       <li nz-menu-item *ngIf="grandSonMenu.HASCHILD==='N'" (click)="selectedMenu(grandSonMenu);">
-                        <span title><i nz-icon type="user"></i>{{grandSonMenu.MENUNAME}}</span>
+                        <span title>
+                          <i nz-icon [type]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></i>
+                          {{grandSonMenu.MENUNAME}}</span>
                       </li>
                       <!-- 三级菜单，有下级 -->
                       <li nz-submenu
                         *ngIf="grandSonMenu.HASCHILD==='Y' && grandSonMenu.P_CHILDMENUS && grandSonMenu.P_CHILDMENUS.length!==0">
-                        <span title><i nz-icon type="user"></i>{{grandSonMenu.MENUNAME}}</span>
+                        <span title>
+                          {{grandSonMenu.MENUNAME}}</span>
                         <ul>
                           <li nz-menu-item *ngFor="let lastChidMenu of grandSonMenu.P_CHILDMENUS"
                             (click)="selectedMenu(lastChidMenu)">
-                            <span title><i nz-icon type="user"></i>{{lastChidMenu.MENUNAME}}</span>
+                            <span title><i class="icon iconfont menu-icon"
+                                [ngClass]="lastChidMenu.MENUICON"></i>{{lastChidMenu.MENUNAME}}</span>
                           </li>
                         </ul>
                       </li>
@@ -68,10 +84,11 @@
     </nz-sider>
     <nz-layout style="padding:0 24px 24px">
       <!-- 选项卡导航 -->
-      <nz-tabset [nzType]="'card'" [nzSelectedIndex]="fcSelectedIndex">
+      <nz-tabset class="fc-tabnav" [nzType]="'card'" [nzSelectedIndex]="fcSelectedIndex">
         <nz-tab *ngFor="let tab of fcTabs;index as i" (nzClick)="selectedTabMenu(tab)" [nzTitle]="titleTemplate">
           <ng-template #titleTemplate>
-            <div>{{ tab.name }}<i *ngIf="i>0" nz-icon type="close" class="ant-tabs-close-x" (click)="closeTabNav(tab)"></i></div>
+            <div>{{ tab.name }}<i *ngIf="i>0" nz-icon type="close" class="ant-tabs-close-x"
+                (click)="closeTabNav(tab)"></i></div>
           </ng-template>
         </nz-tab>
       </nz-tabset>

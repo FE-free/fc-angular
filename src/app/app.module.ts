@@ -9,15 +9,15 @@ import { RouteReuseStrategy, RouterModule } from '@angular/router';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { CoreModule } from 'src/core/core.module';
 import { UserService } from 'src/core/service/user.service';
-import { AppRoutes } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BuildingComponent } from './components/building/building.component';
 import { ErrorComponent } from './components/error/error.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { LayoutService } from './service/layout.service';
-import { SystemService } from './service/services.services';
-import { BuildingComponent } from './components/building/building.component';
 import { FcRouteReuseStrategy } from './service/routereusestrategy.service';
+import { SystemService } from './service/system.services';
+import { AppRoutes } from './app.route';
 registerLocaleData(zh)
 @NgModule({
   imports: [
@@ -34,7 +34,7 @@ registerLocaleData(zh)
     LayoutComponent,
     ErrorComponent,
     SigninComponent,
-    BuildingComponent,
+    BuildingComponent
     // ForgotComponent,
     // LockscreenComponent
   ],

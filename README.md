@@ -1,9 +1,12 @@
 # AngularYyt
 
 基于angular、antdesign的后台管理系统,全面预算管理系统-前端搭建.
+fc是fast core 快速开发平台的缩写
 
 - [【源码】](https://github.com/luohong123/angular-yt)
 - [【demo在线预览】](https://luohong123.github.io/angular-yt/demo/index.html)
+
+
 ## 开发环境
 
 输入 `ng serve` 后显示 `succesful`. 在浏览器输入 `http://localhost:8200/`. 即成功运行项目

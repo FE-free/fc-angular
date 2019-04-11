@@ -1,0 +1,71 @@
+.imgview-wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding-top: 40px;
+}
+
+.imgview-content {
+  position: relative;
+  overflow: auto;
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 2px solid #ddd;
+}
+
+.imgview-content .imgview-detail {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transition: -webkit-transform 0.3s;
+  -moz-transition: -moz-transform 0.3s;
+  -o-transition: -o-transform 0.3s;
+  transition: transform 0.3s;
+  cursor: pointer;
+  max-width: none;
+}
+
+.imgview-wrap .imgview-toolbar {
+  width: 100%;
+  height: 50px;
+  background-color: #f6f6f6;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 5px;
+  text-align: right;
+}
+
+.imgview-wrap .toolbar-action {
+  margin-right: 5px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  display: inline-block;
+  padding: 0;
+  font-size: 18px;
+  border-radius: 50%;
+  color: #ffffff;
+  background-color: #1890ff;
+  border-color: #1890ff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .12);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, .045);
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+}
+
+.imgview-wrap .toolbar-action:hover {
+  color: #fff;
+  background-color: #40a9ff;
+  border-color: #40a9ff;
+}
+
+.imgview-wrap .toolbar-action i {
+  font-size: 16px;
+}

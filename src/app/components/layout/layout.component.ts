@@ -1,8 +1,8 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { LayoutService } from 'src/app/service/layout.service';
-import { CommonService } from 'src/core/service/common.service';
-import { environment } from '../../../environments/environment.dev';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core'
+import { ActivatedRoute, Router } from '@angular/router'
+import { LayoutService } from 'src/app/service/layout.service'
+import { CommonService } from 'src/core/service/common.service'
+import { environment } from '../../../environments/environment.dev'
 @Component({
   selector: 'layout',
   templateUrl: './layout.component.html',
@@ -31,7 +31,7 @@ import { environment } from '../../../environments/environment.dev';
         float: right;
       }
       .fc-header-right .yt-header-icon {
-        font-size: 26px;
+        font-size: 24px;
         color: #fff;
         margin-right: 15px;
         cursor: pointer;
@@ -43,6 +43,12 @@ import { environment } from '../../../environments/environment.dev';
         margin-right: 15px;
         cursor: pointer;
         float: left;
+      }
+      .fc-header-right .avatar {
+        cursor: pointer;
+        float: left;
+        margin-top: 15px;
+        margin-right: 5px;
       }
       .sidebar-nav {
         position: relative;
@@ -80,6 +86,33 @@ import { environment } from '../../../environments/environment.dev';
       }
       ::ng-deep .ant-tabs .anticon-close {
         cursor: pointer;
+      }
+      ::ng-deep .sidebar-menu .ant-menu-inline-collapsed {
+        width: 64px;
+      }
+      ::ng-deep .sidebar-menu .ant-menu-inline-collapsed .first-level-title{
+        display: none;
+      }
+      ::ng-deep .sidebar-menu .ant-menu-inline-collapsed > .ant-menu-submenu {
+        text-align: center;
+      }
+      ::ng-deep .sidebar-menu .ant-menu-inline-collapsed > .ant-menu-submenu > .ant-menu-submenu-title {
+        padding:0!important;
+      }
+      ::ng-deep .sidebar-menu .menu-icon {
+        color: #333333;
+        margin-right: 10px;
+      }
+      ::ng-deep .ant-menu-popup::before { 
+        opacity: 1;
+        background-color: red;
+      }
+      ::ng-deep .ant-menu-popup { 
+        z-index: 1000;
+      }
+      ::ng-deep .fc-tabnav.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab-active {
+        color: #fff;
+        background: #1890ff;
       }
     `
   ]
@@ -131,7 +164,7 @@ export class LayoutComponent implements OnInit {
             close: true,
             icon: selectMenu_1.MENUICON,
             content: selectMenu_1,
-            refresh: 'Y'
+            refresh: 'N'
           }
           if (this.fcTabs.length === 0) {
             tab.enabled = true
@@ -171,19 +204,19 @@ export class LayoutComponent implements OnInit {
           name: '首页',
           close: false,
           icon: 'fc-icon-home',
-          refresh: 'Y',
+          refresh: 'N',
           content: { ID: '0', MENUID: 'HOME', ROUTER: 'home', PID: environment.pid, MENUTYPE: 'INURL' }
         })
         console.log(this.fcTabs)
       }
     }
-    this.router.navigate(['/' + 'budget' + '/home'])
+    this.router.navigate(['/' + environment.pid.toLocaleLowerCase()+ '/home'])
   }
   /**
    * 切换布局
    */
   toggleLayout() {
-    this.menuWidth = this.menuWidth === 50 ? 200 : 50
+    this.menuWidth = this.menuWidth === 64 ? 200 : 64
     this.menuIsCollapsed = this.menuIsCollapsed === true ? false : true
   }
   /**
@@ -229,7 +262,21 @@ export class LayoutComponent implements OnInit {
    * @param tab
    */
   closeTabNav(tab: any): void {
-    this.selectMenu[tab.content['MENUID']] = ''
+    if (tab.close) {
+      this.fcTabs.splice(this.fcTabs.indexOf(tab), 1)
+      let i = 0
+      this.fcTabs.forEach(item => {
+        item.index = i++
+      })
+      if (this.fcTabs.length > 0) {
+        if (this.fcSelectedIndex && tab.index === this.fcSelectedIndex) {
+          CommonService.event('selectedMenu', this.fcTabs[this.fcSelectedIndex - 1].content)
+        } else if (this.fcSelectedIndex && tab.index > this.fcSelectedIndex) {
+          this.fcSelectedIndex = tab.index
+          CommonService.event('selectedMenu', this.fcTabs[this.fcSelectedIndex].content)
+        }
+      }
+    }
   }
   /**
    * 退出登录

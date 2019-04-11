@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { NzMessageService } from 'ng-zorro-antd';
-import { menus } from '_mock/menus';
+import { menus } from '_mock/_menus';
+import { environment } from 'src/environments/environment.dev';
 @Injectable({
   providedIn: 'root'
 })
@@ -40,7 +41,7 @@ export class LayoutService {
       }
       // LogService.debug(params);
       router
-        .navigate(['/' + 'budget' + '/' + menu.ROUTER], params)
+        .navigate(['/' + environment.pid.toLocaleLowerCase() + '/' + menu.ROUTER], params)
         .then(() => {
           // this.providers.msgService.endAntLoading();
         })
@@ -53,7 +54,7 @@ export class LayoutService {
       // 开启加载条
       // this.providers.msgService.startAntLoading();
       router
-        .navigate(['/' + 'budget' + '/' + menu.ROUTER], {
+        .navigate(['/' + environment.pid.toLocaleLowerCase() + '/' + menu.ROUTER], {
           queryParams: {
             refresh: refresh,
             ID: menu.ID,
@@ -81,7 +82,7 @@ export class LayoutService {
       //发出跳转报表iframe的事件
       // router.navigate(['/budget//bgreport'], {
       router
-        .navigate(['/' + 'budget' + '/' + menu.ROUTER], {
+        .navigate(['/' + environment.pid.toLocaleLowerCase() + '/' + menu.ROUTER], {
           queryParams: {
             refresh: refresh,
             ID: menu.ID,
