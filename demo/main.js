@@ -567,7 +567,7 @@ var ErrorComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nz-layout class=\"layout\">\n  <!-- 顶部工具栏 -->\n  <nz-header>\n    <div class=\"logo\">\n      <i class=\"icon iconfont fc-icon-tielu\"></i>\n      <span class=\"logo-text\">东软越通后台管理系统</span>\n    </div>\n    <div class=\"fc-header-right\">\n      <a class=\"text\">{{companyName}}</a>\n      <i class=\"icon iconfont yt-header-icon fc-icon-information\" (click)=\"toggleSidebar()\" title=\"消息\"></i>\n      <i class=\"icon iconfont yt-header-icon fc-icon-peizhi\" title=\"设置\"></i>\n      <i class=\"icon iconfont yt-header-icon fc-icon-wode\" title=\"我的\"></i>\n      <i class=\"icon iconfont yt-header-icon fc-icon-tuichu\" (click)=\"siginout()\" title=\"退出\"></i>\n    </div>\n  </nz-header>\n  <nz-layout style=\"width: 100%;\">\n    <!-- 菜单导航 -->\n    <nz-sider [(nzWidth)]=\"menuWidth\" class=\"sidebar-menu\" style=\"background:#fff;\">\n      <ul nz-menu [nzMode]=\"'inline'\" style=\"height: calc(100% - 40px);\" [nzInlineCollapsed]=\"menuIsCollapsed\">\n        <ng-container *ngFor=\"let menu of _menus\">\n          <!-- 一级菜单，没有下级 -->\n          <li nz-menu-item *ngIf=\"menu.HASCHILD==='N'\" (click)=\"selectedMenu(menu)\">\n            <span title><i nz-icon type=\"user\"></i>{{menu.MENUNAME}}</span>\n          </li>\n          <!-- 一级菜单，有下级 -->\n          <li nz-submenu *ngIf=\"menu.HASCHILD==='Y' && menu.P_CHILDMENUS && menu.P_CHILDMENUS.length!==0\">\n            <span title><i nz-icon type=\"user\"></i>{{menu.MENUNAME}}</span>\n            <ul>\n              <ng-container *ngFor=\"let childMenu of menu.P_CHILDMENUS\">\n                <!-- 二级菜单，没有下级 -->\n                <li nz-menu-item *ngIf=\"childMenu.HASCHILD==='N'\" (click)=\"selectedMenu(childMenu);\">\n                  <span title><i nz-icon type=\"user\"></i>{{childMenu.MENUNAME}}</span>\n                </li>\n                <!-- 二级菜单，有下级 -->\n                <li nz-submenu\n                  *ngIf=\"childMenu.HASCHILD==='Y' && childMenu.P_CHILDMENUS && childMenu.P_CHILDMENUS.length!==0\">\n                  <span title><i nz-icon type=\"user\"></i>{{childMenu.MENUNAME}}</span>\n                  <ul>\n                    <ng-container *ngFor=\"let grandSonMenu of childMenu.P_CHILDMENUS\">\n                      <!-- 三级级菜单，没有下级 -->\n                      <li nz-menu-item *ngIf=\"grandSonMenu.HASCHILD==='N'\" (click)=\"selectedMenu(grandSonMenu);\">\n                        <span title><i nz-icon type=\"user\"></i>{{grandSonMenu.MENUNAME}}</span>\n                      </li>\n                      <!-- 三级菜单，有下级 -->\n                      <li nz-submenu\n                        *ngIf=\"grandSonMenu.HASCHILD==='Y' && grandSonMenu.P_CHILDMENUS && grandSonMenu.P_CHILDMENUS.length!==0\">\n                        <span title><i nz-icon type=\"user\"></i>{{grandSonMenu.MENUNAME}}</span>\n                        <ul>\n                          <li nz-menu-item *ngFor=\"let lastChidMenu of grandSonMenu.P_CHILDMENUS\"\n                            (click)=\"selectedMenu(lastChidMenu)\">\n                            <span title><i nz-icon type=\"user\"></i>{{lastChidMenu.MENUNAME}}</span>\n                          </li>\n                        </ul>\n                      </li>\n                    </ng-container>\n                  </ul>\n                </li>\n              </ng-container>\n            </ul>\n          </li>\n        </ng-container>\n      </ul>\n      <!-- 切换布局控制按钮 -->\n      <div class=\"layout-toggle\">\n        <i class=\"icon iconfont fc-icon-arrowleft\" (click)=\"toggleLayout()\">\n        </i>\n      </div>\n    </nz-sider>\n    <nz-layout style=\"padding:0 24px 24px\">\n      <!-- 选项卡导航 -->\n      <nz-tabset [nzType]=\"'card'\" [nzSelectedIndex]=\"index\">\n        <nz-tab *ngFor=\"let tab of fcTabs\" (nzClick)=\"selectedTabMenu(tab)\" [nzTitle]=\"titleTemplate\">\n          <ng-template #titleTemplate>\n            <div>{{ tab.name }}<i nz-icon type=\"close\" class=\"ant-tabs-close-x\" (click)=\"closeTab(tab)\"></i></div>\n          </ng-template>\n        </nz-tab>\n      </nz-tabset>\n      <nz-content style=\"background:#fff; padding: 24px; min-height: 280px;height: 500px;overflow: auto;\">\n        <div style=\"color: red;font-size:100px;\">\n          <!-- 内容区 -->\n          <router-outlet [ngStyle]=\"{'height':'100%'}\"></router-outlet>\n        </div>\n      </nz-content>\n    </nz-layout>\n  </nz-layout>\n</nz-layout>\n<!-- 消息侧边栏 -->\n<nz-drawer [nzWidth]=\"300\" [nzMaskStyle]=\"{'top': '64px','background':'red'}\"nzWrapClassName=\"navside\" [nzMask]=\"false\" [nzClosable]=\"false\" [nzVisible]=\"navsideVisible\"\n  nzPlacement=\"right\" nzTitle=\"\" (nzOnClose)=\"closeNavSide()\">\n  <nz-tabset>\n    <nz-tab [nzTitle]=\"titleTemplate\">\n      <ng-template #titleTemplate>未读消息</ng-template>\n      <div>\n        content1\n      </div>\n    </nz-tab>\n    <nz-tab [nzTitle]=\"titleTemplate\">\n      <ng-template #titleTemplate>已读消息</ng-template>\n      content2\n    </nz-tab>\n  </nz-tabset>\n</nz-drawer>\n"
+module.exports = "<nz-layout class=\"layout\">\n  <!-- 顶部工具栏 -->\n  <nz-header>\n    <div class=\"logo\">\n      <i class=\"icon iconfont fc-icon-tielu\"></i>\n      <span class=\"logo-text\">东软越通后台管理系统</span>\n    </div>\n    <div class=\"fc-header-right\">\n      <a class=\"text\">{{companyName}}</a>\n      <i class=\"icon iconfont yt-header-icon fc-icon-information\" (click)=\"toggleSidebar()\" title=\"消息\"></i>\n      <i class=\"icon iconfont yt-header-icon fc-icon-peizhi\" title=\"设置\"></i>\n      <i class=\"icon iconfont yt-header-icon fc-icon-wode\" title=\"我的\"></i>\n      <i class=\"icon iconfont yt-header-icon fc-icon-tuichu\" (click)=\"siginout()\" title=\"退出\"></i>\n    </div>\n  </nz-header>\n  <nz-layout style=\"width: 100%;\">\n    <!-- 菜单导航 -->\n    <nz-sider [(nzWidth)]=\"menuWidth\" class=\"sidebar-menu\" style=\"background:#fff;\">\n      <ul nz-menu [nzMode]=\"'inline'\" style=\"height: calc(100% - 40px);\" [nzInlineCollapsed]=\"menuIsCollapsed\">\n        <ng-container *ngFor=\"let menu of _menus\">\n          <!-- 一级菜单，没有下级 -->\n          <li nz-menu-item *ngIf=\"menu.HASCHILD==='N'\" (click)=\"selectedMenu(menu)\">\n            <span title><i nz-icon type=\"user\"></i>{{menu.MENUNAME}}</span>\n          </li>\n          <!-- 一级菜单，有下级 -->\n          <li nz-submenu *ngIf=\"menu.HASCHILD==='Y' && menu.P_CHILDMENUS && menu.P_CHILDMENUS.length!==0\">\n            <span title><i nz-icon type=\"user\"></i>{{menu.MENUNAME}}</span>\n            <ul>\n              <ng-container *ngFor=\"let childMenu of menu.P_CHILDMENUS\">\n                <!-- 二级菜单，没有下级 -->\n                <li nz-menu-item *ngIf=\"childMenu.HASCHILD==='N'\" (click)=\"selectedMenu(childMenu);\">\n                  <span title><i nz-icon type=\"user\"></i>{{childMenu.MENUNAME}}</span>\n                </li>\n                <!-- 二级菜单，有下级 -->\n                <li nz-submenu\n                  *ngIf=\"childMenu.HASCHILD==='Y' && childMenu.P_CHILDMENUS && childMenu.P_CHILDMENUS.length!==0\">\n                  <span title><i nz-icon type=\"user\"></i>{{childMenu.MENUNAME}}</span>\n                  <ul>\n                    <ng-container *ngFor=\"let grandSonMenu of childMenu.P_CHILDMENUS\">\n                      <!-- 三级级菜单，没有下级 -->\n                      <li nz-menu-item *ngIf=\"grandSonMenu.HASCHILD==='N'\" (click)=\"selectedMenu(grandSonMenu);\">\n                        <span title><i nz-icon type=\"user\"></i>{{grandSonMenu.MENUNAME}}</span>\n                      </li>\n                      <!-- 三级菜单，有下级 -->\n                      <li nz-submenu\n                        *ngIf=\"grandSonMenu.HASCHILD==='Y' && grandSonMenu.P_CHILDMENUS && grandSonMenu.P_CHILDMENUS.length!==0\">\n                        <span title><i nz-icon type=\"user\"></i>{{grandSonMenu.MENUNAME}}</span>\n                        <ul>\n                          <li nz-menu-item *ngFor=\"let lastChidMenu of grandSonMenu.P_CHILDMENUS\"\n                            (click)=\"selectedMenu(lastChidMenu)\">\n                            <span title><i nz-icon type=\"user\"></i>{{lastChidMenu.MENUNAME}}</span>\n                          </li>\n                        </ul>\n                      </li>\n                    </ng-container>\n                  </ul>\n                </li>\n              </ng-container>\n            </ul>\n          </li>\n        </ng-container>\n      </ul>\n      <!-- 切换布局控制按钮 -->\n      <div class=\"layout-toggle\">\n        <i class=\"icon iconfont fc-icon-arrowleft\" (click)=\"toggleLayout()\">\n        </i>\n      </div>\n    </nz-sider>\n    <nz-layout style=\"padding:0 24px 24px\">\n      <!-- 选项卡导航 -->\n      <nz-tabset [nzType]=\"'card'\" [nzSelectedIndex]=\"fcSelectedIndex\">\n        <nz-tab *ngFor=\"let tab of fcTabs;index as i\" (nzClick)=\"selectedTabMenu(tab)\" [nzTitle]=\"titleTemplate\">\n          <ng-template #titleTemplate>\n            <div>{{ tab.name }}<i *ngIf=\"i>0\" nz-icon type=\"close\" class=\"ant-tabs-close-x\" (click)=\"closeTabNav(tab)\"></i></div>\n          </ng-template>\n        </nz-tab>\n      </nz-tabset>\n      <nz-content style=\"background:#fff; padding: 24px; min-height: 280px;height: 500px;overflow: auto;\">\n        <div style=\"color: red;font-size:100px;\">\n          <!-- 内容区 -->\n          <router-outlet [ngStyle]=\"{'height':'100%'}\"></router-outlet>\n        </div>\n      </nz-content>\n    </nz-layout>\n  </nz-layout>\n</nz-layout>\n<!-- 消息侧边栏 -->\n<div class=\"navside\">\n  <nz-drawer [nzWidth]=\"300\" [nzMaskStyle]=\"{'height':'auto'}\" nzWrapClassName=\"navside-drawer\" [nzClosable]=\"false\"\n    [nzVisible]=\"navsideVisible\" nzPlacement=\"right\" nzTitle=\"\" (nzOnClose)=\"closeNavSide()\" #navside>\n    <nz-tabset>\n      <nz-tab [nzTitle]=\"titleTemplate\">\n        <ng-template #titleTemplate>未读消息</ng-template>\n        <div>\n          content1\n        </div>\n      </nz-tab>\n      <nz-tab [nzTitle]=\"titleTemplate\">\n        <ng-template #titleTemplate>已读消息</ng-template>\n        content2\n      </nz-tab>\n    </nz-tabset>\n  </nz-drawer>\n</div>\n"
 
 /***/ }),
 
@@ -585,8 +585,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var src_app_service_layout_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/service/layout.service */ "./src/app/service/layout.service.ts");
-/* harmony import */ var _environments_environment_dev__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../environments/environment.dev */ "./src/environments/environment.dev.ts");
-/* harmony import */ var src_core_service_common_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/core/service/common.service */ "./src/core/service/common.service.ts");
+/* harmony import */ var src_core_service_common_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/core/service/common.service */ "./src/core/service/common.service.ts");
+/* harmony import */ var _environments_environment_dev__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../environments/environment.dev */ "./src/environments/environment.dev.ts");
 
 
 
@@ -599,51 +599,25 @@ var LayoutComponent = /** @class */ (function () {
         this.router = router;
         this.activatedRoute = activatedRoute;
         this.mainService = mainService;
-        //导航栏状态
-        this._navbarStatus = 'closed';
-        //菜单栏状态
-        this._navmenuStatus = 'opened';
         //路由打开记录
         this.selectMenu = {};
         // 当前所有菜单
         this._menus = [];
-        //子菜单
-        this._childMenus = [];
-        //布局比例
-        this._layoutSpans = '0,1';
+        // 默认选中的索引
         this.fcSelectedIndex = 0;
+        // 选项卡
         this.fcTabs = [];
         // 单位名称
         this.companyName = '总公司';
-        //
+        // 菜单是否收起
         this.menuIsCollapsed = false;
         // 消息侧边栏
         this.navsideVisible = false;
         // 菜单导航的宽度
         this.menuWidth = 200;
-        this.siginoutVisible = false;
-        //监听路由变化
-        router.events.subscribe(function (event) {
-            if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationStart"]) {
-                //
-            }
-            else if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"]) {
-                //
-                _this.siginoutVisible = false;
-            }
-            else if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationCancel"]) {
-                //
-            }
-            else if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationError"]) {
-                //
-            }
-            else if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["RoutesRecognized"]) {
-                //
-            }
-        });
         this.fcTabs = [];
         // 点击左侧导航
-        src_core_service_common_service__WEBPACK_IMPORTED_MODULE_5__["CommonService"].subscribe('selectedMenu', function (event) {
+        src_core_service_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"].subscribe('selectedMenu', function (event) {
             if (event) {
                 var selectMenu_1_1 = event.param;
                 var tabOne = _this.fcTabs.filter(function (tab) { return tab.content.MENUID === selectMenu_1_1.MENUID; });
@@ -672,42 +646,18 @@ var LayoutComponent = /** @class */ (function () {
                 }
             }
         });
-        //初始化消息配置
-        // this._navSideOption = LayoutBusiness.initNavSideOptions();
-        // 初始化消息
-        // LayoutBusiness.getRealMessage().subscribe(data => {
-        //   if (data.length !== 0) {
-        //     this._navSideOption.fcValues1.unshift(JSON.parse(data));
-        //     this._navSideOption.fcValues1.unshift(JSON.parse(data));
-        //   }
-        // });
-        //如果是产品是tab的显示模式,默认选中第一个导航
-        // SystemBusiness.getProduct(environment.pid).subscribe(result => {
-        //   if (result.CODE === '0') {
-        //     this.productObj = result.DATA[0];
-        //     if (undefined !== this.productObj && null !== this.productObj && '' !== this.productObj) {
-        //       if (this.productObj.DISPLAYMODE === 'TAB') {
-        //         if (this._menus && this._menus.length !== 0) {
-        //           // this.selectedtabmain(this._menus[0]);
-        //         }
-        //       }
-        //     }
-        //   }
-        // });
     }
     /**
      * 显示时加载
      */
     LayoutComponent.prototype.ngOnInit = function () {
         this._menus = this.mainService.getMenus().P_MENUS[0].P_CHILDMENUS;
-        //默认选中第一个选项卡
-        this.childTabSelectedIndex = 0;
         // 默认选择某个菜单
-        src_core_service_common_service__WEBPACK_IMPORTED_MODULE_5__["CommonService"].event('selectedMenu', {
+        src_core_service_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"].event('selectedMenu', {
             ID: '0',
             MENUID: 'HOME',
             ROUTER: 'home',
-            PID: _environments_environment_dev__WEBPACK_IMPORTED_MODULE_4__["environment"].pid,
+            PID: _environments_environment_dev__WEBPACK_IMPORTED_MODULE_5__["environment"].pid,
             MENUTYPE: 'INURL',
             MENUNAME: '首页',
             MENUICON: 'fc-icon-home'
@@ -716,8 +666,6 @@ var LayoutComponent = /** @class */ (function () {
         if (this.fcTabs) {
             this.fcTabs = [];
             this.fcSelectedIndex = 0;
-            //把弹出确认框变量存入到服务里
-            // MessageService.confirmModal = this.confirmmodal;
             if (this.fcTabs.length === 0) {
                 this.fcTabs.push({
                     id: '0',
@@ -727,7 +675,7 @@ var LayoutComponent = /** @class */ (function () {
                     close: false,
                     icon: 'fc-icon-home',
                     refresh: 'Y',
-                    content: { ID: '0', MENUID: 'HOME', ROUTER: 'home', PID: _environments_environment_dev__WEBPACK_IMPORTED_MODULE_4__["environment"].pid, MENUTYPE: 'INURL' }
+                    content: { ID: '0', MENUID: 'HOME', ROUTER: 'home', PID: _environments_environment_dev__WEBPACK_IMPORTED_MODULE_5__["environment"].pid, MENUTYPE: 'INURL' }
                 });
                 console.log(this.fcTabs);
             }
@@ -754,24 +702,37 @@ var LayoutComponent = /** @class */ (function () {
         this.navsideVisible = false;
     };
     /**
-     * 选中
+     * 点击侧边栏外的区域关闭
+     */
+    LayoutComponent.prototype._onOutsideClick = function (event) {
+        if (this.navsideVisible) {
+            var clickedEl = event.target;
+            var classList = clickedEl.classList;
+            /**点击的区域不包括此组件本身且不包含顶部工具栏的消息按钮*/
+            if (!!classList.contains('ant-drawer') && !classList.contains('fc-icon-information')) {
+                this.navsideVisible = false;
+            }
+        }
+    };
+    /**
+    /**
+     * 选中菜单
      * @param menu
      */
     LayoutComponent.prototype.selectedMenu = function (menu) {
         menu.select = true;
-        src_core_service_common_service__WEBPACK_IMPORTED_MODULE_5__["CommonService"].event('selectedMenu', menu);
-        console.log(menu);
+        src_core_service_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"].event('selectedMenu', menu);
     };
     LayoutComponent.prototype.selectedTabMenu = function (tabMenu) {
-        src_core_service_common_service__WEBPACK_IMPORTED_MODULE_5__["CommonService"].event('tabClicked', tabMenu);
+        src_core_service_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"].event('tabClicked', tabMenu);
         this.mainService.navMenu(this.router, tabMenu.content, tabMenu.refresh);
     };
     /**
-     * 关闭
-     * @param tabMenu
+     * 关闭选项卡导航
+     * @param tab
      */
-    LayoutComponent.prototype.closeTabMenu = function (tabMenu) {
-        this.fcTabs.splice(this.fcTabs.indexOf(tabMenu), 1);
+    LayoutComponent.prototype.closeTabNav = function (tab) {
+        this.selectMenu[tab.content['MENUID']] = '';
     };
     /**
      * 退出登录
@@ -780,179 +741,21 @@ var LayoutComponent = /** @class */ (function () {
         this.siginoutVisible = false;
         this.router.navigate(['/signin']);
     };
-    /**
-     * 导航栏事件
-     * @param event
-     */
-    // navbarEvent(event: FCEVENT) {
-    //   switch (event.eventName) {
-    //     case 'toggle'://展开收起消息
-    //       this._navbarStatus = event.param;
-    //       break;
-    //     case 'selectDropdown'://下拉菜单
-    //     case 'selectMenu'://下拉菜单
-    //       if (undefined !== this.productObj && '' !== this.productObj && null !== this.productObj) {
-    //         // 切换布局 有选项卡模式和左侧菜单模式
-    //         if (this.productObj.DISPLAYMODE === 'TAB') {
-    //           this._layoutSpans = "0,1";
-    //         } else {
-    //           this._layoutSpans = "2,9";
-    //         }
-    //       }
-    //       if (undefined !== event.param && null !== event.param && '' !== event.param) {
-    //         this._menus = event.param.P_CHILDMENUS;
-    //       }
-    //       let menu = this._menus[0];
-    //       if (menu.HASCHILD === 'Y') {
-    //         menu.opened = true;
-    //         let childMenu = menu.P_CHILDMENUS[0];
-    //         if (childMenu.HASCHILD === 'Y') {
-    //           childMenu.opened = true;
-    //           let gChildMenu = childMenu.P_CHILDMENUS[0];
-    //           gChildMenu.select = true;
-    //         } else {
-    //           childMenu.select = true;
-    //         }
-    //         break;
-    //       } else {
-    //         menu.select = true;
-    //       }
-    //       break;
-    //     case 'logout'://登出
-    //       SystemBusiness.userService.logout().subscribe(result => {
-    //         //清除用户缓存
-    //         SystemBusiness.userService.clearUserinfo();
-    //         // 清除菜单缓存
-    //         // SystemBusiness.menuService.removeMenus();
-    //         // 清除tab页面
-    //         // if (this.productObj.DISPLAYMODE === 'MENU') {
-    //         //   this.fcnavtab.fcTabs = [];
-    //         //   this.fcnavtab.fcSelectedIndex = undefined;
-    //         // }
-    //         SystemBusiness.navigate(['/signin']);
-    //       })
-    //       break;
-    //     case 'editUser'://修改密码
-    //       SystemBusiness.navigate(["/" + environment.pid.toLocaleLowerCase() + "/sysprofileList"]);
-    //       break;
-    //     case 'changeLayout': //切换布局 有选项卡模式和左侧菜单模式
-    //       if (event.param === '选项卡') {
-    //         this.productObj.DISPLAYMODE = 'TAB';
-    //         this._layoutSpans = "0,1";
-    //         this.theme = 'default';
-    //       } else if (event.param === '菜单') {
-    //         this.productObj.DISPLAYMODE = 'MENU';
-    //         this._layoutSpans = "2,9";
-    //         this.theme = 'blue';
-    //       }
-    //       break;
-    //     case 'changeThemes': //切换皮肤 有default、blue、dark
-    //       if (event.param === 'default') {
-    //         this.theme = 'default';
-    //       } else if (event.param === 'blue') {
-    //         this.theme = 'blue';
-    //       } else if (event.param === 'dark') {
-    //         this.theme = 'dark';
-    //       }
-    //       break;
-    //   }
-    // }
-    /**
-     * 导航父级选项卡跳转路由
-     * @param menu
-     */
-    LayoutComponent.prototype.selectedtabmain = function (menu, refresh) {
-        if (refresh === undefined) {
-            refresh = 'Y';
-        }
-        this.childTabSelectedIndex = 0;
-        if (menu.P_CHILDMENUS && menu.P_CHILDMENUS.length !== 0) {
-            this._childMenus = Object.assign([], menu.P_CHILDMENUS);
-            this.selectedtabsub(this._childMenus[0]);
-        }
-        else {
-            this._childMenus.length = 0;
-            // SystemBusiness.navigate(["/" + environment.pid.toLocaleLowerCase() + "/" + menu.ROUTER], {
-            //   queryParams: { refresh: refresh, MENUICON: menu.MENUICON }
-            // });
-        }
-    };
-    /**
-     * 导航子级选项卡跳转路由
-     * @param menu
-     */
-    LayoutComponent.prototype.selectedtabsub = function (menu) {
-        // SystemBusiness.navigate(["/" + environment.pid.toLocaleLowerCase() + "/" + menu.ROUTER], { queryParams: { refresh: 'Y', MENUICON: menu.MENUICON } });
-    };
-    /**
-     *  菜单事件
-     * @param event
-     */
-    // navmenuEvent(event: FCEVENT) {
-    //   switch (event.eventName) {
-    //     case 'toggle'://展开收起左侧导航
-    //       this._navmenuStatus = event.param;
-    //       if (this._navmenuStatus === "closed") {
-    //         this._layoutSpans = "3,85";
-    //       } else if (this._navmenuStatus === "opened") {
-    //         this._layoutSpans = "2,9";
-    //       }
-    //       break;
-    //     case 'select':
-    //       //导航并存储列表
-    //       event.param.refresh = 'Y';
-    //       CommonService.event('selectedMenu', event.param);
-    //       break;
-    //   }
-    // }
-    /**
-     * 多tab页面事件
-     * @param event tab页面事件
-     */
-    // navtabEvent(event: FCEVENT): void {
-    //   switch (event.eventName) {
-    //     case 'closed':
-    //       this.selectMenu[event.param.MENUID] = "";
-    //       break;
-    //     case 'selected':
-    //       if (!this.selectMenu[event.param.MENUID]) {
-    //         //将该路由存放在路由打开记录中
-    //         this.selectMenu[event.param.MENUID] = event.param.MENUID;
-    //       }
-    //       CommonService.event('tabClicked', event.param);
-    //       // LayoutBusiness.navMenu(event.param);
-    //       break;
-    //   }
-    // }
-    /**
-     * 侧边栏页面事件
-     * @param event tab页面事件
-     */
-    // navsideEvent(event: FCEVENT): void {
-    //   switch (event.eventName) {
-    //     case 'closed':
-    //       // 删除缓存
-    //       break;
-    //     case 'click':
-    //       //点击一项
-    //       debugger;
-    //       // LayoutBusiness.navMessage(event.param);
-    //       break;
-    //     case 'toggle':
-    //       this._navbarStatus = event.param;
-    //   }
-    // }
-    /**
-     *
-     */
-    LayoutComponent.prototype.ngOnDestroy = function () {
-        // SystemBusiness.daoService.ws.close();
-    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('navside'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"])
+    ], LayoutComponent.prototype, "navside", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('document:click', ['$event']),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object]),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
+    ], LayoutComponent.prototype, "_onOutsideClick", null);
     LayoutComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'layout',
             template: __webpack_require__(/*! ./layout.component.html */ "./src/app/components/layout/layout.component.html"),
-            styles: ["\n      .layout {\n        width: 100%;\n        height: 100%;\n      }\n      .logo {\n        overflow: auto;\n        float: left;\n      }\n      .logo .iconfont {\n        color: #fff;\n        font-size: 30px;\n        float: left;\n        margin-right: 10px;\n      }\n      .logo-text {\n        color: #fff;\n        float: left;\n        font-size: 20px;\n      }\n      .fc-header-right {\n        float: right;\n      }\n      .fc-header-right .yt-header-icon {\n        font-size: 26px;\n        color: #fff;\n        margin-right: 15px;\n        cursor: pointer;\n        float: left;\n      }\n      .fc-header-right .text {\n        font-size: 16px;\n        color: #fff;\n        margin-right: 15px;\n        cursor: pointer;\n        float: left;\n      }\n      .sidebar-nav {\n        position: relative;\n      }\n      .layout-toggle {\n        positon: absolute;\n        left: 0;\n        bottom: 0;\n        width: 100%;\n        height: 40px;\n        line-height: 40px;\n        text-align: center;\n        background-color: #f5f5f5;\n      }\n      .layout-toggle .iconfont {\n        color: #333333;\n        font-size: 18px;\n        cursor: pointer;\n      }\n      .layout-toggle .iconfont:hover {\n        color: #000000;\n        font-weight: bold;\n      }\n      ::ng-deep .navside.ant-drawer-content-wrapper {\n        background-color: #ffffff;\n        top: 64px;\n        height: calc(100% - 64px);\n      }\n      ::ng-deep .navside .ant-drawer-body {\n        padding: 0;\n      }\n    "]
+            styles: ["\n      .layout {\n        width: 100%;\n        height: 100%;\n      }\n      .logo {\n        overflow: auto;\n        float: left;\n      }\n      .logo .iconfont {\n        color: #fff;\n        font-size: 30px;\n        float: left;\n        margin-right: 10px;\n      }\n      .logo-text {\n        color: #fff;\n        float: left;\n        font-size: 20px;\n      }\n      .fc-header-right {\n        float: right;\n      }\n      .fc-header-right .yt-header-icon {\n        font-size: 26px;\n        color: #fff;\n        margin-right: 15px;\n        cursor: pointer;\n        float: left;\n      }\n      .fc-header-right .text {\n        font-size: 16px;\n        color: #fff;\n        margin-right: 15px;\n        cursor: pointer;\n        float: left;\n      }\n      .sidebar-nav {\n        position: relative;\n      }\n      .layout-toggle {\n        positon: absolute;\n        left: 0;\n        bottom: 0;\n        width: 100%;\n        height: 40px;\n        line-height: 40px;\n        text-align: center;\n        background-color: #f5f5f5;\n      }\n      .layout-toggle .iconfont {\n        color: #333333;\n        font-size: 18px;\n        cursor: pointer;\n      }\n      .layout-toggle .iconfont:hover {\n        color: #000000;\n        font-weight: bold;\n      }\n      .ant-drawer {\n        width: auto;\n        height: auto;\n      }\n      ::ng-deep .navside-drawer.ant-drawer-content-wrapper {\n        background-color: #ffffff;\n        top: 64px;\n        height: calc(100% - 64px);\n      }\n      ::ng-deep .navside-drawer .ant-drawer-body {\n        padding: 0;\n      }\n      ::ng-deep .ant-tabs .anticon-close {\n        cursor: pointer;\n      }\n    "]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
             _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
@@ -972,7 +775,7 @@ var LayoutComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"sigin-wrap\">\r\n  <div class=\"sigin\">\r\n    <div class=\"sigin-topbar\">\r\n      <nav class=\"navbar navbar-inverse\">\r\n        <div class=\"container-fluid\">\r\n          <div class=\"navbar-header\">\r\n            <a class=\"navbar-brand\" href=\"javascript:;\">\r\n              <i class=\"anticon anticon-api\" style=\"font-size: 30px;\r\n              color: #fff;\r\n              margin-left: 30px;\r\n              margin-top: 15px;\"></i>\r\n              <span style=\"color:#ffffff;font-size:30px;\">{{_projectName}}</span>\r\n            </a>\r\n          </div>\r\n        </div>\r\n      </nav>\r\n    </div>\r\n    <div class=\"sigin-body\">\r\n      <div class=\"sigin-body-box\">\r\n        <!-- <div class=\"sigin-body-txt-box\">\r\n        </div> -->\r\n        <div class=\"sigin-module\">\r\n          <h2>登录</h2>\r\n          <div class=\"sigin-error\">\r\n            <div class=\"sigin-error-in\" *ngIf=\"hasError\">\r\n              <i class=\"icon iconfont icon-error\"></i>\r\n              <span>{{msg}}用户名或者密码错误</span>\r\n            </div>\r\n          </div>\r\n          <form class=\"sigin-form\">\r\n            <div class=\"form-group\">\r\n              <nz-input-group [nzSuffix]=\"suffixTemplate\" [nzPrefix]=\"prefixTemplate\">\r\n                <input type=\"text\" nz-input placeholder=\"请输入用户名admin\" [(ngModel)]=\"userId\" name=\"username\" />\r\n              </nz-input-group>\r\n              <ng-template #prefixTemplate><i nz-icon type=\"user\"></i></ng-template>\r\n              <ng-template #suffixTemplate><i nz-icon type=\"close-circle\" (click)=\"userId = ''\" *ngIf=\"username\"></i>\r\n              </ng-template>\r\n\r\n              <!--  没有单独的验证组件 -->\r\n            </div>\r\n            <div class=\"form-group\">\r\n              <nz-input-group [nzSuffix]=\"pwdSuffixTemplate\" [nzPrefix]=\"pwdPrefixTemplate\">\r\n                <input type=\"text\" nz-input placeholder=\"请输入密码admin\" [(ngModel)]=\"password\" name=\"password\" />\r\n              </nz-input-group>\r\n              <ng-template #pwdSuffixTemplate><i nz-icon type=\"user\"></i></ng-template>\r\n              <ng-template #pwdPrefixTemplate><i nz-icon type=\"close-circle\" (click)=\"password = ''\"\r\n                  *ngIf=\"password\"></i>\r\n              </ng-template>\r\n              <!-- 没有单独的验证组件 -->\r\n            </div>\r\n\r\n            <p class=\"login-p\">本系统推荐使用谷歌或火狐浏览器</p>\r\n            <div class=\"sigin-submit\">\r\n              <button nz-button nzType=\"primary\" (click)=\"login()\">登录</button>\r\n            </div>\r\n            <div class=\"sigin-other\">\r\n              <span>\r\n                <a href=\"javascript:;\" class=\"sigin-other-link\">忘记密码</a>\r\n              </span>\r\n              <span>\r\n                <a href=\"javascript:;\" class=\"sigin-other-link\">忘记用户名</a>\r\n              </span>\r\n              <span>\r\n                <a href=\"javascript:;\" class=\"sigin-other-link\" routerLink=\"/signup\">我要注册</a>\r\n              </span>\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"login-in\">\r\n  <div class=\"login-bg\">\r\n    <div class=\"login-content clearfix\">\r\n      <div class=\"login-left\">\r\n        <img class=\"map-img\" src=\"../../../assets/image/login_pic.png\">\r\n        <img class=\"left-img\" src=\"../../../assets/image/login_left.png\">\r\n      </div>\r\n      <div class=\"login-right\">\r\n        <div class=\"login-right-content\">\r\n          <h2 class=\"login-h2\">\r\n            欢迎登录\r\n          </h2>\r\n          <div class=\"sigin-error\">\r\n            <div class=\"sigin-error-in\" *ngIf=\"hasError\">\r\n              <i class=\"icon iconfont icon-error\"></i>\r\n              <span>{{msg}}</span>\r\n            </div>\r\n          </div>\r\n          <form>\r\n            <div class=\"user-box\">\r\n              <nz-input-group [nzSuffix]=\"suffixTemplate\" [nzPrefix]=\"prefixTemplate\">\r\n                <input type=\"text\" nz-input placeholder=\"请输入用户名admin\" [(ngModel)]=\"userId\" name=\"username\" />\r\n              </nz-input-group>\r\n              <ng-template #prefixTemplate><i class=\"icon iconfont fc-icon-personnel\"></i></ng-template>\r\n              <ng-template #suffixTemplate><i nz-icon type=\"close-circle\" (click)=\"userId = ''\" *ngIf=\"username\"></i>\r\n              </ng-template>\r\n\r\n            </div>\r\n            <div class=\"user-box\">\r\n              <nz-input-group [nzSuffix]=\"pwdSuffixTemplate\" [nzPrefix]=\"pwdPrefixTemplate\">\r\n                <input type=\"text\" nz-input placeholder=\"请输入密码admin\" [(ngModel)]=\"password\" name=\"password\" />\r\n              </nz-input-group>\r\n              <ng-template #pwdPrefixTemplate><i class=\"icon iconfont fc-icon-password\"></i></ng-template>\r\n              <ng-template #pwdSuffixTemplate><i nz-icon type=\"close-circle\" (click)=\"password = ''\"\r\n                  *ngIf=\"password\"></i>\r\n              </ng-template>\r\n            </div>\r\n            <div class=\"user-box login-btn\">\r\n              <button nz-button nzType=\"primary\" (click)=\"login()\" [nzBlock]=\"true\">登录</button>\r\n            </div>\r\n            <div class=\"google-download\">\r\n              <p>本系统仅支持\r\n                <a href=\"../assets/browser/chromedev_x64-v71.0.3554.0.exe\">谷歌</a>和<a\r\n                  href=\"../assets/browser/360cse_9.5.0.138.exe\">360急速</a>浏览器</p>\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1054,7 +857,7 @@ var SigninComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".sigin-wrap {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  overflow: auto;\n  background-image: url('login_bg.png');\n  background-size: 100% 100%;\n}\n.sigin {\n  width: 100%;\n  height: 100%;\n}\n.navbar-brand > img {\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n.sigin-body {\n  padding: 74px 0 118px;\n  text-align: center;\n}\n.sigin-body .sigin-error {\n  width: 100%;\n  margin-bottom: 30px;\n  line-height: 24px;\n  box-sizing: border-box;\n  font-size: 14px;\n  margin-top: 20px;\n}\n.sigin-error-in {\n  background: #FEEEEB;\n  border: 1px solid #F15532;\n  color: #F15533;\n  text-align: left;\n  padding: 3px 6px;\n}\n.sigin-body .sigin-body-box {\n  width: 990px;\n  margin: auto;\n  position: relative;\n  height: 388px;\n}\n.sigin-body .sigin-body-box .sigin-body-txt-box {\n  text-align: left;\n  position: absolute;\n  left: 0;\n  top: 0;\n  color: #ffffff;\n}\n.sigin-body .sigin-body-box .sigin-body-txt-box .start-button {\n  margin-top: 20px;\n}\n.sigin-body .sigin-body-box .sigin-body-txt-box .start-button .start-button-last {\n  margin-left: 20px;\n}\n.sigin-body .sigin-body-box .sigin-module {\n  width: 350px;\n  padding: 30px 20px 40px;\n  background: #0175e1;\n  position: absolute;\n  right: 0;\n  top: 30px;\n  opacity: 0.7;\n}\n.sigin-module h2 {\n  color: #fff;\n}\n.sigin-body .sigin-body-box .sigin-form .form-group {\n  margin-bottom: 20px;\n}\n.sigin-body .sigin-body-box .sigin-form .sigin-submit {\n  margin-top: 30px;\n}\n.sigin-body .sigin-body-box .sigin-other {\n  width: 100%;\n  text-align: right;\n  margin-top: 10px;\n}\n.sigin-body .sigin-body-box .sigin-other .sigin-other-link {\n  font-size: 12px;\n  color: #fff;\n  margin-left: 15px;\n}\n.fc-copyright {\n  padding: 20px;\n}\n.fc-copyright .fc-copyright-in {\n  width: 100%;\n  max-width: 1200px;\n  color: #73777a;\n  font-size: 14px;\n  margin-top: 10px;\n  margin-left: auto;\n  margin-right: auto;\n}\n.fc-copyright .fc-copyright-in .big a {\n  font-size: 16px;\n  color: #9b9ea0;\n  margin-right: 35px;\n}\n.fc-copyright .fc-copyright-in .big a:hover {\n  color: #108ee9;\n}\n.fc-copyright .fc-copyright-in .link-wrap {\n  padding-top: 32px;\n}\n.fc-copyright .fc-copyright-in .link-wrap .link-item {\n  display: inline-block;\n  font-size: 14px;\n  color: #73777a;\n  margin-right: 10px;\n  margin-top: 10px;\n}\n.fc-copyright .fc-copyright-in .link-wrap .link-item:hover {\n  color: #108ee9;\n}\n.fc-copyright .fc-copyright-in .copyright {\n  color: #73777a;\n  font-size: 14px;\n  margin-top: 10px;\n}\n.login-p {\n  color: #fff;\n  text-align: center;\n  letter-spacing: 1px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9BcHBsaWNhdGlvbnMvaG9uZ2hvbmcvY29kZS9hbmd1bGFyLXl5dC9zcmMvYXBwL2NvbXBvbmVudHMvc2lnbmluL3NpZ25pbi5sZXNzIiwic3JjL2FwcC9jb21wb25lbnRzL3NpZ25pbi9zaWduaW4ubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFdBQUE7RUFDQSxZQUFBO0VBQ0Esa0JBQUE7RUFDQSxjQUFBO0VBQ0EscUNBQUE7RUFDQSwwQkFBQTtBQ0NGO0FER0E7RUFDRSxXQUFBO0VBQ0EsWUFBQTtBQ0RGO0FESUE7RUFDRSxrQkFBQTtFQUNBLE1BQUE7RUFDQSxPQUFBO0FDRkY7QURLQTtFQUNFLHFCQUFBO0VBQ0Esa0JBQUE7QUNIRjtBRE1BO0VBQ0UsV0FBQTtFQUNBLG1CQUFBO0VBQ0EsaUJBQUE7RUFDQSxzQkFBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtBQ0pGO0FET0E7RUFDRSxtQkFBQTtFQUNBLHlCQUFBO0VBQ0EsY0FBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7QUNMRjtBRFFBO0VBQ0UsWUFBQTtFQUNBLFlBQUE7RUFDQSxrQkFBQTtFQUNBLGFBQUE7QUNORjtBRFNBO0VBQ0UsZ0JBQUE7RUFDQSxrQkFBQTtFQUNBLE9BQUE7RUFDQSxNQUFBO0VBQ0EsY0FBQTtBQ1BGO0FEVUE7RUFDRSxnQkFBQTtBQ1JGO0FEV0E7RUFDRSxpQkFBQTtBQ1RGO0FEWUE7RUFDRSxZQUFBO0VBQ0EsdUJBQUE7RUFDQSxtQkFBQTtFQUNBLGtCQUFBO0VBQ0EsUUFBQTtFQUNBLFNBQUE7RUFDQSxZQUFBO0FDVkY7QURhQTtFQUNFLFdBQUE7QUNYRjtBRGNBO0VBQ0UsbUJBQUE7QUNaRjtBRGVBO0VBQ0UsZ0JBQUE7QUNiRjtBRGdCQTtFQUNFLFdBQUE7RUFDQSxpQkFBQTtFQUNBLGdCQUFBO0FDZEY7QURpQkE7RUFDRSxlQUFBO0VBQ0EsV0FBQTtFQUNBLGlCQUFBO0FDZkY7QURzQkE7RUFDRSxhQUFBO0FDcEJGO0FEdUJBO0VBQ0UsV0FBQTtFQUNBLGlCQUFBO0VBQ0EsY0FBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7QUNyQkY7QUR3QkE7RUFDRSxlQUFBO0VBQ0EsY0FBQTtFQUNBLGtCQUFBO0FDdEJGO0FEeUJBO0VBQ0UsY0FBQTtBQ3ZCRjtBRDBCQTtFQUNFLGlCQUFBO0FDeEJGO0FEMkJBO0VBQ0UscUJBQUE7RUFDQSxlQUFBO0VBQ0EsY0FBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7QUN6QkY7QUQ0QkE7RUFDRSxjQUFBO0FDMUJGO0FENkJBO0VBQ0UsY0FBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtBQzNCRjtBRDhCQTtFQUNFLFdBQUE7RUFDQSxrQkFBQTtFQUNBLG1CQUFBO0FDNUJGIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9zaWduaW4vc2lnbmluLmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuc2lnaW4td3JhcCB7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgb3ZlcmZsb3c6IGF1dG87XG4gIGJhY2tncm91bmQtaW1hZ2U6IHVybCguLi8uLi8uLi9hc3NldHMvaW1hZ2UvbG9naW5fYmcucG5nKTtcbiAgYmFja2dyb3VuZC1zaXplOiAxMDAlIDEwMCU7XG5cbn1cblxuLnNpZ2luIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMTAwJTtcbn1cblxuLm5hdmJhci1icmFuZD5pbWcge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMDtcbiAgbGVmdDogMDtcbn1cblxuLnNpZ2luLWJvZHkge1xuICBwYWRkaW5nOiA3NHB4IDAgMTE4cHg7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuLnNpZ2luLWJvZHkgLnNpZ2luLWVycm9yIHtcbiAgd2lkdGg6IDEwMCU7XG4gIG1hcmdpbi1ib3R0b206IDMwcHg7XG4gIGxpbmUtaGVpZ2h0OiAyNHB4O1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICBmb250LXNpemU6IDE0cHg7XG4gIG1hcmdpbi10b3A6IDIwcHg7XG59XG5cbi5zaWdpbi1lcnJvci1pbiB7XG4gIGJhY2tncm91bmQ6ICNGRUVFRUI7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNGMTU1MzI7XG4gIGNvbG9yOiAjRjE1NTMzO1xuICB0ZXh0LWFsaWduOiBsZWZ0O1xuICBwYWRkaW5nOiAzcHggNnB4O1xufVxuXG4uc2lnaW4tYm9keSAuc2lnaW4tYm9keS1ib3gge1xuICB3aWR0aDogOTkwcHg7XG4gIG1hcmdpbjogYXV0bztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBoZWlnaHQ6IDM4OHB4O1xufVxuXG4uc2lnaW4tYm9keSAuc2lnaW4tYm9keS1ib3ggLnNpZ2luLWJvZHktdHh0LWJveCB7XG4gIHRleHQtYWxpZ246IGxlZnQ7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgbGVmdDogMDtcbiAgdG9wOiAwO1xuICBjb2xvcjogI2ZmZmZmZjtcbn1cblxuLnNpZ2luLWJvZHkgLnNpZ2luLWJvZHktYm94IC5zaWdpbi1ib2R5LXR4dC1ib3ggLnN0YXJ0LWJ1dHRvbiB7XG4gIG1hcmdpbi10b3A6IDIwcHg7XG59XG5cbi5zaWdpbi1ib2R5IC5zaWdpbi1ib2R5LWJveCAuc2lnaW4tYm9keS10eHQtYm94IC5zdGFydC1idXR0b24gLnN0YXJ0LWJ1dHRvbi1sYXN0IHtcbiAgbWFyZ2luLWxlZnQ6IDIwcHg7XG59XG5cbi5zaWdpbi1ib2R5IC5zaWdpbi1ib2R5LWJveCAuc2lnaW4tbW9kdWxlIHtcbiAgd2lkdGg6IDM1MHB4O1xuICBwYWRkaW5nOiAzMHB4IDIwcHggNDBweDtcbiAgYmFja2dyb3VuZDogIzAxNzVlMTtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICByaWdodDogMDtcbiAgdG9wOiAzMHB4O1xuICBvcGFjaXR5OiAwLjc7XG59XG5cbi5zaWdpbi1tb2R1bGUgaDIge1xuICBjb2xvcjogI2ZmZjtcbn1cblxuLnNpZ2luLWJvZHkgLnNpZ2luLWJvZHktYm94IC5zaWdpbi1mb3JtIC5mb3JtLWdyb3VwIHtcbiAgbWFyZ2luLWJvdHRvbTogMjBweDtcbn1cblxuLnNpZ2luLWJvZHkgLnNpZ2luLWJvZHktYm94IC5zaWdpbi1mb3JtIC5zaWdpbi1zdWJtaXQge1xuICBtYXJnaW4tdG9wOiAzMHB4O1xufVxuXG4uc2lnaW4tYm9keSAuc2lnaW4tYm9keS1ib3ggLnNpZ2luLW90aGVyIHtcbiAgd2lkdGg6IDEwMCU7XG4gIHRleHQtYWxpZ246IHJpZ2h0O1xuICBtYXJnaW4tdG9wOiAxMHB4O1xufVxuXG4uc2lnaW4tYm9keSAuc2lnaW4tYm9keS1ib3ggLnNpZ2luLW90aGVyIC5zaWdpbi1vdGhlci1saW5rIHtcbiAgZm9udC1zaXplOiAxMnB4O1xuICBjb2xvcjogI2ZmZjtcbiAgbWFyZ2luLWxlZnQ6IDE1cHg7XG59XG5cbi8vIC5zaWdpbi1ib2R5IC5zaWdpbi1ib2R5LWJveCAuc2lnaW4tb3RoZXIgLnNpZ2luLW90aGVyLWxpbms6aG92ZXIge1xuLy8gICAgIGNvbG9yOiAjMTA4ZWU5O1xuLy8gfVxuXG4uZmMtY29weXJpZ2h0IHtcbiAgcGFkZGluZzogMjBweDtcbn1cblxuLmZjLWNvcHlyaWdodCAuZmMtY29weXJpZ2h0LWluIHtcbiAgd2lkdGg6IDEwMCU7XG4gIG1heC13aWR0aDogMTIwMHB4O1xuICBjb2xvcjogIzczNzc3YTtcbiAgZm9udC1zaXplOiAxNHB4O1xuICBtYXJnaW4tdG9wOiAxMHB4O1xuICBtYXJnaW4tbGVmdDogYXV0bztcbiAgbWFyZ2luLXJpZ2h0OiBhdXRvO1xufVxuXG4uZmMtY29weXJpZ2h0IC5mYy1jb3B5cmlnaHQtaW4gLmJpZyBhIHtcbiAgZm9udC1zaXplOiAxNnB4O1xuICBjb2xvcjogIzliOWVhMDtcbiAgbWFyZ2luLXJpZ2h0OiAzNXB4O1xufVxuXG4uZmMtY29weXJpZ2h0IC5mYy1jb3B5cmlnaHQtaW4gLmJpZyBhOmhvdmVyIHtcbiAgY29sb3I6ICMxMDhlZTk7XG59XG5cbi5mYy1jb3B5cmlnaHQgLmZjLWNvcHlyaWdodC1pbiAubGluay13cmFwIHtcbiAgcGFkZGluZy10b3A6IDMycHg7XG59XG5cbi5mYy1jb3B5cmlnaHQgLmZjLWNvcHlyaWdodC1pbiAubGluay13cmFwIC5saW5rLWl0ZW0ge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIGZvbnQtc2l6ZTogMTRweDtcbiAgY29sb3I6ICM3Mzc3N2E7XG4gIG1hcmdpbi1yaWdodDogMTBweDtcbiAgbWFyZ2luLXRvcDogMTBweDtcbn1cblxuLmZjLWNvcHlyaWdodCAuZmMtY29weXJpZ2h0LWluIC5saW5rLXdyYXAgLmxpbmstaXRlbTpob3ZlciB7XG4gIGNvbG9yOiAjMTA4ZWU5O1xufVxuXG4uZmMtY29weXJpZ2h0IC5mYy1jb3B5cmlnaHQtaW4gLmNvcHlyaWdodCB7XG4gIGNvbG9yOiAjNzM3NzdhO1xuICBmb250LXNpemU6IDE0cHg7XG4gIG1hcmdpbi10b3A6IDEwcHg7XG59XG5cbi5sb2dpbi1wIHtcbiAgY29sb3I6ICNmZmY7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgbGV0dGVyLXNwYWNpbmc6IDFweDtcbn1cbiIsIi5zaWdpbi13cmFwIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMTAwJTtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBvdmVyZmxvdzogYXV0bztcbiAgYmFja2dyb3VuZC1pbWFnZTogdXJsKC4uLy4uLy4uL2Fzc2V0cy9pbWFnZS9sb2dpbl9iZy5wbmcpO1xuICBiYWNrZ3JvdW5kLXNpemU6IDEwMCUgMTAwJTtcbn1cbi5zaWdpbiB7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG59XG4ubmF2YmFyLWJyYW5kID4gaW1nIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDA7XG4gIGxlZnQ6IDA7XG59XG4uc2lnaW4tYm9keSB7XG4gIHBhZGRpbmc6IDc0cHggMCAxMThweDtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuLnNpZ2luLWJvZHkgLnNpZ2luLWVycm9yIHtcbiAgd2lkdGg6IDEwMCU7XG4gIG1hcmdpbi1ib3R0b206IDMwcHg7XG4gIGxpbmUtaGVpZ2h0OiAyNHB4O1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICBmb250LXNpemU6IDE0cHg7XG4gIG1hcmdpbi10b3A6IDIwcHg7XG59XG4uc2lnaW4tZXJyb3ItaW4ge1xuICBiYWNrZ3JvdW5kOiAjRkVFRUVCO1xuICBib3JkZXI6IDFweCBzb2xpZCAjRjE1NTMyO1xuICBjb2xvcjogI0YxNTUzMztcbiAgdGV4dC1hbGlnbjogbGVmdDtcbiAgcGFkZGluZzogM3B4IDZweDtcbn1cbi5zaWdpbi1ib2R5IC5zaWdpbi1ib2R5LWJveCB7XG4gIHdpZHRoOiA5OTBweDtcbiAgbWFyZ2luOiBhdXRvO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGhlaWdodDogMzg4cHg7XG59XG4uc2lnaW4tYm9keSAuc2lnaW4tYm9keS1ib3ggLnNpZ2luLWJvZHktdHh0LWJveCB7XG4gIHRleHQtYWxpZ246IGxlZnQ7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgbGVmdDogMDtcbiAgdG9wOiAwO1xuICBjb2xvcjogI2ZmZmZmZjtcbn1cbi5zaWdpbi1ib2R5IC5zaWdpbi1ib2R5LWJveCAuc2lnaW4tYm9keS10eHQtYm94IC5zdGFydC1idXR0b24ge1xuICBtYXJnaW4tdG9wOiAyMHB4O1xufVxuLnNpZ2luLWJvZHkgLnNpZ2luLWJvZHktYm94IC5zaWdpbi1ib2R5LXR4dC1ib3ggLnN0YXJ0LWJ1dHRvbiAuc3RhcnQtYnV0dG9uLWxhc3Qge1xuICBtYXJnaW4tbGVmdDogMjBweDtcbn1cbi5zaWdpbi1ib2R5IC5zaWdpbi1ib2R5LWJveCAuc2lnaW4tbW9kdWxlIHtcbiAgd2lkdGg6IDM1MHB4O1xuICBwYWRkaW5nOiAzMHB4IDIwcHggNDBweDtcbiAgYmFja2dyb3VuZDogIzAxNzVlMTtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICByaWdodDogMDtcbiAgdG9wOiAzMHB4O1xuICBvcGFjaXR5OiAwLjc7XG59XG4uc2lnaW4tbW9kdWxlIGgyIHtcbiAgY29sb3I6ICNmZmY7XG59XG4uc2lnaW4tYm9keSAuc2lnaW4tYm9keS1ib3ggLnNpZ2luLWZvcm0gLmZvcm0tZ3JvdXAge1xuICBtYXJnaW4tYm90dG9tOiAyMHB4O1xufVxuLnNpZ2luLWJvZHkgLnNpZ2luLWJvZHktYm94IC5zaWdpbi1mb3JtIC5zaWdpbi1zdWJtaXQge1xuICBtYXJnaW4tdG9wOiAzMHB4O1xufVxuLnNpZ2luLWJvZHkgLnNpZ2luLWJvZHktYm94IC5zaWdpbi1vdGhlciB7XG4gIHdpZHRoOiAxMDAlO1xuICB0ZXh0LWFsaWduOiByaWdodDtcbiAgbWFyZ2luLXRvcDogMTBweDtcbn1cbi5zaWdpbi1ib2R5IC5zaWdpbi1ib2R5LWJveCAuc2lnaW4tb3RoZXIgLnNpZ2luLW90aGVyLWxpbmsge1xuICBmb250LXNpemU6IDEycHg7XG4gIGNvbG9yOiAjZmZmO1xuICBtYXJnaW4tbGVmdDogMTVweDtcbn1cbi5mYy1jb3B5cmlnaHQge1xuICBwYWRkaW5nOiAyMHB4O1xufVxuLmZjLWNvcHlyaWdodCAuZmMtY29weXJpZ2h0LWluIHtcbiAgd2lkdGg6IDEwMCU7XG4gIG1heC13aWR0aDogMTIwMHB4O1xuICBjb2xvcjogIzczNzc3YTtcbiAgZm9udC1zaXplOiAxNHB4O1xuICBtYXJnaW4tdG9wOiAxMHB4O1xuICBtYXJnaW4tbGVmdDogYXV0bztcbiAgbWFyZ2luLXJpZ2h0OiBhdXRvO1xufVxuLmZjLWNvcHlyaWdodCAuZmMtY29weXJpZ2h0LWluIC5iaWcgYSB7XG4gIGZvbnQtc2l6ZTogMTZweDtcbiAgY29sb3I6ICM5YjllYTA7XG4gIG1hcmdpbi1yaWdodDogMzVweDtcbn1cbi5mYy1jb3B5cmlnaHQgLmZjLWNvcHlyaWdodC1pbiAuYmlnIGE6aG92ZXIge1xuICBjb2xvcjogIzEwOGVlOTtcbn1cbi5mYy1jb3B5cmlnaHQgLmZjLWNvcHlyaWdodC1pbiAubGluay13cmFwIHtcbiAgcGFkZGluZy10b3A6IDMycHg7XG59XG4uZmMtY29weXJpZ2h0IC5mYy1jb3B5cmlnaHQtaW4gLmxpbmstd3JhcCAubGluay1pdGVtIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBmb250LXNpemU6IDE0cHg7XG4gIGNvbG9yOiAjNzM3NzdhO1xuICBtYXJnaW4tcmlnaHQ6IDEwcHg7XG4gIG1hcmdpbi10b3A6IDEwcHg7XG59XG4uZmMtY29weXJpZ2h0IC5mYy1jb3B5cmlnaHQtaW4gLmxpbmstd3JhcCAubGluay1pdGVtOmhvdmVyIHtcbiAgY29sb3I6ICMxMDhlZTk7XG59XG4uZmMtY29weXJpZ2h0IC5mYy1jb3B5cmlnaHQtaW4gLmNvcHlyaWdodCB7XG4gIGNvbG9yOiAjNzM3NzdhO1xuICBmb250LXNpemU6IDE0cHg7XG4gIG1hcmdpbi10b3A6IDEwcHg7XG59XG4ubG9naW4tcCB7XG4gIGNvbG9yOiAjZmZmO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGxldHRlci1zcGFjaW5nOiAxcHg7XG59XG4iXX0= */"
+module.exports = ".login-in {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n}\n.login-bg {\n  width: 100%;\n  height: 100%;\n  background: url('login_bg.png') no-repeat fixed top;\n  background-size: 100% 100%;\n  position: fixed;\n}\n.login-bg .login-content {\n  width: 686px;\n  height: 420px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  margin-left: -348px;\n  margin-top: -210px;\n  min-height: 400px;\n  box-shadow: 0 1px 5px 0px rgba(50, 50, 50, 0.2);\n}\n.login-bg .login-content .login-left {\n  float: left;\n  width: 390px;\n  height: 100%;\n  background: #4E8AEC;\n  position: relative;\n}\n.login-bg .login-content .login-left .map-img {\n  width: 336px;\n  height: 300px;\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  margin-left: -168px;\n  margin-top: -150px;\n}\n.login-bg .login-content .login-left .left-img {\n  width: 365px;\n  height: 156px;\n  position: absolute;\n  left: 50%;\n  margin-left: -182px;\n  top: 130px;\n}\n.login-bg .login-content .login-right {\n  float: right;\n  width: 296px;\n  height: 100%;\n  background: #fff;\n  position: relative;\n}\n.login-bg .login-content .login-right .login-right-content {\n  width: 80%;\n  position: absolute;\n  left: 30px;\n  top: 98px;\n}\n.login-bg .login-content .login-right .login-h2 {\n  width: 100%;\n  font-size: 16px;\n  color: #323232;\n  text-align: center;\n  margin-bottom: 20px;\n  font-weight: 400;\n}\n.login-bg .login-content .login-right .login-date {\n  margin-bottom: 5px !important;\n}\n.login-bg .login-content .login-right .user-box {\n  width: 100%;\n  height: 30px;\n  border-radius: 3px;\n  margin-bottom: 20px;\n}\n.login-bg .login-content .login-right .user-box .user-input {\n  text-align: center;\n  width: 100%;\n  height: 100%;\n  line-height: 30px;\n  outline: none;\n  border: 1px solid #aaa;\n  border-radius: 4px;\n  color: #666;\n  font-size: 12px;\n}\n.login-bg .login-content .login-right .user-box input::-webkit-input-placeholder {\n  color: #cccccc !important;\n  font-size: 12px !important;\n}\n.login-bg .login-content .login-right .user-box input:-ms-input-placeholder {\n  color: #cccccc !important;\n  font-size: 12px !important;\n}\n.login-bg .login-content .login-right .user-box input::-ms-input-placeholder {\n  color: #cccccc !important;\n  font-size: 12px !important;\n}\n.login-bg .login-content .login-right .user-box input::placeholder {\n  color: #cccccc !important;\n  font-size: 12px !important;\n}\n.login-bg .login-content .login-right .user-box input:focus::-webkit-input-placeholder {\n  color: transparent !important;\n}\n.login-bg .login-content .login-right .user-box input:focus:-ms-input-placeholder {\n  color: transparent !important;\n}\n.login-bg .login-content .login-right .user-box input:focus::-ms-input-placeholder {\n  color: transparent !important;\n}\n.login-bg .login-content .login-right .user-box input:focus::placeholder {\n  color: transparent !important;\n}\n.login-bg .login-content .login-right .user-box .user-input:hover {\n  color: #666;\n  background-color: #ffffff;\n  border-color: #666;\n}\n.login-bg .login-content .login-right .user-box .user-input:focus {\n  color: #666;\n  border-color: #666 !important;\n  background-color: #fff;\n}\n.login-bg .login-content .login-right .save-word {\n  width: 100%;\n  text-align: center;\n}\n.login-bg .login-content .login-right .save-word .mat-checkbox-inner-container {\n  width: 14px;\n  height: 14px;\n  border-color: #929292;\n}\n.login-bg .login-content .login-right .save-word .mat-checkbox-layout .mat-checkbox-label {\n  font-size: 12px;\n  color: #666;\n}\n.login-bg .login-content .login-right .save-word .mat-checkbox-frame {\n  border-width: 1px;\n}\n.login-bg .login-content .login-right .save-word .mat-checkbox-checked.mat-accent .mat-checkbox-background {\n  background: #3f77e4;\n}\n.login-bg .login-content .login-right .login-button {\n  display: block;\n  width: 100%;\n  height: 30px;\n  outline: none;\n  border: none;\n  background: #3f77e4;\n  font-size: 12px;\n  color: #fff;\n  border-radius: 4px;\n  cursor: pointer;\n}\n.login-bg .login-content .login-right .login-button:hover {\n  background: #3f77e4;\n}\n.login-bg .login-content .login-right .login-btn {\n  margin-top: 7px;\n  margin-bottom: 54px;\n}\n.login-bg .login-content .login-right .google-download {\n  width: 100%;\n}\n.login-bg .login-content .login-right .google-download p {\n  font-size: 12px;\n  text-align: center;\n  color: #666;\n}\n.login-bg .login-content .login-right .google-download a {\n  font-size: 12px;\n  color: #ff7573;\n  cursor: pointer;\n}\n.login-bg .user-input.ng-invalid {\n  border: 1px solid #ff7573 !important;\n}\n.login-bg .user-input.ng-valid {\n  border: 1px solid #aaa !important;\n}\n.login-bg .user-box {\n  position: relative;\n}\n.login-bg .required-color {\n  width: 100%;\n  height: 20px;\n  position: absolute;\n  left: 0;\n  top: 30px;\n  font-size: 12px;\n  text-align: center;\n  color: #ff7573;\n  z-index: 9;\n  border-radius: 2px;\n}\n.login-bg .required-color p {\n  height: 20px;\n  line-height: 20px;\n}\n/* 块级按钮文字不浮动 */\n:host ::ng-deep .login-btn .fc-button-block > span {\n  float: none;\n}\n.sigin-body .sigin-error {\n  width: 100%;\n  margin-bottom: 30px;\n  line-height: 24px;\n  box-sizing: border-box;\n  font-size: 14px;\n  margin-top: 20px;\n}\n.sigin-error-in {\n  background: #FEEEEB;\n  border: 1px solid #F15532;\n  color: #F15533;\n  text-align: left;\n  padding: 3px 6px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9BcHBsaWNhdGlvbnMvaG9uZ2hvbmcvY29kZS9hbmd1bGFyLXl5dC9zcmMvYXBwL2NvbXBvbmVudHMvc2lnbmluL3NpZ25pbi5sZXNzIiwic3JjL2FwcC9jb21wb25lbnRzL3NpZ25pbi9zaWduaW4ubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGVBQUE7RUFDQSxNQUFBO0VBQ0EsT0FBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0FDQ0Y7QURFQTtFQUNFLFdBQUE7RUFDQSxZQUFBO0VBQ0EsbURBQUE7RUFDQSwwQkFBQTtFQUNBLGVBQUE7QUNBRjtBREdBO0VBQ0UsWUFBQTtFQUNBLGFBQUE7RUFDQSxrQkFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsbUJBQUE7RUFDQSxrQkFBQTtFQUNBLGlCQUFBO0VBQ0EsK0NBQUE7QUNERjtBRElBO0VBQ0UsV0FBQTtFQUNBLFlBQUE7RUFDQSxZQUFBO0VBQ0EsbUJBQUE7RUFDQSxrQkFBQTtBQ0ZGO0FES0E7RUFDRSxZQUFBO0VBQ0EsYUFBQTtFQUNBLGtCQUFBO0VBQ0EsU0FBQTtFQUNBLFFBQUE7RUFDQSxtQkFBQTtFQUNBLGtCQUFBO0FDSEY7QURNQTtFQUNFLFlBQUE7RUFDQSxhQUFBO0VBQ0Esa0JBQUE7RUFDQSxTQUFBO0VBQ0EsbUJBQUE7RUFDQSxVQUFBO0FDSkY7QURPQTtFQUNFLFlBQUE7RUFDQSxZQUFBO0VBQ0EsWUFBQTtFQUNBLGdCQUFBO0VBQ0Esa0JBQUE7QUNMRjtBRFFBO0VBQ0UsVUFBQTtFQUNBLGtCQUFBO0VBQ0EsVUFBQTtFQUNBLFNBQUE7QUNORjtBRFNBO0VBQ0UsV0FBQTtFQUNBLGVBQUE7RUFDQSxjQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtFQUNBLGdCQUFBO0FDUEY7QURVQTtFQUNFLDZCQUFBO0FDUkY7QURXQTtFQUNFLFdBQUE7RUFDQSxZQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtBQ1RGO0FEWUE7RUFDRSxrQkFBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0VBQ0EsaUJBQUE7RUFDQSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSxrQkFBQTtFQUNBLFdBQUE7RUFDQSxlQUFBO0FDVkY7QURhQTtFQUNFLHlCQUFBO0VBQ0EsMEJBQUE7QUNYRjtBRFNBO0VBQ0UseUJBQUE7RUFDQSwwQkFBQTtBQ1hGO0FEU0E7RUFDRSx5QkFBQTtFQUNBLDBCQUFBO0FDWEY7QURTQTtFQUNFLHlCQUFBO0VBQ0EsMEJBQUE7QUNYRjtBRGNBO0VBQ0UsNkJBQUE7QUNaRjtBRFdBO0VBQ0UsNkJBQUE7QUNaRjtBRFdBO0VBQ0UsNkJBQUE7QUNaRjtBRFdBO0VBQ0UsNkJBQUE7QUNaRjtBRGVBO0VBQ0UsV0FBQTtFQUNBLHlCQUFBO0VBQ0Esa0JBQUE7QUNiRjtBRGdCQTtFQUNFLFdBQUE7RUFDQSw2QkFBQTtFQUNBLHNCQUFBO0FDZEY7QURpQkE7RUFDRSxXQUFBO0VBQ0Esa0JBQUE7QUNmRjtBRGtCQTtFQUNFLFdBQUE7RUFDQSxZQUFBO0VBQ0EscUJBQUE7QUNoQkY7QURtQkE7RUFDRSxlQUFBO0VBQ0EsV0FBQTtBQ2pCRjtBRG9CQTtFQUNFLGlCQUFBO0FDbEJGO0FEcUJBO0VBQ0UsbUJBQUE7QUNuQkY7QURzQkE7RUFDRSxjQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDQSxhQUFBO0VBQ0EsWUFBQTtFQUNBLG1CQUFBO0VBQ0EsZUFBQTtFQUNBLFdBQUE7RUFDQSxrQkFBQTtFQUNBLGVBQUE7QUNwQkY7QUR1QkE7RUFDRSxtQkFBQTtBQ3JCRjtBRHdCQTtFQUNFLGVBQUE7RUFDQSxtQkFBQTtBQ3RCRjtBRHlCQTtFQUNFLFdBQUE7QUN2QkY7QUQwQkE7RUFDRSxlQUFBO0VBQ0Esa0JBQUE7RUFDQSxXQUFBO0FDeEJGO0FEMkJBO0VBQ0UsZUFBQTtFQUNBLGNBQUE7RUFDQSxlQUFBO0FDekJGO0FENEJBO0VBQ0Usb0NBQUE7QUMxQkY7QUQ2QkE7RUFDRSxpQ0FBQTtBQzNCRjtBRDhCQTtFQUNFLGtCQUFBO0FDNUJGO0FEK0JBO0VBQ0UsV0FBQTtFQUNBLFlBQUE7RUFDQSxrQkFBQTtFQUNBLE9BQUE7RUFDQSxTQUFBO0VBQ0EsZUFBQTtFQUNBLGtCQUFBO0VBQ0EsY0FBQTtFQUNBLFVBQUE7RUFDQSxrQkFBQTtBQzdCRjtBRGdDQTtFQUNFLFlBQUE7RUFDQSxpQkFBQTtBQzlCRjtBQUNBLGNBQWM7QURtQ2Q7RUFDRSxXQUFBO0FDakNGO0FEb0NBO0VBQ0UsV0FBQTtFQUNBLG1CQUFBO0VBQ0EsaUJBQUE7RUFDQSxzQkFBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtBQ2xDRjtBRHFDQTtFQUNFLG1CQUFBO0VBQ0EseUJBQUE7RUFDQSxjQUFBO0VBQ0EsZ0JBQUE7RUFDQSxnQkFBQTtBQ25DRiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvc2lnbmluL3NpZ25pbi5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiLmxvZ2luLWluIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICB0b3A6IDA7XG4gIGxlZnQ6IDA7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG59XG5cbi5sb2dpbi1iZyB7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG4gIGJhY2tncm91bmQ6IHVybChcIi4uLy4uLy4uL2Fzc2V0cy9pbWFnZS9sb2dpbl9iZy5wbmdcIikgbm8tcmVwZWF0IGZpeGVkIHRvcDtcbiAgYmFja2dyb3VuZC1zaXplOiAxMDAlIDEwMCU7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbn1cblxuLmxvZ2luLWJnIC5sb2dpbi1jb250ZW50IHtcbiAgd2lkdGg6IDY4NnB4O1xuICBoZWlnaHQ6IDQyMHB4O1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogNTAlO1xuICBsZWZ0OiA1MCU7XG4gIG1hcmdpbi1sZWZ0OiAtMzQ4cHg7XG4gIG1hcmdpbi10b3A6IC0yMTBweDtcbiAgbWluLWhlaWdodDogNDAwcHg7XG4gIGJveC1zaGFkb3c6IDAgMXB4IDVweCAwcHggcmdiYSg1MCwgNTAsIDUwLCAwLjIpO1xufVxuXG4ubG9naW4tYmcgLmxvZ2luLWNvbnRlbnQgLmxvZ2luLWxlZnQge1xuICBmbG9hdDogbGVmdDtcbiAgd2lkdGg6IDM5MHB4O1xuICBoZWlnaHQ6IDEwMCU7XG4gIGJhY2tncm91bmQ6ICM0RThBRUM7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbn1cblxuLmxvZ2luLWJnIC5sb2dpbi1jb250ZW50IC5sb2dpbi1sZWZ0IC5tYXAtaW1nIHtcbiAgd2lkdGg6IDMzNnB4O1xuICBoZWlnaHQ6IDMwMHB4O1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGxlZnQ6IDUwJTtcbiAgdG9wOiA1MCU7XG4gIG1hcmdpbi1sZWZ0OiAtMTY4cHg7XG4gIG1hcmdpbi10b3A6IC0xNTBweDtcbn1cblxuLmxvZ2luLWJnIC5sb2dpbi1jb250ZW50IC5sb2dpbi1sZWZ0IC5sZWZ0LWltZyB7XG4gIHdpZHRoOiAzNjVweDtcbiAgaGVpZ2h0OiAxNTZweDtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBsZWZ0OiA1MCU7XG4gIG1hcmdpbi1sZWZ0OiAtMTgycHg7XG4gIHRvcDogMTMwcHg7XG59XG5cbi5sb2dpbi1iZyAubG9naW4tY29udGVudCAubG9naW4tcmlnaHQge1xuICBmbG9hdDogcmlnaHQ7XG4gIHdpZHRoOiAyOTZweDtcbiAgaGVpZ2h0OiAxMDAlO1xuICBiYWNrZ3JvdW5kOiAjZmZmO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG59XG5cbi5sb2dpbi1iZyAubG9naW4tY29udGVudCAubG9naW4tcmlnaHQgLmxvZ2luLXJpZ2h0LWNvbnRlbnQge1xuICB3aWR0aDogODAlO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGxlZnQ6IDMwcHg7XG4gIHRvcDogOThweDtcbn1cblxuLmxvZ2luLWJnIC5sb2dpbi1jb250ZW50IC5sb2dpbi1yaWdodCAubG9naW4taDIge1xuICB3aWR0aDogMTAwJTtcbiAgZm9udC1zaXplOiAxNnB4O1xuICBjb2xvcjogIzMyMzIzMjtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBtYXJnaW4tYm90dG9tOiAyMHB4O1xuICBmb250LXdlaWdodDogNDAwO1xufVxuXG4ubG9naW4tYmcgLmxvZ2luLWNvbnRlbnQgLmxvZ2luLXJpZ2h0IC5sb2dpbi1kYXRlIHtcbiAgbWFyZ2luLWJvdHRvbTogNXB4ICFpbXBvcnRhbnQ7XG59XG5cbi5sb2dpbi1iZyAubG9naW4tY29udGVudCAubG9naW4tcmlnaHQgLnVzZXItYm94IHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMzBweDtcbiAgYm9yZGVyLXJhZGl1czogM3B4O1xuICBtYXJnaW4tYm90dG9tOiAyMHB4O1xufVxuXG4ubG9naW4tYmcgLmxvZ2luLWNvbnRlbnQgLmxvZ2luLXJpZ2h0IC51c2VyLWJveCAudXNlci1pbnB1dCB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMTAwJTtcbiAgbGluZS1oZWlnaHQ6IDMwcHg7XG4gIG91dGxpbmU6IG5vbmU7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNhYWE7XG4gIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgY29sb3I6ICM2NjY7XG4gIGZvbnQtc2l6ZTogMTJweDtcbn1cblxuLmxvZ2luLWJnIC5sb2dpbi1jb250ZW50IC5sb2dpbi1yaWdodCAudXNlci1ib3ggaW5wdXQ6OnBsYWNlaG9sZGVyIHtcbiAgY29sb3I6ICNjY2NjY2MgIWltcG9ydGFudDtcbiAgZm9udC1zaXplOiAxMnB4ICFpbXBvcnRhbnQ7XG59XG5cbi5sb2dpbi1iZyAubG9naW4tY29udGVudCAubG9naW4tcmlnaHQgLnVzZXItYm94IGlucHV0OmZvY3VzOjpwbGFjZWhvbGRlciB7XG4gIGNvbG9yOiB0cmFuc3BhcmVudCAhaW1wb3J0YW50O1xufVxuXG4ubG9naW4tYmcgLmxvZ2luLWNvbnRlbnQgLmxvZ2luLXJpZ2h0IC51c2VyLWJveCAudXNlci1pbnB1dDpob3ZlciB7XG4gIGNvbG9yOiAjNjY2O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmZmZmO1xuICBib3JkZXItY29sb3I6ICM2NjY7XG59XG5cbi5sb2dpbi1iZyAubG9naW4tY29udGVudCAubG9naW4tcmlnaHQgLnVzZXItYm94IC51c2VyLWlucHV0OmZvY3VzIHtcbiAgY29sb3I6ICM2NjY7XG4gIGJvcmRlci1jb2xvcjogIzY2NiAhaW1wb3J0YW50O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xufVxuXG4ubG9naW4tYmcgLmxvZ2luLWNvbnRlbnQgLmxvZ2luLXJpZ2h0IC5zYXZlLXdvcmQge1xuICB3aWR0aDogMTAwJTtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuXG4ubG9naW4tYmcgLmxvZ2luLWNvbnRlbnQgLmxvZ2luLXJpZ2h0IC5zYXZlLXdvcmQgLm1hdC1jaGVja2JveC1pbm5lci1jb250YWluZXIge1xuICB3aWR0aDogMTRweDtcbiAgaGVpZ2h0OiAxNHB4O1xuICBib3JkZXItY29sb3I6ICM5MjkyOTI7XG59XG5cbi5sb2dpbi1iZyAubG9naW4tY29udGVudCAubG9naW4tcmlnaHQgLnNhdmUtd29yZCAubWF0LWNoZWNrYm94LWxheW91dCAubWF0LWNoZWNrYm94LWxhYmVsIHtcbiAgZm9udC1zaXplOiAxMnB4O1xuICBjb2xvcjogIzY2Njtcbn1cblxuLmxvZ2luLWJnIC5sb2dpbi1jb250ZW50IC5sb2dpbi1yaWdodCAuc2F2ZS13b3JkIC5tYXQtY2hlY2tib3gtZnJhbWUge1xuICBib3JkZXItd2lkdGg6IDFweDtcbn1cblxuLmxvZ2luLWJnIC5sb2dpbi1jb250ZW50IC5sb2dpbi1yaWdodCAuc2F2ZS13b3JkIC5tYXQtY2hlY2tib3gtY2hlY2tlZC5tYXQtYWNjZW50IC5tYXQtY2hlY2tib3gtYmFja2dyb3VuZCB7XG4gIGJhY2tncm91bmQ6ICMzZjc3ZTQ7XG59XG5cbi5sb2dpbi1iZyAubG9naW4tY29udGVudCAubG9naW4tcmlnaHQgLmxvZ2luLWJ1dHRvbiB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAzMHB4O1xuICBvdXRsaW5lOiBub25lO1xuICBib3JkZXI6IG5vbmU7XG4gIGJhY2tncm91bmQ6ICMzZjc3ZTQ7XG4gIGZvbnQtc2l6ZTogMTJweDtcbiAgY29sb3I6ICNmZmY7XG4gIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuXG4ubG9naW4tYmcgLmxvZ2luLWNvbnRlbnQgLmxvZ2luLXJpZ2h0IC5sb2dpbi1idXR0b246aG92ZXIge1xuICBiYWNrZ3JvdW5kOiAjM2Y3N2U0O1xufVxuXG4ubG9naW4tYmcgLmxvZ2luLWNvbnRlbnQgLmxvZ2luLXJpZ2h0IC5sb2dpbi1idG4ge1xuICBtYXJnaW4tdG9wOiA3cHg7XG4gIG1hcmdpbi1ib3R0b206IDU0cHg7XG59XG5cbi5sb2dpbi1iZyAubG9naW4tY29udGVudCAubG9naW4tcmlnaHQgLmdvb2dsZS1kb3dubG9hZCB7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4ubG9naW4tYmcgLmxvZ2luLWNvbnRlbnQgLmxvZ2luLXJpZ2h0IC5nb29nbGUtZG93bmxvYWQgcCB7XG4gIGZvbnQtc2l6ZTogMTJweDtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBjb2xvcjogIzY2Njtcbn1cblxuLmxvZ2luLWJnIC5sb2dpbi1jb250ZW50IC5sb2dpbi1yaWdodCAuZ29vZ2xlLWRvd25sb2FkIGEge1xuICBmb250LXNpemU6IDEycHg7XG4gIGNvbG9yOiAjZmY3NTczO1xuICBjdXJzb3I6IHBvaW50ZXI7XG59XG5cbi5sb2dpbi1iZyAudXNlci1pbnB1dC5uZy1pbnZhbGlkIHtcbiAgYm9yZGVyOiAxcHggc29saWQgI2ZmNzU3MyAhaW1wb3J0YW50O1xufVxuXG4ubG9naW4tYmcgLnVzZXItaW5wdXQubmctdmFsaWQge1xuICBib3JkZXI6IDFweCBzb2xpZCAjYWFhICFpbXBvcnRhbnQ7XG59XG5cbi5sb2dpbi1iZyAudXNlci1ib3gge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG59XG5cbi5sb2dpbi1iZyAucmVxdWlyZWQtY29sb3Ige1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAyMHB4O1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGxlZnQ6IDA7XG4gIHRvcDogMzBweDtcbiAgZm9udC1zaXplOiAxMnB4O1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGNvbG9yOiAjZmY3NTczO1xuICB6LWluZGV4OiA5O1xuICBib3JkZXItcmFkaXVzOiAycHg7XG59XG5cbi5sb2dpbi1iZyAucmVxdWlyZWQtY29sb3IgcCB7XG4gIGhlaWdodDogMjBweDtcbiAgbGluZS1oZWlnaHQ6IDIwcHg7XG59XG5cblxuLyog5Z2X57qn5oyJ6ZKu5paH5a2X5LiN5rWu5YqoICovXG5cbjpob3N0IDo6bmctZGVlcCAubG9naW4tYnRuIC5mYy1idXR0b24tYmxvY2s+c3BhbiB7XG4gIGZsb2F0OiBub25lO1xufVxuXG4uc2lnaW4tYm9keSAuc2lnaW4tZXJyb3Ige1xuICB3aWR0aDogMTAwJTtcbiAgbWFyZ2luLWJvdHRvbTogMzBweDtcbiAgbGluZS1oZWlnaHQ6IDI0cHg7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gIGZvbnQtc2l6ZTogMTRweDtcbiAgbWFyZ2luLXRvcDogMjBweDtcbn1cblxuLnNpZ2luLWVycm9yLWluIHtcbiAgYmFja2dyb3VuZDogI0ZFRUVFQjtcbiAgYm9yZGVyOiAxcHggc29saWQgI0YxNTUzMjtcbiAgY29sb3I6ICNGMTU1MzM7XG4gIHRleHQtYWxpZ246IGxlZnQ7XG4gIHBhZGRpbmc6IDNweCA2cHg7XG59XG4iLCIubG9naW4taW4ge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIHRvcDogMDtcbiAgbGVmdDogMDtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMTAwJTtcbn1cbi5sb2dpbi1iZyB7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG4gIGJhY2tncm91bmQ6IHVybChcIi4uLy4uLy4uL2Fzc2V0cy9pbWFnZS9sb2dpbl9iZy5wbmdcIikgbm8tcmVwZWF0IGZpeGVkIHRvcDtcbiAgYmFja2dyb3VuZC1zaXplOiAxMDAlIDEwMCU7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbn1cbi5sb2dpbi1iZyAubG9naW4tY29udGVudCB7XG4gIHdpZHRoOiA2ODZweDtcbiAgaGVpZ2h0OiA0MjBweDtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDUwJTtcbiAgbGVmdDogNTAlO1xuICBtYXJnaW4tbGVmdDogLTM0OHB4O1xuICBtYXJnaW4tdG9wOiAtMjEwcHg7XG4gIG1pbi1oZWlnaHQ6IDQwMHB4O1xuICBib3gtc2hhZG93OiAwIDFweCA1cHggMHB4IHJnYmEoNTAsIDUwLCA1MCwgMC4yKTtcbn1cbi5sb2dpbi1iZyAubG9naW4tY29udGVudCAubG9naW4tbGVmdCB7XG4gIGZsb2F0OiBsZWZ0O1xuICB3aWR0aDogMzkwcHg7XG4gIGhlaWdodDogMTAwJTtcbiAgYmFja2dyb3VuZDogIzRFOEFFQztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xufVxuLmxvZ2luLWJnIC5sb2dpbi1jb250ZW50IC5sb2dpbi1sZWZ0IC5tYXAtaW1nIHtcbiAgd2lkdGg6IDMzNnB4O1xuICBoZWlnaHQ6IDMwMHB4O1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGxlZnQ6IDUwJTtcbiAgdG9wOiA1MCU7XG4gIG1hcmdpbi1sZWZ0OiAtMTY4cHg7XG4gIG1hcmdpbi10b3A6IC0xNTBweDtcbn1cbi5sb2dpbi1iZyAubG9naW4tY29udGVudCAubG9naW4tbGVmdCAubGVmdC1pbWcge1xuICB3aWR0aDogMzY1cHg7XG4gIGhlaWdodDogMTU2cHg7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgbGVmdDogNTAlO1xuICBtYXJnaW4tbGVmdDogLTE4MnB4O1xuICB0b3A6IDEzMHB4O1xufVxuLmxvZ2luLWJnIC5sb2dpbi1jb250ZW50IC5sb2dpbi1yaWdodCB7XG4gIGZsb2F0OiByaWdodDtcbiAgd2lkdGg6IDI5NnB4O1xuICBoZWlnaHQ6IDEwMCU7XG4gIGJhY2tncm91bmQ6ICNmZmY7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbn1cbi5sb2dpbi1iZyAubG9naW4tY29udGVudCAubG9naW4tcmlnaHQgLmxvZ2luLXJpZ2h0LWNvbnRlbnQge1xuICB3aWR0aDogODAlO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGxlZnQ6IDMwcHg7XG4gIHRvcDogOThweDtcbn1cbi5sb2dpbi1iZyAubG9naW4tY29udGVudCAubG9naW4tcmlnaHQgLmxvZ2luLWgyIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGZvbnQtc2l6ZTogMTZweDtcbiAgY29sb3I6ICMzMjMyMzI7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgbWFyZ2luLWJvdHRvbTogMjBweDtcbiAgZm9udC13ZWlnaHQ6IDQwMDtcbn1cbi5sb2dpbi1iZyAubG9naW4tY29udGVudCAubG9naW4tcmlnaHQgLmxvZ2luLWRhdGUge1xuICBtYXJnaW4tYm90dG9tOiA1cHggIWltcG9ydGFudDtcbn1cbi5sb2dpbi1iZyAubG9naW4tY29udGVudCAubG9naW4tcmlnaHQgLnVzZXItYm94IHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMzBweDtcbiAgYm9yZGVyLXJhZGl1czogM3B4O1xuICBtYXJnaW4tYm90dG9tOiAyMHB4O1xufVxuLmxvZ2luLWJnIC5sb2dpbi1jb250ZW50IC5sb2dpbi1yaWdodCAudXNlci1ib3ggLnVzZXItaW5wdXQge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG4gIGxpbmUtaGVpZ2h0OiAzMHB4O1xuICBvdXRsaW5lOiBub25lO1xuICBib3JkZXI6IDFweCBzb2xpZCAjYWFhO1xuICBib3JkZXItcmFkaXVzOiA0cHg7XG4gIGNvbG9yOiAjNjY2O1xuICBmb250LXNpemU6IDEycHg7XG59XG4ubG9naW4tYmcgLmxvZ2luLWNvbnRlbnQgLmxvZ2luLXJpZ2h0IC51c2VyLWJveCBpbnB1dDo6cGxhY2Vob2xkZXIge1xuICBjb2xvcjogI2NjY2NjYyAhaW1wb3J0YW50O1xuICBmb250LXNpemU6IDEycHggIWltcG9ydGFudDtcbn1cbi5sb2dpbi1iZyAubG9naW4tY29udGVudCAubG9naW4tcmlnaHQgLnVzZXItYm94IGlucHV0OmZvY3VzOjpwbGFjZWhvbGRlciB7XG4gIGNvbG9yOiB0cmFuc3BhcmVudCAhaW1wb3J0YW50O1xufVxuLmxvZ2luLWJnIC5sb2dpbi1jb250ZW50IC5sb2dpbi1yaWdodCAudXNlci1ib3ggLnVzZXItaW5wdXQ6aG92ZXIge1xuICBjb2xvcjogIzY2NjtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjtcbiAgYm9yZGVyLWNvbG9yOiAjNjY2O1xufVxuLmxvZ2luLWJnIC5sb2dpbi1jb250ZW50IC5sb2dpbi1yaWdodCAudXNlci1ib3ggLnVzZXItaW5wdXQ6Zm9jdXMge1xuICBjb2xvcjogIzY2NjtcbiAgYm9yZGVyLWNvbG9yOiAjNjY2ICFpbXBvcnRhbnQ7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XG59XG4ubG9naW4tYmcgLmxvZ2luLWNvbnRlbnQgLmxvZ2luLXJpZ2h0IC5zYXZlLXdvcmQge1xuICB3aWR0aDogMTAwJTtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuLmxvZ2luLWJnIC5sb2dpbi1jb250ZW50IC5sb2dpbi1yaWdodCAuc2F2ZS13b3JkIC5tYXQtY2hlY2tib3gtaW5uZXItY29udGFpbmVyIHtcbiAgd2lkdGg6IDE0cHg7XG4gIGhlaWdodDogMTRweDtcbiAgYm9yZGVyLWNvbG9yOiAjOTI5MjkyO1xufVxuLmxvZ2luLWJnIC5sb2dpbi1jb250ZW50IC5sb2dpbi1yaWdodCAuc2F2ZS13b3JkIC5tYXQtY2hlY2tib3gtbGF5b3V0IC5tYXQtY2hlY2tib3gtbGFiZWwge1xuICBmb250LXNpemU6IDEycHg7XG4gIGNvbG9yOiAjNjY2O1xufVxuLmxvZ2luLWJnIC5sb2dpbi1jb250ZW50IC5sb2dpbi1yaWdodCAuc2F2ZS13b3JkIC5tYXQtY2hlY2tib3gtZnJhbWUge1xuICBib3JkZXItd2lkdGg6IDFweDtcbn1cbi5sb2dpbi1iZyAubG9naW4tY29udGVudCAubG9naW4tcmlnaHQgLnNhdmUtd29yZCAubWF0LWNoZWNrYm94LWNoZWNrZWQubWF0LWFjY2VudCAubWF0LWNoZWNrYm94LWJhY2tncm91bmQge1xuICBiYWNrZ3JvdW5kOiAjM2Y3N2U0O1xufVxuLmxvZ2luLWJnIC5sb2dpbi1jb250ZW50IC5sb2dpbi1yaWdodCAubG9naW4tYnV0dG9uIHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDMwcHg7XG4gIG91dGxpbmU6IG5vbmU7XG4gIGJvcmRlcjogbm9uZTtcbiAgYmFja2dyb3VuZDogIzNmNzdlNDtcbiAgZm9udC1zaXplOiAxMnB4O1xuICBjb2xvcjogI2ZmZjtcbiAgYm9yZGVyLXJhZGl1czogNHB4O1xuICBjdXJzb3I6IHBvaW50ZXI7XG59XG4ubG9naW4tYmcgLmxvZ2luLWNvbnRlbnQgLmxvZ2luLXJpZ2h0IC5sb2dpbi1idXR0b246aG92ZXIge1xuICBiYWNrZ3JvdW5kOiAjM2Y3N2U0O1xufVxuLmxvZ2luLWJnIC5sb2dpbi1jb250ZW50IC5sb2dpbi1yaWdodCAubG9naW4tYnRuIHtcbiAgbWFyZ2luLXRvcDogN3B4O1xuICBtYXJnaW4tYm90dG9tOiA1NHB4O1xufVxuLmxvZ2luLWJnIC5sb2dpbi1jb250ZW50IC5sb2dpbi1yaWdodCAuZ29vZ2xlLWRvd25sb2FkIHtcbiAgd2lkdGg6IDEwMCU7XG59XG4ubG9naW4tYmcgLmxvZ2luLWNvbnRlbnQgLmxvZ2luLXJpZ2h0IC5nb29nbGUtZG93bmxvYWQgcCB7XG4gIGZvbnQtc2l6ZTogMTJweDtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBjb2xvcjogIzY2Njtcbn1cbi5sb2dpbi1iZyAubG9naW4tY29udGVudCAubG9naW4tcmlnaHQgLmdvb2dsZS1kb3dubG9hZCBhIHtcbiAgZm9udC1zaXplOiAxMnB4O1xuICBjb2xvcjogI2ZmNzU3MztcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuLmxvZ2luLWJnIC51c2VyLWlucHV0Lm5nLWludmFsaWQge1xuICBib3JkZXI6IDFweCBzb2xpZCAjZmY3NTczICFpbXBvcnRhbnQ7XG59XG4ubG9naW4tYmcgLnVzZXItaW5wdXQubmctdmFsaWQge1xuICBib3JkZXI6IDFweCBzb2xpZCAjYWFhICFpbXBvcnRhbnQ7XG59XG4ubG9naW4tYmcgLnVzZXItYm94IHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xufVxuLmxvZ2luLWJnIC5yZXF1aXJlZC1jb2xvciB7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDIwcHg7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgbGVmdDogMDtcbiAgdG9wOiAzMHB4O1xuICBmb250LXNpemU6IDEycHg7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgY29sb3I6ICNmZjc1NzM7XG4gIHotaW5kZXg6IDk7XG4gIGJvcmRlci1yYWRpdXM6IDJweDtcbn1cbi5sb2dpbi1iZyAucmVxdWlyZWQtY29sb3IgcCB7XG4gIGhlaWdodDogMjBweDtcbiAgbGluZS1oZWlnaHQ6IDIwcHg7XG59XG4vKiDlnZfnuqfmjInpkq7mloflrZfkuI3mta7liqggKi9cbjpob3N0IDo6bmctZGVlcCAubG9naW4tYnRuIC5mYy1idXR0b24tYmxvY2sgPiBzcGFuIHtcbiAgZmxvYXQ6IG5vbmU7XG59XG4uc2lnaW4tYm9keSAuc2lnaW4tZXJyb3Ige1xuICB3aWR0aDogMTAwJTtcbiAgbWFyZ2luLWJvdHRvbTogMzBweDtcbiAgbGluZS1oZWlnaHQ6IDI0cHg7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gIGZvbnQtc2l6ZTogMTRweDtcbiAgbWFyZ2luLXRvcDogMjBweDtcbn1cbi5zaWdpbi1lcnJvci1pbiB7XG4gIGJhY2tncm91bmQ6ICNGRUVFRUI7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNGMTU1MzI7XG4gIGNvbG9yOiAjRjE1NTMzO1xuICB0ZXh0LWFsaWduOiBsZWZ0O1xuICBwYWRkaW5nOiAzcHggNnB4O1xufVxuIl19 */"
 
 /***/ }),
 
@@ -2518,15 +2321,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
 /* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
 /* harmony import */ var _environments_environment_dev__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./environments/environment.dev */ "./src/environments/environment.dev.ts");
+/* harmony import */ var ag_grid_enterprise__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ag-grid-enterprise */ "./node_modules/ag-grid-enterprise/main.js");
+/* harmony import */ var ag_grid_enterprise__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(ag_grid_enterprise__WEBPACK_IMPORTED_MODULE_5__);
 
 
 
 
 
+
+// spread报表授权
+ag_grid_enterprise__WEBPACK_IMPORTED_MODULE_5__["LicenseManager"].setLicenseKey('OTQ1MzA4OTQ1Njk3Mw==390bb30c7ca829b2dcbef7b197f8d33e');
 if (_environments_environment_dev__WEBPACK_IMPORTED_MODULE_4__["environment"].production) {
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["enableProdMode"])();
 }
-Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_3__["AppModule"])
+Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformBrowserDynamic"])()
+    .bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_3__["AppModule"])
     .catch(function (err) { return console.error(err); });
 
 
