@@ -5,8 +5,15 @@ import { RouterModule } from '@angular/router'
 import { Routers } from './tx.route'
 import { BgitemComponent } from './components/bgitem/bgitem.component'
 import { BgitemBusiness } from './business/bgitem.business'
+import { NgZorroAntdModule } from 'ng-zorro-antd'
 @NgModule({
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule.forChild(Routers)],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forChild(Routers),
+    NgZorroAntdModule
+  ],
   declarations: [
     BgitemComponent // 组件-预算项目
   ],

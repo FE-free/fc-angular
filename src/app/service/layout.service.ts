@@ -1,13 +1,27 @@
-import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { NzMessageService } from 'ng-zorro-antd';
-import { menus } from '_mock/_menus';
-import { environment } from 'src/environments/environment.dev';
+import { Injectable } from '@angular/core'
+import { Router } from '@angular/router'
+import { NzMessageService } from 'ng-zorro-antd'
+import { menus } from '_mock/_menus'
+import { environment } from 'src/environments/environment.dev'
+import { CommonService } from 'src/core/service/common.service'
+import { ShareService } from './share.service'
 @Injectable({
   providedIn: 'root'
 })
 export class LayoutService {
-  constructor(private Router: Router, private messageService: NzMessageService) {}
+  // 项目名称
+  pid: any
+  constructor(
+    private Router: Router,
+    private messageService: NzMessageService,
+    private shareService: ShareService
+  ) {
+    this.shareService.switchProjectSubject.subscribe(data => {
+      if (data) {
+        this.pid = data.param.PID.toLocaleLowerCase()
+      }
+    })
+  }
   /**
    * 获取菜单信息
    */
@@ -41,7 +55,7 @@ export class LayoutService {
       }
       // LogService.debug(params);
       router
-        .navigate(['/' + environment.pid.toLocaleLowerCase() + '/' + menu.ROUTER], params)
+        .navigate(['/' + this.pid + '/' + menu.ROUTER], params)
         .then(() => {
           // this.providers.msgService.endAntLoading();
         })
@@ -54,7 +68,7 @@ export class LayoutService {
       // 开启加载条
       // this.providers.msgService.startAntLoading();
       router
-        .navigate(['/' + environment.pid.toLocaleLowerCase() + '/' + menu.ROUTER], {
+        .navigate(['/' + this.pid + '/' + menu.ROUTER], {
           queryParams: {
             refresh: refresh,
             ID: menu.ID,
@@ -82,7 +96,7 @@ export class LayoutService {
       //发出跳转报表iframe的事件
       // router.navigate(['/budget//bgreport'], {
       router
-        .navigate(['/' + environment.pid.toLocaleLowerCase() + '/' + menu.ROUTER], {
+        .navigate(['/' + this.pid + '/' + menu.ROUTER], {
           queryParams: {
             refresh: refresh,
             ID: menu.ID,

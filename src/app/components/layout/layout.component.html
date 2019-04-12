@@ -3,9 +3,11 @@
   <nz-header>
     <div class="logo">
       <i class="icon iconfont fc-icon-tielu"></i>
-      <span class="logo-text">东软越通后台管理系统</span>
+      <span class="logo-text">{{ projectName }}</span>
     </div>
     <div class="fc-header-right">
+      <a class="text" *ngFor="let item of allMenus" (click)="switchProject(item)">
+        <i class="icon iconfont fc-icon-peizhi"></i>{{ item.MENUNAME }}</a>
       <i class="icon iconfont yt-header-icon fc-icon-information" (click)="toggleSidebar()" title="消息"></i>
       <i class="icon iconfont yt-header-icon fc-icon-peizhi" title="设置"></i>
       <i class="icon iconfont yt-header-icon fc-icon-wode" title="我的"></i>
@@ -79,7 +81,7 @@
       </ul>
       <!-- 切换布局控制按钮 -->
       <div class="layout-toggle">
-        <i class="icon iconfont fc-icon-arrowleft"  [ngClass]="{'arrowright':menuWidth===64}" (click)="toggleLayout()">
+        <i class="icon iconfont fc-icon-arrowleft" [ngClass]="{'arrowright':menuWidth===64}" (click)="toggleLayout()">
         </i>
       </div>
     </nz-sider>
@@ -97,7 +99,7 @@
       </nz-tabset>
       <!-- 内容区 -->
       <nz-content class="fc-main-wrap">
-        <div class="fc-main" >
+        <div class="fc-main">
           <router-outlet [ngStyle]="{'height':'100%'}"></router-outlet>
         </div>
       </nz-content>

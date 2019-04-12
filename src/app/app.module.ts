@@ -21,6 +21,7 @@ import { AppRoutes } from './app.route'
 import { ForgotComponent } from './components/forgot/forgot.component'
 import { LockscreenComponent } from './components/lockscreen/lockscreen.component'
 import { SignupComponent } from './components/signup/signup.component';
+import { ShareService } from './service/share.service';
 registerLocaleData(zh)
 @NgModule({
   imports: [
@@ -44,6 +45,7 @@ registerLocaleData(zh)
   ],
   providers: [
     UserService, // 服务-用户
+    ShareService,
     LayoutService, // 服务-layout
     { provide: RouteReuseStrategy, useClass: FcRouteReuseStrategy }, // 路由复用策略
     {

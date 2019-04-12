@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router'
 import { LayoutService } from 'src/app/service/layout.service'
 import { CommonService } from 'src/core/service/common.service'
 import { environment } from '../../../environments/environment.dev'
+import { element } from 'protractor'
+import { ShareService } from 'src/app/service/share.service';
 @Component({
   selector: 'layout',
   templateUrl: './layout.component.html',
@@ -44,6 +46,12 @@ import { environment } from '../../../environments/environment.dev'
         cursor: pointer;
         float: left;
       }
+      .fc-header-right .text .iconfont {
+        margin-right: 5px;
+      }
+      .fc-header-right .text:hover {
+        font-weight: bold;
+      }
       .fc-header-right .avatar {
         cursor: pointer;
         float: left;
@@ -80,7 +88,6 @@ import { environment } from '../../../environments/environment.dev'
       }
       .fc-main-wrap {
         background: #f2f6f9;
-        padding: 10px;
       }
       .fc-main {
         width: 100%;
@@ -129,27 +136,6 @@ import { environment } from '../../../environments/environment.dev'
       ::ng-deep .fc-tabnav .ant-tabs-bar {
         margin-bottom: 0;
       }
-      ::ng-deep .fc-tabnav.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab-active {
-        color: #333;
-        background: #f2f6f9;
-      }
-      ::ng-deep .fc-tabnav .card-container ::ng-deep .ant-tabs-card .ant-tabs-content .ant-tabs-tabpane {
-        background: #fff;
-        padding: 16px;
-      }
-      ::ng-deep .fc-tabnav .card-container ::ng-deep .ant-tabs-card .ant-tabs-bar {
-        border-color: #fff;
-      }
-
-      ::ng-deep .fc-tabnav .card-container ::ng-deep .ant-tabs-card .ant-tabs-bar .ant-tabs-tab {
-        border-color: transparent;
-        background: transparent;
-      }
-
-      ::ng-deep .fc-tabnav .card-container ::ng-deep .ant-tabs-card .ant-tabs-bar .ant-tabs-tab-active {
-        border-color: #fff;
-        background: #fff;
-      }
       ::ng-deep .fc-tabnav .ant-tabs-nav .ant-tabs-tab {
         margin-left: 0px;
         margin-right: 0px;
@@ -174,6 +160,8 @@ export class LayoutComponent implements OnInit {
   selectMenu = {}
   // 当前所有菜单
   _menus: any = []
+  // 所有的菜单
+  allMenus: any[]
   // 默认选中的索引
   fcSelectedIndex = 0
   // 选项卡
@@ -191,10 +179,13 @@ export class LayoutComponent implements OnInit {
   // 侧边栏
   @ViewChild('navside')
   navside: ElementRef
+  // 项目名
+  projectName = environment.projectName
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private mainService: LayoutService
+    private mainService: LayoutService,
+    private shareService: ShareService
   ) {
     this.fcTabs = []
     // 点击左侧导航
@@ -231,7 +222,17 @@ export class LayoutComponent implements OnInit {
    * 显示时加载
    */
   ngOnInit() {
-    this._menus = this.mainService.getMenus().P_MENUS[0].P_CHILDMENUS
+    // 所有的菜单
+    this.allMenus = this.mainService.getMenus().P_MENUS
+    this.allMenus.forEach(element => {
+      if (element.PID === environment.pid) {
+        this._menus = element.P_CHILDMENUS
+        this.shareService.switchProjectSubject.next({
+          eventName: 'switchProjectSubject',
+          param: { PID:element.PID }
+        });
+      }
+    })
     // 默认选择某个菜单
     CommonService.event('selectedMenu', {
       ID: '0',
@@ -257,10 +258,27 @@ export class LayoutComponent implements OnInit {
           refresh: 'N',
           content: { ID: '0', MENUID: 'HOME', ROUTER: 'home', PID: environment.pid, MENUTYPE: 'INURL' }
         })
-        console.log(this.fcTabs)
       }
     }
     this.router.navigate(['/' + environment.pid.toLocaleLowerCase() + '/home'])
+  }
+  /**
+   * 切换项目
+   * @param item
+   */
+  switchProject(menu: any) {
+    this._menus = []
+    this.allMenus.forEach(element => {
+      if (element.PID === menu.PID) {
+        this._menus = element.P_CHILDMENUS
+        this.projectName = element.MENUNAME
+        this.shareService.switchProjectSubject.next({
+          eventName: 'switchProjectSubject',
+          param: { PID:menu.PID }
+        });
+    
+      }
+    })
   }
   /**
    * 切换布局

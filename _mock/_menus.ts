@@ -16,8 +16,8 @@ export const menus = {
         {
           ID: '3ae5c74930dab18e877efabee3af0004',
           PID: 'BUDGET',
-          MENUID: 'BGBUSSINESS',
-          MENUNAME: '业务组件',
+          MENUID: 'BGTX',
+          MENUNAME: '预算体系',
           ENABLE: 'Y',
           WXMENU: 'N',
           MENUTYPE: 'MENU',
@@ -29,9 +29,9 @@ export const menus = {
           P_CHILDMENUS: [
             {
               ID: '63fbb2f0708f4fd68db04a92dd5df121',
-              PID: 'BUDGET',
-              MENUID: 'BGLISTINFO',
-              MENUNAME: '查询',
+              PID: 'FC',
+              MENUID: 'BGITEM',
+              MENUNAME: '预算项目',
               ENABLE: 'Y',
               WXMENU: 'N',
               MENUTYPE: 'APP',
@@ -39,13 +39,13 @@ export const menus = {
               HASCHILD: 'N',
               PARENT: 'SYSTEM',
               SORT: 1152,
-              ROUTER: '/bglistinfoList'
+              ROUTER: '/bgitemList'
             },
             {
               ID: '63fbb2f0708f4fd68db04a92dd5df121',
-              PID: 'BUDGET',
-              MENUID: 'BGCREATE',
-              MENUNAME: '新增',
+              PID: 'FC',
+              MENUID: 'BGRPTASK',
+              MENUNAME: '报表任务',
               ENABLE: 'Y',
               WXMENU: 'N',
               MENUTYPE: 'APP',
@@ -53,181 +53,7 @@ export const menus = {
               HASCHILD: 'N',
               PARENT: 'SYSTEM',
               SORT: 1152,
-              ROUTER: '/bgcreateList'
-            },
-            {
-              ID: '63fbb2f0708f4fd68db04a92dd5df121',
-              PID: 'BUDGET',
-              MENUID: 'BGUPDATE',
-              MENUNAME: '修改',
-              ENABLE: 'Y',
-              WXMENU: 'N',
-              MENUTYPE: 'APP',
-              APPID: 'SYSMENU',
-              HASCHILD: 'N',
-              PARENT: 'SYSTEM',
-              SORT: 1152,
-              ROUTER: '/bgupdateList'
-            },
-            {
-              ID: '63fbb2f0708f4fd68db04a92dd5df121',
-              PID: 'BUDGET',
-              MENUID: 'BGREMOVE',
-              MENUNAME: '删除',
-              ENABLE: 'Y',
-              WXMENU: 'N',
-              MENUTYPE: 'APP',
-              APPID: 'SYSMENU',
-              HASCHILD: 'N',
-              PARENT: 'SYSTEM',
-              SORT: 1152,
-              ROUTER: '/bgremoveList'
-            }
-          ]
-        },
-        {
-          ID: '3ae5c74930dab18e877efabee3af0004',
-          PID: 'BUDGET',
-          MENUID: 'BGDEMO',
-          MENUNAME: 'UI示例',
-          ENABLE: 'Y',
-          WXMENU: 'N',
-          MENUTYPE: 'MENU',
-          HASCHILD: 'Y',
-          MENUICON: 'fc-icon-peizhi',
-          PARENT: 'BUDGET',
-          SORT: 1150,
-          ROUTER: '/budget',
-          P_CHILDMENUS: [
-            {
-              ID: '63fbb2f0708f4fd68db04a92dd5df121',
-              PID: 'BUDGET',
-              MENUID: 'BGSPREAD',
-              MENUNAME: 'spread报表',
-              ENABLE: 'Y',
-              WXMENU: 'N',
-              MENUTYPE: 'APP',
-              APPID: 'SYSMENU',
-              HASCHILD: 'N',
-              PARENT: 'SYSTEM',
-              SORT: 1152,
-              ROUTER: '/bgspreadList'
-            },
-            {
-              ID: '63fbb2f0708f4fd68db04a92dd5df121',
-              PID: 'BUDGET',
-              MENUID: 'BGIFRAME',
-              MENUNAME: 'iframe',
-              ENABLE: 'Y',
-              WXMENU: 'N',
-              MENUTYPE: 'APP',
-              APPID: 'SYSMENU',
-              HASCHILD: 'N',
-              PARENT: 'SYSTEM',
-              SORT: 1152,
-              ROUTER: '/bgiframeList'
-            },
-            {
-              ID: '63fbb2f0708f4fd68db04a92dd5df121',
-              PID: 'BUDGET',
-              MENUID: 'BGTABLE',
-              MENUNAME: '表格',
-              ENABLE: 'Y',
-              WXMENU: 'N',
-              MENUTYPE: 'APP',
-              APPID: 'SYSMENU',
-              HASCHILD: 'N',
-              PARENT: 'SYSTEM',
-              SORT: 1152,
-              ROUTER: '/bgtableList'
-            }
-          ]
-        },
-        {
-          ID: '3ae5c74930dab18e877efabee3af0004',
-          PID: 'BUDGET',
-          MENUID: 'SYSTEM',
-          MENUNAME: '系统管理',
-          ENABLE: 'Y',
-          WXMENU: 'N',
-          MENUTYPE: 'MENU',
-          HASCHILD: 'Y',
-          MENUICON: 'fc-icon-peizhi',
-          PARENT: 'BUDGET',
-          SORT: 1150,
-          ROUTER: '/budget',
-          P_CHILDMENUS: [
-            {
-              ID: '63fbb2f0708f4fd68db04a92dd5df121',
-              PID: 'BUDGET',
-              MENUID: 'SYSTEMBASIC',
-              MENUNAME: '基础设置',
-              ENABLE: 'Y',
-              WXMENU: 'N',
-              MENUTYPE: 'APP',
-              APPID: 'SYSTEMBASIC',
-              HASCHILD: 'Y',
-              PARENT: 'SYSTEM',
-              SORT: 1152,
-              ROUTER: '/sysmenuList',
-              P_CHILDMENUS: [
-                {
-                  ID: '63fbb2f0708f4fd68db04a92dd5df121',
-                  PID: 'BUDGET',
-                  MENUID: 'SYSROLE',
-                  MENUNAME: '权限管理',
-                  ENABLE: 'Y',
-                  WXMENU: 'N',
-                  MENUTYPE: 'APP',
-                  APPID: 'SYSROLE',
-                  HASCHILD: 'N',
-                  PARENT: 'SYSTEM',
-                  SORT: 1152,
-                  ROUTER: '/sysroleList'
-                },
-                {
-                  ID: '63fbb2f0708f4fd68db04a92dd5df121',
-                  PID: 'BUDGET',
-                  MENUID: 'SYSMENU',
-                  MENUNAME: '用户管理',
-                  ENABLE: 'Y',
-                  WXMENU: 'N',
-                  MENUTYPE: 'APP',
-                  APPID: 'SYSMENU',
-                  HASCHILD: 'N',
-                  PARENT: 'SYSTEM',
-                  SORT: 1152,
-                  ROUTER: '/sysmenuList'
-                },
-                {
-                  ID: '63fbb2f0708f4fd68db04a92dd5df121',
-                  PID: 'BUDGET',
-                  MENUID: 'SYSMENU',
-                  MENUNAME: '菜单管理',
-                  ENABLE: 'Y',
-                  WXMENU: 'N',
-                  MENUTYPE: 'APP',
-                  APPID: 'SYSMENU',
-                  HASCHILD: 'N',
-                  PARENT: 'SYSTEM',
-                  SORT: 1152,
-                  ROUTER: '/sysmenuList'
-                },
-                {
-                  ID: '63fbb2f0708f4fd68db04a92dd5df121',
-                  PID: 'BUDGET',
-                  MENUID: 'SYSLOG',
-                  MENUNAME: '日志管理',
-                  ENABLE: 'Y',
-                  WXMENU: 'N',
-                  MENUTYPE: 'APP',
-                  APPID: 'SYSMENU',
-                  HASCHILD: 'N',
-                  PARENT: 'SYSTEM',
-                  SORT: 1152,
-                  ROUTER: '/syslogList'
-                }
-              ]
+              ROUTER: '/bgrptaskList'
             }
           ]
         }
@@ -256,9 +82,9 @@ export const menus = {
           MENUTYPE: 'MENU',
           HASCHILD: 'Y',
           MENUICON: 'fc-icon-peizhi',
-          PARENT: 'BUDGET',
+          PARENT: 'FC',
           SORT: 1150,
-          ROUTER: '/budget',
+          ROUTER: '/fc',
           P_CHILDMENUS: [
             {
               ID: '63fbb2f0708f4fd68db04a92dd5df121',

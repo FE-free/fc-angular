@@ -1,0 +1,77 @@
+  <div class="fc-home-page">
+    <!-- 统计 -->
+    <div nz-row [nzGutter]="20">
+      <div nz-col nzSpan="6">
+        <div class="sys-home-box sys-home-box1" nz-row>
+          <nz-statistic nz-col nzSpan="12" [nzValue]="1949101 | number" [nzValueStyle]="{'color':'#fff'}"
+            [nzTitle]="'在线人数'"></nz-statistic>
+          <div nz-col nzSpan="12" class="mini-box">
+            <div id="miniBar_1" class="minibar"></div>
+          </div>
+        </div>
+      </div>
+      <div nz-col nzSpan="6">
+        <div class="sys-home-box sys-home-box2" nz-row>
+          <nz-statistic nz-col nzSpan="12" [nzValue]="1949101 | number" [nzTitle]="'总人数'"
+            [nzValueStyle]="{'color':'#fff'}"></nz-statistic>
+          <div nz-col nzSpan="12" class="mini-box">
+            <div id="miniBar_2" class="minibar"></div>
+          </div>
+        </div>
+      </div>
+      <div nz-col nzSpan="6">
+        <div class="sys-home-box sys-home-box3" nz-row>
+          <nz-statistic nz-col nzSpan="12" [nzValue]="1949101 | number" [nzTitle]="'访问次数'"
+            [nzValueStyle]="{'color':'#fff'}">
+          </nz-statistic>
+          <div nz-col nzSpan="12" class="mini-box">
+            <div id="miniBar_3" class="minibar"></div>
+          </div>
+        </div>
+      </div>
+      <div nz-col nzSpan="6">
+        <div class="sys-home-box sys-home-box4" nz-row>
+          <nz-statistic nz-col nzSpan="12" [nzValue]="1949101 | number" [nzTitle]="'网站流量'"
+            [nzValueStyle]="{'color':'#fff'}">
+          </nz-statistic>
+          <div nz-col nzSpan="12" class="mini-box">
+            <div id="miniBar_4" class="minibar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div nz-row [nzGutter]="20">
+      <!-- 图表状态 -->
+      <div nz-col [nzSpan]="12">
+        <nz-card class="sys-home-card" nzTitle="图表状态" [nzBordered]="false">
+          <div>
+            <div id="chartBar"></div>
+          </div>
+        </nz-card>
+      </div>
+      <!-- 对比图 -->
+      <div nz-col [nzSpan]="12">
+        <nz-card class="sys-home-card" nzTitle="对比图" [nzBordered]="false">
+          <div id="chartLine"></div>
+        </nz-card>
+      </div>
+      <!-- 工作计划 -->
+      <div nz-col [nzSpan]="12">
+        <nz-card class="sys-home-card" nzTitle="工作计划" [nzBordered]="false">
+          <p>Card content</p>
+        </nz-card>
+      </div>
+      <!-- 待办任务 -->
+      <div nz-col [nzSpan]="12">
+        <nz-card class="sys-home-card" nzTitle="待办任务" [nzBordered]="false">
+          <p>Card content</p>
+        </nz-card>
+      </div>
+      <!-- 系统公告 -->
+      <div nz-col [nzSpan]="12">
+        <nz-card class="sys-home-card" nzTitle="系统公告" [nzBordered]="false">
+          <p>Card content</p>
+        </nz-card>
+      </div>
+    </div>
+  </div>
