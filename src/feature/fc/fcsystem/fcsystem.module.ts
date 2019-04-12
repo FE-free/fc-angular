@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common'
-import { NgModule } from '@angular/core'
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router'
 import { Routers } from './fcsystem.route'
@@ -8,8 +8,15 @@ import { SysuserComponent } from './components/sysuser/sysuser.component'
 import { SysmenuComponent } from './components/sysmenu/sysmenu.component'
 import { SysroleComponent } from './components/sysrole/sysrole.component'
 import { SyslogComponent } from './components/syslog/syslog.component'
+import { NgZorroAntdModule } from 'ng-zorro-antd'
 @NgModule({
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule.forChild(Routers)],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forChild(Routers),
+    NgZorroAntdModule
+  ],
   declarations: [
     SysmessagedetailComponent, // 消息详情
     SysuserComponent, // 用户管理
@@ -17,6 +24,7 @@ import { SyslogComponent } from './components/syslog/syslog.component'
     SysroleComponent, // 权限管理
     SyslogComponent // 日志管理
   ],
-  providers: []
+  providers: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA] // 自定义组件
 })
 export class FcsystemModule {}

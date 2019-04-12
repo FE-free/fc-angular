@@ -8,15 +8,6 @@ import { HomeComponent } from './components/home/home.component';
 
 export const Routers: Routes = [
   {
-    path: 'home',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'home',
-    component: HomeComponent
-  },
-  {
     path: 'sysmessageDetail', // 消息详情
     component: SysmessagedetailComponent
   },

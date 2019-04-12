@@ -8,10 +8,10 @@ import { BgcreateComponent } from './components/bgcreate/bgcreate.component'
 import { BgupdateComponent } from './components/bgupdate/bgupdate.component'
 import { BgremoveComponent } from './components/bgremove/bgremove.component'
 import { NgZorroAntdModule } from 'ng-zorro-antd'
-import { SpreadSheetsModule } from '@grapecity/spread-sheets-angular'
 import { BgspreadComponent } from './components/bgspread/bgspread.component'
 import { BgtableComponent } from './components/bgtable/bgtable.component'
-import { BgiframeComponent } from './components/bgiframe/bgiframe.component';
+import { BgiframeComponent } from './components/bgiframe/bgiframe.component'
+import { SpreadSheetsModule } from 'src/assets/plugin/spread/gc.spread.sheets.angular';
 @NgModule({
   imports: [
     CommonModule,
@@ -28,7 +28,7 @@ import { BgiframeComponent } from './components/bgiframe/bgiframe.component';
     BgremoveComponent, // 删除
     BgspreadComponent, // spread报表
     BgtableComponent, // 表格
-    BgiframeComponent, // iframe
+    BgiframeComponent // iframe
   ],
   providers: []
 })

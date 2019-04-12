@@ -54,7 +54,7 @@ import { environment } from '../../../environments/environment.dev'
         position: relative;
       }
       .layout-toggle {
-        positon: absolute;
+        position: absolute;
         left: 0;
         bottom: 0;
         width: 100%;
@@ -62,19 +62,30 @@ import { environment } from '../../../environments/environment.dev'
         line-height: 40px;
         text-align: center;
         background-color: #f5f5f5;
+        border-right: 1px solid #e8e8e8;
       }
       .layout-toggle .iconfont {
         color: #333333;
         font-size: 18px;
         cursor: pointer;
+        transition: transform ease-in 0.8;
+        display: inline-block;
+      }
+      .layout-toggle .iconfont.arrowright {
+        transform: rotate(180deg);
       }
       .layout-toggle .iconfont:hover {
         color: #000000;
         font-weight: bold;
       }
-      .ant-drawer {
-        width: auto;
-        height: auto;
+      .fc-main-wrap {
+        background: #f2f6f9;
+        padding: 10px;
+      }
+      .fc-main {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
       }
       ::ng-deep .navside-drawer.ant-drawer-content-wrapper {
         background-color: #ffffff;
@@ -90,29 +101,68 @@ import { environment } from '../../../environments/environment.dev'
       ::ng-deep .sidebar-menu .ant-menu-inline-collapsed {
         width: 64px;
       }
-      ::ng-deep .sidebar-menu .ant-menu-inline-collapsed .first-level-title{
+      ::ng-deep .sidebar-menu .ant-menu-inline-collapsed .first-level-title {
         display: none;
       }
       ::ng-deep .sidebar-menu .ant-menu-inline-collapsed > .ant-menu-submenu {
         text-align: center;
       }
       ::ng-deep .sidebar-menu .ant-menu-inline-collapsed > .ant-menu-submenu > .ant-menu-submenu-title {
-        padding:0!important;
+        padding: 0 !important;
       }
       ::ng-deep .sidebar-menu .menu-icon {
         color: #333333;
         margin-right: 10px;
       }
-      ::ng-deep .ant-menu-popup::before { 
+      ::ng-deep .ant-menu-popup::before {
         opacity: 1;
         background-color: red;
       }
-      ::ng-deep .ant-menu-popup { 
+      ::ng-deep .ant-menu-popup {
         z-index: 1000;
       }
+      ::ng-deep .fc-tabnav {
+        min-height: 40px;
+        background-color: #ffffff;
+        box-shadow: 0 3px 5px -6px #1890ff;
+      }
+      ::ng-deep .fc-tabnav .ant-tabs-bar {
+        margin-bottom: 0;
+      }
       ::ng-deep .fc-tabnav.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab-active {
-        color: #fff;
-        background: #1890ff;
+        color: #333;
+        background: #f2f6f9;
+      }
+      ::ng-deep .fc-tabnav .card-container ::ng-deep .ant-tabs-card .ant-tabs-content .ant-tabs-tabpane {
+        background: #fff;
+        padding: 16px;
+      }
+      ::ng-deep .fc-tabnav .card-container ::ng-deep .ant-tabs-card .ant-tabs-bar {
+        border-color: #fff;
+      }
+
+      ::ng-deep .fc-tabnav .card-container ::ng-deep .ant-tabs-card .ant-tabs-bar .ant-tabs-tab {
+        border-color: transparent;
+        background: transparent;
+      }
+
+      ::ng-deep .fc-tabnav .card-container ::ng-deep .ant-tabs-card .ant-tabs-bar .ant-tabs-tab-active {
+        border-color: #fff;
+        background: #fff;
+      }
+      ::ng-deep .fc-tabnav .ant-tabs-nav .ant-tabs-tab {
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 8px 5px 8px 16px;
+      }
+      ::ng-deep .fc-tabnav .ant-tabs-nav .ant-tabs-tab .anticon {
+        margin-right: 8px;
+        font-size: 12px;
+        transform: scale(0.9);
+        margin-left: 10px;
+      }
+      .tab-home {
+        padding-right: 15px;
       }
     `
   ]
@@ -190,7 +240,7 @@ export class LayoutComponent implements OnInit {
       PID: environment.pid,
       MENUTYPE: 'INURL',
       MENUNAME: '首页',
-      MENUICON: 'fc-icon-home'
+      MENUICON: 'fc-icon-shouye'
     })
     //导航选项卡
     if (this.fcTabs) {
@@ -203,14 +253,14 @@ export class LayoutComponent implements OnInit {
           enabled: true,
           name: '首页',
           close: false,
-          icon: 'fc-icon-home',
+          icon: 'fc-icon-shouye',
           refresh: 'N',
           content: { ID: '0', MENUID: 'HOME', ROUTER: 'home', PID: environment.pid, MENUTYPE: 'INURL' }
         })
         console.log(this.fcTabs)
       }
     }
-    this.router.navigate(['/' + environment.pid.toLocaleLowerCase()+ '/home'])
+    this.router.navigate(['/' + environment.pid.toLocaleLowerCase() + '/home'])
   }
   /**
    * 切换布局
