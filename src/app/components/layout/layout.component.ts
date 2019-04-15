@@ -1,10 +1,9 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core'
-import { ActivatedRoute, Router } from '@angular/router'
-import { LayoutService } from 'src/app/service/layout.service'
-import { CommonService } from 'src/core/service/common.service'
-import { environment } from '../../../environments/environment.dev'
-import { element } from 'protractor'
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { LayoutService } from 'src/app/service/layout.service';
 import { ShareService } from 'src/app/service/share.service';
+import { environment } from '../../../environments/environment.dev';
+import { CommonService } from 'src/fccore/service/common.service';
 @Component({
   selector: 'layout',
   templateUrl: './layout.component.html',
@@ -140,6 +139,9 @@ import { ShareService } from 'src/app/service/share.service';
         margin-left: 0px;
         margin-right: 0px;
         padding: 8px 5px 8px 16px;
+      }
+      ::ng-deep .fc-tabnav .ant-tabs-nav-wrap {
+        margin-bottom: 0;
       }
       ::ng-deep .fc-tabnav .ant-tabs-nav .ant-tabs-tab .anticon {
         margin-right: 8px;

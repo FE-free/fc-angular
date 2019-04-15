@@ -1,7 +1,6 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core'
-import { ActivatedRoute, Router } from '@angular/router'
-import * as G2 from '@antv/g2'
-import { CommonService } from 'src/core/service/common.service'
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import * as G2 from '@antv/g2';
 @Component({
   selector: 'home',
   templateUrl: './home.component.html',

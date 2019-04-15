@@ -1,10 +1,8 @@
-import { Injectable } from '@angular/core'
-import { Router } from '@angular/router'
-import { NzMessageService } from 'ng-zorro-antd'
-import { menus } from '_mock/_menus'
-import { environment } from 'src/environments/environment.dev'
-import { CommonService } from 'src/core/service/common.service'
-import { ShareService } from './share.service'
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { NzMessageService } from 'ng-zorro-antd';
+import { menus } from '_mock/_menus';
+import { ShareService } from './share.service';
 @Injectable({
   providedIn: 'root'
 })

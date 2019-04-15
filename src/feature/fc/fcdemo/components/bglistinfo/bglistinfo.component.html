@@ -1,57 +1,17 @@
-<div class="fc-page fc-page-list">
-  <div class="fc-toolbar">
-    <button nz-button nzType="primary">新增</button>
-    <button nz-button nzType="primary">修改</button>
-    <button nz-button nzType="primary">删除</button>
-  </div>
-  <form nz-form class="fc-searchbar">
-    <div nz-row [nzGutter]="24">
-      <div nz-col [nzSpan]="8">
-        <nz-form-item nzFlex>
-          <nz-form-label nzFor="taskCode">任务代码</nz-form-label>
-          <nz-form-control>
-            <input nz-input placeholder="请输入任务代码" [(ngModel)]="searchObj.taskCode" name="taskCode" />
-          </nz-form-control>
-        </nz-form-item>
-      </div>
-      <div nz-col [nzSpan]="8">
-        <nz-form-item nzFlex>
-          <nz-form-label nzFor="taskName">任务名称</nz-form-label>
-          <nz-form-control>
-            <input nz-input placeholder="请输入任务名称" [(ngModel)]="searchObj.taskName" name="taskName" />
-          </nz-form-control>
-        </nz-form-item>
-      </div>
-    </div>
-    <div nz-row>
-      <div nz-col [nzSpan]="24" style="text-align: right;">
-        <button nz-button [nzType]="'primary'" (click)="search()">查询</button>
-        <button nz-button (click)="reset()">重置</button>
-      </div>
-    </div>
-  </form>
-  <div class="table-wrap">
-    <nz-table #basicTable [nzData]="pageList" [nzBordered]="true">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Age</th>
-          <th>Address</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let data of basicTable.data">
-          <td>{{ data.name }}</td>
-          <td>{{ data.age }}</td>
-          <td>{{ data.address }}</td>
-          <td>
-            <a>Action 一 {{ data.name }}</a>
-            <nz-divider nzType="vertical"></nz-divider>
-            <a>Delete</a>
-          </td>
-        </tr>
-      </tbody>
-    </nz-table>
-  </div>
+<div style="width: 500px;height: 500px;">
+  <fc-imgview></fc-imgview>
 </div>
+<nz-table #basicTable [nzData]="pageList" [nzBordered]="true">
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>分类</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data;index as i">
+      <td>{{ i+1 }}</td>
+      <td>{{ data }}</td>
+    </tr>
+  </tbody>
+</nz-table>

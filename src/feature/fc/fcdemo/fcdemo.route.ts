@@ -5,6 +5,7 @@ import { BgupdateComponent } from './components/bgupdate/bgupdate.component'
 import { BgremoveComponent } from './components/bgremove/bgremove.component'
 import { BgspreadComponent } from './components/bgspread/bgspread.component';
 import { BgiframeComponent } from './components/bgiframe/bgiframe.component';
+import { BgtableComponent } from './components/bgtable/bgtable.component';
 
 export const Routers: Routes = [
   {
@@ -29,7 +30,7 @@ export const Routers: Routes = [
   },
   {
     path: 'bgtableList', // 表格
-    component: BgspreadComponent
+    component: BgtableComponent
   },
   {
     path: 'bgiframeList', // iframe

@@ -11,6 +11,7 @@ import { NgZorroAntdModule } from 'ng-zorro-antd'
 import { BgspreadComponent } from './components/bgspread/bgspread.component'
 import { BgtableComponent } from './components/bgtable/bgtable.component'
 import { BgiframeComponent } from './components/bgiframe/bgiframe.component'
+import { FccomponentModule } from 'src/fccomponents';
 import { SpreadSheetsModule } from 'src/assets/plugin/spread/gc.spread.sheets.angular';
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { SpreadSheetsModule } from 'src/assets/plugin/spread/gc.spread.sheets.an
     ReactiveFormsModule,
     RouterModule.forChild(Routers),
     NgZorroAntdModule,
-    SpreadSheetsModule
+    SpreadSheetsModule,
+    FccomponentModule
   ],
   declarations: [
     BglistinfoComponent, // 查询

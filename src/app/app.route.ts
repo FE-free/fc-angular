@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router'
-import { UserService } from 'src/core/service/user.service'
 import { LayoutComponent } from './components/layout/layout.component'
 import { SigninComponent } from './components/signin/signin.component'
 import { ErrorComponent } from './components/error/error.component'
@@ -7,6 +6,7 @@ import { BuildingComponent } from './components/building/building.component'
 import { ForgotComponent } from './components/forgot/forgot.component'
 import { LockscreenComponent } from './components/lockscreen/lockscreen.component'
 import { SignupComponent } from './components/signup/signup.component'
+import { UserService } from 'src/fccore/service/user.service';
 export const AppRoutes: Routes = [
   {
     path: '',
