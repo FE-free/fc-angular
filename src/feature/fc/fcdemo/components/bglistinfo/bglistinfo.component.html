@@ -1,0 +1,17 @@
+<div style="width: 500px;height: 500px;">
+  <fc-imgview imgSrc="assets/image/login_bg.png"></fc-imgview>
+</div>
+<nz-table #basicTable [nzData]="pageList" [nzBordered]="true">
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>分类</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data;index as i">
+      <td>{{ i+1 }}</td>
+      <td>{{ data }}</td>
+    </tr>
+  </tbody>
+</nz-table>

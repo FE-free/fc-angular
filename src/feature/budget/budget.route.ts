@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router'
-import { HomeComponent } from './components/home/home.component'
-
+import { HomeComponent } from './home/home.component'
 export const Routers: Routes = [
   {
     path: 'home',
@@ -12,7 +11,11 @@ export const Routers: Routes = [
     component: HomeComponent
   },
   {
-    path: '', // demo组件
-    loadChildren: './components/fcdemo/fcdemo.module#FcdemoModule'
+    path: '', // 预算体系模块
+    loadChildren: './tx/tx.module#TxModule'
+  },
+  {
+    path: '', // 预算报表模块
+    loadChildren: './budget_report/bgreport.module#BgreportModule'
   }
 ]
