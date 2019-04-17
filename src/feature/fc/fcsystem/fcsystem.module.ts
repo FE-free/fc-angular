@@ -1,14 +1,23 @@
-import { CommonModule } from '@angular/common'
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { RouterModule } from '@angular/router'
-import { Routers } from './fcsystem.route'
-import { SysmessagedetailComponent } from './components/sysmessage/sysmessagedetail.component'
-import { SysuserComponent } from './components/sysuser/sysuser.component'
-import { SysmenuComponent } from './components/sysmenu/sysmenu.component'
-import { SysroleComponent } from './components/sysrole/sysrole.component'
-import { SyslogComponent } from './components/syslog/syslog.component'
-import { NgZorroAntdModule } from 'ng-zorro-antd'
+/*
+ * @Author: luohong
+ * @LastEditors: luohong
+ * @Description: 系统模块
+ * @email: luo.hong@neusoft.com
+ * @Date: 2019-04-12 16:39:30
+ * @LastEditTime: 2019-04-17 12:33:03
+ */
+import { CommonModule } from '@angular/common';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+
+import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { Routers } from './fcsystem.route';
+import { SyslogComponent } from './components/syslog/syslog.component';
+import { SysmenuComponent } from './components/sysmenu/sysmenu.component';
+import { SysmessagedetailComponent } from './components/sysmessage/sysmessagedetail.component';
+import { SysroleComponent } from './components/sysrole/sysrole.component';
+import { SysuserComponent } from './components/sysuser/sysuser.component';
 @NgModule({
   imports: [
     CommonModule,

@@ -1,3 +1,11 @@
+/*
+ * @Author: luohong
+ * @LastEditors: luohong
+ * @Description: 路由复用策略,跳转路由时，params的refresh='Y'时，刷新页面，refresh='N'时，不刷新页面，保留用户操作状态
+ * @email: luo.hong@neusoft.com
+ * @Date: 2019-02-18 10:59:15
+ * @LastEditTime: 2019-04-17 10:12:29
+ */
 import {
   ActivatedRouteSnapshot,
   DetachedRouteHandle,

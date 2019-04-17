@@ -1,3 +1,11 @@
+/*
+ * @Author: luohong
+ * @LastEditors: luohong
+ * @Description: 打印服务,上线环境自动关闭打印
+ * @email: luo.hong@neusoft.com
+ * @Date: 2019-04-16 15:57:43
+ * @LastEditTime: 2019-04-17 11:43:44
+ */
 import { Injectable } from '@angular/core';
 import { CacheService } from './cache.service';
 import { CommonService } from './common.service';

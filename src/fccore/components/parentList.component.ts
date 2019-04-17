@@ -1,4 +1,0 @@
-export class ParentListComponent {
-    constructor() {
-    }
-}

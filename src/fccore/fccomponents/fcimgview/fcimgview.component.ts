@@ -1,5 +1,14 @@
+/*
+ * @Author: luohong
+ * @LastEditors: luohong
+ * @Description: 图片查看
+ * @email: luo.hong@neusoft.com
+ * @Date: 2019-04-16 15:57:43
+ * @LastEditTime: 2019-04-17 10:46:37
+ */
 import { Component, ElementRef, Input, OnChanges, Renderer2, ViewChild } from '@angular/core';
 import { EventManager } from '@angular/platform-browser';
+
 @Component({
   selector: 'fc-imgview',
   templateUrl: './fcimgview.component.html',

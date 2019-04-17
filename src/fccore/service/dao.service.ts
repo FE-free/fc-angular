@@ -1,5 +1,14 @@
+/*
+ * @Author: luohong
+ * @LastEditors: luohong
+ * @Description: 前后端通道
+ * @email: luo.hong@neusoft.com
+ * @Date: 2019-04-16 15:57:43
+ * @LastEditTime: 2019-04-17 11:43:25
+ */
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.dev';
 import { CacheService } from './cache.service';

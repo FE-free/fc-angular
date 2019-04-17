@@ -1,5 +1,14 @@
+/*
+ * @Author: luohong
+ * @LastEditors: luohong
+ * @Description: 首页
+ * @email: luo.hong@neusoft.com
+ * @Date: 2019-04-16 15:57:43
+ * @LastEditTime: 2019-04-17 12:35:33
+ */
 import { Component, OnInit, AfterViewInit } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
+
 import * as G2 from '@antv/g2'
 @Component({
   selector: 'home',

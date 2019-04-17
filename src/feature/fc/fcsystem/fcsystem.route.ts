@@ -1,10 +1,17 @@
-import { Routes } from '@angular/router'
-import { SysmessagedetailComponent } from './components/sysmessage/sysmessagedetail.component'
-import { SysuserComponent } from './components/sysuser/sysuser.component'
-import { SysmenuComponent } from './components/sysmenu/sysmenu.component'
-import { SysroleComponent } from './components/sysrole/sysrole.component'
-import { SyslogComponent } from './components/syslog/syslog.component'
-import { HomeComponent } from './components/home/home.component';
+/*
+ * @Author: luohong
+ * @LastEditors: luohong
+ * @Description: 系统模块的路由
+ * @email: luo.hong@neusoft.com
+ * @Date: 2019-04-12 16:39:30
+ * @LastEditTime: 2019-04-17 12:32:29
+ */
+import { Routes } from '@angular/router';
+import { SyslogComponent } from './components/syslog/syslog.component';
+import { SysmenuComponent } from './components/sysmenu/sysmenu.component';
+import { SysmessagedetailComponent } from './components/sysmessage/sysmessagedetail.component';
+import { SysroleComponent } from './components/sysrole/sysrole.component';
+import { SysuserComponent } from './components/sysuser/sysuser.component';
 
 export const Routers: Routes = [
   {

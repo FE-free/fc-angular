@@ -1,9 +1,17 @@
+/*
+ * @Author: luohong
+ * @LastEditors: luohong
+ * @Description: 整体布局包括顶部工具栏、左侧菜单、侧边栏、选项卡导航主体内容区
+ * @email: luo.hong@neusoft.com
+ * @Date: 2019-04-16 15:57:43
+ * @LastEditTime: 2019-04-17 10:09:07
+ */
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LayoutService } from 'src/app/service/layout.service';
-import { ShareService } from 'src/app/service/share.service';
-import { environment } from '../../../environments/environment.dev';
+import { ShareService } from 'src/app/share.service';
 import { CommonService } from 'src/fccore/service/common.service';
+import { environment } from '../../../environments/environment.dev';
 @Component({
   selector: 'layout',
   templateUrl: './layout.component.html',
@@ -113,7 +121,11 @@ import { CommonService } from 'src/fccore/service/common.service';
       ::ng-deep .sidebar-menu .ant-menu-inline-collapsed > .ant-menu-submenu {
         text-align: center;
       }
-      ::ng-deep .sidebar-menu .ant-menu-inline-collapsed > .ant-menu-submenu > .ant-menu-submenu-title {
+      ::ng-deep
+        .sidebar-menu
+        .ant-menu-inline-collapsed
+        > .ant-menu-submenu
+        > .ant-menu-submenu-title {
         padding: 0 !important;
       }
       ::ng-deep .sidebar-menu .menu-icon {
@@ -156,9 +168,9 @@ import { CommonService } from 'src/fccore/service/common.service';
   ]
 })
 export class LayoutComponent implements OnInit {
-  //是否被选中
+  // 是否被选中
   _navmenuSelected: boolean
-  //路由打开记录
+  // 路由打开记录
   selectMenu = {}
   // 当前所有菜单
   _menus: any = []
@@ -193,13 +205,15 @@ export class LayoutComponent implements OnInit {
     // 点击左侧导航
     CommonService.subscribe('selectedMenu', (event: any) => {
       if (event) {
-        let selectMenu_1 = event.param
-        let tabOne = this.fcTabs.filter(tab => tab.content.MENUID === selectMenu_1.MENUID)
+        const selectMenu_1 = event.param
+        const tabOne = this.fcTabs.filter(
+          tab => tab.content.MENUID === selectMenu_1.MENUID
+        )
         if (tabOne.length > 0) {
           this.fcSelectedIndex = tabOne[0].index
           this.selectedTabMenu(tabOne[0])
         } else {
-          let tab = {
+          const tab = {
             id: selectMenu_1.ID,
             index: this.fcTabs.length,
             enabled: false,
@@ -231,8 +245,8 @@ export class LayoutComponent implements OnInit {
         this._menus = element.P_CHILDMENUS
         this.shareService.switchProjectSubject.next({
           eventName: 'switchProjectSubject',
-          param: { PID:element.PID }
-        });
+          param: { PID: element.PID }
+        })
       }
     })
     // 默认选择某个菜单
@@ -245,20 +259,27 @@ export class LayoutComponent implements OnInit {
       MENUNAME: '首页',
       MENUICON: 'fc-icon-shouye'
     })
-    //导航选项卡
+    // 导航选项卡
     if (this.fcTabs) {
       this.fcTabs = []
       this.fcSelectedIndex = 0
       if (this.fcTabs.length === 0) {
         this.fcTabs.push({
           id: '0',
+
           index: 0,
           enabled: true,
           name: '首页',
           close: false,
           icon: 'fc-icon-shouye',
           refresh: 'N',
-          content: { ID: '0', MENUID: 'HOME', ROUTER: 'home', PID: environment.pid, MENUTYPE: 'INURL' }
+          content: {
+            ID: '0',
+            MENUID: 'HOME',
+            ROUTER: 'home',
+            PID: environment.pid,
+            MENUTYPE: 'INURL'
+          }
         })
       }
     }
@@ -274,17 +295,10 @@ export class LayoutComponent implements OnInit {
       if (element.PID === menu.PID) {
         this._menus = element.P_CHILDMENUS
         this.projectName = element.MENUNAME
-        this.shareService.switchProjectSubject.next({
-          eventName: 'switchProjectSubject',
-          param: { PID:menu.PID }
-        });
-    
       }
     })
   }
-  /**
-   * 切换布局
-   */
+
   toggleLayout() {
     this.menuWidth = this.menuWidth === 64 ? 200 : 64
     this.menuIsCollapsed = this.menuIsCollapsed === true ? false : true
@@ -304,17 +318,21 @@ export class LayoutComponent implements OnInit {
   /**
    * 点击侧边栏外的区域关闭
    */
-  @HostListener('document:click', ['$event']) _onOutsideClick(event: any): void {
+  @HostListener('document:click', ['$event']) _onOutsideClick(
+    event: any
+  ): void {
     if (this.navsideVisible) {
-      let clickedEl = event.target
-      let classList = clickedEl.classList
-      /**点击的区域不包括此组件本身且不包含顶部工具栏的消息按钮*/
-      if (!!classList.contains('ant-drawer') && !classList.contains('fc-icon-information')) {
+      const clickedEl = event.target
+      const classList = clickedEl.classList
+      // 点击的区域不包括此组件本身且不包含顶部工具栏的消息按钮
+      if (
+        !!classList.contains('ant-drawer') &&
+        !classList.contains('fc-icon-information')
+      ) {
         this.navsideVisible = false
       }
     }
   }
-  /**
   /**
    * 选中菜单
    * @param menu
@@ -340,10 +358,16 @@ export class LayoutComponent implements OnInit {
       })
       if (this.fcTabs.length > 0) {
         if (this.fcSelectedIndex && tab.index === this.fcSelectedIndex) {
-          CommonService.event('selectedMenu', this.fcTabs[this.fcSelectedIndex - 1].content)
+          CommonService.event(
+            'selectedMenu',
+            this.fcTabs[this.fcSelectedIndex - 1].content
+          )
         } else if (this.fcSelectedIndex && tab.index > this.fcSelectedIndex) {
           this.fcSelectedIndex = tab.index
-          CommonService.event('selectedMenu', this.fcTabs[this.fcSelectedIndex].content)
+          CommonService.event(
+            'selectedMenu',
+            this.fcTabs[this.fcSelectedIndex].content
+          )
         }
       }
     }

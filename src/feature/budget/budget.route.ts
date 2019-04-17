@@ -1,4 +1,13 @@
+/*
+ * @Author: luohong
+ * @LastEditors: luohong
+ * @Description: 预算项目的路由
+ * @email: luo.hong@neusoft.com
+ * @Date: 2019-04-16 15:57:43
+ * @LastEditTime: 2019-04-17 12:25:49
+ */
 import { Routes } from '@angular/router'
+
 import { HomeComponent } from './home/home.component'
 export const Routers: Routes = [
   {

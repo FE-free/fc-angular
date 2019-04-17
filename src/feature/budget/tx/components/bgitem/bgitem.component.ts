@@ -1,5 +1,14 @@
+/*
+ * @Author: luohong
+ * @LastEditors: luohong
+ * @Description: 预算项目
+ * @email: luo.hong@neusoft.com
+ * @Date: 2019-04-16 15:57:43
+ * @LastEditTime: 2019-04-17 12:24:21
+ */
 import { Component, ViewChild } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
+
 import { NzFormatEmitEvent, NzTreeNodeOptions, NzTreeComponent } from 'ng-zorro-antd'
 @Component({
   selector: 'bgitem',
