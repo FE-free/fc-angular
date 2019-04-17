@@ -4,7 +4,7 @@
  * @Description: 平台核心模块
  * @email: luo.hong@neusoft.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-04-17 11:44:23
+ * @LastEditTime: 2019-04-17 14:49:10
  */
 import { registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';

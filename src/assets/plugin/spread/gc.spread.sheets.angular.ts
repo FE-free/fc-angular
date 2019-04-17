@@ -1,6 +1,9 @@
 import * as GC from '@grapecity/spread-sheets';
-import { Component, Input, OnChanges, SimpleChanges, AfterViewInit, QueryList, ContentChildren, OnDestroy, Output, EventEmitter, ElementRef, Inject, NgModule } from '@angular/core'; 
-import { CommonModule } from '@angular/common'; 
+import {
+    Component, Input, OnChanges, SimpleChanges,
+    AfterViewInit, QueryList, ContentChildren, OnDestroy, Output, EventEmitter, ElementRef, Inject, NgModule
+} from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'gc-column',
@@ -13,7 +16,7 @@ export class ColumnComponent implements OnChanges {
     private sheet: GC.Spread.Sheets.Worksheet;
     private index: number;
 
-    //indicate all inputs
+    // indicate all inputs
     @Input() width: number;
     @Input() dataField: string;
     @Input() headerText: string;
@@ -97,7 +100,7 @@ export class WorksheetComponent implements OnChanges, AfterViewInit {
     @ContentChildren(ColumnComponent)
     columns: QueryList<ColumnComponent>;
 
-    //indicate all inputs
+    // indicate all inputs
     @Input() rowCount: number;
     @Input() colCount: number;
     @Input() dataSource: any;
@@ -301,7 +304,7 @@ export class SpreadSheetsComponent implements OnChanges, AfterViewInit, OnDestro
     @Input() showDragFillTip: boolean;
 
 
-    //outputs events
+    // outputs events
     @Output() workbookInitialized = new EventEmitter<any>();
     @Output() validationError = new EventEmitter<any>();
     @Output() cellClick = new EventEmitter<any>();
@@ -432,7 +435,8 @@ export class SpreadSheetsComponent implements OnChanges, AfterViewInit, OnDestro
             'RowChanged', 'ActiveSheetChanging', 'ActiveSheetChanged',
             'SparklineChanged',
             'RangeChanged', 'ButtonClicked', 'EditorStatusChanged',
-            'FloatingObjectChanged', 'FloatingObjectSelectionChanged', 'PictureChanged', 'FloatingObjectRemoving', 'FloatingObjectRemoved', 'PictureSelectionChanged',
+            'FloatingObjectChanged', 'FloatingObjectSelectionChanged', 'PictureChanged', 'FloatingObjectRemoving',
+            'FloatingObjectRemoved', 'PictureSelectionChanged',
             'FloatingObjectLoaded', 'TouchToolStripOpening', 'CommentChanged', 'CommentRemoving', 'CommentRemoved', 'SlicerChanged'];
         events.forEach((event) => {
             spread.bind(event + customEventNameSpace, (event: any, data: any) => {

@@ -4,7 +4,7 @@
  * @Description: 整体布局包括顶部工具栏、左侧菜单、侧边栏、选项卡导航主体内容区
  * @email: luo.hong@neusoft.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-04-17 10:09:07
+ * @LastEditTime: 2019-04-17 17:31:43
  */
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -172,6 +172,8 @@ export class LayoutComponent implements OnInit {
   _navmenuSelected: boolean
   // 路由打开记录
   selectMenu = {}
+  // 选中的
+  selectMenu_1: any;
   // 当前所有菜单
   _menus: any = []
   // 所有的菜单
@@ -205,23 +207,23 @@ export class LayoutComponent implements OnInit {
     // 点击左侧导航
     CommonService.subscribe('selectedMenu', (event: any) => {
       if (event) {
-        const selectMenu_1 = event.param
+        this.selectMenu_1 = event.param
         const tabOne = this.fcTabs.filter(
-          tab => tab.content.MENUID === selectMenu_1.MENUID
+          tab => tab.content.MENUID === this.selectMenu_1.MENUID
         )
         if (tabOne.length > 0) {
           this.fcSelectedIndex = tabOne[0].index
           this.selectedTabMenu(tabOne[0])
         } else {
           const tab = {
-            id: selectMenu_1.ID,
+            id: this.selectMenu_1.ID,
             index: this.fcTabs.length,
             enabled: false,
-            name: selectMenu_1.MENUNAME,
+            name: this.selectMenu_1.MENUNAME,
             close: true,
-            icon: selectMenu_1.MENUICON,
-            content: selectMenu_1,
-            refresh: 'N'
+            icon: this.selectMenu_1.MENUICON,
+            content: this.selectMenu_1,
+            refresh: 'Y'
           }
           if (this.fcTabs.length === 0) {
             tab.enabled = true
@@ -240,15 +242,7 @@ export class LayoutComponent implements OnInit {
   ngOnInit() {
     // 所有的菜单
     this.allMenus = this.mainService.getMenus().P_MENUS
-    this.allMenus.forEach(element => {
-      if (element.PID === environment.pid) {
-        this._menus = element.P_CHILDMENUS
-        this.shareService.switchProjectSubject.next({
-          eventName: 'switchProjectSubject',
-          param: { PID: element.PID }
-        })
-      }
-    })
+    this._menus = this.allMenus[0].P_CHILDMENUS
     // 默认选择某个菜单
     CommonService.event('selectedMenu', {
       ID: '0',
@@ -341,33 +335,44 @@ export class LayoutComponent implements OnInit {
     menu.select = true
     CommonService.event('selectedMenu', menu)
   }
+  /**
+   * @description: 选中选项卡导航
+   * @param {type}
+   * @return:
+   */
   selectedTabMenu(tabMenu: any) {
+    let refresh = 'Y';
+    if (!this.selectMenu[tabMenu.content.MENUID]) {
+      // 将该路由存放在路由打开记录中
+      this.selectMenu[tabMenu.content.MENUID] = tabMenu.content.MENUID;
+      refresh = 'Y'
+    } else {
+      refresh = 'N'
+    }
     CommonService.event('tabClicked', tabMenu)
-    this.mainService.navMenu(this.router, tabMenu.content, tabMenu.refresh)
+    this.mainService.navMenu(this.router, tabMenu.content, refresh)
   }
   /**
    * 关闭选项卡导航
    * @param tab
    */
   closeTabNav(tab: any): void {
+    this.selectMenu[tab.content.MENUID] = "";
     if (tab.close) {
-      this.fcTabs.splice(this.fcTabs.indexOf(tab), 1)
-      let i = 0
+      this.fcTabs.splice(this.fcTabs.indexOf(tab), 1);
+      let i = 0;
       this.fcTabs.forEach(item => {
-        item.index = i++
+        item.index = i++;
       })
       if (this.fcTabs.length > 0) {
         if (this.fcSelectedIndex && tab.index === this.fcSelectedIndex) {
-          CommonService.event(
-            'selectedMenu',
-            this.fcTabs[this.fcSelectedIndex - 1].content
-          )
+          CommonService.event('selectedMenu', this.fcTabs[this.fcSelectedIndex - 1].content);
         } else if (this.fcSelectedIndex && tab.index > this.fcSelectedIndex) {
-          this.fcSelectedIndex = tab.index
-          CommonService.event(
-            'selectedMenu',
-            this.fcTabs[this.fcSelectedIndex].content
-          )
+          this.fcSelectedIndex = tab.index - 1;
+          CommonService.event('selectedMenu', this.fcTabs[this.fcSelectedIndex].content);
+        } else {
+          this.fcSelectedIndex = tab.index + 1;
+          CommonService.event('selectedMenu', this.fcTabs[this.fcSelectedIndex].content);
         }
       }
     }

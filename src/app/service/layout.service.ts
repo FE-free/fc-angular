@@ -4,7 +4,7 @@
  * @Description: layout业务
  * @email: luo.hong@neusoft.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-04-17 09:54:11
+ * @LastEditTime: 2019-04-17 14:06:29
  */
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
@@ -17,7 +17,7 @@ import { environment } from 'src/environments/environment.dev';
 })
 export class LayoutService {
   // 项目名称
-  pid = environment.pid
+  pid = environment.pid.toLocaleLowerCase()
   constructor(
     private Router: Router,
     private messageService: NzMessageService,

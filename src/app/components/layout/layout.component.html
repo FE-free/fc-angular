@@ -4,7 +4,7 @@
  * @Description: 整体布局，包括顶部工具栏、左侧导航、侧边栏、选项卡导航、内容区
  * @email: luo.hong@neusoft.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-04-17 09:56:29
+ * @LastEditTime: 2019-04-17 17:20:52
  -->
 <nz-layout class="layout">
   <!-- 顶部工具栏 -->
@@ -30,7 +30,7 @@
         [nzInlineCollapsed]="menuIsCollapsed">
         <ng-container *ngFor="let menu of _menus">
           <!-- 一级菜单，没有下级 -->
-          <li nz-menu-item *ngIf="menu.HASCHILD==='N'" (click)="selectedMenu(menu)">
+          <li nz-menu-item *ngIf="menu.HASCHILD==='N'" (click)="selectedMenu(menu)" >
             <span title>
               <i class="icon iconfont menu-icon" [ngClass]="menu.MENUICON"></i>
               <span class="first-level-title">{{menu.MENUNAME}}</span>
@@ -45,7 +45,7 @@
             <ul>
               <ng-container *ngFor="let childMenu of menu.P_CHILDMENUS">
                 <!-- 二级菜单，没有下级 -->
-                <li nz-menu-item *ngIf="childMenu.HASCHILD==='N'" (click)="selectedMenu(childMenu);">
+                <li nz-menu-item  *ngIf="childMenu.HASCHILD==='N'" (click)="selectedMenu(childMenu);">
                   <span title>
                     <span>{{childMenu.MENUNAME}}</span>
                   </span>
