@@ -4,7 +4,7 @@
  * @Description: 预算项目
  * @email: luo.hong@neusoft.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-04-17 16:39:56
+ * @LastEditTime: 2019-04-17 18:49:33
  -->
 <div class="page">
   <!-- 工具栏 -->
@@ -16,16 +16,62 @@
     <div class="page-body-content" nz-row nzGutter="10">
       <!-- 左侧树 -->
       <div nz-col class="fc-left" nzSpan="6">
-        <nz-tree #nzTreeComponent [nzData]="treeNodes" nzCheckable [nzCheckedKeys]="defaultCheckedKeys"
-          [nzExpandedKeys]="defaultExpandedKeys" [nzSelectedKeys]="defaultSelectedKeys" (nzClick)="treeClick($event)"
-          (nzCheckBoxChange)="treeCheck($event)" (nzExpandChange)="treeCheck($event)">
-        </nz-tree>
+        <div class="fc-left-head">
+          <div nz-row [nzGutter]="8">
+            <div nz-col class="label" nzSpan="6">
+              一级分类
+            </div>
+            <div nz-col nzSpan="18">
+              <nz-select style="width: 100%;" [(ngModel)]="firstClass" nzAllowClear nzPlaceHolder="请选择一级分类">
+                <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+                <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+                <nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>
+              </nz-select>
+            </div>
+          </div>
+          <div nz-row [nzGutter]="8" style="margin-top: 5px;">
+            <div nz-col class="label" nzSpan="6">
+              二级分类
+            </div>
+            <div nz-col nzSpan="18">
+              <nz-select style="width: 100%;" [(ngModel)]="firstClass" nzAllowClear nzPlaceHolder="请选择一级分类">
+                <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+                <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+                <nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>
+              </nz-select>
+            </div>
+          </div>
+        </div>
+        <div class="fc-left-content">
+          <nz-tree #nzTreeComponent [nzData]="treeNodes" nzCheckable [nzCheckedKeys]="defaultCheckedKeys"
+            [nzExpandedKeys]="defaultExpandedKeys" [nzSelectedKeys]="defaultSelectedKeys" (nzClick)="treeClick($event)"
+            (nzCheckBoxChange)="treeCheck($event)" (nzExpandChange)="treeCheck($event)">
+          </nz-tree>
+        </div>
       </div>
       <!-- 右侧 -->
       <div nz-col class="fc-right" nzSpan="18">
+        <div class="fc-searchbar">
+          <div nz-row [nzGutter]="8">
+            <div nz-col class="label" nzSpan="6">
+              项目名称
+            </div>
+            <div nz-col nzSpan="18">
+              <input nz-input placeholder="请输入项目名称" [(ngModel)]="itemName" />
+            </div>
+          </div>
+          <div nz-row [nzGutter]="8" style="margin-top: 5px;">
+            <div nz-col class="label" nzSpan="6">
+              查询
+            </div>
+            <div nz-col nzSpan="18">
+              <input nz-input placeholder="请输入拼音码" [(ngModel)]="pinyinCode" />
+            </div>
+          </div>
+        </div>
         <nz-tabset [nzSelectedIndex]="fcSelectedIndex" nzSize="small">
           <!-- 第一个选项卡 -->
-          <nz-tab nzTitle="选项卡1" [nzDisabled]="fcSelectedIndex===0">
+          <nz-tab nzTitle="项目列表" [nzDisabled]="fcSelectedIndex===0">
             <div>
               <nz-table #basicTable [nzData]="pageList" [nzBordered]="true" nzSize="small">
                 <thead>
@@ -37,14 +83,14 @@
                 <tbody>
                   <tr *ngFor="let data of basicTable.data;index as i">
                     <td>{{ i+1 }}</td>
-                    <td>{{ data }}</td>
+                    <td>{{ data?.SITEM_NAME }}</td>
                   </tr>
                 </tbody>
               </nz-table>
             </div>
           </nz-tab>
           <!-- 第二个选项卡 -->
-          <nz-tab nzTitle="选项卡2" [nzDisabled]="fcSelectedIndex===1">
+          <nz-tab nzTitle="项目详细" [nzDisabled]="fcSelectedIndex===1">
             <div>
               <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm($event, validateForm.value)">
                 <div nz-row [nzGutter]="24">
@@ -135,7 +181,7 @@
             </div>
           </nz-tab>
           <!-- 第三个选项卡 -->
-          <nz-tab nzTitle="选项卡3" [nzDisabled]="fcSelectedIndex===2">
+          <nz-tab nzTitle="项目公式" [nzDisabled]="fcSelectedIndex===2">
             <div>
               x
             </div>

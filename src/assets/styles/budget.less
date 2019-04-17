@@ -4,7 +4,7 @@
  * @Description: 全面预算项目的样式
  * @email: luo.hong@neusoft.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-04-17 15:20:20
+ * @LastEditTime: 2019-04-17 18:50:22
  */
 html,
 body {
@@ -51,15 +51,47 @@ body {
   height: 60px;
   line-height: 60px;
   text-align: center;
+
   & button {
     margin-right: 20px;
   }
 }
+// 左侧
 .page .fc-left {
   border: 1px solid #eeeeee;
   border-radius: 4px;
 }
+
 .page .fc-left,
 .page .fc-right {
   height: 100%;
+}
+.page .fc-left .fc-left-head {
+  padding: 5px;
+}
+.page .fc-left .fc-left-head .label,.page .fc-searchbar .label{
+  height: 32px;
+  line-height: 32px;
+  text-align: right;
+}
+
+// 表格
+:host ::ng-deep .ant-table-small>.ant-table-content>.ant-table-body {
+  margin: 0;
+}
+
+:host ::ng-deep .ant-table-small .ant-table-thead>tr {
+  background-color: #e6f7ff;
+}
+
+::ng-deep .ant-table-small>.ant-table-content>.ant-table-body {
+  margin: 0;
+}
+
+::ng-deep .ant-table-small .ant-table-thead>tr {
+  background-color: #e6f7ff;
+}
+// 查询工具栏
+.fc-searchbar {
+
 }

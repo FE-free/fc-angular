@@ -4,7 +4,7 @@
  * @Description: 预算项目
  * @email: luo.hong@neusoft.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-04-17 16:41:20
+ * @LastEditTime: 2019-04-17 18:48:35
  */
 import { Component, OnInit, ViewChild, AfterContentInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
@@ -17,7 +17,20 @@ import { DaoService } from 'src/fccore/service/dao.service';
 @Component({
   selector: 'bgitem',
   templateUrl: './bgitem.component.html',
-  styles: [``]
+  styles: [`
+  :host ::ng-deep .ant-table-small>.ant-table-content>.ant-table-body {
+    margin: 0;
+  }
+  :host ::ng-deep .ant-table-small .ant-table-thead>tr {
+    background-color: #e6f7ff;
+  }
+  ::ng-deep .ant-table-small>.ant-table-content>.ant-table-body {
+    margin: 0;
+  }
+  ::ng-deep .ant-table-small .ant-table-thead>tr {
+    background-color: #e6f7ff;
+  }
+  `]
 })
 export class BgitemComponent extends ParentComponent implements OnInit,AfterContentInit {
 
@@ -56,7 +69,14 @@ export class BgitemComponent extends ParentComponent implements OnInit,AfterCont
     }
   ]
   validateForm: FormGroup;
+  // 选中索引
   fcSelectedIndex=0
+  // 一级分类
+  firstClass:any;
+  // 项目名称
+  itemName:string;
+  // 拼音码
+  pinyinCode:string;
   constructor(public router: Router, public activedRoute: ActivatedRoute,private daoService: DaoService, private fb: FormBuilder) {
     super()
     this.validateForm = this.fb.group({
@@ -70,6 +90,7 @@ export class BgitemComponent extends ParentComponent implements OnInit,AfterCont
   ngOnInit(): void {
   }
   ngAfterContentInit(): void {
+    this.pageList = []
     this.daoService.postFromApi('BUDGET/BGITEMNEW/LISTINFO', {}).subscribe(result => {
       if (result.CODE === '0') {
         this.pageList = result.DATA
