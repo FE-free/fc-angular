@@ -4,7 +4,7 @@
  * @Description: 整体布局包括顶部工具栏、左侧菜单、侧边栏、选项卡导航主体内容区
  * @email: luo.hong@neusoft.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-04-17 17:31:43
+ * @LastEditTime: 2019-04-18 11:32:34
  */
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -342,14 +342,12 @@ export class LayoutComponent implements OnInit {
    */
   selectedTabMenu(tabMenu: any) {
     let refresh = 'Y';
+    // 判断路由是否打开过，如果已打开不刷新，反之，刷新
+    refresh = (this.selectMenu[tabMenu.content.MENUID] && this.selectMenu[tabMenu.content.MENUID] !== '') ? 'N' : "Y";
     if (!this.selectMenu[tabMenu.content.MENUID]) {
       // 将该路由存放在路由打开记录中
       this.selectMenu[tabMenu.content.MENUID] = tabMenu.content.MENUID;
-      refresh = 'Y'
-    } else {
-      refresh = 'N'
     }
-    CommonService.event('tabClicked', tabMenu)
     this.mainService.navMenu(this.router, tabMenu.content, refresh)
   }
   /**
@@ -365,14 +363,12 @@ export class LayoutComponent implements OnInit {
         item.index = i++;
       })
       if (this.fcTabs.length > 0) {
-        if (this.fcSelectedIndex && tab.index === this.fcSelectedIndex) {
-          CommonService.event('selectedMenu', this.fcTabs[this.fcSelectedIndex - 1].content);
-        } else if (this.fcSelectedIndex && tab.index > this.fcSelectedIndex) {
+        if (this.fcSelectedIndex && tab.index > this.fcSelectedIndex || tab.index === this.fcSelectedIndex) {
           this.fcSelectedIndex = tab.index - 1;
-          CommonService.event('selectedMenu', this.fcTabs[this.fcSelectedIndex].content);
+          CommonService.event('selectedMenu', this.fcTabs[this.fcSelectedIndex]['content']);
         } else {
-          this.fcSelectedIndex = tab.index + 1;
-          CommonService.event('selectedMenu', this.fcTabs[this.fcSelectedIndex].content);
+          this.fcSelectedIndex = tab.index;
+          CommonService.event('selectedMenu', this.fcTabs[this.fcSelectedIndex]['content']);
         }
       }
     }

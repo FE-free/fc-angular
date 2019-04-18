@@ -4,7 +4,7 @@
  * @Description: 预算项目
  * @email: luo.hong@neusoft.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-04-17 18:48:35
+ * @LastEditTime: 2019-04-18 09:59:01
  */
 import { Component, OnInit, ViewChild, AfterContentInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
@@ -18,18 +18,6 @@ import { DaoService } from 'src/fccore/service/dao.service';
   selector: 'bgitem',
   templateUrl: './bgitem.component.html',
   styles: [`
-  :host ::ng-deep .ant-table-small>.ant-table-content>.ant-table-body {
-    margin: 0;
-  }
-  :host ::ng-deep .ant-table-small .ant-table-thead>tr {
-    background-color: #e6f7ff;
-  }
-  ::ng-deep .ant-table-small>.ant-table-content>.ant-table-body {
-    margin: 0;
-  }
-  ::ng-deep .ant-table-small .ant-table-thead>tr {
-    background-color: #e6f7ff;
-  }
   `]
 })
 export class BgitemComponent extends ParentComponent implements OnInit,AfterContentInit {

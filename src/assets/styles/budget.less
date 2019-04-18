@@ -4,7 +4,7 @@
  * @Description: 全面预算项目的样式
  * @email: luo.hong@neusoft.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-04-17 18:50:22
+ * @LastEditTime: 2019-04-18 09:58:34
  */
 html,
 body {
@@ -76,22 +76,22 @@ body {
 }
 
 // 表格
-:host ::ng-deep .ant-table-small>.ant-table-content>.ant-table-body {
-  margin: 0;
-}
-
-:host ::ng-deep .ant-table-small .ant-table-thead>tr {
-  background-color: #e6f7ff;
-}
-
-::ng-deep .ant-table-small>.ant-table-content>.ant-table-body {
-  margin: 0;
-}
-
-::ng-deep .ant-table-small .ant-table-thead>tr {
-  background-color: #e6f7ff;
+:global {
+  .ant-table-small>.ant-table-content>.ant-table-body {
+    margin: 0;
+  }
+  .ant-table-small .ant-table-thead>tr {
+    background-color: #e6f7ff;
+  }
 }
 // 查询工具栏
 .fc-searchbar {
-
+  padding-top:5px;
+  padding-bottom: 5px; 
+}
+.fc-searchbar button{
+  margin-right: 20px;
+}
+:global .tab-wrap .ant-tabs-bar {
+  margin-bottom: 0;
 }

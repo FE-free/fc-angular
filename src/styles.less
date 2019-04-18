@@ -3,10 +3,6 @@
 @import './assets/fonts/ali_iconfont/iconfont.css';
 // spread
 @import "../node_modules/@grapecity/spread-sheets/styles/gc.spread.sheets.css";
-// 重置样式
-@import './assets/styles/basic/resets.less';
-// 全面预算的样式
-@import './assets/styles/budget.less';
 // The prefix to use on all css classes from ant.
 @ant-prefix : ant;
 
@@ -550,3 +546,8 @@
 @list-item-meta-title-margin-bottom: @padding-sm;
 
 /* You can add global styles to this file, and also import other style files */
+// 覆盖antdesign的样式
+// 重置样式
+@import './assets/styles/basic/resets.less';
+// 全面预算的样式
+@import './assets/styles/budget.less';
