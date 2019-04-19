@@ -4,7 +4,7 @@
  * @Description: 上线环境的环境配置,上线环境需要过aot打包，命令ng build --aot
  * @email: luo.hong@neusoft.com
  * @Date: 2019-04-12 16:39:30
- * @LastEditTime: 2019-04-17 10:44:11
+ * @LastEditTime: 2019-04-19 17:43:17
  */
 
 // The file contents for the current environment will overwrite these during build.
@@ -13,7 +13,7 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 // 开发环境
 export const environment = {
-  production: false,
+  production: true,
   pid: "BUDGET",
   projectName: "全面预算管理系统",
   systemurl: "/server/",

@@ -4,7 +4,7 @@
  * @Description: 根模块的路由，本项目的路由使用懒加载模式，参考网址：https://angular.cn/guide/lazy-loading-ngmodules
  * @email: luo.hong@neusoft.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-04-17 14:03:03
+ * @LastEditTime: 2019-04-19 17:45:29
  */
 import { Routes } from '@angular/router'
 
@@ -18,6 +18,7 @@ import { SignupComponent } from './components/signup/signup.component'
 import { UserService } from 'src/fccore/service/user.service';
 import { environment } from 'src/environments/environment.dev';
 const pid = environment.pid.toLocaleLowerCase()
+const SignIn: string='signin';
 export const AppRoutes: Routes = [
   {
     path: '',
@@ -33,13 +34,13 @@ export const AppRoutes: Routes = [
         component: BuildingComponent
       },
       {
-        path: pid, // 项目的业务模块
+        path: 'budget', // 项目的业务模块
         loadChildren: '../feature/budget/budget.module#BudgetModule'
       }
     ]
   },
   {
-    path: 'signin', // 登录
+    path: SignIn, // 登录
     component: SigninComponent
   },
   {
