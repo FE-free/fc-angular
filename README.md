@@ -2,8 +2,14 @@
 
 fc-angular 是基于 angular、antdesign 的后台管理系统.
 
-- [【源码】](https://github.com/luohong123/angular-yt)
+
+- [【源码】](https://github.com/luohong123/fc-angular)
 - [【demo 在线预览】](https://luohong123.github.io/fc-angular/demo/index.html)
+> 预览效果图
+- 首页
+![首页](./media/1.png)
+- 路由复用策略，切换路由保留用户操作状态
+![选项卡切换](./media/2.png)
 
 ## 克隆项目
 

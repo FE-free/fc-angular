@@ -4,7 +4,7 @@
  * @Description: 预算体系模块
  * @email: luo.hong@neusoft.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-04-19 10:17:58
+ * @LastEditTime: 2019-04-19 17:49:57
  */
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -19,7 +19,7 @@ import { Routers } from './tx.route';
     RouterModule.forChild(Routers)
   ],
   declarations: [
-    BgitemComponent // 组件-预算项目
+    BgitemComponent, // 组件-预算项目
   ],
   providers: [
     BgitemBusiness // 业务-预算项目
