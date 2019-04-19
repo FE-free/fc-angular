@@ -4,7 +4,7 @@
  * @Description: 整体布局包括顶部工具栏、左侧菜单、侧边栏、选项卡导航主体内容区
  * @email: luo.hong@neusoft.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-04-18 11:32:34
+ * @LastEditTime: 2019-04-19 15:40:02
  */
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -132,6 +132,9 @@ import { environment } from '../../../environments/environment.dev';
         color: #333333;
         margin-right: 10px;
       }
+      ::ng-deep .sidebar-menu .ant-menu-inline-collapsed .menu-icon {
+        margin-right: 0px;
+      }
       ::ng-deep .ant-menu-popup::before {
         opacity: 1;
         background-color: red;
@@ -230,7 +233,7 @@ export class LayoutComponent implements OnInit {
             tab.close = false
           }
           this.fcTabs.push(tab)
-          this.fcSelectedIndex = this.fcTabs.length - 1
+          this.fcSelectedIndex = tab.index
           this.selectedTabMenu(tab)
         }
       }
@@ -347,6 +350,8 @@ export class LayoutComponent implements OnInit {
     if (!this.selectMenu[tabMenu.content.MENUID]) {
       // 将该路由存放在路由打开记录中
       this.selectMenu[tabMenu.content.MENUID] = tabMenu.content.MENUID;
+    } else {
+      refresh = 'N'
     }
     this.mainService.navMenu(this.router, tabMenu.content, refresh)
   }
@@ -363,12 +368,11 @@ export class LayoutComponent implements OnInit {
         item.index = i++;
       })
       if (this.fcTabs.length > 0) {
-        if (this.fcSelectedIndex && tab.index > this.fcSelectedIndex || tab.index === this.fcSelectedIndex) {
-          this.fcSelectedIndex = tab.index - 1;
+        // 如果关闭的选项卡索引 等于 激活的选项卡, 关闭选项卡后，打开选中索引前一个
+        if (this.fcSelectedIndex && tab.index > this.fcSelectedIndex) {
           CommonService.event('selectedMenu', this.fcTabs[this.fcSelectedIndex]['content']);
         } else {
-          this.fcSelectedIndex = tab.index;
-          CommonService.event('selectedMenu', this.fcTabs[this.fcSelectedIndex]['content']);
+          CommonService.event('selectedMenu', this.fcTabs[this.fcSelectedIndex - 1]['content']);
         }
       }
     }

@@ -4,7 +4,7 @@
  * @Description: 预算项目
  * @email: luo.hong@neusoft.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-04-18 09:54:56
+ * @LastEditTime: 2019-04-18 14:01:46
  -->
 <div class="page">
   <!-- 工具栏 -->
@@ -53,7 +53,7 @@
       <div nz-col class="fc-right" nzSpan="18">
         <nz-tabset [nzSelectedIndex]="fcSelectedIndex" nzSize="small" class="tab-wrap">
           <!-- 第一个选项卡 -->
-          <nz-tab nzTitle="项目列表" [nzDisabled]="fcSelectedIndex===0">
+          <nz-tab nzTitle="项目列表" [nzDisabled]="false">
             <div>
               <!-- 查询工具栏 -->
               <div class="fc-searchbar">
@@ -97,7 +97,7 @@
             </div>
           </nz-tab>
           <!-- 第二个选项卡 -->
-          <nz-tab nzTitle="项目详细" [nzDisabled]="fcSelectedIndex===1">
+          <nz-tab nzTitle="项目详细" [nzDisabled]="false">
             <div>
               <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm($event, validateForm.value)">
                 <div nz-row [nzGutter]="24">
@@ -188,7 +188,7 @@
             </div>
           </nz-tab>
           <!-- 第三个选项卡 -->
-          <nz-tab nzTitle="项目公式" [nzDisabled]="fcSelectedIndex===2">
+          <nz-tab nzTitle="项目公式" [nzDisabled]="false">
             <div>
               x
             </div>

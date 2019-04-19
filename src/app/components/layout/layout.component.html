@@ -4,7 +4,7 @@
  * @Description: 整体布局，包括顶部工具栏、左侧导航、侧边栏、选项卡导航、内容区
  * @email: luo.hong@neusoft.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-04-17 17:20:52
+ * @LastEditTime: 2019-04-19 15:18:51
  -->
 <nz-layout class="layout">
   <!-- 顶部工具栏 -->
@@ -94,7 +94,7 @@
     </nz-sider>
     <nz-layout>
       <!-- 选项卡导航 -->
-      <nz-tabset class="fc-tabnav" [nzType]="'line'" [nzSize]="'small'" [nzSelectedIndex]="fcSelectedIndex">
+      <nz-tabset class="fc-tabnav" [nzType]="'line'" [nzSize]="'small'" [(nzSelectedIndex)]="fcSelectedIndex">
         <nz-tab *ngFor="let tab of fcTabs;index as i" (nzClick)="selectedTabMenu(tab)" [nzTitle]="titleTemplate">
           <ng-template #titleTemplate>
             <div [ngClass]="{'tab-home':i===0}">

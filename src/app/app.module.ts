@@ -4,7 +4,7 @@
  * @Description: 根模块
  * @email: luo.hong@neusoft.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-04-17 10:40:00
+ * @LastEditTime: 2019-04-19 10:23:09
  */
 import { HashLocationStrategy, LocationStrategy, registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
@@ -40,7 +40,7 @@ registerLocaleData(zh)
     BrowserAnimationsModule,
     RouterModule.forRoot(AppRoutes),
     FccoreModule,
-    NgZorroAntdModule.forRoot()
+    NgZorroAntdModule
   ],
   declarations: [
     AppComponent, // app入口
@@ -65,5 +65,5 @@ registerLocaleData(zh)
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor() {}
+  constructor() { }
 }

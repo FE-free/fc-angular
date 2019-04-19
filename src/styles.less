@@ -37,13 +37,13 @@
 // Background color for `<body>`
 @body-background : #fff;
 // Base background color for most components
-@component-background : #ffff;
+@component-background : #fff;
 @font-family : "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif,
 "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 @code-family : "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 @heading-color : fade(#000, 85%);
 @text-color : fade(#000, 65%);
-@text-color-secondargb(12, 11, 11) fade(#000, 45%);
+@text-color-secondary:  fade(#000, 45%);
 @heading-color-dark : fade(#fff, 100%);
 @text-color-dark : fade(#fff, 85%);
 @text-color-secondary-dark: fade(#fff, 65%);
@@ -420,7 +420,7 @@
 @tabs-title-font-size-lg: @font-size-lg;
 @tabs-title-font-size-sm: @font-size-base;
 @tabs-ink-bar-color: @primary-color;
-@tabs-bar-margin: 0 0 16px 0;
+@tabs-bar-margin: 0 0 0 0;
 @tabs-horizontal-margin: 0 32px 0 0;
 @tabs-horizontal-padding: 12px 16px;
 @tabs-vertical-padding: 8px 24px;
@@ -551,3 +551,11 @@
 @import './assets/styles/basic/resets.less';
 // 全面预算的样式
 @import './assets/styles/budget.less';
+:global {
+  .ant-table-small>.ant-table-content>.ant-table-body {
+    margin: 0!important;
+  }
+  .ant-table-small .ant-table-thead>tr {
+    background-color: #e6f7ff!important;
+  }
+}

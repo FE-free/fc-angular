@@ -4,7 +4,7 @@
  * @Description: 预算项目
  * @email: luo.hong@neusoft.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-04-18 09:59:01
+ * @LastEditTime: 2019-04-18 13:48:37
  */
 import { Component, OnInit, ViewChild, AfterContentInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
@@ -18,6 +18,7 @@ import { DaoService } from 'src/fccore/service/dao.service';
   selector: 'bgitem',
   templateUrl: './bgitem.component.html',
   styles: [`
+
   `]
 })
 export class BgitemComponent extends ParentComponent implements OnInit,AfterContentInit {
