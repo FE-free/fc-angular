@@ -1,27 +1,33 @@
+/*
+ * @Author: luohong
+ * @LastEditors: luohong
+ * @Description: layout业务
+ * @email: luo.hong@neusoft.com
+ * @Date: 2019-04-16 15:57:43
+ * @LastEditTime: 2019-04-17 14:06:29
+ */
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { NzMessageService } from 'ng-zorro-antd';
 import { menus } from '_mock/_menus';
-import { ShareService } from './share.service';
+import { ShareService } from '../share.service';
+import { environment } from 'src/environments/environment.dev';
 @Injectable({
   providedIn: 'root'
 })
 export class LayoutService {
   // 项目名称
-  pid: any
+  pid = environment.pid.toLocaleLowerCase()
   constructor(
     private Router: Router,
     private messageService: NzMessageService,
     private shareService: ShareService
   ) {
-    this.shareService.switchProjectSubject.subscribe(data => {
-      if (data) {
-        this.pid = data.param.PID.toLocaleLowerCase()
-      }
-    })
   }
   /**
-   * 获取菜单信息
+   * @description: 获取菜单信息
+   * @param {type} []
+   * @return:  []
    */
   getMenus() {
     return menus
@@ -81,18 +87,11 @@ export class LayoutService {
           }
         })
         .then(() => {
-          // this.providers.msgService.endAntLoading();
         })
         .catch(error => {
           console.log(error)
-          // this.providers.msgService.endAntLoading();
         })
     } else {
-      //window.open(menu.MENUURL);
-      // 开启加载条
-      // this.providers.msgService.startAntLoading();
-      //发出跳转报表iframe的事件
-      // router.navigate(['/budget//bgreport'], {
       router
         .navigate(['/' + this.pid + '/' + menu.ROUTER], {
           queryParams: {
@@ -109,11 +108,9 @@ export class LayoutService {
           }
         })
         .then(() => {
-          // this.providers.msgService.endAntLoading();
         })
         .catch(error => {
           console.log(error)
-          // this.providers.msgService.endAntLoading();
           router.navigate(['/error'])
         })
     }

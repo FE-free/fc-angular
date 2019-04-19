@@ -1,5 +1,11 @@
-
-
+/*
+ * @Author: luohong
+ * @LastEditors: luohong
+ * @Description: 上线环境的环境配置,上线环境需要过aot打包，命令ng build --aot
+ * @email: luo.hong@neusoft.com
+ * @Date: 2019-04-12 16:39:30
+ * @LastEditTime: 2019-04-17 10:44:11
+ */
 
 // The file contents for the current environment will overwrite these during build.
 // The build system defaults to the dev environment which uses `environment.ts`, but if you do

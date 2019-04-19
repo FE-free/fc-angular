@@ -1,3 +1,11 @@
+/*
+ * @Author: luohong
+ * @LastEditors: luohong
+ * @Description: 查询
+ * @email: luo.hong@neusoft.com
+ * @Date: 2019-04-16 15:57:43
+ * @LastEditTime: 2019-04-17 12:28:36
+ */
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
 import { DaoService } from 'src/fccore/service/dao.service'
@@ -16,14 +24,14 @@ export class BglistinfoComponent implements OnInit {
     taskName: '',
     taskCode: ''
   }
-  //查询接口
+  // 查询接口
   listinfo: any
   constructor(
     public router: Router,
     public activedRoute: ActivatedRoute,
     public daoService: DaoService,
     public logService: LogService
-  ) {}
+  ) { }
   ngOnInit(): void {
     this.daoService.getBase("http://www.imooc.com/search/hotwords", {}).subscribe(result => {
       if (result['result'] === 0) {
@@ -40,12 +48,15 @@ export class BglistinfoComponent implements OnInit {
     // 如何使用公共方法
     this.logService.debug(CommonService.getMilliseconds())
   }
+
   /**
-   * 查询
+   * @description: 查询
+   * @param {type}
+   * @return:
    */
-  search() {}
+  search() { }
   /**
    * 重置
    */
-  reset() {}
+  reset() { }
 }

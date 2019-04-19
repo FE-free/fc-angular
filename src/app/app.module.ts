@@ -1,3 +1,11 @@
+/*
+ * @Author: luohong
+ * @LastEditors: luohong
+ * @Description: 根模块
+ * @email: luo.hong@neusoft.com
+ * @Date: 2019-04-16 15:57:43
+ * @LastEditTime: 2019-04-19 10:23:09
+ */
 import { HashLocationStrategy, LocationStrategy, registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import zh from '@angular/common/locales/zh';
@@ -6,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
+
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { FccoreModule } from 'src/fccore/fccore.module';
 import { UserService } from 'src/fccore/service/user.service';
@@ -20,7 +29,7 @@ import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LayoutService } from './service/layout.service';
 import { FcRouteReuseStrategy } from './service/routereusestrategy.service';
-import { ShareService } from './service/share.service';
+import { ShareService } from './share.service';
 registerLocaleData(zh)
 
 @NgModule({
@@ -31,7 +40,7 @@ registerLocaleData(zh)
     BrowserAnimationsModule,
     RouterModule.forRoot(AppRoutes),
     FccoreModule,
-    NgZorroAntdModule.forRoot()
+    NgZorroAntdModule
   ],
   declarations: [
     AppComponent, // app入口
@@ -56,5 +65,5 @@ registerLocaleData(zh)
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor() {}
+  constructor() { }
 }

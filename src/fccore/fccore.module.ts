@@ -1,3 +1,11 @@
+/*
+ * @Author: luohong
+ * @LastEditors: luohong
+ * @Description: 平台核心模块
+ * @email: luo.hong@neusoft.com
+ * @Date: 2019-04-16 15:57:43
+ * @LastEditTime: 2019-04-17 14:49:10
+ */
 import { registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import zh from '@angular/common/locales/zh';
@@ -5,6 +13,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { DaoService } from './service/dao.service';
 import { LogService } from './service/log.service';
 import { CommonService } from './service/common.service';
@@ -19,7 +28,6 @@ registerLocaleData(zh)
     BrowserAnimationsModule
   ],
   declarations: [
-  
   ],
   providers: [
    DaoService,

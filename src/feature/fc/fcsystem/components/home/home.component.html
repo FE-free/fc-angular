@@ -1,77 +1,155 @@
-  <div class="fc-home-page">
-    <!-- 统计 -->
-    <div nz-row [nzGutter]="20">
-      <div nz-col nzSpan="6">
-        <div class="sys-home-box sys-home-box1" nz-row>
-          <nz-statistic nz-col nzSpan="12" [nzValue]="1949101 | number" [nzValueStyle]="{'color':'#fff'}"
-            [nzTitle]="'在线人数'"></nz-statistic>
-          <div nz-col nzSpan="12" class="mini-box">
-            <div id="miniBar_1" class="minibar"></div>
-          </div>
-        </div>
-      </div>
-      <div nz-col nzSpan="6">
-        <div class="sys-home-box sys-home-box2" nz-row>
-          <nz-statistic nz-col nzSpan="12" [nzValue]="1949101 | number" [nzTitle]="'总人数'"
-            [nzValueStyle]="{'color':'#fff'}"></nz-statistic>
-          <div nz-col nzSpan="12" class="mini-box">
-            <div id="miniBar_2" class="minibar"></div>
-          </div>
-        </div>
-      </div>
-      <div nz-col nzSpan="6">
-        <div class="sys-home-box sys-home-box3" nz-row>
-          <nz-statistic nz-col nzSpan="12" [nzValue]="1949101 | number" [nzTitle]="'访问次数'"
-            [nzValueStyle]="{'color':'#fff'}">
-          </nz-statistic>
-          <div nz-col nzSpan="12" class="mini-box">
-            <div id="miniBar_3" class="minibar"></div>
-          </div>
-        </div>
-      </div>
-      <div nz-col nzSpan="6">
-        <div class="sys-home-box sys-home-box4" nz-row>
-          <nz-statistic nz-col nzSpan="12" [nzValue]="1949101 | number" [nzTitle]="'网站流量'"
-            [nzValueStyle]="{'color':'#fff'}">
-          </nz-statistic>
-          <div nz-col nzSpan="12" class="mini-box">
-            <div id="miniBar_4" class="minibar"></div>
-          </div>
+<!--
+ * @Author: luohong
+ * @LastEditors: luohong
+ * @Description: 首页
+ * @email: luo.hong@neusoft.com
+ * @Date: 2019-04-12 16:39:30
+ * @LastEditTime: 2019-04-18 14:26:48
+ -->
+<div class="fc-home-page">
+  <!-- 统计 -->
+  <div nz-row [nzGutter]="20">
+    <div nz-col nzSpan="6">
+      <div class="sys-home-box sys-home-box1" nz-row>
+        <nz-statistic nz-col nzSpan="12" [nzValue]="1949101 | number" [nzValueStyle]="{'color':'#fff'}"
+          [nzTitle]="'在线人数'"></nz-statistic>
+        <div nz-col nzSpan="12" class="mini-box">
+          <div id="miniBar_1" class="minibar"></div>
         </div>
       </div>
     </div>
-    <div nz-row [nzGutter]="20">
-      <!-- 图表状态 -->
-      <div nz-col [nzSpan]="12">
-        <nz-card class="sys-home-card" nzTitle="图表状态" [nzBordered]="false">
-          <div>
-            <div id="chartBar"></div>
-          </div>
-        </nz-card>
+    <div nz-col nzSpan="6">
+      <div class="sys-home-box sys-home-box2" nz-row>
+        <nz-statistic nz-col nzSpan="12" [nzValue]="1949101 | number" [nzTitle]="'总人数'"
+          [nzValueStyle]="{'color':'#fff'}"></nz-statistic>
+        <div nz-col nzSpan="12" class="mini-box">
+          <div id="miniBar_2" class="minibar"></div>
+        </div>
       </div>
-      <!-- 对比图 -->
-      <div nz-col [nzSpan]="12">
-        <nz-card class="sys-home-card" nzTitle="对比图" [nzBordered]="false">
-          <div id="chartLine"></div>
-        </nz-card>
+    </div>
+    <div nz-col nzSpan="6">
+      <div class="sys-home-box sys-home-box3" nz-row>
+        <nz-statistic nz-col nzSpan="12" [nzValue]="1949101 | number" [nzTitle]="'访问次数'"
+          [nzValueStyle]="{'color':'#fff'}">
+        </nz-statistic>
+        <div nz-col nzSpan="12" class="mini-box">
+          <div id="miniBar_3" class="minibar"></div>
+        </div>
       </div>
-      <!-- 工作计划 -->
-      <div nz-col [nzSpan]="12">
-        <nz-card class="sys-home-card" nzTitle="工作计划" [nzBordered]="false">
-          <p>Card content</p>
-        </nz-card>
-      </div>
-      <!-- 待办任务 -->
-      <div nz-col [nzSpan]="12">
-        <nz-card class="sys-home-card" nzTitle="待办任务" [nzBordered]="false">
-          <p>Card content</p>
-        </nz-card>
-      </div>
-      <!-- 系统公告 -->
-      <div nz-col [nzSpan]="12">
-        <nz-card class="sys-home-card" nzTitle="系统公告" [nzBordered]="false">
-          <p>Card content</p>
-        </nz-card>
+    </div>
+    <div nz-col nzSpan="6">
+      <div class="sys-home-box sys-home-box4" nz-row>
+        <nz-statistic nz-col nzSpan="12" [nzValue]="1949101 | number" [nzTitle]="'网站流量'"
+          [nzValueStyle]="{'color':'#fff'}">
+        </nz-statistic>
+        <div nz-col nzSpan="12" class="mini-box">
+          <div id="miniBar_4" class="minibar"></div>
+        </div>
       </div>
     </div>
   </div>
+  <div nz-row [nzGutter]="20">
+    <!-- 图表状态 -->
+    <div nz-col [nzSpan]="12">
+      <nz-card class="sys-home-card" nzTitle="图表状态" [nzBordered]="false">
+        <div>
+          <div id="chartBar"></div>
+        </div>
+      </nz-card>
+    </div>
+    <!-- 对比图 -->
+    <div nz-col [nzSpan]="12">
+      <nz-card class="sys-home-card" nzTitle="对比图" [nzBordered]="false">
+        <div id="chartLine"></div>
+      </nz-card>
+    </div>
+    <!-- 工作计划 -->
+    <div nz-col [nzSpan]="12">
+      <nz-card class="sys-home-card" nzTitle="工作计划" [nzBordered]="false">
+          <nz-calendar class="fc-calendar">
+              <ul *nzDateCell="let date" class="events">
+                <ng-container [ngSwitch]="date.getDate()">
+                  <ng-container *ngSwitchCase="8">
+                    <li *ngFor="let item of listDataMap.eight">
+                      <nz-badge [nzStatus]="item.type" [nzText]="item.content"></nz-badge>
+                    </li>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="10">
+                    <li *ngFor="let item of listDataMap.ten">
+                      <nz-badge [nzStatus]="item.type" [nzText]="item.content"></nz-badge>
+                    </li>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="11">
+                    <li *ngFor="let item of listDataMap.eleven">
+                      <nz-badge [nzStatus]="item.type" [nzText]="item.content"></nz-badge>
+                    </li>
+                  </ng-container>
+                </ng-container>
+              </ul>
+              <ng-container *nzMonthCell="let month">
+                <div *ngIf="getMonthData(month) as monthData" class="notes-month">
+                  <section>{{ monthData }}</section>
+                  <span>Backlog number</span>
+                </div>
+              </ng-container>
+            </nz-calendar>
+      </nz-card>
+    </div>
+    <!-- 待办任务 -->
+    <div nz-col [nzSpan]="12">
+      <nz-card class="sys-home-card" nzTitle="待办任务" [nzBordered]="false">
+        <nz-list [nzDataSource]="toDoTaks" [nzRenderItem]="item" [nzItemLayout]="'horizontal'">
+          <ng-template #item let-item>
+            <nz-list-item>
+              <nz-list-item-meta [nzTitle]="nzTitle"
+                nzAvatar="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                nzDescription="报表任务还未完成，请在2019年6月1日之前完成。">
+                <ng-template #nzTitle>
+                  <a href="https://ng.ant.design">{{ item.title }}</a>
+                </ng-template>
+              </nz-list-item-meta>
+            </nz-list-item>
+          </ng-template>
+        </nz-list>
+      </nz-card>
+    </div>
+    <!-- 系统公告 -->
+    <div nz-col [nzSpan]="12">
+      <nz-card class="sys-home-card" nzTitle="系统公告" [nzBordered]="false">
+        <nz-timeline class="fc-timeline">
+          <nz-timeline-item nzColor="green">
+            <div class="timelie-title">
+              <span> 星期一</span>
+              <span class="time">11:24</span>
+            </div>
+            系统维护，资料卡功能暂时受限 2015-09-01
+          </nz-timeline-item>
+          <nz-timeline-item nzColor="green">
+            <div class="timelie-title">
+              <span> 星期一</span>
+              <span class="time">11:24</span>
+            </div>系统正在优化中，敬请期待 2015-09-01
+          </nz-timeline-item>
+          <nz-timeline-item nzColor="red">
+            <div class="timelie-title">
+              <span> 星期一</span>
+              <span class="time">11:24</span>
+            </div>
+            <p>系统正在优化中，敬请期待 1</p>
+            <p>系统正在优化中，敬请期待 2</p>
+            <p>系统正在优化中，敬请期待s 3 2015-09-01</p>
+          </nz-timeline-item>
+          <nz-timeline-item>
+            <div class="timelie-title">
+              <span>星期一</span>
+              <span class="time">11:24</span>
+            </div>
+            <p>系统正在优化中，敬请期待 1</p>
+            <p>系统正在优化中，敬请期待 2</p>
+            <p>系统正在优化中，敬请期待 3 2015-09-01</p>
+          </nz-timeline-item>
+        </nz-timeline>
+      </nz-card>
+    </div>
+  </div>
+</div>

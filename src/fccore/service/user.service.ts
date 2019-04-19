@@ -1,5 +1,14 @@
+/*
+ * @Author: luohong
+ * @LastEditors: luohong
+ * @Description: 用户服务
+ * @email: luo.hong@neusoft.com
+ * @Date: 2019-04-16 15:57:43
+ * @LastEditTime: 2019-04-17 11:44:14
+ */
 import { Injectable } from '@angular/core'
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router'
+
 import { Observable } from 'rxjs'
 import { CommonService } from './common.service';
 import { CacheService } from './cache.service';
@@ -70,7 +79,7 @@ export class UserService implements CanActivate {
   logout(userInfo?: any): Observable<any> {
     if (userInfo) {
       var param = { USERID: userInfo.USERCODE, AID: 'SYSUSER' }
-      //请求注销
+      // 请求注销
       this.logService.writeAction(this.moduleId, this.serviceId, 'LOGOUT', param, '注销', '')
       return this.daoService.getFromAuth(
         CommonService.getUrlBy(this.moduleId, this.serviceId, 'LOGOUT'),

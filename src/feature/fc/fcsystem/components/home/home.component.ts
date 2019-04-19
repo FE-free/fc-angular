@@ -1,5 +1,14 @@
+/*
+ * @Author: luohong
+ * @LastEditors: luohong
+ * @Description: 首页
+ * @email: luo.hong@neusoft.com
+ * @Date: 2019-04-16 15:57:43
+ * @LastEditTime: 2019-04-18 14:43:45
+ */
 import { Component, OnInit, AfterViewInit } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
+
 import * as G2 from '@antv/g2'
 @Component({
   selector: 'home',
@@ -288,11 +297,46 @@ export class HomeComponent implements OnInit, AfterViewInit {
       value: 176
     }
   ]
-  constructor(public router: Router, public activedRoute: ActivatedRoute) {}
+  // 待办任务
+  toDoTaks = [
+    {
+      title: ' 报表任务 1'
+    },
+    {
+      title: '报表任务 2'
+    },
+    {
+      title: '报表任务 3'
+    },
+    {
+      title: '报表任务 4'
+    }
+  ];
+  // 日历数据
+  listDataMap = {
+    eight: [
+      { type: 'warning', content: 'This is warning event.' },
+      { type: 'success', content: 'This is usual event.' }
+    ],
+    ten: [
+      { type: 'warning', content: 'This is warning event.' },
+      { type: 'success', content: 'This is usual event.' },
+      { type: 'error', content: 'This is error event.' }
+    ],
+    eleven: [
+      { type: 'warning', content: 'This is warning event' },
+      { type: 'success', content: 'This is very long usual event........' },
+      { type: 'error', content: 'This is error event 1.' },
+      { type: 'error', content: 'This is error event 2.' },
+      { type: 'error', content: 'This is error event 3.' },
+      { type: 'error', content: 'This is error event 4.' }
+    ]
+  };
+  constructor(public router: Router, public activedRoute: ActivatedRoute) { }
   /**
    * 初始化指令/组件,在第一轮 ngOnChanges() 完成之后调用，只调用一次
    */
-  ngOnInit(): void {}
+  ngOnInit(): void { }
   /**
    * 每当 Angular 初始化完组件视图及其子视图之后调用。
    */
@@ -376,7 +420,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     // 渲染柱状图
     this.chartBar.render()
     // 渲染折线图
-    this.createChartLine('chartLine',this.chartLineData)
+    this.createChartLine('chartLine', this.chartLineData)
   }
 
   /**
@@ -470,5 +514,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
       x: 300 - 20,
       y: 100
     })
+  }
+  /**
+   * @description: 日历
+   * @param {type}
+   * @return:
+   */
+  getMonthData(date: Date): number | null {
+    if (date.getMonth() === 8) {
+      return 1394;
+    }
+    return null;
   }
 }

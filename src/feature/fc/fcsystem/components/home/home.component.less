@@ -1,3 +1,11 @@
+/*
+ * @Author: luohong
+ * @LastEditors: luohong
+ * @Description: 首页的样式
+ * @email: luo.hong@neusoft.com
+ * @Date: 2019-04-16 15:57:43
+ * @LastEditTime: 2019-04-18 14:34:43
+ */
 .fc-home-page {
   width: 100%;
   height: 100%;
@@ -84,5 +92,47 @@
   left: 10px;
   color: #262626;
   font-size: 22px;
-  /*font-weight: bold*/
+}
+
+// 时间轴
+::ng-deep .fc-timeline .ant-timeline {
+  padding-left: 150px;
+}
+::ng-deep .fc-timeline .ant-timeline .ant-timeline-item{
+  padding-bottom: 40px;
+}
+
+::ng-deep .fc-timeline .ant-timeline .timelie-title {
+  position: absolute;
+    left: -150px;
+    width: 115px;
+    text-align: right;
+}
+
+::ng-deep .fc-timeline .ant-timeline .time {
+  display: block;
+}
+
+// 日历
+::ng-deep .fc-calendar .events {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+::ng-deep .fc-calendar .events .ant-badge-status {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  text-overflow: ellipsis;
+  font-size: 12px;
+}
+
+::ng-deep .fc-calendar .notes-month {
+  text-align: center;
+  font-size: 28px;
+}
+
+::ng-deep .fc-calendar .notes-month section {
+  font-size: 28px;
 }

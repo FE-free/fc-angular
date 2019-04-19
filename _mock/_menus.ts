@@ -2,9 +2,9 @@ export const menus = {
   P_MENUS: [
     {
       ID: '3ae5c74930da4b1e877efabee3af0005',
-      PID: 'BUDGET',
-      MENUID: 'BUDGET',
-      MENUNAME: '全面预算管理系统',
+      PID: 'FC',
+      MENUID: 'FC',
+      MENUNAME: '快速开发平台',
       ENABLE: 'Y',
       WXMENU: 'N',
       MENUTYPE: 'MENU',
@@ -56,22 +56,7 @@ export const menus = {
               ROUTER: '/bgrptaskList'
             }
           ]
-        }
-      ]
-    },
-    {
-      ID: '3ae5c74930da4b1e877efabee3af0005',
-      PID: 'FC',
-      MENUID: 'FC',
-      MENUNAME: '快速开发平台',
-      ENABLE: 'Y',
-      WXMENU: 'N',
-      MENUTYPE: 'MENU',
-      HASCHILD: 'Y',
-      MENUICON: 'icon iconfont icon-ppbs',
-      SORT: 1000,
-      ROUTER: '/fc',
-      P_CHILDMENUS: [
+        },
         {
           ID: '3ae5c74930dab18e877efabee3af0004',
           PID: 'FC',

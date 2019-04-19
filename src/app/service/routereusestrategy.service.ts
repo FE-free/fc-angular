@@ -1,63 +1,74 @@
+/*
+ * @Author: luohong
+ * @LastEditors: luohong
+ * @Description: 路由复用策略,跳转路由时，params的refresh='Y'时，刷新页面，refresh='N'时，不刷新页面，保留用户操作状态
+ * @email: luo.hong@neusoft.com
+ * @Date: 2019-02-18 10:59:15
+ * @LastEditTime: 2019-04-19 15:31:02
+ */
 import {
   ActivatedRouteSnapshot,
   DetachedRouteHandle,
   RouteReuseStrategy,
   PRIMARY_OUTLET,
-  Route
+  Route,
+  NavigationEnd
 } from '@angular/router'
-
+import { environment } from 'src/environments/environment.dev';
 export class FcRouteReuseStrategy implements RouteReuseStrategy {
   private static waitDelete: string
   public static handlers: { [key: string]: DetachedRouteHandle } = {}
-  // //是否允许路由复用
-  // shouldDetach(route: ActivatedRouteSnapshot): boolean {
-  //   if (route.routeConfig.path === 'home') {
-  //     return false;
-  //   }
-  //   return true;
-  // }
-  /** 表示对所有路由允许复用 如果你有路由不想利用可以在这加一些业务逻辑判断 */
+  /**
+   * @description: 表示对所有路由允许复用 如果你有路由不想利用可以在这加一些业务逻辑判断
+   * @param {type}
+   * @return:
+   */
   public shouldDetach(route: ActivatedRouteSnapshot): boolean {
     if (route.routeConfig.path === 'home' || route.routeConfig.path === 'error') {
-      return false
+      return false // 不允许路由复用
+    }
+    if (route.routeConfig['data'] && !route.routeConfig['data']['keepAlive']) {
+      return false // 不允许路由复用
     }
     if (!route.routeConfig || route.routeConfig.loadChildren) {
-      return false
+      return false;
     }
     return true
   }
-  /** 当路由离开时会触发。按path作为key存储路由快照&组件当前实例对象 */
+  /**
+   * @description: 当路由离开时会触发，存储路由,按path作为key存储路由快照&组件当前实例对象
+   * @param {type}
+   * @return:
+   */
   public store(route: ActivatedRouteSnapshot, handle: DetachedRouteHandle): void {
     if (route.routeConfig.path === 'signin') {
       FcRouteReuseStrategy.handlers = {}
     }
-    // 当路由离开并且需要删除时候删除
     let url = this.getRouteUrl(route)
-    window.sessionStorage.getItem('removeRouter')
-    if (route.queryParams['deleteRouter']) {
-      FcRouteReuseStrategy.deleteRouteSnapshot(url)
-    } else {
-      FcRouteReuseStrategy.handlers[url] = handle
-    }
+    FcRouteReuseStrategy.handlers[url] = handle
   }
 
-  /** 若 path 在缓存中有的都认为允许还原路由 */
+  /**
+   * @description:若 path 在缓存中有的都认为允许还原路由
+   * @param {type}
+   * @return:
+   */
   public shouldAttach(route: ActivatedRouteSnapshot): boolean {
-    // console.log('===shouldAttach-route', route);
     if (route.queryParams['refresh'] === 'Y') {
       return false
     }
-    return !!FcRouteReuseStrategy.handlers[this.getRouteUrl(route)]
+    let url = this.getRouteUrl(route);
+    return !!FcRouteReuseStrategy.handlers[url]
   }
-  /** 从缓存中获取快照，若无则返回null */
+  /**
+   * @description: 从缓存中获取快照，若无则返回null
+   * @param {type}
+   * @return:
+   */
   public retrieve(route: ActivatedRouteSnapshot): DetachedRouteHandle {
-    if (!route.routeConfig) {
+    if (!route.routeConfig || route.queryParams['refresh'] === 'Y' || route.routeConfig.loadChildren) {
       return null
     }
-    if (route.queryParams['refresh'] === 'Y') {
-      return null
-    }
-    if (route.routeConfig.loadChildren) return null
     let url = this.getRouteUrl(route)
     let rtn: DetachedRouteHandle = FcRouteReuseStrategy.handlers[url]
     if (rtn !== undefined) {
@@ -67,18 +78,32 @@ export class FcRouteReuseStrategy implements RouteReuseStrategy {
     }
   }
 
-  /** 进入路由触发，判断是否同一路由 */
+  /**
+   * @description: 进入路由触发，判断是否同一路由
+   * @param {type}
+   * @return:
+   */
   public shouldReuseRoute(future: ActivatedRouteSnapshot, curr: ActivatedRouteSnapshot): boolean {
     return (
-      JSON.stringify(future.params) === JSON.stringify(curr.params) && future.routeConfig === curr.routeConfig
+      // 同一路由时复用路由
+      future.routeConfig === curr.routeConfig && JSON.stringify(future.params) === JSON.stringify(curr.params)
     )
   }
-
+  /**
+   * @description:获取路由路径
+   * @param {type}
+   * @return:
+   */
   private getRouteUrl(route: ActivatedRouteSnapshot) {
-    var path = route['_routerState'].url.replace(/\//g, '_')
+    let path = environment.pid + '_' + route['routeConfig'].path
+    // let path = route['_routerState'].url.replace(/\//g, '_')
     return path
   }
-
+  /**
+   * @description:
+   * @param {type}
+   * @return:
+   */
   getRouteUrl0(route: ActivatedRouteSnapshot): string {
     let namedOutletCount: number = 0
     return (
@@ -97,7 +122,11 @@ export class FcRouteReuseStrategy implements RouteReuseStrategy {
       }, '') + (namedOutletCount ? new Array(namedOutletCount + 1).join(')') : '')
     )
   }
-
+  /**
+   * @description: 删除快照
+   * @param {type}
+   * @return:
+   */
   public static deleteRouteSnapshot(name: string): void {
     if (FcRouteReuseStrategy.handlers[name]) {
       delete FcRouteReuseStrategy.handlers[name]
@@ -105,45 +134,4 @@ export class FcRouteReuseStrategy implements RouteReuseStrategy {
       FcRouteReuseStrategy.waitDelete = name
     }
   }
-  // //当路由离开时会触发，存储路由
-  // store(route: ActivatedRouteSnapshot, handle: DetachedRouteHandle): void {
-  //   if (route.routeConfig.path !== '') {
-  //     if (route.routeConfig.path === 'signin') {
-  //       this._cacheRouters = {};
-  //     }
-  //     this._cacheRouters[route.routeConfig.path] = {
-  //       snapshot: route,
-  //       handle: handle
-  //     };
-  //   }
-  // }
-  // //是否允许还原路由
-  // shouldAttach(route: ActivatedRouteSnapshot): boolean {
-  //   if (route.queryParams['refresh'] === 'Y') {
-  //     return false;
-  //   }
-  //   if (this._cacheRouters.hasOwnProperty(route.routeConfig.path)) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
-  // //获取存储路由
-  // retrieve(route: ActivatedRouteSnapshot): DetachedRouteHandle {
-  //   if (route.queryParams['refresh'] === 'Y') {
-  //     return null;
-  //   }
-  //   if (route.routeConfig.path.length === 0) {
-  //     return null;
-  //   } else if (this._cacheRouters[route.routeConfig.path] !== undefined) {
-  //     return !!this._cacheRouters[route.routeConfig.path].handle;
-  //   } else {
-  //     return null;
-  //   }
-  // }
-  // //进入路由触发，是否同一路由时复用路由
-  // shouldReuseRoute(future: ActivatedRouteSnapshot, curr: ActivatedRouteSnapshot): boolean {
-  //   return future.routeConfig === curr.routeConfig &&
-  //     JSON.stringify(future.params) == JSON.stringify(curr.params);;
-  // }
 }

@@ -1,13 +1,21 @@
+/*
+ * @Author: luohong
+ * @LastEditors: luohong
+ * @Description: 公共方法
+ * @email: luo.hong@neusoft.com
+ * @Date: 2019-04-16 15:57:43
+ * @LastEditTime: 2019-04-17 11:42:53
+ */
 import { EventEmitter, Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
-@Injectable({providedIn:'root'})
+@Injectable({ providedIn: 'root' })
 export class CommonService {
   static eventEmit: EventEmitter<any> = new EventEmitter()
   static base64encode: any
   static utf16to8: any
   static utf8to16: any
   static base64decode: any
-  constructor() {}
+  constructor() { }
   /**
    * 发生事件
    * @param actCode 事件名称
@@ -24,7 +32,7 @@ export class CommonService {
    * @param 方法
    */
   static subscribe(actCode: string, func: Function) {
-    return this.eventEmit.subscribe(function(value) {
+    return this.eventEmit.subscribe(function (value) {
       if (value.eventName === actCode) {
         return func(value)
       } else {
@@ -458,10 +466,10 @@ export class CommonService {
     return value
   }
   /**
-   * 时间格式化处理
-   * @param 格式化字符串
-   * @param 格式化日期格式化
-   * */
+   * @description: 时间格式化处理
+   * @param {type} 格式化字符串
+   * @return:
+   */
   static dateFormat(date: Date, fmt: string): string {
     let o = {
       'M+': date.getMonth() + 1,
@@ -470,7 +478,7 @@ export class CommonService {
       'm+': date.getMinutes(),
       's+': date.getSeconds(),
       'q+': Math.floor((date.getMonth() + 3) / 3),
-      S: date.getMilliseconds() //毫秒
+      S: date.getMilliseconds() // 毫秒
     }
     if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length))
     for (var k in o)
@@ -479,18 +487,18 @@ export class CommonService {
     return fmt
   }
   /**
-   * 时间格式化处理
-   * @param 格式化字符串
-   * @param 格式化日期格式化
-   * */
+   * @description: 时间格式化处理
+   * @param {type} 格式化字符串
+   * @return:
+   */
   static stringDateFormat(dateStr: string, fmt: string): string {
     return this.dateFormat(this.stringToDate(dateStr), fmt)
   }
   /**
-   * 时间戳格式化处理
-   * @param 格式化
-   * @param 时间戳
-   * */
+   * @description: 时间戳格式化处理
+   * @param {type} 格式化
+   * @return:
+   */
   static timestampFormat(timestamp: number, fmt: string): string {
     return this.dateFormat(new Date(timestamp), fmt)
   }
@@ -786,7 +794,7 @@ export class CommonService {
   static listtotree(list: any[], parentValue: any, code: string, name: string, parent: string): any[] {
     let _this = this
     let nodes = []
-    list.forEach(function(item) {
+    list.forEach(function (item) {
       if (parentValue === item[parent]) {
         var node_1 = {
           id: item.ID,
@@ -797,7 +805,7 @@ export class CommonService {
           hasChildren: false,
           DATA: item
         }
-        list.forEach(function(child) {
+        list.forEach(function (child) {
           if (item[code] === child[parent]) {
             var childNode = {
               id: item.ID,
@@ -826,7 +834,7 @@ export class CommonService {
   static getStringFilterByParam(data: any, dataStr: string): string {
     var rtn = ''
     var ds = dataStr.split(':{')
-    ds.forEach(function(item) {
+    ds.forEach(function (item) {
       if (item.indexOf('}') === -1) {
         rtn += item
       } else {
@@ -853,7 +861,7 @@ export class CommonService {
   static listtotreeasync(list: any[], code: string, name: string, childFieldCode: string): any[] {
     var _this = this
     var nodes = []
-    list.forEach(function(item) {
+    list.forEach(function (item) {
       var node = {
         id: item.ID,
         code: item[code],
@@ -878,7 +886,7 @@ export class CommonService {
    * @return {?}
    */
   static createObservable(obj: any): Observable<any> {
-    return Observable.create(function(observer) {
+    return Observable.create(function (observer) {
       observer.next(obj)
       observer.complete()
     })
@@ -908,7 +916,7 @@ export class CommonService {
       return obj + ''
     }
     let datas = {}
-    Object.keys(obj).forEach(function(key) {
+    Object.keys(obj).forEach(function (key) {
       if (exceptKey && exceptKey.length !== 0) {
         if (exceptKey !== key) {
           datas[key] = obj[key]
@@ -929,7 +937,7 @@ export class CommonService {
       return objs + ''
     }
     let datas = []
-    Object.keys(objs).forEach(function(key) {
+    Object.keys(objs).forEach(function (key) {
       if (exceptKey && exceptKey.length !== 0) {
         if (exceptKey !== key) {
           if (typeof objs === 'object') {

@@ -1,35 +1,199 @@
+<!--
+ * @Author: luohong
+ * @LastEditors: luohong
+ * @Description: 预算项目
+ * @email: luo.hong@neusoft.com
+ * @Date: 2019-04-16 15:57:43
+ * @LastEditTime: 2019-04-18 14:01:46
+ -->
 <div class="page">
   <!-- 工具栏 -->
-  <div class="fc-toolbar">
-    <button nz-button nzType="primary" nzSize="default">新增下级项目</button>
+  <div class="fc-toolbar" *ngIf="fcSelectedIndex===0">
+    <button nz-button nzType="primary" nzSize="default" (click)="event('listAdd')">新增下级项目</button>
   </div>
   <div class="page-body">
     <!-- 内容区 -->
-    <div class="page-body-content">
-      <div nz-row nzGutter="10">
-        <!-- 左侧树 -->
-        <div nz-col class="fc-left" nzSpan="6">
-          <nz-tree
-            #nzTreeComponent
-            [nzData]="treeNodes"
-            nzCheckable
-            [nzCheckedKeys]="defaultCheckedKeys"
-            [nzExpandedKeys]="defaultExpandedKeys"
-            [nzSelectedKeys]="defaultSelectedKeys"
-            (nzClick)="treeClick($event)"
-            (nzCheckBoxChange)="treeCheck($event)"
-            (nzExpandChange)="treeCheck($event)"
-          >
+    <div class="page-body-content" nz-row nzGutter="10">
+      <!-- 左侧树 -->
+      <div nz-col class="fc-left" nzSpan="6">
+        <div class="fc-left-head">
+          <div nz-row [nzGutter]="8">
+            <div nz-col class="label" nzSpan="6">
+              一级分类
+            </div>
+            <div nz-col nzSpan="18">
+              <nz-select style="width: 100%;" [(ngModel)]="firstClass" nzAllowClear nzPlaceHolder="请选择一级分类">
+                <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+                <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+                <nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>
+              </nz-select>
+            </div>
+          </div>
+          <div nz-row [nzGutter]="8" style="margin-top: 5px;">
+            <div nz-col class="label" nzSpan="6">
+              二级分类
+            </div>
+            <div nz-col nzSpan="18">
+              <nz-select style="width: 100%;" [(ngModel)]="firstClass" nzAllowClear nzPlaceHolder="请选择一级分类">
+                <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+                <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+                <nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>
+              </nz-select>
+            </div>
+          </div>
+        </div>
+        <div class="fc-left-content">
+          <nz-tree #nzTreeComponent [nzData]="treeNodes" nzCheckable [nzCheckedKeys]="defaultCheckedKeys"
+            [nzExpandedKeys]="defaultExpandedKeys" [nzSelectedKeys]="defaultSelectedKeys" (nzClick)="treeClick($event)"
+            (nzCheckBoxChange)="treeCheck($event)" (nzExpandChange)="treeCheck($event)">
           </nz-tree>
         </div>
-        <!-- 右侧 -->
-        <div nz-col class="gutter-row" nzSpan="18">
-          <div cla> </div>
-        </div>
       </div>
-      <div class="fc-tlbform">
-        <button nz-button nzType="primary" nzSize="large" nzShape="circle">保存</button>
-        <button nz-button nzType="default" nzSize="large" nzShape="circle">返回</button>
+      <!-- 右侧 -->
+      <div nz-col class="fc-right" nzSpan="18">
+        <nz-tabset [nzSelectedIndex]="fcSelectedIndex" nzSize="small" class="tab-wrap">
+          <!-- 第一个选项卡 -->
+          <nz-tab nzTitle="项目列表" [nzDisabled]="false">
+            <div>
+              <!-- 查询工具栏 -->
+              <div class="fc-searchbar">
+                <div nz-row [nzGutter]="24">
+                  <div nz-row [nzGutter]="8" nz-col nzSpan="8">
+                    <div nz-col class="label" nzSpan="6">
+                      项目名称
+                    </div>
+                    <div nz-col nzSpan="18">
+                      <input nz-input placeholder="请输入项目名称" [(ngModel)]="itemName" />
+                    </div>
+                  </div>
+                  <div nz-row [nzGutter]="8" nz-col nzSpan="8">
+                    <div nz-col class="label" nzSpan="6">
+                      拼音码
+                    </div>
+                    <div nz-col nzSpan="18">
+                      <input nz-input placeholder="请输入拼音码" [(ngModel)]="pinyinCode" />
+                    </div>
+                  </div>
+                  <div nz-col nzSpan="8">
+                    <button nz-button nzType="primary">查询</button>
+                    <button nz-button nzType="default">重置</button>
+                  </div>
+                </div>
+              </div>
+              <nz-table #basicTable [nzData]="pageList" [nzBordered]="true" nzSize="small">
+                <thead>
+                  <tr>
+                    <th>序号</th>
+                    <th>分类</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let data of basicTable.data;index as i">
+                    <td>{{ i+1 }}</td>
+                    <td>{{ data?.SITEM_NAME }}</td>
+                  </tr>
+                </tbody>
+              </nz-table>
+            </div>
+          </nz-tab>
+          <!-- 第二个选项卡 -->
+          <nz-tab nzTitle="项目详细" [nzDisabled]="false">
+            <div>
+              <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm($event, validateForm.value)">
+                <div nz-row [nzGutter]="24">
+                  <div nz-col [nzSpan]="12">
+                    <nz-form-item>
+                      <nz-form-label [nzSpan]="6" nzRequired>姓名</nz-form-label>
+                      <nz-form-control [nzSpan]="16" nzHasFeedback>
+                        <input nz-input formControlName="userName" placeholder="请输入姓名" />
+                        <nz-form-explain *ngIf="
+                              (validateForm.get('userName')?.dirty && validateForm.get('userName')?.errors) ||
+                              validateForm.get('userName')?.pending
+                            ">
+                          <ng-container *ngIf="validateForm.get('userName')?.hasError('required')">
+                            姓名不能为空!
+                          </ng-container>
+                          <ng-container *ngIf="validateForm.get('userName')?.hasError('duplicated')">
+                            The username is redundant!
+                          </ng-container>
+                          <ng-container *ngIf="validateForm.get('userName')?.pending">
+                            验证中...
+                          </ng-container>
+                        </nz-form-explain>
+                      </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                      <nz-form-label [nzSpan]="6" nzRequired>个人邮箱账号</nz-form-label>
+                      <nz-form-control [nzSpan]="16" nzHasFeedback>
+                        <input nz-input formControlName="email" placeholder="email" type="email" />
+                        <nz-form-explain *ngIf="validateForm.get('email')?.dirty && validateForm.get('email')?.errors">
+                          <ng-container *ngIf="validateForm.get('email')?.hasError('email')">
+                            The input is not valid E-mail!
+                          </ng-container>
+                          <ng-container *ngIf="validateForm.get('email')?.hasError('required')">
+                            Please input your E-mail!
+                          </ng-container>
+                        </nz-form-explain>
+                      </nz-form-control>
+                    </nz-form-item>
+
+                  </div>
+                  <div nz-col [nzSpan]="12">
+                    <nz-form-item>
+                      <nz-form-label [nzSpan]="6" nzRequired>个人邮箱密码</nz-form-label>
+                      <nz-form-control [nzSpan]="16" nzHasFeedback>
+                        <input nz-input type="password" formControlName="confirm" placeholder="confirm your password" />
+                        <nz-form-explain
+                          *ngIf="validateForm.get('confirm')?.dirty && validateForm.get('confirm')?.errors">
+                          <ng-container *ngIf="validateForm.get('confirm')?.hasError('required')">
+                            Please confirm your password!
+                          </ng-container>
+                          <ng-container *ngIf="validateForm.get('confirm')?.hasError('confirm')">
+                            Password is inconsistent!
+                          </ng-container>
+                        </nz-form-explain>
+                      </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                      <nz-form-label [nzSpan]="6" nzRequired>Password</nz-form-label>
+                      <div>
+                        <nz-form-control [nzSpan]="16" nzHasFeedback>
+                          <input nz-input type="password" formControlName="password"
+                            (ngModelChange)="validateConfirmPassword()" />
+                          <nz-form-explain
+                            *ngIf="validateForm.get('password')?.dirty && validateForm.get('password')?.hasError('required')">
+                            Please input your password!</nz-form-explain>
+                        </nz-form-control>
+                      </div>
+                    </nz-form-item>
+                  </div>
+                  <div nz-col [nzSpan]="24">
+                    <nz-form-item>
+                      <nz-form-label [nzSpan]="3" nzRequired>备注</nz-form-label>
+                      <nz-form-control [nzSpan]="20">
+                        <textarea formControlName="comment" nz-input rows="2" placeholder="write any thing"></textarea>
+                        <nz-form-explain
+                          *ngIf="validateForm.get('comment')?.dirty && validateForm.get('comment')?.hasError('required')">
+                          Please write something here!</nz-form-explain>
+                      </nz-form-control>
+                    </nz-form-item>
+                  </div>
+                </div>
+                <!-- 底部工具栏 -->
+                <div class="fc-tlbform">
+                  <button nz-button nzType="primary" nzSize="default" (click)="event('cardSave')">保存</button>
+                  <button nz-button nzType="default" nzSize="default" (click)="event('cardBack')">返回</button>
+                </div>
+              </form>
+            </div>
+          </nz-tab>
+          <!-- 第三个选项卡 -->
+          <nz-tab nzTitle="项目公式" [nzDisabled]="false">
+            <div>
+              x
+            </div>
+          </nz-tab>
+        </nz-tabset>
       </div>
     </div>
   </div>

@@ -1,20 +1,24 @@
-import { CommonModule } from '@angular/common';
+/*
+ * @Author: luohong
+ * @LastEditors: luohong
+ * @Description: fccomponent平台组件模块
+ * @email: luo.hong@neusoft.com
+ * @Date: 2019-04-16 15:57:43
+ * @LastEditTime: 2019-04-19 10:23:45
+ */
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { SharedModule } from 'src/shared';
 import { FcimgviewComponent } from './fcimgview/fcimgview.component';
+
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    NgZorroAntdModule
+    SharedModule
   ],
-  declarations:[
+  declarations: [
     FcimgviewComponent // 组件-图片查看
   ],
-  exports:[
+  exports: [
     FcimgviewComponent
   ]
 })
-export class FccomponentModule {}
+export class FccomponentModule { }

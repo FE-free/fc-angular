@@ -1,13 +1,20 @@
+<!--
+ * @Author: luohong
+ * @LastEditors: luohong
+ * @Description: 整体布局，包括顶部工具栏、左侧导航、侧边栏、选项卡导航、内容区
+ * @email: luo.hong@neusoft.com
+ * @Date: 2019-04-16 15:57:43
+ * @LastEditTime: 2019-04-19 15:18:51
+ -->
 <nz-layout class="layout">
   <!-- 顶部工具栏 -->
   <nz-header>
+
     <div class="logo">
       <i class="icon iconfont fc-icon-tielu"></i>
       <span class="logo-text">{{ projectName }}</span>
     </div>
     <div class="fc-header-right">
-      <a class="text" *ngFor="let item of allMenus" (click)="switchProject(item)">
-      <i class="icon iconfont fc-icon-peizhi"></i>{{ item.MENUNAME }}</a>
       <i class="icon iconfont yt-header-icon fc-icon-information" (click)="toggleSidebar()" title="消息"></i>
       <i class="icon iconfont yt-header-icon fc-icon-peizhi" title="设置"></i>
       <i class="icon iconfont yt-header-icon fc-icon-wode" title="我的"></i>
@@ -18,12 +25,12 @@
   </nz-header>
   <nz-layout style="width: 100%;">
     <!-- 菜单导航 -->
-    <nz-sider [(nzWidth)]="menuWidth" class="sidebar-menu" style="background:#fff;">
+    <nz-sider [(nzWidth)]="menuWidth"Ø class="sidebar-menu" style="background:#fff;">
       <ul nz-menu [nzMode]="'inline'" style="height: calc(100% - 40px);overflow: auto;"
         [nzInlineCollapsed]="menuIsCollapsed">
         <ng-container *ngFor="let menu of _menus">
           <!-- 一级菜单，没有下级 -->
-          <li nz-menu-item *ngIf="menu.HASCHILD==='N'" (click)="selectedMenu(menu)">
+          <li nz-menu-item *ngIf="menu.HASCHILD==='N'" (click)="selectedMenu(menu)" >
             <span title>
               <i class="icon iconfont menu-icon" [ngClass]="menu.MENUICON"></i>
               <span class="first-level-title">{{menu.MENUNAME}}</span>
@@ -38,7 +45,7 @@
             <ul>
               <ng-container *ngFor="let childMenu of menu.P_CHILDMENUS">
                 <!-- 二级菜单，没有下级 -->
-                <li nz-menu-item *ngIf="childMenu.HASCHILD==='N'" (click)="selectedMenu(childMenu);">
+                <li nz-menu-item  *ngIf="childMenu.HASCHILD==='N'" (click)="selectedMenu(childMenu);">
                   <span title>
                     <span>{{childMenu.MENUNAME}}</span>
                   </span>
@@ -87,7 +94,7 @@
     </nz-sider>
     <nz-layout>
       <!-- 选项卡导航 -->
-      <nz-tabset class="fc-tabnav" [nzType]="'line'" [nzSize]="'small'" [nzSelectedIndex]="fcSelectedIndex">
+      <nz-tabset class="fc-tabnav" [nzType]="'line'" [nzSize]="'small'" [(nzSelectedIndex)]="fcSelectedIndex">
         <nz-tab *ngFor="let tab of fcTabs;index as i" (nzClick)="selectedTabMenu(tab)" [nzTitle]="titleTemplate">
           <ng-template #titleTemplate>
             <div [ngClass]="{'tab-home':i===0}">
