@@ -6,18 +6,16 @@
  * @Date: 2019-04-16 15:57:43
  * @LastEditTime: 2019-04-19 17:45:29
  */
-import { Routes } from '@angular/router'
-
-import { LayoutComponent } from './components/layout/layout.component'
-import { SigninComponent } from './components/signin/signin.component'
-import { ErrorComponent } from './components/error/error.component'
-import { BuildingComponent } from './components/building/building.component'
-import { ForgotComponent } from './components/forgot/forgot.component'
-import { LockscreenComponent } from './components/lockscreen/lockscreen.component'
-import { SignupComponent } from './components/signup/signup.component'
+import { Routes } from '@angular/router';
 import { UserService } from 'src/fccore/service/user.service';
-import { environment } from 'src/environments/environment.dev';
-const pid = environment.pid.toLocaleLowerCase()
+import { BuildingComponent } from './components/building/building.component';
+import { ErrorComponent } from './components/error/error.component';
+import { ForgotComponent } from './components/forgot/forgot.component';
+import { LayoutComponent } from './components/layout/layout.component';
+import { LockscreenComponent } from './components/lockscreen/lockscreen.component';
+import { SigninComponent } from './components/signin/signin.component';
+import { SignupComponent } from './components/signup/signup.component';
+
 const SignIn: string='signin';
 export const AppRoutes: Routes = [
   {
