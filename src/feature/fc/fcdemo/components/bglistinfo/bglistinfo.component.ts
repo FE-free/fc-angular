@@ -4,10 +4,11 @@
  * @Description: 查询
  * @email: luo.hong@neusoft.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-04-17 12:28:36
+ * @LastEditTime: 2019-04-25 12:29:45
  */
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
+
 import { DaoService } from 'src/fccore/service/dao.service'
 import { LogService } from 'src/fccore/service/log.service'
 import { CommonService } from 'src/fccore/service/common.service'
@@ -16,7 +17,7 @@ import { CommonService } from 'src/fccore/service/common.service'
   templateUrl: './bglistinfo.component.html',
   styles: [``]
 })
-export class BglistinfoComponent implements OnInit {
+export class BglistinfoComponent  {
   // 获取列表数据
   pageList = []
   // 查询对象

@@ -4,7 +4,7 @@
  * @Description: 单例服务，参考网址: https://angular.cn/guide/singleton-services
  * @email: luo.hong@neusoft.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-04-17 10:37:56
+ * @LastEditTime: 2019-05-07 18:12:10
  */
 import { Injectable } from '@angular/core';
 
