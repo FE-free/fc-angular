@@ -8,8 +8,10 @@
  */
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+
 import { SpreadSheetsModule } from 'src/assets/plugin/spread/gc.spread.sheets.angular';
 import { FccomponentModule } from 'src/fccomponents/fccomponent.module';
+import { Routers } from './fcdemo.route';
 import { SharedModule } from 'src/shared';
 import { BgcreateComponent } from './components/bgcreate/bgcreate.component';
 import { BgiframeComponent } from './components/bgiframe/bgiframe.component';
@@ -18,7 +20,6 @@ import { BgremoveComponent } from './components/bgremove/bgremove.component';
 import { BgspreadComponent } from './components/bgspread/bgspread.component';
 import { BgtableComponent } from './components/bgtable/bgtable.component';
 import { BgupdateComponent } from './components/bgupdate/bgupdate.component';
-import { Routers } from './fcdemo.route';
 
 
 @NgModule({
