@@ -2,7 +2,7 @@
  * @Author: luohong
  * @LastEditors: luohong
  * @Description: 开发环境的环境配置
- * @email: luo.hong@neusoft.com
+ * @email: 3300536651@qq.com
  * @Date: 2019-04-12 16:39:30
  * @LastEditTime: 2019-04-19 17:46:33
  */

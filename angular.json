@@ -34,7 +34,9 @@
             "styles": [
               "src/styles.less"
             ],
-            "scripts": [],
+            "scripts": [
+              "./node_modules/@antv/data-set/dist/data-set.min.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {

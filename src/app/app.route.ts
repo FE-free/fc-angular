@@ -2,7 +2,7 @@
  * @Author: luohong
  * @LastEditors: luohong
  * @Description: 根模块的路由，本项目的路由使用懒加载模式，参考网址：https://angular.cn/guide/lazy-loading-ngmodules
- * @email: luo.hong@neusoft.com
+ * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
  * @LastEditTime: 2019-04-19 17:45:29
  */

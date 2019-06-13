@@ -2,7 +2,7 @@
  * @Author: luohong
  * @LastEditors: luohong
  * @Description: 示例模块
- * @email: luo.hong@neusoft.com
+ * @email: 3300536651@qq.com
  * @Date: 2019-04-16 16:02:48
  * @LastEditTime: 2019-04-17 14:46:17
  */
@@ -20,6 +20,7 @@ import { BgremoveComponent } from './components/bgremove/bgremove.component';
 import { BgspreadComponent } from './components/bgspread/bgspread.component';
 import { BgtableComponent } from './components/bgtable/bgtable.component';
 import { BgupdateComponent } from './components/bgupdate/bgupdate.component';
+import { BgchartComponent } from './components/bgchart/bgchart.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { BgupdateComponent } from './components/bgupdate/bgupdate.component';
     BgremoveComponent, // 删除
     BgspreadComponent, // spread报表
     BgtableComponent, // 表格
-    BgiframeComponent // iframe
+    BgiframeComponent, // iframe
+    BgchartComponent // 图表
   ],
   providers: []
 })

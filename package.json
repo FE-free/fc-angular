@@ -20,6 +20,7 @@
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
+    "@antv/data-set": "^0.10.2",
     "@antv/g2": "^3.5.3",
     "@grapecity/spread-excelio": "^12.0.10",
     "@grapecity/spread-sheets": "^12.0.10",

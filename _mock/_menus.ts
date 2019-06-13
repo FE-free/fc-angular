@@ -146,6 +146,20 @@ export const menus = {
             {
               ID: '63fbb2f0708f4fd68db04a92dd5df121',
               PID: 'FC',
+              MENUID: 'BGCHART',
+              MENUNAME: '图表',
+              ENABLE: 'Y',
+              WXMENU: 'N',
+              MENUTYPE: 'APP',
+              APPID: 'SYSMENU',
+              HASCHILD: 'N',
+              PARENT: 'SYSTEM',
+              SORT: 1152,
+              ROUTER: '/bgchartList'
+            },
+            {
+              ID: '63fbb2f0708f4fd68db04a92dd5df121',
+              PID: 'FC',
               MENUID: 'BGSPREAD',
               MENUNAME: 'spread报表',
               ENABLE: 'Y',

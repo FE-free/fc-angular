@@ -2,7 +2,7 @@
  * @Author: luohong
  * @LastEditors: luohong
  * @Description: app入口
- * @email: luo.hong@neusoft.com
+ * @email: 3300536651@qq.com
  * @Date: 2019-02-18 10:44:05
  * @LastEditTime: 2019-04-17 10:16:54
  */
