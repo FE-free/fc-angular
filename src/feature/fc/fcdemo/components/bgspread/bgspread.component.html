@@ -1,0 +1,19 @@
+<!--
+ * @Author: luohong
+ * @LastEditors: luohong
+ * @Description: spread
+ * @email: 3300536651@qq.com
+ * @Date: 2019-04-12 16:39:30
+ * @LastEditTime: 2019-04-17 14:42:08
+ -->
+<div class="page">
+  <div class="fc-toolbar">
+    <button nz-button nzType="primary">新增</button>
+    <button nz-button nzType="primary">修改</button>
+    <button nz-button nzType="primary">删除</button>
+  </div>
+  <div class="fc-spread-content">
+    <gc-spread-sheets  (workbookInitialized)="workbookInit($event)" [hostStyle]="spreadStyle">
+    </gc-spread-sheets>
+  </div>
+</div>

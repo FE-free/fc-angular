@@ -1,0 +1,60 @@
+<!--
+ * @Author: luohong
+ * @LastEditors: luohong
+ * @Description: 登录
+ * @email: 3300536651@qq.com
+ * @Date: 2019-02-18 10:59:15
+ * @LastEditTime: 2019-06-19 16:40:49
+ -->
+<div class="login-in">
+  <div class="login-bg">
+    <div class="login-content clearfix">
+      <div class="login-left">
+        <span class="project-name">{{ _projectName }}</span>
+        <!-- <img class="map-img" src="../../../assets/image/login_pic.png"> -->
+        <!-- <img class="left-img" src="../../../assets/image/login_left.png"> -->
+      </div>
+      <div class="login-right">
+        <div class="login-right-content">
+          <h2 class="login-h2">
+            欢迎登录
+          </h2>
+          <div class="sigin-error">
+            <div class="sigin-error-in" *ngIf="hasError">
+              <i class="icon iconfont icon-error"></i>
+              <span>{{msg}}</span>
+            </div>
+          </div>
+          <form>
+            <div class="user-box">
+              <nz-input-group [nzSuffix]="suffixTemplate" [nzPrefix]="prefixTemplate">
+                <input type="text" nz-input placeholder="请输入用户名admin" [(ngModel)]="userId" name="username" />
+              </nz-input-group>
+              <ng-template #prefixTemplate><i class="icon iconfont fc-icon-personnel"></i></ng-template>
+              <ng-template #suffixTemplate><i nz-icon type="close-circle" (click)="userId = ''" *ngIf="username"></i>
+              </ng-template>
+
+            </div>
+            <div class="user-box">
+              <nz-input-group [nzSuffix]="pwdSuffixTemplate" [nzPrefix]="pwdPrefixTemplate">
+                <input type="text" nz-input placeholder="请输入密码admin" [(ngModel)]="password" name="password" />
+              </nz-input-group>
+              <ng-template #pwdPrefixTemplate><i class="icon iconfont fc-icon-password"></i></ng-template>
+              <ng-template #pwdSuffixTemplate><i nz-icon type="close-circle" (click)="password = ''"
+                  *ngIf="password"></i>
+              </ng-template>
+            </div>
+            <div class="user-box login-btn">
+              <button nz-button nzType="primary" (click)="login()" [nzBlock]="true">登录</button>
+            </div>
+            <div class="google-download">
+              <p>本系统仅支持
+                <a href="../assets/browser/chromedev_x64-v71.0.3554.0.exe">谷歌</a>和<a
+                  href="../assets/browser/360cse_9.5.0.138.exe">360急速</a>浏览器</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
