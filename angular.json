@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular8-go": {
+    "angular8-fast-start": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular8-go",
+            "outputPath": "dist/angular8-fast-start",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -65,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular8-go:build"
+            "browserTarget": "angular8-fast-start:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular8-go:build:production"
+              "browserTarget": "angular8-fast-start:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular8-go:build"
+            "browserTarget": "angular8-fast-start:build"
           }
         },
         "test": {
@@ -113,16 +113,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular8-go:serve"
+            "devServerTarget": "angular8-fast-start:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular8-go:serve:production"
+              "devServerTarget": "angular8-fast-start:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "angular8-go"
+  "defaultProject": "angular8-fast-start"
 }
