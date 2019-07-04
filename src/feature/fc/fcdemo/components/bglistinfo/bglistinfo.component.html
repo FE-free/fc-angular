@@ -1,0 +1,25 @@
+<!--
+ * @Author: luohong
+ * @LastEditors: luohong
+ * @Description: 查询
+ * @email: 3300536651@qq.com
+ * @Date: 2019-04-16 15:57:43
+ * @LastEditTime: 2019-04-25 15:10:43
+ -->
+<div style="width: 500px;height: 500px;">
+  <fc-imgview imgSrc="assets/image/login_bg.png"></fc-imgview>
+</div>
+<nz-table #basicTable [nzData]="pageList" [nzBordered]="true">
+  <thead>
+    <tr>
+      <th>序号 </th>
+      <th>分类</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data;index as i">
+      <td>{{ i+1 }}</td>
+      <td>{{ data }}</td>
+    </tr>
+  </tbody>
+</nz-table>
