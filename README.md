@@ -16,8 +16,8 @@
 - 路由复用策略，切换路由保留用户操作状态
 ![选项卡切换](./media/2.png)
 
-- 【在线预览】[https://luohong123.github.io/angular8-fast-start/demo/index.html](https://luohong123.github.io/angular8-fast-start/demo/index.html)
-- 【源码地址】[https://github.com/luohong123/angular8-fast-start](https://github.com/luohong123/angular8-fast-start)
+- 【在线预览】[https://luohong123.github.io/fc-angular/demo/index.html](https://luohong123.github.io/fc-angular/demo/index.html)
+- 【源码地址】[https://github.com/luohong123/fc-angular](https://github.com/luohong123/fc-angular)
 
 <a name="f3a1332d"></a>
 ## 平台功能开发进度
