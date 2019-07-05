@@ -1,9 +1,0 @@
-
-      ::ng-deep .cdk-drag-preview {
-        display: table;
-      }
-
-      ::ng-deep .cdk-drag-placeholder {
-        opacity: 0;
-      }
-    
