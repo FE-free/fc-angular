@@ -4,7 +4,11 @@
  * @Description: 登录
  * @email: 3300536651@qq.com
  * @Date: 2019-02-18 10:59:15
+<<<<<<< HEAD
  * @LastEditTime: 2019-06-19 16:40:49
+=======
+ * @LastEditTime: 2019-07-05 12:43:48
+>>>>>>> d77c7163b8d263f1114820b35acd56317d76d493
  -->
 <div class="login-in">
   <div class="login-bg">
@@ -27,21 +31,37 @@
           </div>
           <form>
             <div class="user-box">
+<<<<<<< HEAD
               <nz-input-group [nzSuffix]="suffixTemplate" [nzPrefix]="prefixTemplate">
                 <input type="text" nz-input placeholder="请输入用户名admin" [(ngModel)]="userId" name="username" />
               </nz-input-group>
               <ng-template #prefixTemplate><i class="icon iconfont fc-icon-personnel"></i></ng-template>
               <ng-template #suffixTemplate><i nz-icon type="close-circle" (click)="userId = ''" *ngIf="username"></i>
+=======
+              <nz-input-group [nzSuffix]="userIdSuffix" [nzPrefix]="userIdPrefix">
+                <input type="text" nz-input placeholder="请输入用户名admin" [(ngModel)]="userId" name="userId" />
+              </nz-input-group>
+              <ng-template #userIdPrefix><i class="icon iconfont fc-icon-personnel"></i></ng-template>
+              <ng-template #userIdSuffix><i nz-icon type="close-circle" (click)="userId =''" *ngIf="userId"></i>
+>>>>>>> d77c7163b8d263f1114820b35acd56317d76d493
               </ng-template>
 
             </div>
             <div class="user-box">
+<<<<<<< HEAD
               <nz-input-group [nzSuffix]="pwdSuffixTemplate" [nzPrefix]="pwdPrefixTemplate">
                 <input type="text" nz-input placeholder="请输入密码admin" [(ngModel)]="password" name="password" />
               </nz-input-group>
               <ng-template #pwdPrefixTemplate><i class="icon iconfont fc-icon-password"></i></ng-template>
               <ng-template #pwdSuffixTemplate><i nz-icon type="close-circle" (click)="password = ''"
                   *ngIf="password"></i>
+=======
+              <nz-input-group [nzSuffix]="pwdSuffix" [nzPrefix]="pwdPrefix">
+                <input type="password" nz-input placeholder="请输入密码admin" [(ngModel)]="password" name="password" />
+              </nz-input-group>
+              <ng-template #pwdPrefix><i class="icon iconfont fc-icon-password"></i></ng-template>
+              <ng-template #pwdSuffix><i nz-icon type="close-circle" (click)="password = ''" *ngIf="password"></i>
+>>>>>>> d77c7163b8d263f1114820b35acd56317d76d493
               </ng-template>
             </div>
             <div class="user-box login-btn">
@@ -57,4 +77,8 @@
       </div>
     </div>
   </div>
+<<<<<<< HEAD
 </div>
+=======
+</div>
+>>>>>>> d77c7163b8d263f1114820b35acd56317d76d493

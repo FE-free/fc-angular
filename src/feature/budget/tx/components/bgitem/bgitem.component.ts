@@ -4,7 +4,11 @@
  * @Description: 预算项目
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
+<<<<<<< HEAD
  * @LastEditTime: 2019-06-19 16:30:06
+=======
+ * @LastEditTime: 2019-07-05 12:11:56
+>>>>>>> d77c7163b8d263f1114820b35acd56317d76d493
  */
 import { Component, OnInit, ViewChild, AfterContentInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
@@ -21,10 +25,17 @@ import { DaoService } from 'src/fccore/service/dao.service';
 
   `]
 })
+<<<<<<< HEAD
 export class BgitemComponent extends ParentComponent implements OnInit,AfterContentInit {
 
   // 树
   @ViewChild('nzTreeComponent',{static: false}) nzTreeComponent: NzTreeComponent
+=======
+export class BgitemComponent extends ParentComponent implements OnInit, AfterContentInit {
+
+  // 树
+  @ViewChild('nzTreeComponent', { static: false }) nzTreeComponent: NzTreeComponent
+>>>>>>> d77c7163b8d263f1114820b35acd56317d76d493
   // 指定选中复选框的树节点
   defaultCheckedKeys = ['10020']
   // 指定选中的树节点
@@ -59,6 +70,7 @@ export class BgitemComponent extends ParentComponent implements OnInit,AfterCont
   ]
   validateForm: FormGroup;
   // 选中索引
+<<<<<<< HEAD
   fcSelectedIndex=0
   // 一级分类
   firstClass:any;
@@ -75,6 +87,17 @@ export class BgitemComponent extends ParentComponent implements OnInit,AfterCont
       confirm: ['', [this.confirmValidator]],
       comment: ['', [Validators.required]]
     })
+=======
+  fcSelectedIndex = 0
+  // 一级分类
+  firstClass: any;
+  // 项目名称
+  itemName: string;
+  // 拼音码
+  pinyinCode: string;
+  constructor(public router: Router, public activedRoute: ActivatedRoute, private daoService: DaoService, private fb: FormBuilder) {
+    super()
+>>>>>>> d77c7163b8d263f1114820b35acd56317d76d493
   }
   ngOnInit(): void {
   }
