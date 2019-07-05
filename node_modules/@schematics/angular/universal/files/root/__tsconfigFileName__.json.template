@@ -1,9 +1,0 @@
-{
-  "extends": "./<%= tsConfigExtends %>",
-  "compilerOptions": {
-    "outDir": "<%= outDir %>-server"
-  },
-  "angularCompilerOptions": {
-    "entryModule": "./<%= rootInSrc ? '' : 'src/' %><%= appDir %>/<%= stripTsExtension(rootModuleFileName) %>#<%= rootModuleClassName %>"
-  }
-}

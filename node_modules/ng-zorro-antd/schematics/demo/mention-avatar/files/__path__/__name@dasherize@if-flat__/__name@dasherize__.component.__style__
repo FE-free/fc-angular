@@ -1,8 +1,0 @@
-
-      .ant-avatar.ant-avatar-sm {
-        width: 14px;
-        height: 14px;
-        margin-right: 8px;
-        position: relative;
-      }
-    

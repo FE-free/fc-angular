@@ -1,9 +1,0 @@
-
-      .wrapper {
-        width: 240px;
-      }
-
-      button {
-        margin-bottom: 12px;
-      }
-    

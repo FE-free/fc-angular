@@ -1,5 +1,0 @@
-
-      .large ::ng-deep .ant-rate-star {
-        font-size: 36px;
-      }
-    
