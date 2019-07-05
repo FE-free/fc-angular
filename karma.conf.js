@@ -16,11 +16,7 @@ module.exports = function (config) {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
     coverageIstanbulReporter: {
-<<<<<<< HEAD
-      dir: require('path').join(__dirname, './coverage/angular8-fast-start'),
-=======
       dir: require('path').join(__dirname, './coverage/fc-angular'),
->>>>>>> d77c7163b8d263f1114820b35acd56317d76d493
       reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true
     },

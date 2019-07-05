@@ -2,10 +2,7 @@
 
 # compiled output
 /dist
-<<<<<<< HEAD
-=======
 dist
->>>>>>> d77c7163b8d263f1114820b35acd56317d76d493
 /tmp
 /out-tsc
 # Only exists if Bazel was run
@@ -13,11 +10,7 @@ dist
 
 # dependencies
 /node_modules
-<<<<<<< HEAD
-
-=======
 node_modules
->>>>>>> d77c7163b8d263f1114820b35acd56317d76d493
 # profiling files
 chrome-profiler-events.json
 speed-measure-plugin.json
@@ -51,8 +44,4 @@ testem.log
 
 # System Files
 .DS_Store
-<<<<<<< HEAD
 Thumbs.db
-=======
-Thumbs.db
->>>>>>> d77c7163b8d263f1114820b35acd56317d76d493

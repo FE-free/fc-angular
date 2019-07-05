@@ -4,11 +4,7 @@
  * @Description: 登录
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
-<<<<<<< HEAD
- * @LastEditTime: 2019-04-17 10:10:16
-=======
  * @LastEditTime: 2019-07-05 12:46:04
->>>>>>> d77c7163b8d263f1114820b35acd56317d76d493
  */
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -22,11 +18,7 @@ import { CacheService } from 'src/fccore/service/cache.service';
 })
 export class SigninComponent implements OnInit {
   hasError: boolean = false
-<<<<<<< HEAD
-  msg: string = ''
-=======
   msg: string = '用户名或者密码错误'
->>>>>>> d77c7163b8d263f1114820b35acd56317d76d493
   userId: string = ''
   password: string = ''
   _projectName = environment.projectName

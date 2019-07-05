@@ -10,11 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-<<<<<<< HEAD
-    expect(page.getTitleText()).toEqual('Welcome to angular8-fast-start!');
-=======
     expect(page.getTitleText()).toEqual('Welcome to fc-angular!');
->>>>>>> d77c7163b8d263f1114820b35acd56317d76d493
   });
 
   afterEach(async () => {
