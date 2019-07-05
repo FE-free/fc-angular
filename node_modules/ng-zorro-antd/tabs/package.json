@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-tabs.umd.js",
+  "module": "../fesm5/ng-zorro-antd-tabs.js",
+  "es2015": "../fesm2015/ng-zorro-antd-tabs.js",
+  "esm5": "../esm5/tabs/ng-zorro-antd-tabs.js",
+  "esm2015": "../esm2015/tabs/ng-zorro-antd-tabs.js",
+  "fesm5": "../fesm5/ng-zorro-antd-tabs.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-tabs.js",
+  "typings": "ng-zorro-antd-tabs.d.ts",
+  "metadata": "ng-zorro-antd-tabs.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/tabs"
+}

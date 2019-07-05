@@ -1,0 +1,10 @@
+
+      .components-table-demo-control-bar {
+        margin-bottom: 12px;
+      }
+
+      .nz-form-item {
+        margin-right: 16px;
+        margin-bottom: 8px;
+      }
+    

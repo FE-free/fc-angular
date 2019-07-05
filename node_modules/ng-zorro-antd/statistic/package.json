@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-statistic.umd.js",
+  "module": "../fesm5/ng-zorro-antd-statistic.js",
+  "es2015": "../fesm2015/ng-zorro-antd-statistic.js",
+  "esm5": "../esm5/statistic/ng-zorro-antd-statistic.js",
+  "esm2015": "../esm2015/statistic/ng-zorro-antd-statistic.js",
+  "fesm5": "../fesm5/ng-zorro-antd-statistic.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-statistic.js",
+  "typings": "ng-zorro-antd-statistic.d.ts",
+  "metadata": "ng-zorro-antd-statistic.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/statistic"
+}

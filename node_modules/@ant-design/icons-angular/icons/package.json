@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ant-design-icons-angular-icons.umd.js",
+  "module": "../fesm5/ant-design-icons-angular-icons.js",
+  "es2015": "../fesm2015/ant-design-icons-angular-icons.js",
+  "esm5": "../esm5/icons/ant-design-icons-angular-icons.js",
+  "esm2015": "../esm2015/icons/ant-design-icons-angular-icons.js",
+  "fesm5": "../fesm5/ant-design-icons-angular-icons.js",
+  "fesm2015": "../fesm2015/ant-design-icons-angular-icons.js",
+  "typings": "ant-design-icons-angular-icons.d.ts",
+  "metadata": "ant-design-icons-angular-icons.metadata.json",
+  "sideEffects": false,
+  "name": "@ant-design/icons-angular/icons"
+}

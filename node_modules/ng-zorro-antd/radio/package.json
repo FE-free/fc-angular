@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-radio.umd.js",
+  "module": "../fesm5/ng-zorro-antd-radio.js",
+  "es2015": "../fesm2015/ng-zorro-antd-radio.js",
+  "esm5": "../esm5/radio/ng-zorro-antd-radio.js",
+  "esm2015": "../esm2015/radio/ng-zorro-antd-radio.js",
+  "fesm5": "../fesm5/ng-zorro-antd-radio.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-radio.js",
+  "typings": "ng-zorro-antd-radio.d.ts",
+  "metadata": "ng-zorro-antd-radio.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/radio"
+}

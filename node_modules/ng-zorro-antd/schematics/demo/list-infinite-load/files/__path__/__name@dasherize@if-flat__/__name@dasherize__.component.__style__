@@ -1,0 +1,11 @@
+
+      .demo-infinite-container {
+        height: 300px;
+        border: 1px solid #e8e8e8;
+        border-radius: 4px;
+      }
+
+      nz-list {
+        padding: 24px;
+      }
+    

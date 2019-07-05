@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-switch.umd.js",
+  "module": "../fesm5/ng-zorro-antd-switch.js",
+  "es2015": "../fesm2015/ng-zorro-antd-switch.js",
+  "esm5": "../esm5/switch/ng-zorro-antd-switch.js",
+  "esm2015": "../esm2015/switch/ng-zorro-antd-switch.js",
+  "fesm5": "../fesm5/ng-zorro-antd-switch.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-switch.js",
+  "typings": "ng-zorro-antd-switch.d.ts",
+  "metadata": "ng-zorro-antd-switch.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/switch"
+}

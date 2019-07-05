@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-cascader.umd.js",
+  "module": "../fesm5/ng-zorro-antd-cascader.js",
+  "es2015": "../fesm2015/ng-zorro-antd-cascader.js",
+  "esm5": "../esm5/cascader/ng-zorro-antd-cascader.js",
+  "esm2015": "../esm2015/cascader/ng-zorro-antd-cascader.js",
+  "fesm5": "../fesm5/ng-zorro-antd-cascader.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-cascader.js",
+  "typings": "ng-zorro-antd-cascader.d.ts",
+  "metadata": "ng-zorro-antd-cascader.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/cascader"
+}

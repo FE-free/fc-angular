@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-input-number.umd.js",
+  "module": "../fesm5/ng-zorro-antd-input-number.js",
+  "es2015": "../fesm2015/ng-zorro-antd-input-number.js",
+  "esm5": "../esm5/input-number/ng-zorro-antd-input-number.js",
+  "esm2015": "../esm2015/input-number/ng-zorro-antd-input-number.js",
+  "fesm5": "../fesm5/ng-zorro-antd-input-number.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-input-number.js",
+  "typings": "ng-zorro-antd-input-number.d.ts",
+  "metadata": "ng-zorro-antd-input-number.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/input-number"
+}

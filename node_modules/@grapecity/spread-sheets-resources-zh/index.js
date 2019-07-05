@@ -1,0 +1,1 @@
+require('./dist/gc.spread.sheets.resources.zh.min.js');

@@ -1,0 +1,13 @@
+
+    <nz-radio-group [(ngModel)]="dotPosition">
+      <label nz-radio-button nzValue="bottom">Bottom</label>
+      <label nz-radio-button nzValue="top">Top</label>
+      <label nz-radio-button nzValue="left">Left</label>
+      <label nz-radio-button nzValue="right">Right</label>
+    </nz-radio-group>
+    <nz-carousel [nzDotPosition]="dotPosition">
+      <div nz-carousel-content *ngFor="let index of array">
+        <h3>{{ index }}</h3>
+      </div>
+    </nz-carousel>
+  

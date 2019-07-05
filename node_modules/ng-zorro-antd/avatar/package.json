@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-avatar.umd.js",
+  "module": "../fesm5/ng-zorro-antd-avatar.js",
+  "es2015": "../fesm2015/ng-zorro-antd-avatar.js",
+  "esm5": "../esm5/avatar/ng-zorro-antd-avatar.js",
+  "esm2015": "../esm2015/avatar/ng-zorro-antd-avatar.js",
+  "fesm5": "../fesm5/ng-zorro-antd-avatar.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-avatar.js",
+  "typings": "ng-zorro-antd-avatar.d.ts",
+  "metadata": "ng-zorro-antd-avatar.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/avatar"
+}

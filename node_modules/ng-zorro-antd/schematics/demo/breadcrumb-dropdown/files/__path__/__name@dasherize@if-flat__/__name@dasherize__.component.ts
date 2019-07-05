@@ -1,0 +1,29 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: '<%= selector %>',
+  <% if(inlineTemplate) { %>template: `
+    <nz-breadcrumb>
+      <nz-breadcrumb-item>
+        Ant Design
+      </nz-breadcrumb-item>
+      <nz-breadcrumb-item>
+        <a>Component</a>
+      </nz-breadcrumb-item>
+      <nz-breadcrumb-item [nzOverlay]="menu">
+        <a href>An Application</a>
+      </nz-breadcrumb-item>
+      <nz-breadcrumb-item>
+        Button
+      </nz-breadcrumb-item>
+    </nz-breadcrumb>
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+      <ul nz-menu nzSelectable>
+        <li nz-menu-item>General</li>
+        <li nz-menu-item>Layout</li>
+        <li nz-menu-item>Navigation</li>
+      </ul>
+    </nz-dropdown-menu>
+  `<% } else { %>templateUrl: './<%= dasherize(name) %>.component.html'<% } %>
+})
+export class <%= classify(name) %>Component {}

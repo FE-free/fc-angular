@@ -1,0 +1,29 @@
+
+    <button nz-button nzType="primary" (click)="showModalTop()">Display a modal dialog at 20px to Top</button>
+    <nz-modal
+      [nzStyle]="{ top: '20px' }"
+      [(nzVisible)]="isVisibleTop"
+      nzTitle="20px to Top"
+      (nzOnCancel)="handleCancelTop()"
+      (nzOnOk)="handleOkTop()"
+    >
+      <p>some contents...</p>
+      <p>some contents...</p>
+      <p>some contents...</p>
+    </nz-modal>
+
+    <br /><br />
+
+    <button nz-button nzType="primary" (click)="showModalMiddle()">Vertically centered modal dialog</button>
+    <nz-modal
+      nzWrapClassName="vertical-center-modal"
+      [(nzVisible)]="isVisibleMiddle"
+      nzTitle="Vertically centered modal dialog"
+      (nzOnCancel)="handleCancelMiddle()"
+      (nzOnOk)="handleOkMiddle()"
+    >
+      <p>some contents...</p>
+      <p>some contents...</p>
+      <p>some contents...</p>
+    </nz-modal>
+  

@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-pagination.umd.js",
+  "module": "../fesm5/ng-zorro-antd-pagination.js",
+  "es2015": "../fesm2015/ng-zorro-antd-pagination.js",
+  "esm5": "../esm5/pagination/ng-zorro-antd-pagination.js",
+  "esm2015": "../esm2015/pagination/ng-zorro-antd-pagination.js",
+  "fesm5": "../fesm5/ng-zorro-antd-pagination.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-pagination.js",
+  "typings": "ng-zorro-antd-pagination.d.ts",
+  "metadata": "ng-zorro-antd-pagination.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/pagination"
+}

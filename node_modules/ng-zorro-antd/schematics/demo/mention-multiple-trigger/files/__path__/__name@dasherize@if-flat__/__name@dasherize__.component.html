@@ -1,0 +1,10 @@
+
+    <nz-mention [nzSuggestions]="suggestions" (nzOnSearchChange)="onSearchChange($event)" [nzPrefix]="['#', '@']">
+      <input
+        placeholder="input @ to mention people, # to mention tag"
+        nzMentionTrigger
+        nz-input
+        [(ngModel)]="inputValue"
+      />
+    </nz-mention>
+  

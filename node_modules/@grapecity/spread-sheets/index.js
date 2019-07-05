@@ -1,0 +1,1 @@
+module.exports = require('./dist/gc.spread.sheets.all.min.js');

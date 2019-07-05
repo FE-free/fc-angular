@@ -1,0 +1,14 @@
+
+    <nz-slider
+      [(ngModel)]="singleValue"
+      (ngModelChange)="onChange($event)"
+      (nzOnAfterChange)="onAfterChange($event)"
+    ></nz-slider>
+    <nz-slider
+      nzRange
+      [nzStep]="10"
+      [(ngModel)]="rangeValue"
+      (ngModelChange)="onChange($event)"
+      (nzOnAfterChange)="onAfterChange($event)"
+    ></nz-slider>
+  

@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-transfer.umd.js",
+  "module": "../fesm5/ng-zorro-antd-transfer.js",
+  "es2015": "../fesm2015/ng-zorro-antd-transfer.js",
+  "esm5": "../esm5/transfer/ng-zorro-antd-transfer.js",
+  "esm2015": "../esm2015/transfer/ng-zorro-antd-transfer.js",
+  "fesm5": "../fesm5/ng-zorro-antd-transfer.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-transfer.js",
+  "typings": "ng-zorro-antd-transfer.d.ts",
+  "metadata": "ng-zorro-antd-transfer.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/transfer"
+}

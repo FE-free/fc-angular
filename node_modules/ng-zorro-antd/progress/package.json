@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-progress.umd.js",
+  "module": "../fesm5/ng-zorro-antd-progress.js",
+  "es2015": "../fesm2015/ng-zorro-antd-progress.js",
+  "esm5": "../esm5/progress/ng-zorro-antd-progress.js",
+  "esm2015": "../esm2015/progress/ng-zorro-antd-progress.js",
+  "fesm5": "../fesm5/ng-zorro-antd-progress.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-progress.js",
+  "typings": "ng-zorro-antd-progress.d.ts",
+  "metadata": "ng-zorro-antd-progress.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/progress"
+}

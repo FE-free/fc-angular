@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-anchor.umd.js",
+  "module": "../fesm5/ng-zorro-antd-anchor.js",
+  "es2015": "../fesm2015/ng-zorro-antd-anchor.js",
+  "esm5": "../esm5/anchor/ng-zorro-antd-anchor.js",
+  "esm2015": "../esm2015/anchor/ng-zorro-antd-anchor.js",
+  "fesm5": "../fesm5/ng-zorro-antd-anchor.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-anchor.js",
+  "typings": "ng-zorro-antd-anchor.d.ts",
+  "metadata": "ng-zorro-antd-anchor.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/anchor"
+}

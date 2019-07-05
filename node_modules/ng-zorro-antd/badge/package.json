@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-badge.umd.js",
+  "module": "../fesm5/ng-zorro-antd-badge.js",
+  "es2015": "../fesm2015/ng-zorro-antd-badge.js",
+  "esm5": "../esm5/badge/ng-zorro-antd-badge.js",
+  "esm2015": "../esm2015/badge/ng-zorro-antd-badge.js",
+  "fesm5": "../fesm5/ng-zorro-antd-badge.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-badge.js",
+  "typings": "ng-zorro-antd-badge.d.ts",
+  "metadata": "ng-zorro-antd-badge.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/badge"
+}

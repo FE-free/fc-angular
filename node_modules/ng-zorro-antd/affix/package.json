@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-affix.umd.js",
+  "module": "../fesm5/ng-zorro-antd-affix.js",
+  "es2015": "../fesm2015/ng-zorro-antd-affix.js",
+  "esm5": "../esm5/affix/ng-zorro-antd-affix.js",
+  "esm2015": "../esm2015/affix/ng-zorro-antd-affix.js",
+  "fesm5": "../fesm5/ng-zorro-antd-affix.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-affix.js",
+  "typings": "ng-zorro-antd-affix.d.ts",
+  "metadata": "ng-zorro-antd-affix.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/affix"
+}

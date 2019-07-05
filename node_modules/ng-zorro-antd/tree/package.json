@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-tree.umd.js",
+  "module": "../fesm5/ng-zorro-antd-tree.js",
+  "es2015": "../fesm2015/ng-zorro-antd-tree.js",
+  "esm5": "../esm5/tree/ng-zorro-antd-tree.js",
+  "esm2015": "../esm2015/tree/ng-zorro-antd-tree.js",
+  "fesm5": "../fesm5/ng-zorro-antd-tree.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-tree.js",
+  "typings": "ng-zorro-antd-tree.d.ts",
+  "metadata": "ng-zorro-antd-tree.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/tree"
+}

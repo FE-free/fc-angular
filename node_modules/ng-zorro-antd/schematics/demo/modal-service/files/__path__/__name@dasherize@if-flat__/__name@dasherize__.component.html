@@ -1,0 +1,39 @@
+
+    <button nz-button nzType="primary" (click)="createModal()">
+      <span>String</span>
+    </button>
+
+    <button nz-button nzType="primary" (click)="createTplModal(tplTitle, tplContent, tplFooter)">
+      <span>Template</span>
+    </button>
+    <ng-template #tplTitle>
+      <span>Title Template</span>
+    </ng-template>
+    <ng-template #tplContent>
+      <p>some contents...</p>
+      <p>some contents...</p>
+      <p>some contents...</p>
+      <p>some contents...</p>
+      <p>some contents...</p>
+    </ng-template>
+    <ng-template #tplFooter>
+      <button nz-button nzType="primary" (click)="destroyTplModal()" [nzLoading]="tplModalButtonLoading">
+        Close after submit
+      </button>
+    </ng-template>
+
+    <br /><br />
+
+    <button nz-button nzType="primary" (click)="createComponentModal()">
+      <span>Use Component</span>
+    </button>
+
+    <button nz-button nzType="primary" (click)="createCustomButtonModal()">Custom Button</button>
+
+    <br /><br />
+
+    <button nz-button nzType="primary" (click)="openAndCloseAll()">Open more modals then close all after 2s</button>
+    <nz-modal [(nzVisible)]="htmlModalVisible" nzMask="false" nzZIndex="1001" nzTitle="Non-service html modal"
+      >This is a non-service html modal</nz-modal
+    >
+  

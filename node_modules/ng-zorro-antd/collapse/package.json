@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-collapse.umd.js",
+  "module": "../fesm5/ng-zorro-antd-collapse.js",
+  "es2015": "../fesm2015/ng-zorro-antd-collapse.js",
+  "esm5": "../esm5/collapse/ng-zorro-antd-collapse.js",
+  "esm2015": "../esm2015/collapse/ng-zorro-antd-collapse.js",
+  "fesm5": "../fesm5/ng-zorro-antd-collapse.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-collapse.js",
+  "typings": "ng-zorro-antd-collapse.d.ts",
+  "metadata": "ng-zorro-antd-collapse.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/collapse"
+}

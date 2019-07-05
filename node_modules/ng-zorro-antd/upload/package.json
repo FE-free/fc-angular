@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-upload.umd.js",
+  "module": "../fesm5/ng-zorro-antd-upload.js",
+  "es2015": "../fesm2015/ng-zorro-antd-upload.js",
+  "esm5": "../esm5/upload/ng-zorro-antd-upload.js",
+  "esm2015": "../esm2015/upload/ng-zorro-antd-upload.js",
+  "fesm5": "../fesm5/ng-zorro-antd-upload.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-upload.js",
+  "typings": "ng-zorro-antd-upload.d.ts",
+  "metadata": "ng-zorro-antd-upload.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/upload"
+}

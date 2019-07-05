@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-tag.umd.js",
+  "module": "../fesm5/ng-zorro-antd-tag.js",
+  "es2015": "../fesm2015/ng-zorro-antd-tag.js",
+  "esm5": "../esm5/tag/ng-zorro-antd-tag.js",
+  "esm2015": "../esm2015/tag/ng-zorro-antd-tag.js",
+  "fesm5": "../fesm5/ng-zorro-antd-tag.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-tag.js",
+  "typings": "ng-zorro-antd-tag.d.ts",
+  "metadata": "ng-zorro-antd-tag.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/tag"
+}

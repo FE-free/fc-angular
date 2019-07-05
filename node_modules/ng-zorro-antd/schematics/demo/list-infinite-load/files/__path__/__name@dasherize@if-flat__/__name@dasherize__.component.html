@@ -1,0 +1,21 @@
+
+    <div>
+      <cdk-virtual-scroll-viewport itemSize="73" class="demo-infinite-container">
+        <nz-list>
+          <nz-list-item *cdkVirtualFor="let item of ds">
+            <nz-skeleton *ngIf="!item" [nzAvatar]="true" [nzParagraph]="{ rows: 1 }"></nz-skeleton>
+            <nz-list-item-meta
+              *ngIf="item"
+              [nzTitle]="nzTitle"
+              nzAvatar="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+              [nzDescription]="item.email"
+            >
+              <ng-template #nzTitle>
+                <a href="https://ng.ant.design">{{ item.name.last }}</a>
+              </ng-template>
+            </nz-list-item-meta>
+          </nz-list-item>
+        </nz-list>
+      </cdk-virtual-scroll-viewport>
+    </div>
+  

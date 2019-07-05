@@ -1,5 +1,5 @@
 {
-  "name": "angular8-fast-start",
+  "name": "fc-angular",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -31,7 +31,7 @@
     "ag-grid-community": "^21.0.1",
     "ag-grid-enterprise": "^21.0.1",
     "mockjs": "^1.0.1-beta3",
-    "ng-zorro-antd": "^7.5.1",
+    "ng-zorro-antd": "^8.0.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"

@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-calendar.umd.js",
+  "module": "../fesm5/ng-zorro-antd-calendar.js",
+  "es2015": "../fesm2015/ng-zorro-antd-calendar.js",
+  "esm5": "../esm5/calendar/ng-zorro-antd-calendar.js",
+  "esm2015": "../esm2015/calendar/ng-zorro-antd-calendar.js",
+  "fesm5": "../fesm5/ng-zorro-antd-calendar.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-calendar.js",
+  "typings": "ng-zorro-antd-calendar.d.ts",
+  "metadata": "ng-zorro-antd-calendar.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/calendar"
+}

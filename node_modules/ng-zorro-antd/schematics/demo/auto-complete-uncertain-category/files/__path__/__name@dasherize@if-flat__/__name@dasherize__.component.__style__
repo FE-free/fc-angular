@@ -1,0 +1,6 @@
+
+      .global-search-item-count {
+        position: absolute;
+        right: 16px;
+      }
+    

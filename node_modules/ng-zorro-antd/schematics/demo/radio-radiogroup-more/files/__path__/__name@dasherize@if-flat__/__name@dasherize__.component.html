@@ -1,0 +1,11 @@
+
+    <nz-radio-group [(ngModel)]="radioValue">
+      <label nz-radio [ngStyle]="style" nzValue="A">Option A</label>
+      <label nz-radio [ngStyle]="style" nzValue="B">Option B</label>
+      <label nz-radio [ngStyle]="style" nzValue="C">Option C</label>
+      <label nz-radio [ngStyle]="style" nzValue="M">
+        More...
+        <input type="text" nz-input *ngIf="radioValue == 'M'" style="width: 100px; margin-left: 10px;" />
+      </label>
+    </nz-radio-group>
+  

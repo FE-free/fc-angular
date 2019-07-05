@@ -1,0 +1,13 @@
+
+    <nz-select
+      [(ngModel)]="placement"
+      style="width: 120px; margin-right: 10px;"
+      (ngModelChange)="clearBeforeNotifications()"
+    >
+      <nz-option nzValue="topLeft" nzLabel="topLeft"></nz-option>
+      <nz-option nzValue="topRight" nzLabel="topRight"></nz-option>
+      <nz-option nzValue="bottomLeft" nzLabel="bottomLeft"></nz-option>
+      <nz-option nzValue="bottomRight" nzLabel="bottomRight"></nz-option>
+    </nz-select>
+    <button nz-button [nzType]="'primary'" (click)="createBasicNotification()">Open the notification box</button>
+  

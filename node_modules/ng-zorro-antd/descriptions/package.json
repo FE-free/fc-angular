@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-descriptions.umd.js",
+  "module": "../fesm5/ng-zorro-antd-descriptions.js",
+  "es2015": "../fesm2015/ng-zorro-antd-descriptions.js",
+  "esm5": "../esm5/descriptions/ng-zorro-antd-descriptions.js",
+  "esm2015": "../esm2015/descriptions/ng-zorro-antd-descriptions.js",
+  "fesm5": "../fesm5/ng-zorro-antd-descriptions.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-descriptions.js",
+  "typings": "ng-zorro-antd-descriptions.d.ts",
+  "metadata": "ng-zorro-antd-descriptions.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/descriptions"
+}

@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-popconfirm.umd.js",
+  "module": "../fesm5/ng-zorro-antd-popconfirm.js",
+  "es2015": "../fesm2015/ng-zorro-antd-popconfirm.js",
+  "esm5": "../esm5/popconfirm/ng-zorro-antd-popconfirm.js",
+  "esm2015": "../esm2015/popconfirm/ng-zorro-antd-popconfirm.js",
+  "fesm5": "../fesm5/ng-zorro-antd-popconfirm.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-popconfirm.js",
+  "typings": "ng-zorro-antd-popconfirm.d.ts",
+  "metadata": "ng-zorro-antd-popconfirm.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/popconfirm"
+}

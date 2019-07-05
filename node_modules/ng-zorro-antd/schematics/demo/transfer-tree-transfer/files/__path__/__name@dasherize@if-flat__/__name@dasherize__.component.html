@@ -1,0 +1,28 @@
+
+    <nz-transfer
+      [nzDataSource]="list"
+      [nzShowSelectAll]="false"
+      [nzRenderList]="[leftRenderList, null]"
+      (nzChange)="change($event)"
+    >
+      <ng-template #leftRenderList let-items let-onItemSelectAll="onItemSelectAll" let-onItemSelect="onItemSelect">
+        <nz-tree #tree [nzData]="treeData" nzExpandAll nzBlockNode>
+          <ng-template #nzTreeTemplate let-node>
+            <span
+              class="ant-tree-checkbox"
+              [class.ant-tree-checkbox-disabled]="node.isDisabled"
+              [class.ant-tree-checkbox-checked]="node.isChecked"
+              (click)="checkBoxChange(node, onItemSelect)"
+            >
+              <span class="ant-tree-checkbox-inner"></span>
+            </span>
+            <span
+              (click)="checkBoxChange(node, onItemSelect)"
+              class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
+              >{{ node.title }}</span
+            >
+          </ng-template>
+        </nz-tree>
+      </ng-template>
+    </nz-transfer>
+  

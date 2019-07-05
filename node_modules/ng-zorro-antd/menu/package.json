@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-menu.umd.js",
+  "module": "../fesm5/ng-zorro-antd-menu.js",
+  "es2015": "../fesm2015/ng-zorro-antd-menu.js",
+  "esm5": "../esm5/menu/ng-zorro-antd-menu.js",
+  "esm2015": "../esm2015/menu/ng-zorro-antd-menu.js",
+  "fesm5": "../fesm5/ng-zorro-antd-menu.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-menu.js",
+  "typings": "ng-zorro-antd-menu.d.ts",
+  "metadata": "ng-zorro-antd-menu.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/menu"
+}

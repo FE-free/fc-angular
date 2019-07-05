@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-carousel.umd.js",
+  "module": "../fesm5/ng-zorro-antd-carousel.js",
+  "es2015": "../fesm2015/ng-zorro-antd-carousel.js",
+  "esm5": "../esm5/carousel/ng-zorro-antd-carousel.js",
+  "esm2015": "../esm2015/carousel/ng-zorro-antd-carousel.js",
+  "fesm5": "../fesm5/ng-zorro-antd-carousel.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-carousel.js",
+  "typings": "ng-zorro-antd-carousel.d.ts",
+  "metadata": "ng-zorro-antd-carousel.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/carousel"
+}

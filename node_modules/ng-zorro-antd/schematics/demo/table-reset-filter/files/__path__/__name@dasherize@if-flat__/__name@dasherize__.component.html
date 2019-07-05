@@ -1,0 +1,41 @@
+
+    <div class="table-operations">
+      <button nz-button (click)="sort('age', 'descend')">Sort age</button>
+      <button nz-button (click)="resetFilters()">Clear filters</button>
+      <button nz-button (click)="resetSortAndFilters()">Clear filters and sorters</button>
+    </div>
+    <nz-table #filterTable [nzData]="listOfDisplayData">
+      <thead>
+        <tr>
+          <th
+            nzShowSort
+            nzShowFilter
+            [(nzSort)]="mapOfSort.name"
+            (nzSortChange)="sort('name', $event)"
+            [nzFilters]="listOfFilterName"
+            (nzFilterChange)="search($event, listOfSearchAddress)"
+          >
+            Name
+          </th>
+          <th nzShowSort [(nzSort)]="mapOfSort.age" (nzSortChange)="sort('age', $event)">Age</th>
+          <th
+            nzShowSort
+            nzShowFilter
+            [(nzSort)]="mapOfSort.address"
+            (nzSortChange)="sort('address', $event)"
+            [nzFilters]="listOfFilterAddress"
+            (nzFilterChange)="search(listOfSearchName, $event)"
+          >
+            Address
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of filterTable.data">
+          <td>{{ data.name }}</td>
+          <td>{{ data.age }}</td>
+          <td>{{ data.address }}</td>
+        </tr>
+      </tbody>
+    </nz-table>
+  

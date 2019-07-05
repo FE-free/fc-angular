@@ -1,0 +1,20 @@
+
+    <nz-date-picker
+      nzFormat="yyyy-MM-dd HH:mm:ss"
+      [nzDisabledDate]="disabledDate"
+      [nzDisabledTime]="disabledDateTime"
+      [nzShowTime]="{ nzDefaultOpenValue: timeDefaultValue }"
+    >
+    </nz-date-picker>
+    <br />
+    <nz-month-picker [nzDisabledDate]="disabledDate" nzPlaceHolder="Select month"></nz-month-picker>
+    <br />
+    <nz-year-picker [nzDisabledDate]="disabledDate"></nz-year-picker>
+    <br />
+    <nz-range-picker
+      [nzDisabledDate]="disabledDate"
+      [nzDisabledTime]="disabledRangeTime"
+      [nzShowTime]="{ nzHideDisabledOptions: true, nzDefaultOpenValue: timeDefaultValue }"
+      nzFormat="yyyy-MM-dd HH:mm:ss"
+    ></nz-range-picker>
+  

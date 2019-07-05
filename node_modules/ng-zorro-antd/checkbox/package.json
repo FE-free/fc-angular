@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-checkbox.umd.js",
+  "module": "../fesm5/ng-zorro-antd-checkbox.js",
+  "es2015": "../fesm2015/ng-zorro-antd-checkbox.js",
+  "esm5": "../esm5/checkbox/ng-zorro-antd-checkbox.js",
+  "esm2015": "../esm2015/checkbox/ng-zorro-antd-checkbox.js",
+  "fesm5": "../fesm5/ng-zorro-antd-checkbox.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-checkbox.js",
+  "typings": "ng-zorro-antd-checkbox.d.ts",
+  "metadata": "ng-zorro-antd-checkbox.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/checkbox"
+}

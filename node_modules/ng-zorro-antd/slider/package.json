@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-slider.umd.js",
+  "module": "../fesm5/ng-zorro-antd-slider.js",
+  "es2015": "../fesm2015/ng-zorro-antd-slider.js",
+  "esm5": "../esm5/slider/ng-zorro-antd-slider.js",
+  "esm2015": "../esm2015/slider/ng-zorro-antd-slider.js",
+  "fesm5": "../fesm5/ng-zorro-antd-slider.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-slider.js",
+  "typings": "ng-zorro-antd-slider.d.ts",
+  "metadata": "ng-zorro-antd-slider.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/slider"
+}

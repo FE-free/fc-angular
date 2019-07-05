@@ -1,0 +1,19 @@
+
+    <div>
+      <button nz-button nzType="primary" (click)="showModal()">Modal</button>
+      <nz-modal
+        [(nzVisible)]="isVisible"
+        nzTitle="Modal"
+        nzOkText="Ok"
+        nzCancelText="Cancel"
+        (nzOnOk)="handleOk()"
+        (nzOnCancel)="handleCancel()"
+      >
+        <p>Bla bla ...</p>
+        <p>Bla bla ...</p>
+        <p>Bla bla ...</p>
+      </nz-modal>
+    </div>
+    <br />
+    <button nz-button nzType="info" (click)="showConfirm()">Confirm</button>
+  

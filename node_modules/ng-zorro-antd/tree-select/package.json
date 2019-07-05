@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-tree-select.umd.js",
+  "module": "../fesm5/ng-zorro-antd-tree-select.js",
+  "es2015": "../fesm2015/ng-zorro-antd-tree-select.js",
+  "esm5": "../esm5/tree-select/ng-zorro-antd-tree-select.js",
+  "esm2015": "../esm2015/tree-select/ng-zorro-antd-tree-select.js",
+  "fesm5": "../fesm5/ng-zorro-antd-tree-select.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-tree-select.js",
+  "typings": "ng-zorro-antd-tree-select.d.ts",
+  "metadata": "ng-zorro-antd-tree-select.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/tree-select"
+}

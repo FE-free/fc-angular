@@ -1,0 +1,11 @@
+
+    <nz-select
+      nzMode="tags"
+      [nzTokenSeparators]="[',']"
+      style="width: 100%;"
+      [(ngModel)]="listOfTagOptions"
+      nzPlaceHolder="automatic tokenization"
+    >
+      <nz-option *ngFor="let option of listOfOption" [nzLabel]="option.label" [nzValue]="option.value"> </nz-option>
+    </nz-select>
+  

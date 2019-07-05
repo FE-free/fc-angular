@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-select.umd.js",
+  "module": "../fesm5/ng-zorro-antd-select.js",
+  "es2015": "../fesm2015/ng-zorro-antd-select.js",
+  "esm5": "../esm5/select/ng-zorro-antd-select.js",
+  "esm2015": "../esm2015/select/ng-zorro-antd-select.js",
+  "fesm5": "../fesm5/ng-zorro-antd-select.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-select.js",
+  "typings": "ng-zorro-antd-select.d.ts",
+  "metadata": "ng-zorro-antd-select.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/select"
+}

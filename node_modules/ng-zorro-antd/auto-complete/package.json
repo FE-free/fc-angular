@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-auto-complete.umd.js",
+  "module": "../fesm5/ng-zorro-antd-auto-complete.js",
+  "es2015": "../fesm2015/ng-zorro-antd-auto-complete.js",
+  "esm5": "../esm5/auto-complete/ng-zorro-antd-auto-complete.js",
+  "esm2015": "../esm2015/auto-complete/ng-zorro-antd-auto-complete.js",
+  "fesm5": "../fesm5/ng-zorro-antd-auto-complete.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-auto-complete.js",
+  "typings": "ng-zorro-antd-auto-complete.d.ts",
+  "metadata": "ng-zorro-antd-auto-complete.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/auto-complete"
+}

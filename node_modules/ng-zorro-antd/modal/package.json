@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-modal.umd.js",
+  "module": "../fesm5/ng-zorro-antd-modal.js",
+  "es2015": "../fesm2015/ng-zorro-antd-modal.js",
+  "esm5": "../esm5/modal/ng-zorro-antd-modal.js",
+  "esm2015": "../esm2015/modal/ng-zorro-antd-modal.js",
+  "fesm5": "../fesm5/ng-zorro-antd-modal.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-modal.js",
+  "typings": "ng-zorro-antd-modal.d.ts",
+  "metadata": "ng-zorro-antd-modal.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/modal"
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../dist/icons",
+  "deleteDestPath": true,
+  "lib": {
+    "entryFile": "public_api.ts"
+  },
+  "whitelistedNonPeerDependencies": [
+    "@ant-design/colors"
+  ]
+}

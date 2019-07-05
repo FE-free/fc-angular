@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-popover.umd.js",
+  "module": "../fesm5/ng-zorro-antd-popover.js",
+  "es2015": "../fesm2015/ng-zorro-antd-popover.js",
+  "esm5": "../esm5/popover/ng-zorro-antd-popover.js",
+  "esm2015": "../esm2015/popover/ng-zorro-antd-popover.js",
+  "fesm5": "../fesm5/ng-zorro-antd-popover.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-popover.js",
+  "typings": "ng-zorro-antd-popover.d.ts",
+  "metadata": "ng-zorro-antd-popover.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/popover"
+}

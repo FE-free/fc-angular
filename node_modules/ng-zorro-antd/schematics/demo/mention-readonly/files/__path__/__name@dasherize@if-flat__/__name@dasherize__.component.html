@@ -1,0 +1,13 @@
+
+    <nz-mention [nzSuggestions]="suggestions">
+      <input
+        style="margin-bottom: 10px"
+        placeholder="this is disabled Mention"
+        nzMentionTrigger
+        nz-input
+        disabled
+        [(ngModel)]="inputValue"
+      />
+      <input placeholder="this is readOnly Mention" nzMentionTrigger nz-input readOnly [(ngModel)]="inputValue" />
+    </nz-mention>
+  

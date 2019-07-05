@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-comment.umd.js",
+  "module": "../fesm5/ng-zorro-antd-comment.js",
+  "es2015": "../fesm2015/ng-zorro-antd-comment.js",
+  "esm5": "../esm5/comment/ng-zorro-antd-comment.js",
+  "esm2015": "../esm2015/comment/ng-zorro-antd-comment.js",
+  "fesm5": "../fesm5/ng-zorro-antd-comment.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-comment.js",
+  "typings": "ng-zorro-antd-comment.d.ts",
+  "metadata": "ng-zorro-antd-comment.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/comment"
+}

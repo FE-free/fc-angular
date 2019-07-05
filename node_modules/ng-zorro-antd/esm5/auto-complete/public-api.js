@@ -1,0 +1,17 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @license
+ * Copyright Alibaba.com All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://github.com/NG-ZORRO/ng-zorro-antd/blob/master/LICENSE
+ */
+export { NzAutocompleteModule } from './nz-autocomplete.module';
+export { NzAutocompleteComponent } from './nz-autocomplete.component';
+export { getNzAutocompleteMissingPanelError, NZ_AUTOCOMPLETE_VALUE_ACCESSOR, NzAutocompleteTriggerDirective } from './nz-autocomplete-trigger.directive';
+export { NzOptionSelectionChange, NzAutocompleteOptionComponent } from './nz-autocomplete-option.component';
+export { NzAutocompleteOptgroupComponent } from './nz-autocomplete-optgroup.component';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL25nLXpvcnJvLWFudGQvYXV0by1jb21wbGV0ZS8iLCJzb3VyY2VzIjpbInB1YmxpYy1hcGkudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7QUFRQSxxQ0FBYywwQkFBMEIsQ0FBQztBQUN6Qyx3Q0FBYyw2QkFBNkIsQ0FBQztBQUM1QyxtSEFBYyxxQ0FBcUMsQ0FBQztBQUNwRCx1RUFBYyxvQ0FBb0MsQ0FBQztBQUNuRCxnREFBYyxzQ0FBc0MsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbIi8qKlxuICogQGxpY2Vuc2VcbiAqIENvcHlyaWdodCBBbGliYWJhLmNvbSBBbGwgUmlnaHRzIFJlc2VydmVkLlxuICpcbiAqIFVzZSBvZiB0aGlzIHNvdXJjZSBjb2RlIGlzIGdvdmVybmVkIGJ5IGFuIE1JVC1zdHlsZSBsaWNlbnNlIHRoYXQgY2FuIGJlXG4gKiBmb3VuZCBpbiB0aGUgTElDRU5TRSBmaWxlIGF0IGh0dHBzOi8vZ2l0aHViLmNvbS9ORy1aT1JSTy9uZy16b3Jyby1hbnRkL2Jsb2IvbWFzdGVyL0xJQ0VOU0VcbiAqL1xuXG5leHBvcnQgKiBmcm9tICcuL256LWF1dG9jb21wbGV0ZS5tb2R1bGUnO1xuZXhwb3J0ICogZnJvbSAnLi9uei1hdXRvY29tcGxldGUuY29tcG9uZW50JztcbmV4cG9ydCAqIGZyb20gJy4vbnotYXV0b2NvbXBsZXRlLXRyaWdnZXIuZGlyZWN0aXZlJztcbmV4cG9ydCAqIGZyb20gJy4vbnotYXV0b2NvbXBsZXRlLW9wdGlvbi5jb21wb25lbnQnO1xuZXhwb3J0ICogZnJvbSAnLi9uei1hdXRvY29tcGxldGUtb3B0Z3JvdXAuY29tcG9uZW50JztcbiJdfQ==

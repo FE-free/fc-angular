@@ -1,0 +1,8 @@
+
+    <form [formGroup]="form" novalidate>
+      <nz-cascader [nzOptions]="nzOptions" (nzChange)="onChanges($event)" [formControlName]="'name'"> </nz-cascader>
+    </form>
+    <br />
+    <button nz-button (click)="reset()">Reset</button>
+    <button nz-button (click)="submit()">Submit</button>
+  

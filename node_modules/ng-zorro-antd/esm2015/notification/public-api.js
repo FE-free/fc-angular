@@ -1,0 +1,18 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @license
+ * Copyright Alibaba.com All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://github.com/NG-ZORRO/ng-zorro-antd/blob/master/LICENSE
+ */
+export { NZ_NOTIFICATION_DEFAULT_CONFIG, NZ_NOTIFICATION_CONFIG, NZ_NOTIFICATION_DEFAULT_CONFIG_PROVIDER } from './nz-notification-config';
+export { NzNotificationComponent } from './nz-notification.component';
+export { NzNotificationModule } from './nz-notification.module';
+export {} from './nz-notification.definitions';
+export { NzNotificationService } from './nz-notification.service';
+export { NzNotificationContainerComponent } from './nz-notification-container.component';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL25nLXpvcnJvLWFudGQvbm90aWZpY2F0aW9uLyIsInNvdXJjZXMiOlsicHVibGljLWFwaS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7OztBQVFBLGdIQUFjLDBCQUEwQixDQUFDO0FBQ3pDLHdDQUFjLDZCQUE2QixDQUFDO0FBQzVDLHFDQUFjLDBCQUEwQixDQUFDO0FBQ3pDLGVBQWMsK0JBQStCLENBQUM7QUFDOUMsc0NBQWMsMkJBQTJCLENBQUM7QUFDMUMsaURBQWMsdUNBQXVDLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIEBsaWNlbnNlXG4gKiBDb3B5cmlnaHQgQWxpYmFiYS5jb20gQWxsIFJpZ2h0cyBSZXNlcnZlZC5cbiAqXG4gKiBVc2Ugb2YgdGhpcyBzb3VyY2UgY29kZSBpcyBnb3Zlcm5lZCBieSBhbiBNSVQtc3R5bGUgbGljZW5zZSB0aGF0IGNhbiBiZVxuICogZm91bmQgaW4gdGhlIExJQ0VOU0UgZmlsZSBhdCBodHRwczovL2dpdGh1Yi5jb20vTkctWk9SUk8vbmctem9ycm8tYW50ZC9ibG9iL21hc3Rlci9MSUNFTlNFXG4gKi9cblxuZXhwb3J0ICogZnJvbSAnLi9uei1ub3RpZmljYXRpb24tY29uZmlnJztcbmV4cG9ydCAqIGZyb20gJy4vbnotbm90aWZpY2F0aW9uLmNvbXBvbmVudCc7XG5leHBvcnQgKiBmcm9tICcuL256LW5vdGlmaWNhdGlvbi5tb2R1bGUnO1xuZXhwb3J0ICogZnJvbSAnLi9uei1ub3RpZmljYXRpb24uZGVmaW5pdGlvbnMnO1xuZXhwb3J0ICogZnJvbSAnLi9uei1ub3RpZmljYXRpb24uc2VydmljZSc7XG5leHBvcnQgKiBmcm9tICcuL256LW5vdGlmaWNhdGlvbi1jb250YWluZXIuY29tcG9uZW50JztcbiJdfQ==

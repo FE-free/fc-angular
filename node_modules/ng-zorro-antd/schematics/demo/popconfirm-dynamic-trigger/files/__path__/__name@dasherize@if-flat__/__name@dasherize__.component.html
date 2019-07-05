@@ -1,0 +1,14 @@
+
+    <a
+      nz-popconfirm
+      nzTitle="Are you sure delete this task?"
+      [nzCondition]="switchValue"
+      (nzOnConfirm)="confirm()"
+      (nzOnCancel)="cancel()"
+      >Delete a task</a
+    >
+    <br />
+    <br />
+    Whether directly execute:
+    <nz-switch [(ngModel)]="switchValue"></nz-switch>
+  

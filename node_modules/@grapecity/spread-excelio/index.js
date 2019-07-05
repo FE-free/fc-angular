@@ -1,0 +1,1 @@
+module.exports = require('./dist/gc.spread.excelio.min.js');

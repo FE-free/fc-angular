@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-icon.umd.js",
+  "module": "../fesm5/ng-zorro-antd-icon.js",
+  "es2015": "../fesm2015/ng-zorro-antd-icon.js",
+  "esm5": "../esm5/icon/ng-zorro-antd-icon.js",
+  "esm2015": "../esm2015/icon/ng-zorro-antd-icon.js",
+  "fesm5": "../fesm5/ng-zorro-antd-icon.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-icon.js",
+  "typings": "ng-zorro-antd-icon.d.ts",
+  "metadata": "ng-zorro-antd-icon.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/icon"
+}

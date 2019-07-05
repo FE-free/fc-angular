@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-date-picker.umd.js",
+  "module": "../fesm5/ng-zorro-antd-date-picker.js",
+  "es2015": "../fesm2015/ng-zorro-antd-date-picker.js",
+  "esm5": "../esm5/date-picker/ng-zorro-antd-date-picker.js",
+  "esm2015": "../esm2015/date-picker/ng-zorro-antd-date-picker.js",
+  "fesm5": "../fesm5/ng-zorro-antd-date-picker.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-date-picker.js",
+  "typings": "ng-zorro-antd-date-picker.d.ts",
+  "metadata": "ng-zorro-antd-date-picker.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/date-picker"
+}

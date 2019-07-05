@@ -1,0 +1,12 @@
+
+    <nz-upload
+      nzAction="https://jsonplaceholder.typicode.com/posts/"
+      [nzFileList]="fileList"
+      nzMultiple
+      [nzLimit]="2"
+      [nzFilter]="filters"
+      (nzChange)="handleChange($event)"
+    >
+      <button nz-button><i nz-icon nzType="upload"></i><span>Upload</span></button>
+    </nz-upload>
+  

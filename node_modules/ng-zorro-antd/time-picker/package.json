@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-time-picker.umd.js",
+  "module": "../fesm5/ng-zorro-antd-time-picker.js",
+  "es2015": "../fesm2015/ng-zorro-antd-time-picker.js",
+  "esm5": "../esm5/time-picker/ng-zorro-antd-time-picker.js",
+  "esm2015": "../esm2015/time-picker/ng-zorro-antd-time-picker.js",
+  "fesm5": "../fesm5/ng-zorro-antd-time-picker.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-time-picker.js",
+  "typings": "ng-zorro-antd-time-picker.d.ts",
+  "metadata": "ng-zorro-antd-time-picker.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/time-picker"
+}

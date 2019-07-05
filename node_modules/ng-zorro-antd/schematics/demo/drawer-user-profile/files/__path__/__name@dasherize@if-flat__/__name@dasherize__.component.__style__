@@ -1,0 +1,20 @@
+
+      .title {
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.85);
+        line-height: 24px;
+        display: block;
+        margin-bottom: 16px;
+      }
+      .item-wrap {
+        font-size: 14px;
+        line-height: 22px;
+        margin-bottom: 7px;
+        color: rgba(0, 0, 0, 0.65);
+      }
+      .label {
+        margin-right: 8px;
+        display: inline-block;
+        color: rgba(0, 0, 0, 0.85);
+      }
+    

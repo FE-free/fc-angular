@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-i18n.umd.js",
+  "module": "../fesm5/ng-zorro-antd-i18n.js",
+  "es2015": "../fesm2015/ng-zorro-antd-i18n.js",
+  "esm5": "../esm5/i18n/ng-zorro-antd-i18n.js",
+  "esm2015": "../esm2015/i18n/ng-zorro-antd-i18n.js",
+  "fesm5": "../fesm5/ng-zorro-antd-i18n.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-i18n.js",
+  "typings": "ng-zorro-antd-i18n.d.ts",
+  "metadata": "ng-zorro-antd-i18n.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/i18n"
+}

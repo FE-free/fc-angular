@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-form.umd.js",
+  "module": "../fesm5/ng-zorro-antd-form.js",
+  "es2015": "../fesm2015/ng-zorro-antd-form.js",
+  "esm5": "../esm5/form/ng-zorro-antd-form.js",
+  "esm2015": "../esm2015/form/ng-zorro-antd-form.js",
+  "fesm5": "../fesm5/ng-zorro-antd-form.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-form.js",
+  "typings": "ng-zorro-antd-form.d.ts",
+  "metadata": "ng-zorro-antd-form.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/form"
+}

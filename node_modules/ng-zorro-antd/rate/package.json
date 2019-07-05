@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-rate.umd.js",
+  "module": "../fesm5/ng-zorro-antd-rate.js",
+  "es2015": "../fesm2015/ng-zorro-antd-rate.js",
+  "esm5": "../esm5/rate/ng-zorro-antd-rate.js",
+  "esm2015": "../esm2015/rate/ng-zorro-antd-rate.js",
+  "fesm5": "../fesm5/ng-zorro-antd-rate.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-rate.js",
+  "typings": "ng-zorro-antd-rate.d.ts",
+  "metadata": "ng-zorro-antd-rate.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/rate"
+}

@@ -1,0 +1,12 @@
+
+      nz-badge {
+        margin-right: 20px;
+      }
+
+      [nz-icon] {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        font-size: 16px;
+      }
+    

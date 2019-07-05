@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-alert.umd.js",
+  "module": "../fesm5/ng-zorro-antd-alert.js",
+  "es2015": "../fesm2015/ng-zorro-antd-alert.js",
+  "esm5": "../esm5/alert/ng-zorro-antd-alert.js",
+  "esm2015": "../esm2015/alert/ng-zorro-antd-alert.js",
+  "fesm5": "../fesm5/ng-zorro-antd-alert.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-alert.js",
+  "typings": "ng-zorro-antd-alert.d.ts",
+  "metadata": "ng-zorro-antd-alert.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/alert"
+}

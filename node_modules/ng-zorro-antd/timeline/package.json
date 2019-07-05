@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-timeline.umd.js",
+  "module": "../fesm5/ng-zorro-antd-timeline.js",
+  "es2015": "../fesm2015/ng-zorro-antd-timeline.js",
+  "esm5": "../esm5/timeline/ng-zorro-antd-timeline.js",
+  "esm2015": "../esm2015/timeline/ng-zorro-antd-timeline.js",
+  "fesm5": "../fesm5/ng-zorro-antd-timeline.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-timeline.js",
+  "typings": "ng-zorro-antd-timeline.d.ts",
+  "metadata": "ng-zorro-antd-timeline.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/timeline"
+}

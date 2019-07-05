@@ -1,14 +1,14 @@
-# angular8-fast-start
+# fc-angular
 
-# 【angular8-fast-start】基于angular7的多页面后台管理系统
-
-
+# 【fc-angular】基于angular8的多页面后台管理系统
+- 【在线预览】[https://luohong123.github.io/fc-angular/demo/index.html](https://luohong123.github.io/fc-angular/demo/index.html)
+- 【源码地址】[https://github.com/luohong123/fc-angular](https://github.com/luohong123/fc-angular)
 <a name="6ddda5c2"></a>
 # 一、简介
 <a name="9cd0c2c7"></a>
 ## 项目介绍 
 
-- 基于 angularV7.2.0，ng.ant.design V7.2.0开发的后台管理系统
+- 基于 angularV8，ng.ant.design V8.0.1开发的后台管理系统
 
 > 预览效果图
 - 首页
@@ -16,8 +16,7 @@
 - 路由复用策略，切换路由保留用户操作状态
 ![选项卡切换](./media/2.png)
 
-- 【在线预览】[https://luohong123.github.io/angular8-fast-start/demo/index.html](https://luohong123.github.io/angular8-fast-start/demo/index.html)
-- 【源码地址】[https://github.com/luohong123/angular8-fast-start](https://github.com/luohong123/angular8-fast-start)
+
 
 <a name="f3a1332d"></a>
 ## 平台功能开发进度

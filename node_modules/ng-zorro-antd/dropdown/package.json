@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-dropdown.umd.js",
+  "module": "../fesm5/ng-zorro-antd-dropdown.js",
+  "es2015": "../fesm2015/ng-zorro-antd-dropdown.js",
+  "esm5": "../esm5/dropdown/ng-zorro-antd-dropdown.js",
+  "esm2015": "../esm2015/dropdown/ng-zorro-antd-dropdown.js",
+  "fesm5": "../fesm5/ng-zorro-antd-dropdown.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-dropdown.js",
+  "typings": "ng-zorro-antd-dropdown.d.ts",
+  "metadata": "ng-zorro-antd-dropdown.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/dropdown"
+}

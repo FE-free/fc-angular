@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-skeleton.umd.js",
+  "module": "../fesm5/ng-zorro-antd-skeleton.js",
+  "es2015": "../fesm2015/ng-zorro-antd-skeleton.js",
+  "esm5": "../esm5/skeleton/ng-zorro-antd-skeleton.js",
+  "esm2015": "../esm2015/skeleton/ng-zorro-antd-skeleton.js",
+  "fesm5": "../fesm5/ng-zorro-antd-skeleton.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-skeleton.js",
+  "typings": "ng-zorro-antd-skeleton.d.ts",
+  "metadata": "ng-zorro-antd-skeleton.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/skeleton"
+}

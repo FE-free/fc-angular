@@ -1,0 +1,9 @@
+
+      h4 {
+        margin: 0 0 16px;
+      }
+
+      .ant-slider-with-marks {
+        margin-bottom: 44px;
+      }
+    

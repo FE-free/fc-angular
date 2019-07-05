@@ -1,0 +1,43 @@
+
+    <nz-layout class="layout">
+      <nz-sider
+        nzCollapsible
+        [(nzCollapsed)]="isCollapsed"
+        [nzBreakpoint]="'lg'"
+        [nzCollapsedWidth]="0"
+        [nzZeroTrigger]="zeroTrigger"
+      >
+        <div class="logo"></div>
+        <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+          <li nz-menu-item>
+            <i nz-icon nzType="user"></i>
+            <span>nav 1</span>
+          </li>
+          <li nz-menu-item>
+            <i nz-icon nzType="video-camera"></i>
+            <span>nav 2</span>
+          </li>
+          <li nz-menu-item>
+            <i nz-icon nzType="upload"></i>
+            <span>nav 3</span>
+          </li>
+          <li nz-menu-item>
+            <i nz-icon nzType="user"></i>
+            <span>nav 4</span>
+          </li>
+        </ul>
+      </nz-sider>
+      <nz-layout>
+        <nz-header></nz-header>
+        <nz-content>
+          <div class="inner-content">
+            Content
+          </div>
+        </nz-content>
+        <nz-footer>Ant Design ©2019 Implement By Angular</nz-footer>
+      </nz-layout>
+    </nz-layout>
+    <ng-template #zeroTrigger>
+      <i nz-icon nzType="menu-fold" nzTheme="outline"></i>
+    </ng-template>
+  

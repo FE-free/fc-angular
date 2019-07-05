@@ -1,0 +1,12 @@
+
+      .context-area {
+        background: rgb(190, 200, 200);
+        padding: 32px;
+        text-align: center;
+      }
+
+      .context-intro {
+        color: #fff;
+        font-size: 14px;
+      }
+    

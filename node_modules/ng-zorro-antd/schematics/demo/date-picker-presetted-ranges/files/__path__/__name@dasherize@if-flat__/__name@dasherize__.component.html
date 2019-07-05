@@ -1,0 +1,11 @@
+
+    <nz-range-picker [nzRanges]="ranges1" ngModel (ngModelChange)="onChange($event)"></nz-range-picker>
+    <br />
+    <nz-range-picker
+      [nzRanges]="ranges1"
+      nzShowTime
+      nzFormat="yyyy/MM/dd HH:mm:ss"
+      ngModel
+      (ngModelChange)="onChange($event)"
+    ></nz-range-picker>
+  

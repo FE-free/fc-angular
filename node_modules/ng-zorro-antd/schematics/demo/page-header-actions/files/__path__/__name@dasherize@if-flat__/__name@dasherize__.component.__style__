@@ -1,0 +1,64 @@
+
+      nz-page-header {
+        border: 1px solid rgb(235, 237, 240);
+      }
+
+      .wrap {
+        display: flex;
+      }
+
+      .content {
+        flex: 1;
+      }
+
+      .content.padding {
+        padding-left: 40px;
+      }
+
+      .content p {
+        margin-bottom: 8px;
+      }
+
+      .content .description {
+        display: table;
+      }
+
+      .description .term {
+        display: table-cell;
+        margin-right: 8px;
+        padding-bottom: 8px;
+        white-space: nowrap;
+        line-height: 20px;
+      }
+
+      .description .term:after {
+        position: relative;
+        top: -0.5px;
+        margin: 0 8px 0 2px;
+        content: ':';
+      }
+
+      .description .detail {
+        display: table-cell;
+        padding-bottom: 8px;
+        width: 100%;
+        line-height: 20px;
+      }
+
+      .extra-content {
+        min-width: 240px;
+        text-align: right;
+      }
+
+      .extra-content .label {
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.45);
+        line-height: 22px;
+      }
+
+      .extra-content .detail {
+        font-size: 20px;
+        color: rgba(0, 0, 0, 0.85);
+        line-height: 28px;
+      }
+    

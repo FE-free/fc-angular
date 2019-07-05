@@ -1,0 +1,36 @@
+
+      nz-page-header {
+        border: 1px solid rgb(235, 237, 240);
+      }
+
+      .wrap {
+        display: flex;
+      }
+
+      .content {
+        flex: 1;
+      }
+
+      .content p {
+        margin-bottom: 8px;
+      }
+
+      .content-link {
+        padding-top: 16px;
+      }
+
+      .content-link a {
+        display: inline-block;
+        vertical-align: text-top;
+        margin-right: 32px;
+      }
+
+      .content-link a img {
+        margin-right: 8px;
+      }
+
+      .extra-content {
+        min-width: 240px;
+        text-align: right;
+      }
+    

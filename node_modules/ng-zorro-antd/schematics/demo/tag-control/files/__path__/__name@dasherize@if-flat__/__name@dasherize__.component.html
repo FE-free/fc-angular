@@ -1,0 +1,23 @@
+
+    <nz-tag
+      *ngFor="let tag of tags; let i = index"
+      [nzMode]="i === 0 ? 'default' : 'closeable'"
+      (nzAfterClose)="handleClose(tag)"
+    >
+      {{ sliceTagName(tag) }}
+    </nz-tag>
+    <nz-tag *ngIf="!inputVisible" class="editable-tag" nzNoAnimation (click)="showInput()">
+      <i nz-icon nzType="plus"></i> New Tag
+    </nz-tag>
+    <input
+      #inputElement
+      nz-input
+      nzSize="small"
+      *ngIf="inputVisible"
+      type="text"
+      [(ngModel)]="inputValue"
+      style="width: 78px;"
+      (blur)="handleInputConfirm()"
+      (keydown.enter)="handleInputConfirm()"
+    />
+  

@@ -1,0 +1,5 @@
+
+      [nz-form]:not(.ant-form-inline):not(.ant-form-vertical) {
+        max-width: 600px;
+      }
+    

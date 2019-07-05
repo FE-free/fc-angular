@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-drawer.umd.js",
+  "module": "../fesm5/ng-zorro-antd-drawer.js",
+  "es2015": "../fesm2015/ng-zorro-antd-drawer.js",
+  "esm5": "../esm5/drawer/ng-zorro-antd-drawer.js",
+  "esm2015": "../esm2015/drawer/ng-zorro-antd-drawer.js",
+  "fesm5": "../fesm5/ng-zorro-antd-drawer.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-drawer.js",
+  "typings": "ng-zorro-antd-drawer.d.ts",
+  "metadata": "ng-zorro-antd-drawer.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/drawer"
+}

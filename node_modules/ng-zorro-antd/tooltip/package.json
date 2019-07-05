@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-tooltip.umd.js",
+  "module": "../fesm5/ng-zorro-antd-tooltip.js",
+  "es2015": "../fesm2015/ng-zorro-antd-tooltip.js",
+  "esm5": "../esm5/tooltip/ng-zorro-antd-tooltip.js",
+  "esm2015": "../esm2015/tooltip/ng-zorro-antd-tooltip.js",
+  "fesm5": "../fesm5/ng-zorro-antd-tooltip.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-tooltip.js",
+  "typings": "ng-zorro-antd-tooltip.d.ts",
+  "metadata": "ng-zorro-antd-tooltip.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/tooltip"
+}

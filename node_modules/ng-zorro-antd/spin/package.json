@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-spin.umd.js",
+  "module": "../fesm5/ng-zorro-antd-spin.js",
+  "es2015": "../fesm2015/ng-zorro-antd-spin.js",
+  "esm5": "../esm5/spin/ng-zorro-antd-spin.js",
+  "esm2015": "../esm2015/spin/ng-zorro-antd-spin.js",
+  "fesm5": "../fesm5/ng-zorro-antd-spin.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-spin.js",
+  "typings": "ng-zorro-antd-spin.d.ts",
+  "metadata": "ng-zorro-antd-spin.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/spin"
+}

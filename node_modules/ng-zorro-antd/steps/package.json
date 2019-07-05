@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-steps.umd.js",
+  "module": "../fesm5/ng-zorro-antd-steps.js",
+  "es2015": "../fesm2015/ng-zorro-antd-steps.js",
+  "esm5": "../esm5/steps/ng-zorro-antd-steps.js",
+  "esm2015": "../esm2015/steps/ng-zorro-antd-steps.js",
+  "fesm5": "../fesm5/ng-zorro-antd-steps.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-steps.js",
+  "typings": "ng-zorro-antd-steps.d.ts",
+  "metadata": "ng-zorro-antd-steps.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/steps"
+}

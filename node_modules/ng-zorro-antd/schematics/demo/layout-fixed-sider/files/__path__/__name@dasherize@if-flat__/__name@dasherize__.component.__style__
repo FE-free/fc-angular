@@ -1,0 +1,42 @@
+
+      .logo {
+        height: 32px;
+        background: rgba(255, 255, 255, 0.2);
+        margin: 16px;
+      }
+
+      .left-layout {
+        height: 100vh;
+      }
+
+      nz-sider {
+        overflow: auto;
+        height: 100%;
+        position: fixed;
+        left: 0;
+      }
+
+      .right-layout {
+        margin-left: 200px;
+      }
+
+      nz-header {
+        background: #fff;
+        padding: 0;
+      }
+
+      nz-content {
+        margin: 24px 16px 0;
+        overflow: initial;
+      }
+
+      .inner-content {
+        padding: 24px;
+        background: #fff;
+        text-align: center;
+      }
+
+      nz-footer {
+        text-align: center;
+      }
+    

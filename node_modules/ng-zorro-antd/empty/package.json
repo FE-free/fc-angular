@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-empty.umd.js",
+  "module": "../fesm5/ng-zorro-antd-empty.js",
+  "es2015": "../fesm2015/ng-zorro-antd-empty.js",
+  "esm5": "../esm5/empty/ng-zorro-antd-empty.js",
+  "esm2015": "../esm2015/empty/ng-zorro-antd-empty.js",
+  "fesm5": "../fesm5/ng-zorro-antd-empty.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-empty.js",
+  "typings": "ng-zorro-antd-empty.d.ts",
+  "metadata": "ng-zorro-antd-empty.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/empty"
+}

@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/ng-zorro-antd-grid.umd.js",
+  "module": "../fesm5/ng-zorro-antd-grid.js",
+  "es2015": "../fesm2015/ng-zorro-antd-grid.js",
+  "esm5": "../esm5/grid/ng-zorro-antd-grid.js",
+  "esm2015": "../esm2015/grid/ng-zorro-antd-grid.js",
+  "fesm5": "../fesm5/ng-zorro-antd-grid.js",
+  "fesm2015": "../fesm2015/ng-zorro-antd-grid.js",
+  "typings": "ng-zorro-antd-grid.d.ts",
+  "metadata": "ng-zorro-antd-grid.metadata.json",
+  "sideEffects": false,
+  "name": "ng-zorro-antd/grid"
+}
