@@ -1,3 +1,4 @@
+![首页](./media/logo.png)
 # 【fc-angular】基于angular8的多页面后台管理系统
 - 【在线预览】[https://luohong123.github.io/fc-angular/demo/index.html](https://luohong123.github.io/fc-angular/demo/index.html)
 - 【源码地址】[https://github.com/luohong123/fc-angular](https://github.com/luohong123/fc-angular)
