@@ -4,7 +4,7 @@
  * @Description: 整体布局包括顶部工具栏、左侧菜单、侧边栏、选项卡导航主体内容区
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-06-19 16:30:41
+ * @LastEditTime: 2019-07-11 17:48:40
  */
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -186,7 +186,7 @@ export class LayoutComponent implements OnInit {
   // 选项卡
   fcTabs = []
   // 单位名称
-  companyName = '总公司'
+  companyName = '管理员'
   // 菜单是否收起
   menuIsCollapsed = false
   // 退出登录文字提示是否显示

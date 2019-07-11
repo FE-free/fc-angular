@@ -1,5 +1,5 @@
-<img src="./media/logo.png" style="margin: 0 auto;
-    display: block;">
+<img src="./media/logo.png" style="margin: 0 auto;display: block;">
+
 English | [简体中文](https://github.com/luohong123/fc-angular/blob/master/README.md) 
 # 一、简介
 ## 项目介绍

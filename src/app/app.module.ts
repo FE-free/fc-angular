@@ -4,7 +4,7 @@
  * @Description: 根模块
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-04-19 10:23:09
+ * @LastEditTime: 2019-07-11 17:44:11
  */
 import { HashLocationStrategy, LocationStrategy, registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,7 +14,6 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
-
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { FccoreModule } from 'src/fccore/fccore.module';
 import { UserService } from 'src/fccore/service/user.service';
@@ -30,6 +29,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { LayoutService } from './service/layout.service';
 import { FcRouteReuseStrategy } from './service/routereusestrategy.service';
 import { ShareService } from './share.service';
+
 registerLocaleData(zh)
 
 @NgModule({

@@ -17,43 +17,43 @@ export const menus = {
           ID: '3ae5c74930dab18e877efabee3af0004',
           PID: 'BUDGET',
           MENUID: 'BGTX',
-          MENUNAME: '预算体系',
+          MENUNAME: '主导航',
           ENABLE: 'Y',
           WXMENU: 'N',
           MENUTYPE: 'MENU',
           HASCHILD: 'Y',
           MENUICON: 'fc-icon-peizhi',
           PARENT: 'BUDGET',
-          SORT: 1150,
+          SORT: 1100,
           ROUTER: '/budget',
           P_CHILDMENUS: [
             {
               ID: '63fbb2f0708f4fd68db04a92dd5df121',
               PID: 'FC',
-              MENUID: 'BGITEM',
-              MENUNAME: '预算项目',
+              MENUID: 'FCHOME2',
+              MENUNAME: '分析页',
               ENABLE: 'Y',
               WXMENU: 'N',
               MENUTYPE: 'APP',
               APPID: 'SYSMENU',
               HASCHILD: 'N',
               PARENT: 'SYSTEM',
-              SORT: 1152,
-              ROUTER: '/bgitemList'
+              SORT: 1101,
+              ROUTER: '/home1'
             },
             {
               ID: '63fbb2f0708f4fd68db04a92dd5df121',
               PID: 'FC',
-              MENUID: 'BGRPTASK',
-              MENUNAME: '报表任务',
+              MENUID: 'FCHOME1',
+              MENUNAME: '监控页',
               ENABLE: 'Y',
               WXMENU: 'N',
               MENUTYPE: 'APP',
               APPID: 'SYSMENU',
               HASCHILD: 'N',
               PARENT: 'SYSTEM',
-              SORT: 1152,
-              ROUTER: '/bgrptaskList'
+              SORT: 1102,
+              ROUTER: '/home2'
             }
           ]
         },
@@ -74,8 +74,8 @@ export const menus = {
             {
               ID: '63fbb2f0708f4fd68db04a92dd5df121',
               PID: 'FC',
-              MENUID: 'BGLISTINFO',
-              MENUNAME: '查询',
+              MENUID: 'FCLISTINFO',
+              MENUNAME: '按钮',
               ENABLE: 'Y',
               WXMENU: 'N',
               MENUTYPE: 'APP',
@@ -83,12 +83,12 @@ export const menus = {
               HASCHILD: 'N',
               PARENT: 'SYSTEM',
               SORT: 1152,
-              ROUTER: '/bglistinfoList'
+              ROUTER: '/fclistinfoList'
             },
             {
               ID: '63fbb2f0708f4fd68db04a92dd5df121',
               PID: 'FC',
-              MENUID: 'BGCREATE',
+              MENUID: 'FCCREATE',
               MENUNAME: '新增',
               ENABLE: 'Y',
               WXMENU: 'N',
@@ -97,12 +97,12 @@ export const menus = {
               HASCHILD: 'N',
               PARENT: 'SYSTEM',
               SORT: 1152,
-              ROUTER: '/bgcreateList'
+              ROUTER: '/fccreateList'
             },
             {
               ID: '63fbb2f0708f4fd68db04a92dd5df121',
               PID: 'FC',
-              MENUID: 'BGUPDATE',
+              MENUID: 'FCUPDATE',
               MENUNAME: '修改',
               ENABLE: 'Y',
               WXMENU: 'N',
@@ -111,12 +111,12 @@ export const menus = {
               HASCHILD: 'N',
               PARENT: 'SYSTEM',
               SORT: 1152,
-              ROUTER: '/bgupdateList'
+              ROUTER: '/fcupdateList'
             },
             {
               ID: '63fbb2f0708f4fd68db04a92dd5df121',
               PID: 'FC',
-              MENUID: 'BGREMOVE',
+              MENUID: 'FCREMOVE',
               MENUNAME: '删除',
               ENABLE: 'Y',
               WXMENU: 'N',
@@ -125,14 +125,14 @@ export const menus = {
               HASCHILD: 'N',
               PARENT: 'SYSTEM',
               SORT: 1152,
-              ROUTER: '/bgremoveList'
+              ROUTER: '/fcremoveList'
             }
           ]
         },
         {
           ID: '3ae5c74930dab18e877efabee3af0004',
           PID: 'FC',
-          MENUID: 'BGDEMO',
+          MENUID: 'FCUI',
           MENUNAME: 'UI示例',
           ENABLE: 'Y',
           WXMENU: 'N',
@@ -146,7 +146,7 @@ export const menus = {
             {
               ID: '63fbb2f0708f4fd68db04a92dd5df121',
               PID: 'FC',
-              MENUID: 'BGCHART',
+              MENUID: 'FCCHART',
               MENUNAME: '图表',
               ENABLE: 'Y',
               WXMENU: 'N',
@@ -155,12 +155,12 @@ export const menus = {
               HASCHILD: 'N',
               PARENT: 'SYSTEM',
               SORT: 1152,
-              ROUTER: '/bgchartList'
+              ROUTER: '/fcchartList'
             },
             {
               ID: '63fbb2f0708f4fd68db04a92dd5df121',
               PID: 'FC',
-              MENUID: 'BGSPREAD',
+              MENUID: 'FCSPREAD',
               MENUNAME: 'spread报表',
               ENABLE: 'Y',
               WXMENU: 'N',
@@ -169,7 +169,7 @@ export const menus = {
               HASCHILD: 'N',
               PARENT: 'SYSTEM',
               SORT: 1152,
-              ROUTER: '/bgspreadList'
+              ROUTER: '/fcspreadList'
             },
             {
               ID: '63fbb2f0708f4fd68db04a92dd5df121',
@@ -183,12 +183,12 @@ export const menus = {
               HASCHILD: 'N',
               PARENT: 'SYSTEM',
               SORT: 1152,
-              ROUTER: '/bgiframeList'
+              ROUTER: '/fciframeList'
             },
             {
               ID: '63fbb2f0708f4fd68db04a92dd5df121',
               PID: 'FC',
-              MENUID: 'BGTABLE',
+              MENUID: 'FCTABLE',
               MENUNAME: '表格',
               ENABLE: 'Y',
               WXMENU: 'N',
@@ -197,7 +197,7 @@ export const menus = {
               HASCHILD: 'N',
               PARENT: 'SYSTEM',
               SORT: 1152,
-              ROUTER: '/bgtableList'
+              ROUTER: '/fctableList'
             }
           ]
         },
@@ -213,7 +213,7 @@ export const menus = {
           MENUICON: 'fc-icon-peizhi',
           PARENT: 'FC',
           SORT: 1150,
-          ROUTER: '/budget',
+          ROUTER: '/system',
           P_CHILDMENUS: [
             {
               ID: '63fbb2f0708f4fd68db04a92dd5df121',

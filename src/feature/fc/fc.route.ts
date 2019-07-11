@@ -7,7 +7,17 @@
  * @LastEditTime: 2019-04-19 17:19:58
  */
 import { Routes } from '@angular/router'
+import { HomeComponent } from './fcsystem/components/home/home.component';
 export const Routers: Routes = [
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
+  {
+    path: 'home',
+    component: HomeComponent
+  },
   {
     path: '', // demo组件
     loadChildren: './fcdemo/fcdemo.module#FcdemoModule'
