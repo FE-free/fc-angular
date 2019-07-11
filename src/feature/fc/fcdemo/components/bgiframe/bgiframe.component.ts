@@ -4,7 +4,7 @@
  * @Description: iframe
  * @email: 3300536651@qq.com
  * @Date: 2019-04-12 16:39:30
- * @LastEditTime: 2019-04-17 12:26:57
+ * @LastEditTime: 2019-07-11 16:05:55
  */
 import { Component } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
@@ -19,7 +19,7 @@ export class BgiframeComponent {
   // iframe地址
   iframeUrl: SafeResourceUrl
   constructor(public router: Router, public activedRoute: ActivatedRoute, public sanitizer: DomSanitizer) {
-    let url: string = 'https://ng.ant.design/docs/introduce/zh'
+    let url: string = 'https://ng.ant.design/components/form/zh'
     this.iframeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url)
   }
 }
