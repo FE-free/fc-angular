@@ -4,7 +4,7 @@
  * @Description: 整体布局包括顶部工具栏、左侧菜单、侧边栏、选项卡导航主体内容区
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-07-11 17:48:40
+ * @LastEditTime: 2019-07-12 17:52:32
  */
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -25,16 +25,30 @@ import { environment } from '../../../environments/environment.dev';
         overflow: auto;
         float: left;
       }
+      .logo img{
+        margin-right: 20px;
+        vertical-align: top;
+        height: 50px;
+        margin-top: 7px;
+        margin-left: -10px;
+      }
       .logo .iconfont {
         color: #fff;
         font-size: 30px;
         float: left;
         margin-right: 10px;
+        cursor: pointer;
       }
       .logo-text {
         color: #fff;
         float: left;
         font-size: 20px;
+      }
+      .fc-header-left .icon {
+        float: none;
+        font-size: 24px;
+        margin-left: 5px;
+        cursor: pointer;
       }
       .fc-header-right {
         float: right;

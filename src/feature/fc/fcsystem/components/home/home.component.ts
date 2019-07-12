@@ -4,7 +4,7 @@
  * @Description: 首页
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-04-18 14:43:45
+ * @LastEditTime: 2019-07-12 10:58:26
  */
 import { Component, OnInit, AfterViewInit } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
@@ -343,14 +343,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     // 加载柱状图的数据
     this.chartData()
-    // 加载迷你柱状图1
-    this.createMiniBarChart('miniBar_1', this.miniBarData_1)
-    // 加载迷你柱状图2
-    this.createMiniBarChart('miniBar_2', this.miniBarData_1)
-    // 加载迷你柱状图3
-    this.createMiniBarChart('miniBar_3', this.miniBarData_1)
-    // 加载迷你柱状图4
-    this.createMiniBarChart('miniBar_4', this.miniBarData_1)
   }
   /**
    * 柱状图的数据
