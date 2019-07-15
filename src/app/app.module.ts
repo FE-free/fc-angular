@@ -4,7 +4,7 @@
  * @Description: 根模块
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-07-11 17:44:11
+ * @LastEditTime: 2019-07-15 13:04:09
  */
 import { HashLocationStrategy, LocationStrategy, registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,7 +19,6 @@ import { FccoreModule } from 'src/fccore/fccore.module';
 import { UserService } from 'src/fccore/service/user.service';
 import { AppComponent } from './app.component';
 import { AppRoutes } from './app.route';
-import { BuildingComponent } from './components/building/building.component';
 import { ErrorComponent } from './components/error/error.component';
 import { ForgotComponent } from './components/forgot/forgot.component';
 import { LayoutComponent } from './components/layout/layout.component';
@@ -47,7 +46,6 @@ registerLocaleData(zh)
     LayoutComponent, // 组件-layout
     ErrorComponent, // 组件-错误
     SigninComponent, // 组件-登录
-    BuildingComponent, // 组件-正在开发中
     ForgotComponent, // 组件-忘记密码
     LockscreenComponent, // 组件-锁屏
     SignupComponent // 组件-注册

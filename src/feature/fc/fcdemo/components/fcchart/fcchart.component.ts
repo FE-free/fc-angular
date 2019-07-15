@@ -11,11 +11,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import * as G2 from '@antv/g2';
 import DataSet from '@antv/data-set';
 @Component({
-  selector: 'bgchart',
-  templateUrl: './bgchart.component.html',
+  selector: 'fcchart',
+  templateUrl: './fcchart.component.html',
   styles: [``]
 })
-export class BgchartComponent implements AfterViewInit {
+export class FcchartComponent implements AfterViewInit {
 
   chartRadarData = [
     {

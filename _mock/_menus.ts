@@ -11,7 +11,7 @@ export const menus = {
       HASCHILD: 'Y',
       MENUICON: 'icon iconfont icon-ppbs',
       SORT: 1000,
-      ROUTER: '/budget',
+      ROUTER: '/fc',
       P_CHILDMENUS: [
         {
           ID: '3ae5c74930dab18e877efabee3af0004',
@@ -74,8 +74,8 @@ export const menus = {
             {
               ID: '63fbb2f0708f4fd68db04a92dd5df121',
               PID: 'FC',
-              MENUID: 'FCCHART',
-              MENUNAME: '图表',
+              MENUID: 'FCBUTTON',
+              MENUNAME: '按钮',
               ENABLE: 'Y',
               WXMENU: 'N',
               MENUTYPE: 'APP',
@@ -83,35 +83,7 @@ export const menus = {
               HASCHILD: 'N',
               PARENT: 'SYSTEM',
               SORT: 1152,
-              ROUTER: '/fcchartList'
-            },
-            {
-              ID: '63fbb2f0708f4fd68db04a92dd5df121',
-              PID: 'FC',
-              MENUID: 'FCSPREAD',
-              MENUNAME: 'spread报表',
-              ENABLE: 'Y',
-              WXMENU: 'N',
-              MENUTYPE: 'APP',
-              APPID: 'SYSMENU',
-              HASCHILD: 'N',
-              PARENT: 'SYSTEM',
-              SORT: 1152,
-              ROUTER: '/fcspreadList'
-            },
-            {
-              ID: '63fbb2f0708f4fd68db04a92dd5df121',
-              PID: 'FC',
-              MENUID: 'BGIFRAME',
-              MENUNAME: 'iframe',
-              ENABLE: 'Y',
-              WXMENU: 'N',
-              MENUTYPE: 'APP',
-              APPID: 'SYSMENU',
-              HASCHILD: 'N',
-              PARENT: 'SYSTEM',
-              SORT: 1152,
-              ROUTER: '/fciframeList'
+              ROUTER: '/building'
             },
             {
               ID: '63fbb2f0708f4fd68db04a92dd5df121',
@@ -125,7 +97,96 @@ export const menus = {
               HASCHILD: 'N',
               PARENT: 'SYSTEM',
               SORT: 1152,
-              ROUTER: '/fctableList'
+              ROUTER: '/building'
+            }
+          ]
+        },
+        {
+          ID: '3ae5c74930dab18e877efabee3af0004',
+          PID: 'FC',
+          MENUID: 'FCCHART',
+          MENUNAME: '图表',
+          ENABLE: 'Y',
+          WXMENU: 'N',
+          MENUTYPE: 'MENU',
+          HASCHILD: 'N',
+          MENUICON: 'fc-icon-tubiao',
+          PARENT: 'FC',
+          SORT: 1150,
+          ROUTER: '/building',
+        },
+        {
+          ID: '63fbb2f0708f4fd68db04a92dd5df121',
+          PID: 'FC',
+          MENUID: 'FCSPREAD',
+          MENUNAME: 'spread报表',
+          ENABLE: 'Y',
+          WXMENU: 'N',
+          MENUTYPE: 'APP',
+          APPID: 'SYSMENU',
+          HASCHILD: 'N',
+          MENUICON: 'fc-icon-shujubiaoge',
+          PARENT: 'SYSTEM',
+          SORT: 1152,
+          ROUTER: '/building'
+        },
+        {
+          ID: '63fbb2f0708f4fd68db04a92dd5df121',
+          PID: 'FC',
+          MENUID: 'BGIFRAME',
+          MENUNAME: 'iframe',
+          ENABLE: 'Y',
+          WXMENU: 'N',
+          MENUTYPE: 'APP',
+          APPID: 'SYSMENU',
+          HASCHILD: 'N',
+          MENUICON: 'fc-icon-iframe',
+          PARENT: 'SYSTEM',
+          SORT: 1152,
+          ROUTER: '/building'
+        },
+        {
+          ID: '63fbb2f0708f4fd68db04a92dd5df121',
+          PID: 'FC',
+          MENUID: 'FCAGGRID',
+          MENUNAME: 'ag-grid表格',
+          ENABLE: 'Y',
+          WXMENU: 'N',
+          MENUTYPE: 'APP',
+          APPID: 'SYSMENU',
+          HASCHILD: 'N',
+          MENUICON: 'fc-icon-datatable',
+          PARENT: 'SYSTEM',
+          SORT: 1152,
+          ROUTER: '/building'
+        },
+        {
+          ID: '3ae5c74930dab18e877efabee3af0004',
+          PID: 'FC',
+          MENUID: 'FCPAGES',
+          MENUNAME: '模版页面',
+          ENABLE: 'Y',
+          WXMENU: 'N',
+          MENUTYPE: 'MENU',
+          HASCHILD: 'Y',
+          MENUICON: 'fc-icon-pages',
+          PARENT: 'FC',
+          SORT: 1150,
+          ROUTER: '/fc',
+          P_CHILDMENUS: [
+            {
+              ID: '63fbb2f0708f4fd68db04a92dd5df121',
+              PID: 'FC',
+              MENUID: 'FCTEMPLATELIST',
+              MENUNAME: '列表页面',
+              ENABLE: 'Y',
+              WXMENU: 'N',
+              MENUTYPE: 'APP',
+              APPID: 'SYSMENU',
+              HASCHILD: 'N',
+              PARENT: 'SYSTEM',
+              SORT: 1152,
+              ROUTER: '/building'
             }
           ]
         },
@@ -133,7 +194,7 @@ export const menus = {
           ID: '3ae5c74930dab18e877efabee3af0004',
           PID: 'FC',
           MENUID: 'BGBUSSINESS',
-          MENUNAME: '业务组件',
+          MENUNAME: '基础业务',
           ENABLE: 'Y',
           WXMENU: 'N',
           MENUTYPE: 'MENU',

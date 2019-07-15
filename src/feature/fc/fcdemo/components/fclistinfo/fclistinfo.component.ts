@@ -13,11 +13,11 @@ import { DaoService } from 'src/fccore/service/dao.service'
 import { LogService } from 'src/fccore/service/log.service'
 import { CommonService } from 'src/fccore/service/common.service'
 @Component({
-  selector: 'bglistinfo',
-  templateUrl: './bglistinfo.component.html',
+  selector: 'fclistinfo',
+  templateUrl: './fclistinfo.component.html',
   styles: [``]
 })
-export class BglistinfoComponent  {
+export class FclistinfoComponent  {
   // 获取列表数据
   pageList = []
   // 查询对象
@@ -39,7 +39,7 @@ export class BglistinfoComponent  {
         this.pageList = result['data']
       }
     })
-    this.daoService.postFromApi('BUDGET/BGITEMNEW/LISTINFO', {}).subscribe(result => {
+    this.daoService.postFromApi('BUDGET/fcITEMNEW/LISTINFO', {}).subscribe(result => {
       if (result.CODE === '0') {
         this.listinfo = result.DATA
         this.logService.debug(this.listinfo)

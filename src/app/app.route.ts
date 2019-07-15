@@ -28,10 +28,6 @@ export const AppRoutes: Routes = [
         component: ErrorComponent
       },
       {
-        path: 'building', // 正在开发中
-        component: BuildingComponent
-      },
-      {
         path: 'fc', // 项目的业务模块
         loadChildren: '../feature/fc/fc.module#FcModule'
       }

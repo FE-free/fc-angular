@@ -4,7 +4,7 @@
  * @Description: 新增
  * @email: 3300536651@qq.com
  * @Date: 2019-04-12 16:39:30
- * @LastEditTime: 2019-04-17 12:26:33
+ * @LastEditTime: 2019-07-15 14:05:43
  */
 import { Component } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
@@ -12,11 +12,11 @@ import { FormGroup, FormBuilder, Validators, FormControl, ValidationErrors } fro
 
 import { Observable, Observer } from 'rxjs'
 @Component({
-  selector: 'bgcreate',
-  templateUrl: './bgcreate.component.html',
+  selector: 'fccreate',
+  templateUrl: './fccreate.component.html',
   styles: [``]
 })
-export class BgcreateComponent {
+export class FccreateComponent {
   validateForm: FormGroup
   constructor(public router: Router, public activedRoute: ActivatedRoute, private fb: FormBuilder) {
     this.validateForm = this.fb.group({

@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from 'src/shared';
 import { Routers } from './fc.route';
 import { HomeComponent } from './fcsystem/components/home/home.component';
+import { BuildingComponent } from 'src/app/components/building/building.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { HomeComponent } from './fcsystem/components/home/home.component';
     RouterModule.forChild(Routers)
   ],
   declarations: [
-    HomeComponent
+    HomeComponent,
+    BuildingComponent
   ],
   providers: []
 })

@@ -4,7 +4,7 @@
  * @Description: 整体布局，包括顶部工具栏、左侧导航、侧边栏、选项卡导航、内容区
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-07-12 18:13:26
+ * @LastEditTime: 2019-07-15 14:30:34
  -->
 <nz-layout class="layout">
   <!-- 顶部工具栏 -->
@@ -12,24 +12,46 @@
     <div class="logo fc-header-left">
       <img src="assets/image/logo.png" [ngStyle]="{'display': menuWidth===64 ?'none':'inline'}" alt="logo">
       <img src="assets/image/small-logo.png" [ngStyle]="{'display': menuWidth===64 ?'inline':'none'}" alt="logo">
-      <i class="icon iconfont fc-header-toggle fc-icon-menufold-right"
-      [ngClass]="{'fc-icon-menufold-left':menuWidth===64}" (click)="toggleLayout()"></i>
-      <a href="https://github.com/luohong123/fc-angular" target="_blank"
-        title="icon iconfont fc-icon-github fc-header-github"><i
-          class="icon iconfont fc-icon-github fc-header-github"></i></a>
+      <div class="fc-header-icon-wrap">
+        <i class="icon iconfont fc-header-toggle"
+          [ngClass]="{'fc-icon-menufold-left':menuWidth===64,'fc-icon-menufold-right':menuWidth!==64}" (click)="toggleLayout()"></i>
+      </div>
+      <div class="fc-header-icon-wrap">
+        <a href="https://github.com/luohong123/fc-angular" target="_blank"
+          title="icon iconfont fc-icon-github fc-header-github"><i
+            class="icon iconfont fc-icon-github fc-header-github"></i></a>
+      </div>
     </div>
     <div class="fc-header-right">
-      <i class="icon iconfont yt-header-icon fc-icon-information" (click)="toggleSidebar()" title="消息"></i>
-      <i class="icon iconfont yt-header-icon fc-icon-peizhi" title="设置"></i>
-      <i class="icon iconfont yt-header-icon fc-icon-wode" title="我的"></i>
-      <i class="icon iconfont yt-header-icon fc-icon-tuichu" (click)="siginout()" title="退出"></i>
-      <nz-avatar class="avatar" [nzSize]="32" nzIcon="user"></nz-avatar>
-      <a class="text">{{companyName}}</a>
+      <div class="fc-header-icon-wrap">
+        <i class="icon iconfont fc-header-icon fc-icon-information" (click)="toggleSidebar()" title="消息"></i>
+      </div>
+      <div class="fc-header-icon-wrap">
+        <i class="icon iconfont fc-header-icon fc-icon-peizhi" title="设置"></i>
+      </div>
+      <div class="fc-header-icon-wrap fc-header-dropdown">
+        <a nz-dropdown [nzDropdownMenu]="headerMenu" [nzPlacement]="'bottomRight'" [nzOverlayStyle]="{top:'18px' }">
+          <nz-avatar class="avatar" [nzSize]="32" nzIcon="user" [nzSrc]="avatar"></nz-avatar>
+          <a class="text">{{companyName}}</a>
+        </a>
+        <nz-dropdown-menu #headerMenu="nzDropdownMenu">
+          <ul nz-menu>
+            <li nz-menu-item> <i class="icon iconfont fc-header-icon fc-icon-peizhi"></i> 设置
+            </li>
+            <li nz-menu-item> <i class="icon iconfont fc-header-icon fc-icon-personnel"></i> 个人中心
+            </li>
+            <li nz-menu-item> <i class="icon iconfont fc-header-icon fc-icon-password"></i> 修改密码
+            </li>
+            <li nz-menu-item (click)="siginout()"> <i class=" icon iconfont fc-header-icon fc-icon-tuichu" ></i> 退出
+            </li>
+          </ul>
+        </nz-dropdown-menu>
+      </div>
     </div>
   </nz-header>
   <nz-layout style="width: 100%;">
     <!-- 菜单导航 -->
-    <nz-sider [(nzWidth)]="menuWidth" Ø class="sidebar-menu" style="background:#fff;">
+    <nz-sider [(nzWidth)]="menuWidth" Ø class="fc-sidebar-menu">
       <ul nz-menu [nzMode]="'inline'" style="height: calc(100% - 40px);overflow: auto;"
         [nzInlineCollapsed]="menuIsCollapsed">
         <ng-container *ngFor="let menu of _menus">

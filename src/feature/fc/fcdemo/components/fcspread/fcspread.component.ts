@@ -10,8 +10,8 @@ import { Component } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
 
 @Component({
-  selector: 'bgspread',
-  templateUrl: './bgspread.component.html',
+  selector: 'fcspread',
+  templateUrl: './fcspread.component.html',
   styles: [
     `
       .fc-spread-content {
@@ -21,7 +21,7 @@ import { ActivatedRoute, Router } from '@angular/router'
     `
   ]
 })
-export class BgspreadComponent {
+export class FcspreadComponent {
   // spread
   spread: any;
   // spread 样式

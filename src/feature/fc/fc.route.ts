@@ -8,6 +8,7 @@
  */
 import { Routes } from '@angular/router'
 import { HomeComponent } from './fcsystem/components/home/home.component';
+import { BuildingComponent } from 'src/app/components/building/building.component';
 export const Routers: Routes = [
   {
     path: '',
@@ -17,6 +18,10 @@ export const Routers: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'building', // 正在开发中
+    component: BuildingComponent
   },
   {
     path: '', // demo组件
