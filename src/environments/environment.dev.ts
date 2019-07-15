@@ -12,13 +12,13 @@
 // 可以在`.angular-cli.json`中找到environment映射到文件的列表。
 // 开发环境
 export const environment = {
-  production: false,
-  pid: 'BUDGET',
-  projectName: 'FC快速开发平台',
-  systemurl: '/server/',
-  apiurl: '/server/api/',
-  logurl: '/server/api/',
-  authurl: '/server/api/',
-  wsurl: '',
+  production: true,
+  pid: "FC",
+  projectName: "fc-angular",
+  systemurl: "/server/",
+  apiurl: "/server/api/",
+  logurl: "/server/api/",
+  authurl: "/server/api/",
+  wsurl: "",
   license: ''
 }

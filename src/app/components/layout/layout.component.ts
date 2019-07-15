@@ -4,7 +4,7 @@
  * @Description: 整体布局包括顶部工具栏、左侧菜单、侧边栏、选项卡导航主体内容区
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-06-19 16:30:41
+ * @LastEditTime: 2019-07-15 14:26:30
  */
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -22,48 +22,79 @@ import { environment } from '../../../environments/environment.dev';
         height: 100%;
       }
       .logo {
-        overflow: auto;
+        height: 64px;
+        line-height: 64px;
+        float: left;
+      }
+      .logo:after, .fc-header-right:after {
+        content:'';
+        display: block;
+        clear: both;
+      }
+      .logo img{
+        margin-right: 20px;
+        vertical-align: top;
+        height: 50px;
+        margin-top: 7px;
+        margin-left: -10px;
         float: left;
       }
       .logo .iconfont {
         color: #fff;
         font-size: 30px;
-        float: left;
-        margin-right: 10px;
+        cursor: pointer;
       }
       .logo-text {
         color: #fff;
-        float: left;
         font-size: 20px;
       }
-      .fc-header-right {
-        float: right;
+      .fc-header-icon-wrap {
+        float: left;
+        transition: .2s;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        cursor: pointer;
+        margin-top: 12px;
+        margin-right: 10px;
       }
-      .fc-header-right .yt-header-icon {
+      .fc-header-icon-wrap:hover {
+        background: #40a9ff;
+        color: #fff;
+      }
+      .fc-header-dropdown {
+        width: auto;
+      }
+      .fc-header-left .icon {
+        float: none;
+        font-size: 24px;
+        cursor: pointer;
+      }
+      .fc-header-right {
+        height: 64px;
+        line-height: 64px;
+        float: right;
+        overflow: hidden;
+      }
+      .fc-header-right .fc-header-icon {
         font-size: 24px;
         color: #fff;
-        margin-right: 15px;
         cursor: pointer;
-        float: left;
       }
       .fc-header-right .text {
         font-size: 16px;
         color: #fff;
         margin-right: 15px;
         cursor: pointer;
-        float: left;
       }
       .fc-header-right .text .iconfont {
         margin-right: 5px;
       }
-      .fc-header-right .text:hover {
-        font-weight: bold;
-      }
       .fc-header-right .avatar {
         cursor: pointer;
         float: left;
-        margin-top: 15px;
-        margin-right: 5px;
+        margin: 4px 10px 0 10px;
       }
       .sidebar-nav {
         position: relative;
@@ -112,27 +143,34 @@ import { environment } from '../../../environments/environment.dev';
       ::ng-deep .ant-tabs .anticon-close {
         cursor: pointer;
       }
-      ::ng-deep .sidebar-menu .ant-menu-inline-collapsed {
+      ::ng-deep .fc-sidebar-menu {
+        background: #ffffff;
+      }
+      ::ng-deep .fc-sidebar-menu .ant-menu-inline-collapsed > .ant-menu-item {
+        padding: 0!important;
+        text-align: center;
+      }
+      ::ng-deep .fc-sidebar-menu .ant-menu-inline-collapsed {
         width: 64px;
       }
-      ::ng-deep .sidebar-menu .ant-menu-inline-collapsed .first-level-title {
+      ::ng-deep .fc-sidebar-menu .ant-menu-inline-collapsed .first-level-title {
         display: none;
       }
-      ::ng-deep .sidebar-menu .ant-menu-inline-collapsed > .ant-menu-submenu {
+      ::ng-deep .fc-sidebar-menu .ant-menu-inline-collapsed > .ant-menu-submenu {
         text-align: center;
       }
       ::ng-deep
-        .sidebar-menu
+        .fc-sidebar-menu
         .ant-menu-inline-collapsed
         > .ant-menu-submenu
         > .ant-menu-submenu-title {
         padding: 0 !important;
       }
-      ::ng-deep .sidebar-menu .menu-icon {
+      ::ng-deep .fc-sidebar-menu .menu-icon {
         color: #333333;
         margin-right: 10px;
       }
-      ::ng-deep .sidebar-menu .ant-menu-inline-collapsed .menu-icon {
+      ::ng-deep .fc-sidebar-menu .ant-menu-inline-collapsed .menu-icon {
         margin-right: 0px;
       }
       ::ng-deep .ant-menu-popup::before {
@@ -186,7 +224,7 @@ export class LayoutComponent implements OnInit {
   // 选项卡
   fcTabs = []
   // 单位名称
-  companyName = '总公司'
+  companyName = 'admin'
   // 菜单是否收起
   menuIsCollapsed = false
   // 退出登录文字提示是否显示
@@ -195,6 +233,8 @@ export class LayoutComponent implements OnInit {
   navsideVisible = false
   // 菜单导航的宽度
   menuWidth = 200
+  // 头像
+  avatar = 'assets/image/avatar.jpeg'
   // 侧边栏
   @ViewChild('navside',{static: false})
   navside: ElementRef
