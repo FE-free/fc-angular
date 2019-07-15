@@ -1,17 +1,20 @@
-# 【fc-angular】基于angular8的多页面后台管理系统
-- 【在线预览】[https://luohong123.github.io/fc-angular/demo/index.html](https://luohong123.github.io/fc-angular/demo/index.html)
-- 【源码地址】[https://github.com/luohong123/fc-angular](https://github.com/luohong123/fc-angular)
+<img src="./media/logo.png" style="margin: 0 auto;display: block;">
 
+English | [简体中文](https://github.com/luohong123/fc-angular/blob/master/README.md) 
 # 一、简介
 ## 项目介绍
 
 - 基于 angularV8，ng.ant.design V8.0.1开发的后台管理系统
+- 【在线预览】[https://luohong123.github.io/fc-angular/demo/index.html](https://luohong123.github.io/fc-angular/demo/index.html)
+- 【源码地址】[https://github.com/luohong123/fc-angular](https://github.com/luohong123/fc-angular)
 
 > 预览效果图
+- 登录
+![选项卡切换](./media/2.png)
 - 首页
 ![首页](./media/1.png)
-- 路由复用策略，切换路由保留用户操作状态
-![选项卡切换](./media/2.png)
+
+
 
 ## 二、平台功能开发进度
 
