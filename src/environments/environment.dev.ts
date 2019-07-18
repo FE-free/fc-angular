@@ -2,7 +2,7 @@
  * @Author: luohong
  * @LastEditors: luohong
  * @Description: 开发环境的环境配置
- * @email: luo.hong@neusoft.com
+ * @email: 3300536651@qq.com
  * @Date: 2019-04-12 16:39:30
  * @LastEditTime: 2019-04-19 17:46:33
  */
@@ -12,13 +12,13 @@
 // 可以在`.angular-cli.json`中找到environment映射到文件的列表。
 // 开发环境
 export const environment = {
-  production: false,
-  pid: 'BUDGET',
-  projectName: 'FC快速开发平台',
-  systemurl: '/server/',
-  apiurl: '/server/api/',
-  logurl: '/server/api/',
-  authurl: '/server/api/',
-  wsurl: 'ws://192.168.0.121:8080/server/msg',
+  production: true,
+  pid: "FC",
+  projectName: "fc-angular",
+  systemurl: "/server/",
+  apiurl: "/server/api/",
+  logurl: "/server/api/",
+  authurl: "/server/api/",
+  wsurl: "",
   license: ''
 }

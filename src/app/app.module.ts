@@ -2,9 +2,9 @@
  * @Author: luohong
  * @LastEditors: luohong
  * @Description: 根模块
- * @email: luo.hong@neusoft.com
+ * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-04-19 10:23:09
+ * @LastEditTime: 2019-07-15 13:04:09
  */
 import { HashLocationStrategy, LocationStrategy, registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,13 +14,11 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
-
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { FccoreModule } from 'src/fccore/fccore.module';
 import { UserService } from 'src/fccore/service/user.service';
 import { AppComponent } from './app.component';
 import { AppRoutes } from './app.route';
-import { BuildingComponent } from './components/building/building.component';
 import { ErrorComponent } from './components/error/error.component';
 import { ForgotComponent } from './components/forgot/forgot.component';
 import { LayoutComponent } from './components/layout/layout.component';
@@ -30,6 +28,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { LayoutService } from './service/layout.service';
 import { FcRouteReuseStrategy } from './service/routereusestrategy.service';
 import { ShareService } from './share.service';
+
 registerLocaleData(zh)
 
 @NgModule({
@@ -47,7 +46,6 @@ registerLocaleData(zh)
     LayoutComponent, // 组件-layout
     ErrorComponent, // 组件-错误
     SigninComponent, // 组件-登录
-    BuildingComponent, // 组件-正在开发中
     ForgotComponent, // 组件-忘记密码
     LockscreenComponent, // 组件-锁屏
     SignupComponent // 组件-注册

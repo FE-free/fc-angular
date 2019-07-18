@@ -2,9 +2,9 @@
  * @Author: luohong
  * @LastEditors: luohong
  * @Description: 图片查看
- * @email: luo.hong@neusoft.com
+ * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-04-17 10:46:37
+ * @LastEditTime: 2019-06-19 16:30:58
  */
 import { Component, ElementRef, Input, OnChanges, Renderer2, ViewChild } from '@angular/core';
 import { EventManager } from '@angular/platform-browser';
@@ -26,7 +26,7 @@ export class FcimgviewComponent implements OnChanges {
   top: string
   // 获取图片的相对定位left
   left: string
-  @ViewChild('imgDetail') imgDetailRef: ElementRef
+  @ViewChild('imgDetail',{static: false}) imgDetailRef: ElementRef
   imgviewSelector: any
   styleJsonStr: any
   hidden:boolean = false;

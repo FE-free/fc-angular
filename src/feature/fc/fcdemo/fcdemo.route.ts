@@ -2,47 +2,52 @@
  * @Author: luohong
  * @LastEditors: luohong
  * @Description: 示例模块的路由
- * @email: luo.hong@neusoft.com
+ * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-04-17 12:30:44
+ * @LastEditTime: 2019-07-15 14:06:40
  */
 import { Routes } from '@angular/router'
 
-import { BglistinfoComponent } from './components/bglistinfo/bglistinfo.component'
-import { BgcreateComponent } from './components/bgcreate/bgcreate.component'
-import { BgupdateComponent } from './components/bgupdate/bgupdate.component'
-import { BgremoveComponent } from './components/bgremove/bgremove.component'
-import { BgspreadComponent } from './components/bgspread/bgspread.component';
-import { BgiframeComponent } from './components/bgiframe/bgiframe.component';
-import { BgtableComponent } from './components/bgtable/bgtable.component';
+import { FclistinfoComponent } from './components/fclistinfo/fclistinfo.component'
+import { FccreateComponent } from './components/fccreate/fccreate.component'
+import { FcupdateComponent } from './components/fcupdate/fcupdate.component'
+import { FcremoveComponent } from './components/fcremove/fcremove.component'
+import { FcspreadComponent } from './components/fcspread/fcspread.component';
+import { FciframeComponent } from './components/fciframe/fciframe.component';
+import { FctableComponent } from './components/fctable/fctable.component';
+import { FcchartComponent } from './components/fcchart/fcchart.component';
 
 export const Routers: Routes = [
   {
-    path: 'bglistinfoList', // 查询
-    component: BglistinfoComponent
+    path: 'fclistinfoList', // 查询
+    component:FclistinfoComponent
   },
   {
-    path: 'bgcreateList', // 新增
-    component: BgcreateComponent
+    path: 'fccreateList', // 新增
+    component: FccreateComponent
   },
   {
-    path: 'bgupdateList', // 修改
-    component: BgupdateComponent
+    path: 'fcupdateList', // 修改
+    component: FcupdateComponent
   },
   {
-    path: 'bgremoveList', // 删除
-    component: BgremoveComponent
+    path: 'fcremoveList', // 删除
+    component: FcremoveComponent
   },
   {
-    path: 'bgspreadList', // spread报表
-    component: BgspreadComponent
+    path: 'fcspreadList', // spread报表
+    component: FcspreadComponent
   },
   {
-    path: 'bgtableList', // 表格
-    component: BgtableComponent
+    path: 'fctableList', // 表格
+    component: FctableComponent
   },
   {
-    path: 'bgiframeList', // iframe
-    component: BgiframeComponent
+    path: 'fciframeList', // iframe
+    component: FciframeComponent
+  },
+  {
+    path: 'fcchartList', // 图表
+    component: FcchartComponent
   }
 ]

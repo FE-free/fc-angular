@@ -2,35 +2,61 @@
  * @Author: luohong
  * @LastEditors: luohong
  * @Description: 整体布局，包括顶部工具栏、左侧导航、侧边栏、选项卡导航、内容区
- * @email: luo.hong@neusoft.com
+ * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-04-19 15:18:51
+ * @LastEditTime: 2019-07-15 14:30:34
  -->
 <nz-layout class="layout">
   <!-- 顶部工具栏 -->
   <nz-header>
-
-    <div class="logo">
-      <i class="icon iconfont fc-icon-tielu"></i>
-      <span class="logo-text">{{ projectName }}</span>
+    <div class="logo fc-header-left">
+      <img src="assets/image/logo.png" [ngStyle]="{'display': menuWidth===64 ?'none':'inline'}" alt="logo">
+      <img src="assets/image/small-logo.png" [ngStyle]="{'display': menuWidth===64 ?'inline':'none'}" alt="logo">
+      <div class="fc-header-icon-wrap">
+        <i class="icon iconfont fc-header-toggle"
+          [ngClass]="{'fc-icon-menufold-left':menuWidth===64,'fc-icon-menufold-right':menuWidth!==64}" (click)="toggleLayout()"></i>
+      </div>
+      <div class="fc-header-icon-wrap">
+        <a href="https://github.com/luohong123/fc-angular" target="_blank"
+          title="icon iconfont fc-icon-github fc-header-github"><i
+            class="icon iconfont fc-icon-github fc-header-github"></i></a>
+      </div>
     </div>
     <div class="fc-header-right">
-      <i class="icon iconfont yt-header-icon fc-icon-information" (click)="toggleSidebar()" title="消息"></i>
-      <i class="icon iconfont yt-header-icon fc-icon-peizhi" title="设置"></i>
-      <i class="icon iconfont yt-header-icon fc-icon-wode" title="我的"></i>
-      <i class="icon iconfont yt-header-icon fc-icon-tuichu" (click)="siginout()" title="退出"></i>
-      <nz-avatar class="avatar" [nzSize]="32" nzIcon="user"></nz-avatar>
-      <a class="text">{{companyName}}</a>
+      <div class="fc-header-icon-wrap">
+        <i class="icon iconfont fc-header-icon fc-icon-information" (click)="toggleSidebar()" title="消息"></i>
+      </div>
+      <div class="fc-header-icon-wrap">
+        <i class="icon iconfont fc-header-icon fc-icon-peizhi" title="设置"></i>
+      </div>
+      <div class="fc-header-icon-wrap fc-header-dropdown">
+        <a nz-dropdown [nzDropdownMenu]="headerMenu" [nzPlacement]="'bottomRight'" [nzOverlayStyle]="{top:'18px' }">
+          <nz-avatar class="avatar" [nzSize]="32" nzIcon="user" [nzSrc]="avatar"></nz-avatar>
+          <a class="text">{{companyName}}</a>
+        </a>
+        <nz-dropdown-menu #headerMenu="nzDropdownMenu">
+          <ul nz-menu>
+            <li nz-menu-item> <i class="icon iconfont fc-header-icon fc-icon-peizhi"></i> 设置
+            </li>
+            <li nz-menu-item> <i class="icon iconfont fc-header-icon fc-icon-personnel"></i> 个人中心
+            </li>
+            <li nz-menu-item> <i class="icon iconfont fc-header-icon fc-icon-password"></i> 修改密码
+            </li>
+            <li nz-menu-item (click)="siginout()"> <i class=" icon iconfont fc-header-icon fc-icon-tuichu" ></i> 退出
+            </li>
+          </ul>
+        </nz-dropdown-menu>
+      </div>
     </div>
   </nz-header>
   <nz-layout style="width: 100%;">
     <!-- 菜单导航 -->
-    <nz-sider [(nzWidth)]="menuWidth"Ø class="sidebar-menu" style="background:#fff;">
+    <nz-sider [(nzWidth)]="menuWidth" Ø class="fc-sidebar-menu">
       <ul nz-menu [nzMode]="'inline'" style="height: calc(100% - 40px);overflow: auto;"
         [nzInlineCollapsed]="menuIsCollapsed">
         <ng-container *ngFor="let menu of _menus">
           <!-- 一级菜单，没有下级 -->
-          <li nz-menu-item *ngIf="menu.HASCHILD==='N'" (click)="selectedMenu(menu)" >
+          <li nz-menu-item *ngIf="menu.HASCHILD==='N'" (click)="selectedMenu(menu)">
             <span title>
               <i class="icon iconfont menu-icon" [ngClass]="menu.MENUICON"></i>
               <span class="first-level-title">{{menu.MENUNAME}}</span>
@@ -45,7 +71,7 @@
             <ul>
               <ng-container *ngFor="let childMenu of menu.P_CHILDMENUS">
                 <!-- 二级菜单，没有下级 -->
-                <li nz-menu-item  *ngIf="childMenu.HASCHILD==='N'" (click)="selectedMenu(childMenu);">
+                <li nz-menu-item *ngIf="childMenu.HASCHILD==='N'" (click)="selectedMenu(childMenu);">
                   <span title>
                     <span>{{childMenu.MENUNAME}}</span>
                   </span>
@@ -54,7 +80,7 @@
                 <li nz-submenu
                   *ngIf="childMenu.HASCHILD==='Y' && childMenu.P_CHILDMENUS && childMenu.P_CHILDMENUS.length!==0">
                   <span title>
-                    <i nz-icon [type]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></i>
+                    <i class="icon iconfont menu-icon" [ngClass]="childMenu.MENUICON"></i>
                     <span>{{childMenu.MENUNAME}}</span>
                   </span>
                   <ul>
@@ -62,7 +88,6 @@
                       <!-- 三级级菜单，没有下级 -->
                       <li nz-menu-item *ngIf="grandSonMenu.HASCHILD==='N'" (click)="selectedMenu(grandSonMenu);">
                         <span title>
-                          <i nz-icon [type]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></i>
                           {{grandSonMenu.MENUNAME}}</span>
                       </li>
                       <!-- 三级菜单，有下级 -->
@@ -73,8 +98,8 @@
                         <ul>
                           <li nz-menu-item *ngFor="let lastChidMenu of grandSonMenu.P_CHILDMENUS"
                             (click)="selectedMenu(lastChidMenu)">
-                            <span title><i class="icon iconfont menu-icon"
-                                [ngClass]="lastChidMenu.MENUICON"></i>{{lastChidMenu.MENUNAME}}</span>
+                            <span title>
+                              {{lastChidMenu.MENUNAME}}</span>
                           </li>
                         </ul>
                       </li>
