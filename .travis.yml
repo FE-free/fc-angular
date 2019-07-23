@@ -9,8 +9,5 @@ cache:
 
 before_script:
 
-before_install:
-  - npm i
-  
 after_success:
   - npm run start

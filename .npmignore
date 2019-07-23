@@ -1,0 +1,16 @@
+.idea
+.DS_Store
+node_modules/
+package-lock.json
+sandbox/
+test/
+coverage/
+.travis.yml
+karma.conf.js
+.babelrc
+.eslintignore
+.eslintrc.js
+.gitignore
+gulpfile.js
+docs/
+demo/
