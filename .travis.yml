@@ -10,4 +10,4 @@ cache:
 before_script:
 
 after_success:
-  - npm run start
+  - npm run vs
