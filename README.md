@@ -30,10 +30,12 @@ English | [简体中文](https://github.com/luohong123/fc-angular/blob/master/RE
 - 【源码地址】[https://github.com/luohong123/fc-angular](https://github.com/luohong123/fc-angular)
 
 > 预览效果图
-- 登录
-![选项卡切换](./media/2.png)
-- 首页
+
 ![首页](./media/1.png)
+
+![选项卡切换](./media/2.png)
+
+
 
 
 
