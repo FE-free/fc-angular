@@ -1,0 +1,85 @@
+/*
+ * @Author: luohong
+ * @LastEditors: luohong
+ * @Description: 全面预算项目的样式
+ * @email: 3300536651@qq.com
+ * @Date: 2019-04-16 15:57:43
+ * @LastEditTime: 2019-04-18 13:56:19
+ */
+html,
+body {
+  overflow: hidden;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.fc-toolbar {
+  width: 100%;
+  height: 38px;
+  line-height: 38px;
+  padding-left: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 3px 5px -6px #1890ff;
+}
+
+.fc-toolbar button {
+  margin-right: 10px;
+
+}
+
+.page-body {
+  flex: 1;
+  padding: 10px;
+}
+
+.page-body-content {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  padding: 5px;
+  margin: 0!important;
+  position: relative;
+  border-radius: 4px;
+}
+
+.fc-tlbform {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+
+  & button {
+    margin-right: 20px;
+  }
+}
+// 左侧
+.page .fc-left {
+  border: 1px solid #eeeeee;
+  border-radius: 4px;
+}
+
+.page .fc-left,
+.page .fc-right {
+  height: 100%;
+}
+.page .fc-left .fc-left-head {
+  padding: 5px;
+}
+.page .fc-left .fc-left-head .label,.page .fc-searchbar .label{
+  height: 32px;
+  line-height: 32px;
+  text-align: right;
+}
+// 查询工具栏
+.fc-searchbar {
+  padding-top:5px;
+  padding-bottom: 5px; 
+}
+.fc-searchbar button{
+  margin-right: 15px;
+}

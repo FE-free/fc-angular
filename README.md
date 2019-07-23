@@ -1,5 +1,27 @@
 <img src="./media/logo.png" style="margin: 0 auto;display: block;">
 
+<p align="center">
+dev branch:
+    <a href="https://travis-ci.org/fc-angular/fc-angular">
+        <img src="https://travis-ci.org/fc-angular/fc-angular.svg?branch=dev" alt="Build Status">
+    </a>
+     <a href="https://coveralls.io/github/fc-angular/fc-angular?branch=dev">
+        <img src="https://coveralls.io/repos/github/fc-angular/fc-angular/badge.svg?branch=dev" alt="Coverage Status"/>
+    </a>
+    <a href="https://npmcharts.com/compare/fc-angular?minimal=true">
+        <img src="https://img.shields.io/npm/dm/fc-angular.svg" alt="Downloads">
+    </a>
+    <a href="https://www.npmjs.com/package/fc-angular">
+        <img src="https://img.shields.io/npm/v/fc-angular.svg" alt="Version">
+    </a>
+    <a href="https://www.npmjs.com/package/fc-angular">
+        <img src="https://img.shields.io/npm/l/fc-angular.svg" alt="License">
+    </a>
+    <a href="https://gitter.im/fc-angular/community">
+        <img src="https://img.shields.io/gitter/room/fc-angular/community.svg" alt="Chat">
+    </a>
+</p>
+
 English | [简体中文](https://github.com/luohong123/fc-angular/blob/master/README.md) 
 # 一、简介
 ## 项目介绍
@@ -9,6 +31,7 @@ English | [简体中文](https://github.com/luohong123/fc-angular/blob/master/RE
 - 【源码地址】[https://github.com/luohong123/fc-angular](https://github.com/luohong123/fc-angular)
 
 > 预览效果图
+
 ![首页](./media/1.png)
 
 ![选项卡切换](./media/2.png)
