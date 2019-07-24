@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "aot": "ng build --aot",
-    "vs": "ng v"
+    "vs": "node -v"
   },
   "private": true,
   "dependencies": {
