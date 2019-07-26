@@ -365,3 +365,4 @@ export class SpreadSheetsComponent {
 }
 export class SpreadSheetsModule {
 }
+//# sourceMappingURL=gc.spread.sheets.angular.js.map
