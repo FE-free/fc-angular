@@ -4,7 +4,7 @@
  * @Description: 示例模块的路由
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-07-15 14:06:40
+ * @LastEditTime: 2019-08-05 10:09:45
  */
 import { Routes } from '@angular/router'
 
@@ -18,6 +18,10 @@ import { FctableComponent } from './components/fctable/fctable.component';
 import { FcchartComponent } from './components/fcchart/fcchart.component';
 
 export const Routers: Routes = [
+  {
+    path: '', // demo组件
+    loadChildren: './fcantd/fcantd.module#FcantdModule'
+  },
   {
     path: 'fclistinfoList', // 查询
     component:FclistinfoComponent
