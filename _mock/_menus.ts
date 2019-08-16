@@ -83,7 +83,7 @@ export const menus = {
               HASCHILD: 'N',
               PARENT: 'SYSTEM',
               SORT: 1152,
-              ROUTER: '/building'
+              ROUTER: '/fcbuttonList'
             },
             {
               ID: '63fbb2f0708f4fd68db04a92dd5df121',
