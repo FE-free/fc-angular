@@ -2,7 +2,15 @@
   "name": "fc-angular",
   "version": "0.0.0",
   "scripts": {
-    "vs": "node -v"
+    "ng": "ng",
+    "start": "ng serve --proxy-config proxy.config.json --host=0.0.0.0 --open --port=4200",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "aot": "ng build --aot",
+    "coveralls": "cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "karma": "karma start"
   },
   "private": true,
   "dependencies": {
@@ -28,6 +36,7 @@
     "mockjs": "^1.0.1-beta3",
     "ng-zorro-antd": "^8.0.1",
     "rxjs": "~6.4.0",
+    "three": "^0.106.2",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
   },
@@ -40,6 +49,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
+    "coveralls": "^3.0.5",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",

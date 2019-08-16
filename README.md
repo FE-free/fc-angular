@@ -1,21 +1,20 @@
 <img src="./media/logo.png" style="margin: 0 auto;display: block;">
 
 <p align="center">
-dev branch:
     <a href="https://travis-ci.org/fc-angular/fc-angular">
-        <img src="https://travis-ci.org/fc-angular/fc-angular.svg?branch=dev" alt="Build Status">
+        <img src="https://travis-ci.org/luohong123/fc-angular.svg?branch=dev" alt="Build Status">
     </a>
      <a href="https://coveralls.io/github/fc-angular/fc-angular?branch=dev">
         <img src="https://coveralls.io/repos/github/fc-angular/fc-angular/badge.svg?branch=dev" alt="Coverage Status"/>
     </a>
-    <a href="https://npmcharts.com/compare/fc-angular?minimal=true">
-        <img src="https://img.shields.io/npm/dm/fc-angular.svg" alt="Downloads">
+    <a href="https://npmcharts.com/compare/@fc-angular/core?minimal=true">
+        <img src="https://img.shields.io/npm/dm/@fc-angular/core.svg" alt="Downloads">
     </a>
-    <a href="https://www.npmjs.com/package/fc-angular">
-        <img src="https://img.shields.io/npm/v/fc-angular.svg" alt="Version">
+    <a href="https://www.npmjs.com/package/@fc-angular/components">
+        <img src="https://img.shields.io/npm/v/@fc-angular/components.svg" alt="Version">
     </a>
-    <a href="https://www.npmjs.com/package/fc-angular">
-        <img src="https://img.shields.io/npm/l/fc-angular.svg" alt="License">
+    <a href="https://www.npmjs.com/package/@fc-angular/core">
+        <img src="https://img.shields.io/npm/l/@fc-angular/core.svg" alt="License">
     </a>
     <a href="https://gitter.im/fc-angular/community">
         <img src="https://img.shields.io/gitter/room/fc-angular/community.svg" alt="Chat">
@@ -35,9 +34,6 @@ English | [简体中文](https://github.com/luohong123/fc-angular/blob/master/RE
 ![首页](./media/1.png)
 
 ![选项卡切换](./media/2.png)
-
-
-
 
 
 ## 二、平台功能开发进度
@@ -61,7 +57,36 @@ English | [简体中文](https://github.com/luohong123/fc-angular/blob/master/RE
 - [ ] spreadjs报表可视化
 - [x] aot打包
 
-## 三、代码目录结构
+# 三、安装项目
+
+- 在 `git` 、`node`、`npm `、`vscode` 配置好多前提下，克隆代码，命令如下：
+
+```bash
+git clone https://github.com/luohong123/fc-angular.git
+npm install
+npm start
+```
+- 在浏览器中输入 http://localhost:4200 ,项目启动成功。
+
+# 四、开发代码
+<a name="98245d55"></a>
+## 1. 代码规范
+
+- 请按照angular官网提出的 `风格指南` 开发代码
+
+ 【风格指南】[https://angular.cn/guide/styleguide#prevent-re-import-of-the-core-module](https://angular.cn/guide/styleguide#prevent-re-import-of-the-core-module)
+
+## 2. 前后端通信
+【 使用httpclient】[https://angular.cn/guide/http](https://angular.cn/guide/http)
+
+# 五、aot打包部署
+
+- 通过   `ng build --aot`  命令生成dist 文件，命令如下：
+
+```bash
+ng build --aot
+```
+## 六、代码目录结构
 
 ```markdown
 .
@@ -125,37 +150,6 @@ English | [简体中文](https://github.com/luohong123/fc-angular/blob/master/RE
 ├── .gitignore  # 指定 Git 要忽略的非跟踪的文件。
 ├── .editorconfig   # 代码编辑器配置
 └── tslint代码检查.READE.md # 介绍文档
-```
-
-
-# 四、安装项目
-
-- 在 `git` 、`node`、`npm `、`vscode` 配置好多前提下，克隆代码，命令如下：
-
-```bash
-git clone https://github.com/luohong123/fc-angular.git
-npm install
-npm start
-```
-- 在浏览器中输入 http://localhost:4200 ,项目启动成功。
-
-# 五、开发代码
-<a name="98245d55"></a>
-## 1. 代码规范
-
-- 请按照angular官网提出的 `风格指南` 开发代码
-
- 【风格指南】[https://angular.cn/guide/styleguide#prevent-re-import-of-the-core-module](https://angular.cn/guide/styleguide#prevent-re-import-of-the-core-module)
-
-## 2. 前后端通信
-【 使用httpclient】[https://angular.cn/guide/http](https://angular.cn/guide/http)
-
-# 六、aot打包部署
-
-- 通过   `ng build --aot`  命令生成dist 文件，命令如下：
-
-```bash
-ng build --aot
 ```
 
 # 七、学习帮助
