@@ -4,7 +4,7 @@
  * @Description: 路由复用策略,跳转路由时，params的refresh='Y'时，刷新页面，refresh='N'时，不刷新页面，保留用户操作状态
  * @email: 3300536651@qq.com
  * @Date: 2019-02-18 10:59:15
- * @LastEditTime: 2019-07-05 12:15:00
+ * @LastEditTime: 2019-08-21 13:40:07
  */
 import {
   ActivatedRouteSnapshot,
@@ -24,7 +24,7 @@ export class FcRouteReuseStrategy implements RouteReuseStrategy {
    * @return:
    */
   public shouldDetach(route: ActivatedRouteSnapshot): boolean {
-    if (route.routeConfig.path === 'home' || route.routeConfig.path === 'error') {
+    if (route.routeConfig.path === 'fchome' || route.routeConfig.path === 'error') {
       return false // 不允许路由复用
     }
     if (route.routeConfig['data'] && !route.routeConfig['data']['keepAlive']) {

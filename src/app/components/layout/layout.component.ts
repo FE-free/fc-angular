@@ -4,7 +4,7 @@
  * @Description: 整体布局包括顶部工具栏、左侧菜单、侧边栏、选项卡导航主体内容区
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-07-23 15:28:08
+ * @LastEditTime: 2019-08-21 17:14:31
  */
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -130,7 +130,8 @@ import { environment } from '../../../environments/environment.dev';
       .fc-main {
         width: 100%;
         height: 100%;
-        overflow: hidden;
+        overflow: auto;
+        padding: 10px;
       }
       ::ng-deep .navside-drawer.ant-drawer-content-wrapper {
         background-color: #ffffff;
@@ -299,8 +300,8 @@ export class LayoutComponent implements OnInit {
     // 默认选择某个菜单
     CommonService.event('selectedMenu', {
       ID: '0',
-      MENUID: 'HOME',
-      ROUTER: 'home',
+      MENUID: 'FCHOME',
+      ROUTER: 'fchome',
       PID: environment.pid,
       MENUTYPE: 'INURL',
       MENUNAME: '首页',
@@ -322,15 +323,15 @@ export class LayoutComponent implements OnInit {
           refresh: 'N',
           content: {
             ID: '0',
-            MENUID: 'HOME',
-            ROUTER: 'home',
+            MENUID: 'FCHOME',
+            ROUTER: 'fchome',
             PID: environment.pid,
             MENUTYPE: 'INURL'
           }
         })
       }
     }
-    this.router.navigate(['/' + environment.pid.toLocaleLowerCase() + '/home'])
+    this.router.navigate(['/' + environment.pid.toLocaleLowerCase() + '/fchome'])
   }
   /**
    * 切换项目

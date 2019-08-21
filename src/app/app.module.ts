@@ -4,7 +4,7 @@
  * @Description: 根模块
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-08-05 15:20:43
+ * @LastEditTime: 2019-08-21 10:55:07
  */
 import { HashLocationStrategy, LocationStrategy, registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';

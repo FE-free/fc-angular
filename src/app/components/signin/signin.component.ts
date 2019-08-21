@@ -4,7 +4,7 @@
  * @Description: 登录
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-07-05 12:46:04
+ * @LastEditTime: 2019-08-21 11:02:36
  */
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -19,13 +19,13 @@ import { CacheService } from 'src/fccore/service/cache.service';
 export class SigninComponent implements OnInit {
   hasError: boolean = false
   msg: string = '用户名或者密码错误'
-  userId: string = ''
-  password: string = ''
+  userId: string = 'admin'
+  password: string = 'admin'
   _projectName = environment.projectName
   constructor(private router: Router) {}
   ngOnInit() {
     if (this.loginValid(this.userId, this.password)) {
-      this.router.navigate(['/' + environment.pid.toLocaleLowerCase() + '/home'])
+      this.router.navigate(['/' + environment.pid.toLocaleLowerCase() + '/fchome'])
     }
   }
   /**
@@ -36,7 +36,7 @@ export class SigninComponent implements OnInit {
       this.hasError = false
       CacheService.setS("userinfo",{USERCODE:'admin'});
       CacheService.setS("token", 'ab2be4ef08c0418bab13a6a88c9772e7');
-      this.router.navigate(['/' + environment.pid.toLocaleLowerCase() + '/home'])
+      this.router.navigate(['/' + environment.pid.toLocaleLowerCase() + '/fchome'])
     } else {
       this.hasError = true
     }

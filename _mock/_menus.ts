@@ -1,3 +1,11 @@
+/*
+ * @Author: luohong
+ * @Date: 2019-08-16 09:28:26
+ * @LastEditors: luohong
+ * @LastEditTime: 2019-08-21 16:39:04
+ * @Description: 
+ * @email: 3300536651@qq.com
+ */
 export const menus = {
   P_MENUS: [
     {
@@ -15,89 +23,47 @@ export const menus = {
       P_CHILDMENUS: [
         {
           ID: '3ae5c74930dab18e877efabee3af0004',
-          PID: 'BUDGET',
-          MENUID: 'BGTX',
-          MENUNAME: '主导航',
+          PID: 'FC',
+          MENUID: 'FCVISUAL',
+          MENUNAME: '可视化',
           ENABLE: 'Y',
           WXMENU: 'N',
           MENUTYPE: 'MENU',
           HASCHILD: 'Y',
           MENUICON: 'fc-icon-yibiaopan',
-          PARENT: 'BUDGET',
+          PARENT: 'FC',
           SORT: 1100,
-          ROUTER: '/budget',
+          ROUTER: '/fc',
           P_CHILDMENUS: [
             {
               ID: '63fbb2f0708f4fd68db04a92dd5df121',
               PID: 'FC',
-              MENUID: 'FCHOME2',
-              MENUNAME: '分析页',
+              MENUID: 'FCTHREEJS',
+              MENUNAME: 'threejs',
               ENABLE: 'Y',
               WXMENU: 'N',
-              MENUTYPE: 'APP',
+              MENUTYPE: 'MENU',
               APPID: 'SYSMENU',
-              HASCHILD: 'N',
-              PARENT: 'SYSTEM',
+              HASCHILD: 'Y',
+              PARENT: 'FCVISUAL',
               SORT: 1101,
-              ROUTER: '/home1'
-            },
-            {
-              ID: '63fbb2f0708f4fd68db04a92dd5df121',
-              PID: 'FC',
-              MENUID: 'FCHOME1',
-              MENUNAME: '监控页',
-              ENABLE: 'Y',
-              WXMENU: 'N',
-              MENUTYPE: 'APP',
-              APPID: 'SYSMENU',
-              HASCHILD: 'N',
-              PARENT: 'SYSTEM',
-              SORT: 1102,
-              ROUTER: '/home2'
-            }
-          ]
-        },
-        {
-          ID: '3ae5c74930dab18e877efabee3af0004',
-          PID: 'FC',
-          MENUID: 'FCANTDESIGN',
-          MENUNAME: 'Ant Design',
-          ENABLE: 'Y',
-          WXMENU: 'N',
-          MENUTYPE: 'MENU',
-          HASCHILD: 'Y',
-          MENUICON: 'fc-icon-antdesign',
-          PARENT: 'BUDGET',
-          SORT: 1150,
-          ROUTER: '/antdesign',
-          P_CHILDMENUS: [
-            {
-              ID: '63fbb2f0708f4fd68db04a92dd5df121',
-              PID: 'FC',
-              MENUID: 'FCBUTTON',
-              MENUNAME: '按钮',
-              ENABLE: 'Y',
-              WXMENU: 'N',
-              MENUTYPE: 'APP',
-              APPID: 'SYSMENU',
-              HASCHILD: 'N',
-              PARENT: 'SYSTEM',
-              SORT: 1152,
-              ROUTER: '/fcbuttonList'
-            },
-            {
-              ID: '63fbb2f0708f4fd68db04a92dd5df121',
-              PID: 'FC',
-              MENUID: 'FCTABLE',
-              MENUNAME: '表格',
-              ENABLE: 'Y',
-              WXMENU: 'N',
-              MENUTYPE: 'APP',
-              APPID: 'SYSMENU',
-              HASCHILD: 'N',
-              PARENT: 'SYSTEM',
-              SORT: 1152,
-              ROUTER: '/building'
+              ROUTER: '/fcthreejs',
+              P_CHILDMENUS: [
+                {
+                  ID: '63fbb2f0708f4fd68db04a92dd5df121',
+                  PID: 'FC',
+                  MENUID: 'FCEARTH',
+                  MENUNAME: '地球',
+                  ENABLE: 'Y',
+                  WXMENU: 'N',
+                  MENUTYPE: 'APP',
+                  APPID: 'SYSMENU',
+                  HASCHILD: 'N',
+                  PARENT: 'SYSTEM',
+                  SORT: 1101,
+                  ROUTER: '/fcearth'
+                }
+              ]
             }
           ]
         },
@@ -109,11 +75,57 @@ export const menus = {
           ENABLE: 'Y',
           WXMENU: 'N',
           MENUTYPE: 'MENU',
-          HASCHILD: 'N',
+          HASCHILD: 'Y',
           MENUICON: 'fc-icon-tubiao',
           PARENT: 'FC',
           SORT: 1150,
-          ROUTER: '/building',
+          ROUTER: '/fc',
+          P_CHILDMENUS: [
+            {
+              ID: '63fbb2f0708f4fd68db04a92dd5df121',
+              PID: 'FC',
+              MENUID: 'FCCHARTBAR',
+              MENUNAME: 'g2',
+              ENABLE: 'Y',
+              WXMENU: 'N',
+              MENUTYPE: 'APP',
+              APPID: 'SYSMENU',
+              HASCHILD: 'N',
+              PARENT: 'FCCHART',
+              SORT: 1151,
+              ROUTER: '/fcg2'
+            }
+          ]
+        },
+        {
+          ID: '3ae5c74930dab18e877efabee3af0004',
+          PID: 'FC',
+          MENUID: 'FCEDITOR',
+          MENUNAME: '富文本',
+          ENABLE: 'Y',
+          WXMENU: 'N',
+          MENUTYPE: 'MENU',
+          HASCHILD: 'Y',
+          MENUICON: 'fc-icon-tubiao',
+          PARENT: 'FC',
+          SORT: 1150,
+          ROUTER: '/fc',
+          P_CHILDMENUS: [
+            {
+              ID: '63fbb2f0708f4fd68db04a92dd5df121',
+              PID: 'FC',
+              MENUID: 'FCCKEEDITOR',
+              MENUNAME: '富文本',
+              ENABLE: 'Y',
+              WXMENU: 'N',
+              MENUTYPE: 'APP',
+              APPID: 'SYSMENU',
+              HASCHILD: 'N',
+              PARENT: 'FCEDITOR',
+              SORT: 1151,
+              ROUTER: '/fcckeeditor'
+            }
+          ]
         },
         {
           ID: '63fbb2f0708f4fd68db04a92dd5df121',
@@ -124,16 +136,32 @@ export const menus = {
           WXMENU: 'N',
           MENUTYPE: 'APP',
           APPID: 'SYSMENU',
-          HASCHILD: 'N',
+          HASCHILD: 'Y',
           MENUICON: 'fc-icon-shujubiaoge',
           PARENT: 'SYSTEM',
           SORT: 1152,
-          ROUTER: '/building'
+          ROUTER: '/fc',
+          P_CHILDMENUS: [
+            {
+              ID: '63fbb2f0708f4fd68db04a92dd5df121',
+              PID: 'FC',
+              MENUID: 'FCSPREAD',
+              MENUNAME: 'fcspreadbasic',
+              ENABLE: 'Y',
+              WXMENU: 'N',
+              MENUTYPE: 'APP',
+              APPID: 'SYSMENU',
+              HASCHILD: 'N',
+              PARENT: 'FCSPREAD',
+              SORT: 1151,
+              ROUTER: '/fcspreadbasic'
+            }
+          ]
         },
         {
           ID: '63fbb2f0708f4fd68db04a92dd5df121',
           PID: 'FC',
-          MENUID: 'BGIFRAME',
+          MENUID: 'FCIFRAME',
           MENUNAME: 'iframe',
           ENABLE: 'Y',
           WXMENU: 'N',
@@ -143,22 +171,38 @@ export const menus = {
           MENUICON: 'fc-icon-iframe',
           PARENT: 'SYSTEM',
           SORT: 1152,
-          ROUTER: '/building'
+          ROUTER: '/fciframe'
         },
         {
           ID: '63fbb2f0708f4fd68db04a92dd5df121',
           PID: 'FC',
           MENUID: 'FCAGGRID',
-          MENUNAME: 'ag-grid表格',
+          MENUNAME: '表格',
           ENABLE: 'Y',
           WXMENU: 'N',
           MENUTYPE: 'APP',
           APPID: 'SYSMENU',
-          HASCHILD: 'N',
+          HASCHILD: 'Y',
           MENUICON: 'fc-icon-datatable',
           PARENT: 'SYSTEM',
           SORT: 1152,
-          ROUTER: '/building'
+          ROUTER: '/fc',
+          P_CHILDMENUS: [
+            {
+              ID: '63fbb2f0708f4fd68db04a92dd5df121',
+              PID: 'FC',
+              MENUID: 'FCAGGRID',
+              MENUNAME: 'ag-grid',
+              ENABLE: 'Y',
+              WXMENU: 'N',
+              MENUTYPE: 'APP',
+              APPID: 'SYSMENU',
+              HASCHILD: 'N',
+              PARENT: 'FCAGGRID',
+              SORT: 1151,
+              ROUTER: '/fcaggrid'
+            }
+          ]
         },
         {
           ID: '3ae5c74930dab18e877efabee3af0004',
@@ -177,89 +221,111 @@ export const menus = {
             {
               ID: '63fbb2f0708f4fd68db04a92dd5df121',
               PID: 'FC',
+              MENUID: 'FCTEMPLATEFASTPOSITION',
+              MENUNAME: '快速定位',
+              ENABLE: 'Y',
+              WXMENU: 'N',
+              MENUTYPE: 'APP',
+              APPID: 'SYSMENU',
+              HASCHILD: 'N',
+              PARENT: 'FCPAGES',
+              SORT: 1152,
+              ROUTER: '/fctemplatefastposition'
+            },
+            {
+              ID: '63fbb2f0708f4fd68db04a92dd5df121',
+              PID: 'FC',
+              MENUID: 'FCTEMPLATEFORM',
+              MENUNAME: '表单',
+              ENABLE: 'Y',
+              WXMENU: 'N',
+              MENUTYPE: 'APP',
+              APPID: 'SYSMENU',
+              HASCHILD: 'N',
+              PARENT: 'FCPAGES',
+              SORT: 1152,
+              ROUTER: '/fctemplateform'
+            },
+            {
+              ID: '63fbb2f0708f4fd68db04a92dd5df121',
+              PID: 'FC',
               MENUID: 'FCTEMPLATELIST',
-              MENUNAME: '列表页面',
+              MENUNAME: '列表',
               ENABLE: 'Y',
               WXMENU: 'N',
               MENUTYPE: 'APP',
               APPID: 'SYSMENU',
               HASCHILD: 'N',
-              PARENT: 'SYSTEM',
+              PARENT: 'FCPAGES',
               SORT: 1152,
-              ROUTER: '/building'
-            }
-          ]
-        },
-        {
-          ID: '3ae5c74930dab18e877efabee3af0004',
-          PID: 'FC',
-          MENUID: 'BGBUSSINESS',
-          MENUNAME: '基础业务',
-          ENABLE: 'Y',
-          WXMENU: 'N',
-          MENUTYPE: 'MENU',
-          HASCHILD: 'Y',
-          MENUICON: 'fc-icon-Workorder',
-          PARENT: 'FC',
-          SORT: 1150,
-          ROUTER: '/fc',
-          P_CHILDMENUS: [
-            {
-              ID: '63fbb2f0708f4fd68db04a92dd5df121',
-              PID: 'FC',
-              MENUID: 'FCLISTINFO',
-              MENUNAME: '查询',
-              ENABLE: 'Y',
-              WXMENU: 'N',
-              MENUTYPE: 'APP',
-              APPID: 'SYSMENU',
-              HASCHILD: 'N',
-              PARENT: 'SYSTEM',
-              SORT: 1152,
-              ROUTER: '/fclistinfoList'
+              ROUTER: '/fctemplatelist'
             },
             {
               ID: '63fbb2f0708f4fd68db04a92dd5df121',
               PID: 'FC',
-              MENUID: 'FCCREATE',
-              MENUNAME: '新增',
+              MENUID: 'FCTEMPLATETABFORM',
+              MENUNAME: '选项卡表单',
               ENABLE: 'Y',
               WXMENU: 'N',
               MENUTYPE: 'APP',
               APPID: 'SYSMENU',
               HASCHILD: 'N',
-              PARENT: 'SYSTEM',
+              PARENT: 'FCPAGES',
               SORT: 1152,
-              ROUTER: '/fccreateList'
-            },
-            {
+              ROUTER: '/fctemplatetabform'
+            }, {
               ID: '63fbb2f0708f4fd68db04a92dd5df121',
               PID: 'FC',
-              MENUID: 'FCUPDATE',
-              MENUNAME: '修改',
+              MENUID: 'FCTEMPLATETABLIST',
+              MENUNAME: '选项卡列表',
               ENABLE: 'Y',
               WXMENU: 'N',
               MENUTYPE: 'APP',
               APPID: 'SYSMENU',
               HASCHILD: 'N',
-              PARENT: 'SYSTEM',
+              PARENT: 'FCPAGES',
               SORT: 1152,
-              ROUTER: '/fcupdateList'
-            },
-            {
+              ROUTER: '/fctemplatetablist'
+            }, {
               ID: '63fbb2f0708f4fd68db04a92dd5df121',
               PID: 'FC',
-              MENUID: 'FCREMOVE',
-              MENUNAME: '删除',
+              MENUID: 'FCTEMPLATETREEFORMS',
+              MENUNAME: '树表单',
               ENABLE: 'Y',
               WXMENU: 'N',
               MENUTYPE: 'APP',
               APPID: 'SYSMENU',
               HASCHILD: 'N',
-              PARENT: 'SYSTEM',
+              PARENT: 'FCPAGES',
               SORT: 1152,
-              ROUTER: '/fcremoveList'
-            }
+              ROUTER: '/fctemplatetreeforms'
+            }, {
+              ID: '63fbb2f0708f4fd68db04a92dd5df121',
+              PID: 'FC',
+              MENUID: 'FCTEMPLATETREETREELISTS',
+              MENUNAME: '树列表',
+              ENABLE: 'Y',
+              WXMENU: 'N',
+              MENUTYPE: 'APP',
+              APPID: 'SYSMENU',
+              HASCHILD: 'N',
+              PARENT: 'FCPAGES',
+              SORT: 1152,
+              ROUTER: '/fctemplatetreelists'
+            }, {
+              ID: '63fbb2f0708f4fd68db04a92dd5df121',
+              PID: 'FC',
+              MENUID: 'FCTEMPLATETREETABLIST',
+              MENUNAME: '树选项卡列表',
+              ENABLE: 'Y',
+              WXMENU: 'N',
+              MENUTYPE: 'APP',
+              APPID: 'SYSMENU',
+              HASCHILD: 'N',
+              PARENT: 'FCPAGES',
+              SORT: 1152,
+              ROUTER: '/fctemplatetreetablist'
+            },
           ]
         },
         {
@@ -289,7 +355,7 @@ export const menus = {
               PARENT: 'SYSTEM',
               MENUICON: 'fc-icon-jichushezhi',
               SORT: 1152,
-              ROUTER: '/sysmenuList',
+              ROUTER: '/systembasic',
               P_CHILDMENUS: [
                 {
                   ID: '63fbb2f0708f4fd68db04a92dd5df121',
