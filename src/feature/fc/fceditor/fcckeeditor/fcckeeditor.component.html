@@ -2,21 +2,11 @@
  * @Author: luohong
  * @Date: 2019-08-21 10:01:15
  * @LastEditors: luohong
- * @LastEditTime: 2019-08-21 18:01:11
+ * @LastEditTime: 2019-08-22 15:52:37
  * @Description: 
  * @email: 3300536651@qq.com
  -->
-<!-- <div class="fc-ckeeditor">
-  <ckeditor [(ngModel)]="ckeditorContent" [config]="{uiColor: '#99000'}" [readonly]="false" (change)="onChange($event)"
-    (editorChange)="onEditorChange($event)" <!-- CKEditor change event -->
-    (ready)="onReady($event)"
-    (focus)="onFocus($event)"
-    (blur)="onBlur($event)"
-    (contentDom)="onContentDom($event)"
-    (fileUploadRequest)="onFileUploadRequest($event)"
-    (fileUploadResponse)="onFileUploadResponse($event)"
-    (paste)="onPaste($event)"
-    (drop)="onDrop($event)"
-    debounce="500">
+<div style="width:100%;height:500px;">
+  <ckeditor [(ngModel)]="html" [config]="{language:'zh-cn' }" name="myckeditor" required debounce="500">
   </ckeditor>
-</div> -->
+</div>

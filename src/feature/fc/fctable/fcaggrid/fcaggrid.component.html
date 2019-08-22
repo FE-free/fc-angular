@@ -6,3 +6,18 @@
  * @Description: 
  * @email: 3300536651@qq.com
  -->
+ <ag-grid-angular
+ #agGrid
+ style="width: 100%; height: 100%;"
+ id="myGrid"
+ class="ag-theme-balham"
+ [columnDefs]="columnDefs"
+ [defaultColDef]="defaultColDef"
+ [debug]="true"
+ [rowSelection]="rowSelection"
+ [rowModelType]="rowModelType"
+ [getRowNodeId]="getRowNodeId"
+ [components]="components"
+ [rowData]="rowData"
+ (gridReady)="onGridReady($event)"
+></ag-grid-angular>

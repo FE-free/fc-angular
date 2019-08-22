@@ -4,7 +4,7 @@
  * @Description: fccomponent平台组件模块
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-04-19 10:23:45
+ * @LastEditTime: 2019-08-22 15:05:44
  */
 import { NgModule } from '@angular/core';
 import { SharedModule } from 'src/shared';

@@ -2,7 +2,7 @@
  * @Author: luohong
  * @Date: 2019-08-21 10:01:21
  * @LastEditors: luohong
- * @LastEditTime: 2019-08-21 14:12:37
+ * @LastEditTime: 2019-08-22 17:56:44
  * @Description: 
  * @email: 3300536651@qq.com
  */
@@ -15,15 +15,27 @@ import { ActivatedRoute, Router } from '@angular/router'
     styleUrls: ['./templatelist.component.less']
 })
 export class TemplatelistComponent implements OnInit, AfterViewInit {
+    listOfData: any[] = [];
     constructor(public router: Router, public activedRoute: ActivatedRoute) { }
     /**
      * 初始化指令/组件,在第一轮 ngOnChanges() 完成之后调用，只调用一次
      */
-    ngOnInit(): void { }
+    ngOnInit(): void {
+        for (let i = 0; i < 100; i++) {
+            this.listOfData.push({
+                name: `Edward King ${i}`,
+                age: 32,
+                address: `London`
+            });
+        }
+    }
     /**
      * 每当 Angular 初始化完组件视图及其子视图之后调用。
      */
     ngAfterViewInit(): void {
 
+    }
+    tableResize(){
+        
     }
 }

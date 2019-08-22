@@ -2,15 +2,14 @@
  * @Author: luohong
  * @Date: 2019-08-21 09:57:09
  * @LastEditors: luohong
- * @LastEditTime: 2019-08-21 17:30:08
+ * @LastEditTime: 2019-08-22 14:29:16
  * @Description: 
  * @email: 3300536651@qq.com
  */
-import { Component, AfterViewChecked, AfterViewInit } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import * as G2 from '@antv/g2';
 import DataSet from '@antv/data-set';
-import { Geom } from '@antv/g2';
+import * as G2 from '@antv/g2';
 
 @Component({
     selector: 'fc-g2',

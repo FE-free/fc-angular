@@ -2,20 +2,21 @@
  * @Author: luohong
  * @Date: 2019-08-21 09:57:09
  * @LastEditors: luohong
- * @LastEditTime: 2019-08-21 17:52:36
+ * @LastEditTime: 2019-08-22 15:35:21
  * @Description: 
  * @email: 3300536651@qq.com
  */
-import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core'
-import { ActivatedRoute, Router } from '@angular/router'
-
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+window['CKEDITOR_BASEPATH'] = '//cdn.ckeditor.com/4.7.3/full-all/';
+import 'ckeditor';
 @Component({
-    selector: 'fc-ckeeditor',
+    selector: 'demo-ckeeditor',
     templateUrl: './fcckeeditor.component.html',
     styleUrls: ['./fcckeeditor.component.less']
 })
-export class FcckeeditorComponent implements OnInit, AfterViewInit {
-    ckeditorContent: string = '<p>Some html</p>';
+export class DemockeeditorComponent implements OnInit, AfterViewInit {
+    html='122'
     constructor(public router: Router, public activedRoute: ActivatedRoute) {
     }
     /**
