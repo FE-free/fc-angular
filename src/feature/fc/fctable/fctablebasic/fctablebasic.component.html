@@ -1,0 +1,24 @@
+<!--
+ * @Author: luohong
+ * @Date: 2019-08-21 10:01:19
+ * @LastEditors: luohong
+ * @LastEditTime: 2019-08-23 15:59:03
+ * @Description: 
+ * @email: 3300536651@qq.com
+ -->
+ <nz-table #headerTable [nzData]="listOfData" [nzPageSize]="50" [nzBordered]="true" nzSize="small" [nzScroll]="{ y: '340px' }">
+    <thead>
+      <tr>
+        <th nzWidth="150px">Name</th>
+        <th nzWidth="150px">Age</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of headerTable.data">
+        <td>{{ data.name }}</td>
+        <td>{{ data.age }}</td>
+        <td>{{ data.address }}</td>
+      </tr>
+    </tbody>
+  </nz-table>

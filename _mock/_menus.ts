@@ -2,7 +2,7 @@
  * @Author: luohong
  * @Date: 2019-08-16 09:28:26
  * @LastEditors: luohong
- * @LastEditTime: 2019-08-21 16:39:04
+ * @LastEditTime: 2019-08-23 15:52:29
  * @Description: 
  * @email: 3300536651@qq.com
  */
@@ -192,7 +192,7 @@ export const menus = {
               ID: '63fbb2f0708f4fd68db04a92dd5df121',
               PID: 'FC',
               MENUID: 'FCAGGRID',
-              MENUNAME: 'ag-grid',
+              MENUNAME: '基础表格',
               ENABLE: 'Y',
               WXMENU: 'N',
               MENUTYPE: 'APP',
@@ -200,7 +200,7 @@ export const menus = {
               HASCHILD: 'N',
               PARENT: 'FCAGGRID',
               SORT: 1151,
-              ROUTER: '/fcaggrid'
+              ROUTER: '/fctablebasic'
             }
           ]
         },

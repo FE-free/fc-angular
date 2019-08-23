@@ -12,7 +12,7 @@
     "coveralls": "cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "karma": "karma start",
     "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s"
-  }, 
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.0.1",
@@ -32,9 +32,6 @@
     "@grapecity/spread-sheets-pdf": "^12.1.3",
     "@grapecity/spread-sheets-print": "^12.1.3",
     "@grapecity/spread-sheets-resources-zh": "^12.1.3",
-    "ag-grid-angular": "^19.1.2",
-    "ag-grid-community": "^19.1.2",
-    "ag-grid-enterprise": "^19.1.2",
     "ckeditor": "^4.7.3",
     "mockjs": "^1.0.1-beta3",
     "ng-zorro-antd": "^8.0.1",
