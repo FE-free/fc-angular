@@ -4,15 +4,15 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.config.json --host=0.0.0.0 --open --port=4200",
-    "build": "ng build",
+    "build": "ng build && node --max_old_space_size=5120",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "aot": "ng build --aot",
+    "aot": "ng build --aot && node --max_old_space_size=5120",
     "coveralls": "cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "karma": "karma start",
     "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s"
-  },
+  }, 
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.0.1",
