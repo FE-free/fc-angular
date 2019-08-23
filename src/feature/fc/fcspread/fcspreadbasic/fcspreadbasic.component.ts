@@ -37,4 +37,5 @@ export class FcspreadbasicComponent {
   workbookInit(args) {
     this.spread = args.spread
   }
+  
 }
