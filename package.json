@@ -8,7 +8,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "aot": "ng build --aot"
+    "aot": "ng build --aot",
+    "coveralls": "cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "karma": "karma start"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +24,7 @@
     "@angular/router": "~8.0.1",
     "@antv/data-set": "^0.10.2",
     "@antv/g2": "^3.5.8-beta.1",
+    "@fc-angular/core": "0.0.0-beta.1",
     "@grapecity/spread-excelio": "^12.1.3",
     "@grapecity/spread-sheets": "^12.1.3",
     "@grapecity/spread-sheets-charts": "^12.1.3",
@@ -33,6 +36,7 @@
     "mockjs": "^1.0.1-beta3",
     "ng-zorro-antd": "^8.0.1",
     "rxjs": "~6.4.0",
+    "three": "^0.106.2",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
   },
@@ -41,10 +45,11 @@
     "@angular/cli": "~8.0.3",
     "@angular/compiler-cli": "~8.0.1",
     "@angular/language-service": "~8.0.1",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
+    "coveralls": "^3.0.5",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
