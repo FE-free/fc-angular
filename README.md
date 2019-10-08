@@ -26,8 +26,8 @@ English | [简体中文](https://github.com/luohong123/fc-angular/blob/master/RE
 ## 项目介绍
 
 - 基于 angularV8，ng.ant.design V8.0.1开发的后台管理系统
-- 【在线预览】[https://luohong123.github.io/fc-angular/demo/index.html](https://luohong123.github.io/fc-angular/demo/index.html)
-- 【源码地址】[https://github.com/luohong123/fc-angular](https://github.com/luohong123/fc-angular)
+- 【在线预览】[https://fe-free.github.io/fc-angular/demo/index.html](https://fe-free.github.io/fc-angular/demo/index.html)
+- 【源码地址】[https://github.com/FE-free/fc-angular](https://github.com/FE-free/fc-angular)
 
 > 预览效果图
 
