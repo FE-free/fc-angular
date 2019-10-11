@@ -2,7 +2,7 @@
  * @Author: honghong
  * @Date: 2019-10-11 09:50:12
  * @LastEditors: honghong
- * @LastEditTime: 2019-10-11 11:02:22
+ * @LastEditTime: 2019-10-11 11:03:49
  * @Description: 
  * @email: 3300536651@qq.com
  */
@@ -34,7 +34,7 @@ module.exports = {
       name: '🍎perf:     A code change that improves performance（更改代码以提高性能）'
     },
     {
-      value: 'test',
+      value: '🍌test',
       name: '🍉test:     Adding missing tests（测试用例修改）'
     },
     {
