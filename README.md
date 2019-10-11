@@ -1,5 +1,26 @@
 <img src="./media/logo.png" style="margin: 0 auto;display: block;">
 
+<p align="center">
+    <a href="https://travis-ci.org/fc-angular/fc-angular">
+        <img src="https://travis-ci.org/luohong123/fc-angular.svg?branch=dev" alt="Build Status">
+    </a>
+     <a href="https://coveralls.io/github/fc-angular/fc-angular?branch=dev">
+        <img src="https://coveralls.io/repos/github/fc-angular/fc-angular/badge.svg?branch=dev" alt="Coverage Status"/>
+    </a>
+    <a href="https://npmcharts.com/compare/@fc-angular/core?minimal=true">
+        <img src="https://img.shields.io/npm/dm/@fc-angular/core.svg" alt="Downloads">
+    </a>
+    <a href="https://www.npmjs.com/package/@fc-angular/components">
+        <img src="https://img.shields.io/npm/v/@fc-angular/components.svg" alt="Version">
+    </a>
+    <a href="https://www.npmjs.com/package/@fc-angular/core">
+        <img src="https://img.shields.io/npm/l/@fc-angular/core.svg" alt="License">
+    </a>
+    <a href="https://gitter.im/fc-angular/community">
+        <img src="https://img.shields.io/gitter/room/fc-angular/community.svg" alt="Chat">
+    </a>
+</p>
+
 English | [简体中文](https://github.com/luohong123/fc-angular/blob/master/README.md)
 
 # 一、简介
@@ -7,8 +28,8 @@ English | [简体中文](https://github.com/luohong123/fc-angular/blob/master/RE
 ## 项目介绍
 
 - 基于 angularV8，ng.ant.design V8.0.1 开发的后台管理系统
-- 【在线预览】[https://luohong123.github.io/fc-angular/demo/index.html](https://luohong123.github.io/fc-angular/demo/index.html)
-- 【源码地址】[https://github.com/luohong123/fc-angular](https://github.com/luohong123/fc-angular)
+- 【在线预览】[https://fe-free.github.io/fc-angular/demo/index.html](https://fe-free.github.io/fc-angular/demo/index.html)
+- 【源码地址】[https://github.com/FE-free/fc-angular](https://github.com/FE-free/fc-angular)
 
 > 预览效果图
 
@@ -37,7 +58,41 @@ English | [简体中文](https://github.com/luohong123/fc-angular/blob/master/RE
 - [ ] spreadjs 报表可视化
 - [x] aot 打包
 
-## 三、代码目录结构
+# 三、安装项目
+
+- 在 `git` 、`node`、`npm`、`vscode`  配置好多前提下，克隆代码，命令如下：
+
+```bash
+git clone https://github.com/luohong123/fc-angular.git
+npm install
+npm start
+```
+
+- 在浏览器中输入  http://localhost:4200 ,项目启动成功。
+
+# 四、开发代码
+
+<a name="98245d55"></a>
+
+## 1. 代码规范
+
+- 请按照 angular 官网提出的 `风格指南`  开发代码
+
+【风格指南】[https://angular.cn/guide/styleguide#prevent-re-import-of-the-core-module](https://angular.cn/guide/styleguide#prevent-re-import-of-the-core-module)
+
+## 2. 前后端通信
+
+【 使用 httpclient】[https://angular.cn/guide/http](https://angular.cn/guide/http)
+
+# 五、aot 打包部署
+
+- 通过    `ng build --aot`  命令生成 dist 文件，命令如下：
+
+```bash
+ng build --aot
+```
+
+## 六、代码目录结构
 
 ```markdown
 .
