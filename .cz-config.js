@@ -2,7 +2,7 @@
  * @Author: honghong
  * @Date: 2019-10-11 09:50:12
  * @LastEditors: honghong
- * @LastEditTime: 2019-10-11 11:03:49
+ * @LastEditTime: 2019-10-11 11:09:31
  * @Description: 
  * @email: 3300536651@qq.com
  */
@@ -10,44 +10,44 @@
 module.exports = {
 
   types: [{
-      value: 'feat',
-      name: '❤️feat:     A new feature（新特性）'
+      value: '🍊feat',
+      name: '🍊feat:     A new feature（新特性）'
     },
     {
-      value: 'fix',
-      name: '🔧fix:      A bug fix（修改问题）'
+      value: '🥑fix',
+      name: '🥑fix:      A bug fix（修改问题）'
     },
     {
-      value: 'docs',
-      name: '📁docs:     Documentation only changes（文档修改）'
+      value: '🍈docs',
+      name: '🍈docs:     Documentation only changes（文档修改）'
     },
     {
-      value: 'style',
-      name: '🎀style:    Changes that do not affect the meaning of the code\n            (white-space, formatting, missing semi-colons, etc)（代码格式修改，注意不是css修改）'
+      value: '🥝style',
+      name: '🥝style:    Changes that do not affect the meaning of the code\n            (white-space, formatting, missing semi-colons, etc)（代码格式修改，注意不是css修改）'
     },
     {
-      value: 'refactor',
+      value: '🐶refactor',
       name: '🐶refactor: A code change that neither fixes a bug nor adds a feature（代码重构）'
     },
     {
-      value: 'perf',
+      value: '🍎perf',
       name: '🍎perf:     A code change that improves performance（更改代码以提高性能）'
     },
     {
-      value: '🍌test',
+      value: '🍉test',
       name: '🍉test:     Adding missing tests（测试用例修改）'
     },
     {
-      value: 'chore',
-      name: '🌞chore:    Changes to the build process or auxiliary tools\n            and libraries such as documentation generation（其他修改，比如构建流程，依赖管理）'
+      value: '🍌chore',
+      name: '🍌chore:    Changes to the build process or auxiliary tools\n            and libraries such as documentation generation（其他修改，比如构建流程，依赖管理）'
     },
     {
-      value: 'revert',
-      name: '🍰revert:   Revert to a commit（恢复为提交）'
+      value: '🍓revert',
+      name: '🍓revert:   Revert to a commit（恢复为提交）'
     },
     {
-      value: 'WIP',
-      name: '🐰WIP:      Work in progress（Work in progress）'
+      value: '🍇WIP',
+      name: '🍇WIP:      Work in progress（Work in progress）'
     }
   ],
 
