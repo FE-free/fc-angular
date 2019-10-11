@@ -28,7 +28,7 @@ English | [简体中文](https://github.com/luohong123/fc-angular/blob/master/RE
 ## 项目介绍
 
 - 基于 angularV8，ng.ant.design V8.0.1 开发的后台管理系统
-- 【在线预览】[https://fe-free.github.io/fc-angular/demo/index.html](https://fe-free.github.io/fc-angular/demo/index.html)
+- 【在线预览】[https://fe-free.github.io/fc-angular/index.html](https://fe-free.github.io/fc-angular/index.html)
 - 【源码地址】[https://github.com/FE-free/fc-angular](https://github.com/FE-free/fc-angular)
 
 > 预览效果图
@@ -202,6 +202,8 @@ ng build --aot
 - travis
 - 使用 npm version 管理版本
   https://docs.npmjs.com/cli/version
+- git commit 管理
+  https://zhuanlan.zhihu.com/p/34223150
 
 # 八、学习帮助
 
