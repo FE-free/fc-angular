@@ -1,6 +1,6 @@
 /*
- * @Author: luohong
- * @LastEditors: luohong
+ * @Author: honghong
+ * @LastEditors: honghong
  * @Description: 单例服务，参考网址: https://angular.cn/guide/singleton-services
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43

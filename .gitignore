@@ -6,6 +6,7 @@ dist
 /demo
 /tmp
 /out-tsc
+package-lock.json
 # Only exists if Bazel was run
 /bazel-out
 

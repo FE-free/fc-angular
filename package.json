@@ -44,7 +44,7 @@
     "ag-grid-community": "^21.0.1",
     "ag-grid-enterprise": "^21.0.1",
     "mockjs": "^1.0.1-beta3",
-    "ng-zorro-antd": "^8.0.1",
+    "ng-zorro-antd": "^8.3.1",
     "rxjs": "~6.4.0",
     "three": "^0.106.2",
     "tslib": "^1.9.0",

@@ -1,27 +1,22 @@
 /*
- * @Author: luohong
- * @LastEditors: luohong
+ * @Author: honghong
+ * @LastEditors: honghong
  * @Description: 示例模块
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 16:02:48
- * @LastEditTime: 2019-07-15 14:07:25
+ * @LastEditTime: 2019-10-11 17:58:00
  */
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SpreadSheetsModule } from 'src/assets/plugin/spread/gc.spread.sheets.angular';
 import { FccomponentModule } from 'src/fccomponents/fccomponent.module';
-import { SharedModule } from 'src/shared';import { Routers } from './fcdemo.route';
-import { FclistinfoComponent } from './components/fclistinfo/fclistinfo.component';
-import { FccreateComponent } from './components/fccreate/fccreate.component';
-import { FcupdateComponent } from './components/fcupdate/fcupdate.component';
-import { FcremoveComponent } from './components/fcremove/fcremove.component';
-import { FcspreadComponent } from './components/fcspread/fcspread.component';
-import { FctableComponent } from './components/fctable/fctable.component';
-import { FcchartComponent } from './components/fcchart/fcchart.component';
-import { FciframeComponent } from './components/fciframe/fciframe.component';
-
-
-
+import { SharedModule } from 'src/shared';
+import { FcchartComponent } from './fcchart/fcchart.component';
+import { FciframeComponent } from './fciframe/fciframe.component';
+import { FcspreadComponent } from './fcspread/fcspread.component';
+import { FctableComponent } from './fctable/fctable.component';
+import { Routers } from './fcdemo.route';
+import { FcantdComponent } from './fcantd/fcantd.component';
 @NgModule({
   imports: [
     SharedModule,
@@ -30,14 +25,11 @@ import { FciframeComponent } from './components/fciframe/fciframe.component';
     FccomponentModule
   ],
   declarations: [
-    FclistinfoComponent, // 查询
-    FccreateComponent, // 新增
-    FcupdateComponent, // 修改
-    FcremoveComponent, // 删除
     FcspreadComponent, // spread报表
     FctableComponent, // 表格
     FciframeComponent, // iframe
-    FcchartComponent // 图表
+    FcchartComponent, // 图表
+    FcantdComponent
   ],
   providers: []
 })

@@ -1,10 +1,10 @@
 /*
- * @Author: luohong
- * @LastEditors: luohong
+ * @Author: honghong
+ * @LastEditors: honghong
  * @Description: 系统模块
  * @email: 3300536651@qq.com
  * @Date: 2019-04-12 16:39:30
- * @LastEditTime: 2019-07-11 17:19:17
+ * @LastEditTime: 2019-10-11 15:40:43
  */
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';

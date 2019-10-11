@@ -2,11 +2,17 @@
 
 <p align="center">
     <a href="https://travis-ci.org/fc-angular/fc-angular">
-        <img src="https://travis-ci.org/luohong123/fc-angular.svg?branch=dev" alt="Build Status">
+        <img src="https://travis-ci.org/honghong123/fc-angular.svg?branch=dev" alt="Build Status">
     </a>
      <a href="https://coveralls.io/github/fc-angular/fc-angular?branch=dev">
         <img src="https://coveralls.io/repos/github/fc-angular/fc-angular/badge.svg?branch=dev" alt="Coverage Status"/>
     </a>
+    <a href="https://github.com/angular/angular">
+        <img src="https://img.shields.io/badge/angular-8.1.0-green.svg" alt="angular">
+    </a>
+    <a href="https://github.com/NG-ZORRO/ng-zorro-antd">
+        <img src="https://img.shields.io/badge/ng--zorro--antd-8.3.1-green.svg" alt="ng-zorro-antd">
+  </a>
     <a href="https://npmcharts.com/compare/@fc-angular/core?minimal=true">
         <img src="https://img.shields.io/npm/dm/@fc-angular/core.svg" alt="Downloads">
     </a>
@@ -21,7 +27,7 @@
     </a>
 </p>
 
-English | [简体中文](https://github.com/luohong123/fc-angular/blob/master/README.md)
+English | [简体中文](https://github.com/honghong123/fc-angular/blob/master/README.md)
 
 # 一、简介
 
@@ -63,7 +69,7 @@ English | [简体中文](https://github.com/luohong123/fc-angular/blob/master/RE
 - 在 `git` 、`node`、`npm`、`vscode`  配置好多前提下，克隆代码，命令如下：
 
 ```bash
-git clone https://github.com/luohong123/fc-angular.git
+git clone https://github.com/honghong123/fc-angular.git
 npm install
 npm start
 ```
@@ -163,7 +169,7 @@ ng build --aot
 - 在 `git` 、`node`、`npm`、`vscode`  配置好多前提下，克隆代码，命令如下：
 
 ```bash
-git clone https://github.com/luohong123/fc-angular.git
+git clone https://github.com/honghong123/fc-angular.git
 npm install
 npm start
 ```
@@ -194,17 +200,25 @@ ng build --aot
 
 # 七、前端工程化
 
-- tslint
-- stylelint
-- pre-commit
-- commitlint
-- changelog
-  standard-version: 自动生成 CHANGELOG
-- travis
-- 使用 npm version 管理版本
-  https://docs.npmjs.com/cli/version
-- [【优雅的提交你的 Git Commit Message】](https://zhuanlan.zhihu.com/p/34223150)
 - [【if 我是前端团队 Leader，怎么制定前端协作规范?】](https://juejin.im/post/5d3a7134f265da1b5d57f1ed#heading-18)
+
+### tslint
+
+### stylelint
+
+### commitlint
+
+- [【优雅的提交你的 Git Commit Message】](https://zhuanlan.zhihu.com/p/34223150)
+
+### changelog
+
+standard-version: 自动生成 CHANGELOG
+
+### travis
+
+### 使用 npm version 管理版本
+
+官网：https://docs.npmjs.com/cli/version
 
 # 八、学习帮助
 
@@ -212,28 +226,7 @@ ng build --aot
 【typescript 官网】[http://www.typescriptlang.org/index.html](http://www.typescriptlang.org/index.html)<br/>
 【ng.ant.design 官网】[https://ng.ant.design/docs/introduce/zh](https://ng.ant.design/docs/introduce/zh)
 
-```
+# Contributors
 
-安装指南
-
-安装commitizen
-sudo npm install -g commitizen
-
-配置
-cd到.git所在目录
-
-commitizen init cz-conventional-changelog --save --save-exact
-
-使用
-用git cz命令来取代git commit
- "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -e $GIT_PARAMS"
-    }
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-customizable"
-    }
-  },
-```
+Thanks to everyone who contributed to the source code, comments, scripts, documentation, and test cases.
+<a href="https://github.com/FE-free/fc-angular/graphs/contributors"><img src="https://opencollective.com/FE-free/fc-angular/contributors.svg?width=890" /></a>

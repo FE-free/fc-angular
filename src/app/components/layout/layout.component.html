@@ -1,10 +1,10 @@
 <!--
- * @Author: luohong
- * @LastEditors: luohong
+ * @Author: honghong
+ * @LastEditors: honghong
  * @Description: 整体布局，包括顶部工具栏、左侧导航、侧边栏、选项卡导航、内容区
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-07-15 14:30:34
+ * @LastEditTime: 2019-10-11 15:31:22
  -->
 <nz-layout class="layout">
   <!-- 顶部工具栏 -->
@@ -14,10 +14,11 @@
       <img src="assets/image/small-logo.png" [ngStyle]="{'display': menuWidth===64 ?'inline':'none'}" alt="logo">
       <div class="fc-header-icon-wrap">
         <i class="icon iconfont fc-header-toggle"
-          [ngClass]="{'fc-icon-menufold-left':menuWidth===64,'fc-icon-menufold-right':menuWidth!==64}" (click)="toggleLayout()"></i>
+          [ngClass]="{'fc-icon-menufold-left':menuWidth===64,'fc-icon-menufold-right':menuWidth!==64}"
+          (click)="toggleLayout()"></i>
       </div>
       <div class="fc-header-icon-wrap">
-        <a href="https://github.com/luohong123/fc-angular" target="_blank"
+        <a href="https://github.com/FE-free/fc-angular" target="_blank"
           title="icon iconfont fc-icon-github fc-header-github"><i
             class="icon iconfont fc-icon-github fc-header-github"></i></a>
       </div>
@@ -42,7 +43,7 @@
             </li>
             <li nz-menu-item> <i class="icon iconfont fc-header-icon fc-icon-password"></i> 修改密码
             </li>
-            <li nz-menu-item (click)="siginout()"> <i class=" icon iconfont fc-header-icon fc-icon-tuichu" ></i> 退出
+            <li nz-menu-item (click)="siginout()"> <i class=" icon iconfont fc-header-icon fc-icon-tuichu"></i> 退出
             </li>
           </ul>
         </nz-dropdown-menu>
