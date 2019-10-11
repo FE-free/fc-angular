@@ -2,36 +2,37 @@
  * @Author: honghong
  * @Date: 2019-10-11 09:50:12
  * @LastEditors: honghong
- * @LastEditTime: 2019-10-11 11:09:31
- * @Description: 
+ * @LastEditTime: 2019-10-11 14:42:47
+ * @Description:  不使用cz-conventional-changelog (一个符合 Angular团队规范的 preset)
+ * 自定义格式
  * @email: 3300536651@qq.com
  */
 'use strict';
 module.exports = {
 
   types: [{
-      value: '🍊feat',
-      name: '🍊feat:     A new feature（新特性）'
+      value: ':tada: feat',
+      name: 'feat:     A new feature（新特性）'
     },
     {
-      value: '🥑fix',
-      name: '🥑fix:      A bug fix（修改问题）'
+      value: ':bug: fix',
+      name: 'fix:      A bug fix（修改问题）'
     },
     {
-      value: '🍈docs',
-      name: '🍈docs:     Documentation only changes（文档修改）'
+      value: ':memo: docs',
+      name: 'docs:     Documentation only changes（文档修改）'
     },
     {
-      value: '🥝style',
-      name: '🥝style:    Changes that do not affect the meaning of the code\n            (white-space, formatting, missing semi-colons, etc)（代码格式修改，注意不是css修改）'
+      value: 'style',
+      name: 'style:    Changes that do not affect the meaning of the code\n            (white-space, formatting, missing semi-colons, etc)（代码格式修改，注意不是css修改）'
     },
     {
-      value: '🐶refactor',
-      name: '🐶refactor: A code change that neither fixes a bug nor adds a feature（代码重构）'
+      value: 'refactor',
+      name: 'refactor: A code change that neither fixes a bug nor adds a feature（代码重构）'
     },
     {
-      value: '🍎perf',
-      name: '🍎perf:     A code change that improves performance（更改代码以提高性能）'
+      value: ':rocket: perf',
+      name: 'perf:     A code change that improves performance（更改代码以提高性能）'
     },
     {
       value: '🍉test',
@@ -69,6 +70,12 @@ module.exports = {
       name: 'core'
     }, {
       name: 'feature'
+    }, {
+      name: 'style'
+    }, {
+      name: 'docs'
+    }, {
+      name: 'other'
     }
   ],
 

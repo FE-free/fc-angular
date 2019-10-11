@@ -199,11 +199,12 @@ ng build --aot
 - pre-commit
 - commitlint
 - changelog
+  standard-version: 自动生成 CHANGELOG
 - travis
 - 使用 npm version 管理版本
   https://docs.npmjs.com/cli/version
-- git commit 管理
-  https://zhuanlan.zhihu.com/p/34223150
+- [【优雅的提交你的 Git Commit Message】](https://zhuanlan.zhihu.com/p/34223150)
+- [【if 我是前端团队 Leader，怎么制定前端协作规范?】](https://juejin.im/post/5d3a7134f265da1b5d57f1ed#heading-18)
 
 # 八、学习帮助
 
@@ -211,4 +212,28 @@ ng build --aot
 【typescript 官网】[http://www.typescriptlang.org/index.html](http://www.typescriptlang.org/index.html)<br/>
 【ng.ant.design 官网】[https://ng.ant.design/docs/introduce/zh](https://ng.ant.design/docs/introduce/zh)
 
-test
+```
+
+安装指南
+
+安装commitizen
+sudo npm install -g commitizen
+
+配置
+cd到.git所在目录
+
+commitizen init cz-conventional-changelog --save --save-exact
+
+使用
+用git cz命令来取代git commit
+ "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
+```

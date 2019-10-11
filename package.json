@@ -1,6 +1,6 @@
 {
   "name": "fc-angular",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.config.json --host=0.0.0.0 --open --port=4200",
@@ -27,7 +27,7 @@
     "@angular/animations": "~8.0.1",
     "@angular/common": "~8.0.1",
     "@angular/compiler": "~8.0.1",
-    "@angular/core": "~ 11`8.0.1",
+    "@angular/core": "~8.0.1",
     "@angular/forms": "~8.0.1",
     "@angular/platform-browser": "~8.0.1",
     "@angular/platform-browser-dynamic": "~8.0.1",
@@ -61,7 +61,10 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
+    "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^3.0.2",
+    "cz-customizable": "^6.2.0",
+    "gitmoji-cli": "^2.0.0",
     "husky": "^4.0.0-beta.2",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
