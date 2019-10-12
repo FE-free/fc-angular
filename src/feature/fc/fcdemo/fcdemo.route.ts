@@ -12,6 +12,8 @@ import { FciframeComponent } from './fciframe/fciframe.component';
 import { FctableComponent } from './fctable/fctable.component';
 import { FcchartComponent } from './fcchart/fcchart.component';
 import { FcantdComponent } from './fcantd/fcantd.component';
+import { FciconComponent } from './fcicon/fcicon.component';
+import { FcspreadComponent } from './fcspread/fcspread.component';
 
 export const Routers: Routes = [
   {
@@ -29,5 +31,13 @@ export const Routers: Routes = [
   {
     path: 'fcantd', // AntDesign
     component: FcantdComponent
+  },
+  {
+    path: 'fcicon', // 
+    component: FciconComponent
+  },
+  {
+    path: 'fcspread', // 
+    component: FcspreadComponent
   }
 ];

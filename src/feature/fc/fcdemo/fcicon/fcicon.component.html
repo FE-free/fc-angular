@@ -1,0 +1,35 @@
+<!--
+ * @Author: honghong
+ * @Date: 2019-10-11 17:55:22
+ * @LastEditors: honghong
+ * @LastEditTime: 2019-10-12 17:15:20
+ * @Description: 
+ * @email: 3300536651@qq.com
+ -->
+<div nz-row class="fc-row">
+  <div nz-col nzSpan="24">
+    <nz-tabset>
+      <nz-tab nzTitle="AntDesign">
+        <ul class="fc-icon-show">
+          <li class="fc-icon-item" *ngFor="let icon of icons" (click)="copyed(getIconCode(icon), $event)">
+            <i class="copyIcon" nz-icon [nzType]="icon.name" [nzTheme]="icon.theme"></i>
+            <span class="fc-icon-text">
+              {{icon.name}}
+            </span>
+          </li>
+        </ul>
+      </nz-tab>
+      <nz-tab nzTitle="阿里巴巴矢量图标">
+        <a href="https://www.iconfont.cn" target="_blank">阿里巴巴矢量图标库官网 </a>
+        <ul class="fc-icon-show">
+          <li class="fc-icon-item" *ngFor="let icon of aliIcons" (click)="copyed(getIconCode(icon), $event)">
+            <i class="icon iconfont copyIcon" [ngClass]="icon.name"></i>
+            <span class="fc-icon-text">
+              {{icon.name}}
+            </span>
+          </li>
+        </ul>
+      </nz-tab>
+    </nz-tabset>
+  </div>
+</div>

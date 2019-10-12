@@ -2,7 +2,7 @@
  * @Author: honghong
  * @Date: 2019-10-11 10:16:13
  * @LastEditors: honghong
- * @LastEditTime: 2019-10-11 18:00:17
+ * @LastEditTime: 2019-10-12 15:02:17
  * @Description:
  * @email: 3300536651@qq.com
  */
@@ -62,12 +62,27 @@ export const menus = {
           MENUICON: 'fc-icon-shujubiaoge',
           PARENT: 'SYSTEM',
           SORT: 1152,
-          ROUTER: '/building'
+          ROUTER: '/fcspread'
         },
         {
           ID: '63fbb2f0708f4fd68db04a92dd5df121',
           PID: 'FC',
-          MENUID: 'BGIFRAME',
+          MENUID: 'FCICON',
+          MENUNAME: 'icon',
+          ENABLE: 'Y',
+          WXMENU: 'N',
+          MENUTYPE: 'APP',
+          APPID: 'SYSMENU',
+          HASCHILD: 'N',
+          MENUICON: 'fc-icon-icon',
+          PARENT: 'SYSTEM',
+          SORT: 1152,
+          ROUTER: '/fcicon'
+        },
+        {
+          ID: '63fbb2f0708f4fd68db04a92dd5df121',
+          PID: 'FC',
+          MENUID: 'FCIFRAME',
           MENUNAME: 'iframe',
           ENABLE: 'Y',
           WXMENU: 'N',
