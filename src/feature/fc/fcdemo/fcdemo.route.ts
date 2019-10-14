@@ -7,13 +7,13 @@
  * @LastEditTime: 2019-10-11 17:58:48
  */
 import { Routes } from '@angular/router';
-
-import { FciframeComponent } from './fciframe/fciframe.component';
-import { FctableComponent } from './fctable/fctable.component';
-import { FcchartComponent } from './fcchart/fcchart.component';
 import { FcantdComponent } from './fcantd/fcantd.component';
+import { Fcg2Component } from './fcchart/fcg2/fcg2.component';
 import { FciconComponent } from './fcicon/fcicon.component';
+import { FciframeComponent } from './fciframe/fciframe.component';
 import { FcspreadComponent } from './fcspread/fcspread.component';
+import { FctableComponent } from './fctable/fctable.component';
+
 
 export const Routers: Routes = [
   {
@@ -25,8 +25,8 @@ export const Routers: Routes = [
     component: FciframeComponent
   },
   {
-    path: 'fcchart', // 图表
-    component: FcchartComponent
+    path: 'fcg2', // 图表
+    component: Fcg2Component
   },
   {
     path: 'fcantd', // AntDesign

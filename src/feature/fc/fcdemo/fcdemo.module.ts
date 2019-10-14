@@ -11,13 +11,13 @@ import { RouterModule } from '@angular/router';
 import { SpreadSheetsModule } from 'src/assets/plugin/spread/gc.spread.sheets.angular';
 import { FccomponentModule } from 'src/fccomponents/fccomponent.module';
 import { SharedModule } from 'src/shared';
-import { FcchartComponent } from './fcchart/fcchart.component';
+import { FcantdComponent } from './fcantd/fcantd.component';
+import { Fcg2Component } from './fcchart/fcg2/fcg2.component';
+import { Routers } from './fcdemo.route';
+import { FciconComponent } from './fcicon/fcicon.component';
 import { FciframeComponent } from './fciframe/fciframe.component';
 import { FcspreadComponent } from './fcspread/fcspread.component';
 import { FctableComponent } from './fctable/fctable.component';
-import { Routers } from './fcdemo.route';
-import { FcantdComponent } from './fcantd/fcantd.component';
-import { FciconComponent } from './fcicon/fcicon.component';
 @NgModule({
   imports: [
     SharedModule,
@@ -29,7 +29,7 @@ import { FciconComponent } from './fcicon/fcicon.component';
     FcspreadComponent, // spread报表
     FctableComponent, // 表格
     FciframeComponent, // iframe
-    FcchartComponent, // 图表
+    Fcg2Component, // 图表
     FcantdComponent,
     FciconComponent
   ],

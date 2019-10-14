@@ -2,7 +2,7 @@
  * @Author: honghong
  * @Date: 2019-10-11 10:16:13
  * @LastEditors: honghong
- * @LastEditTime: 2019-10-12 15:02:17
+ * @LastEditTime: 2019-10-14 11:10:05
  * @Description:
  * @email: 3300536651@qq.com
  */
@@ -43,11 +43,28 @@ export const menus = {
           ENABLE: 'Y',
           WXMENU: 'N',
           MENUTYPE: 'MENU',
-          HASCHILD: 'N',
+          HASCHILD: 'Y',
           MENUICON: 'fc-icon-tubiao',
           PARENT: 'FC',
           SORT: 1150,
-          ROUTER: '/building'
+          ROUTER: '/fcchart',
+          P_CHILDMENUS: [
+            {
+              ID: '63fbb2f0708f4fd68db04a92dd5df121',
+              PID: 'FC',
+              MENUID: 'FCG2',
+              MENUNAME: 'g2',
+              ENABLE: 'Y',
+              WXMENU: 'N',
+              MENUTYPE: 'APP',
+              APPID: 'FCG2',
+              HASCHILD: 'N',
+              PARENT: 'FC',
+              MENUICON: '',
+              SORT: 1152,
+              ROUTER: '/fcg2',
+            },
+          ]
         },
         {
           ID: '63fbb2f0708f4fd68db04a92dd5df121',
