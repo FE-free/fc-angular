@@ -4,7 +4,7 @@
  * @Description: 整体布局，包括顶部工具栏、左侧导航、侧边栏、选项卡导航、内容区
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-10-11 15:31:22
+ * @LastEditTime: 2019-10-14 17:03:45
  -->
 <nz-layout class="layout">
   <!-- 顶部工具栏 -->
@@ -41,7 +41,8 @@
             </li>
             <li nz-menu-item> <i class="icon iconfont fc-header-icon fc-icon-personnel"></i> 个人中心
             </li>
-            <li nz-menu-item> <i class="icon iconfont fc-header-icon fc-icon-password"></i> 修改密码
+            <li nz-menu-item (click)="editPassWord()"> <i class="icon iconfont fc-header-icon fc-icon-password"></i>
+              修改密码
             </li>
             <li nz-menu-item (click)="siginout()"> <i class=" icon iconfont fc-header-icon fc-icon-tuichu"></i> 退出
             </li>

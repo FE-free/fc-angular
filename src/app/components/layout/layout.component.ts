@@ -4,14 +4,16 @@
  * @Description: 整体布局包括顶部工具栏、左侧菜单、侧边栏、选项卡导航主体内容区
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-10-12 16:17:44
+ * @LastEditTime: 2019-10-14 16:45:01
  */
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NzModalService } from 'ng-zorro-antd';
 import { LayoutService } from 'src/app/service/layout.service';
 import { ShareService } from 'src/app/share.service';
 import { CommonService } from 'src/fccore/service/common.service';
 import { environment } from '../../../environments/environment.dev';
+import { SyseditpasswordComponent } from '../dialog/syseditpassword.dialog';
 @Component({
   selector: 'layout',
   templateUrl: './layout.component.html',
@@ -244,7 +246,8 @@ export class LayoutComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private mainService: LayoutService,
-    private shareService: ShareService
+    private shareService: ShareService,
+    public modalService: NzModalService
   ) {
     this.fcTabs = []
     // 点击左侧导航
@@ -433,5 +436,34 @@ export class LayoutComponent implements OnInit {
   siginout() {
     this.siginoutVisible = false
     this.router.navigate(['/signin'])
+  }
+  /**
+   * 修改密码
+   */
+  editPassWord() {
+    const modal = this.modalService.create({
+      nzTitle: '修改密码',
+      nzContent: SyseditpasswordComponent,
+      nzComponentParams: {
+        userName: 'userName',
+        passWord: 'passWord'
+      },
+      nzFooter: [
+        {
+          label: 'change component title from outside',
+          onClick: componentInstance => {
+            componentInstance!.userName = 'admin';
+          }
+        }
+      ]
+    });
+    modal.afterOpen.subscribe(() => console.log('[afterOpen] emitted!'));
+    // Return a result when closed
+    modal.afterClose.subscribe(result => console.log('[afterClose] The result is:', result));
+    // delay until modal instance created
+    setTimeout(() => {
+      const instance = modal.getContentComponent();
+      instance.passWord = 'passWord is changed';
+    }, 2000);
   }
 }

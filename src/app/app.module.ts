@@ -4,7 +4,7 @@
  * @Description: 根模块
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-08-05 15:20:43
+ * @LastEditTime: 2019-10-14 17:04:50
  */
 import { HashLocationStrategy, LocationStrategy, registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,11 +14,14 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
+
 import { NgZorroAntdModule } from 'ng-zorro-antd';
+
 import { FccoreModule } from 'src/fccore/fccore.module';
 import { UserService } from 'src/fccore/service/user.service';
 import { AppComponent } from './app.component';
 import { AppRoutes } from './app.route';
+import { SyseditpasswordComponent } from './components/dialog/syseditpassword.dialog';
 import { ErrorComponent } from './components/error/error.component';
 import { ForgotComponent } from './components/forgot/forgot.component';
 import { LayoutComponent } from './components/layout/layout.component';
@@ -32,6 +35,7 @@ import { ShareService } from './share.service';
 registerLocaleData(zh)
 
 @NgModule({
+  entryComponents: [SyseditpasswordComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -48,7 +52,8 @@ registerLocaleData(zh)
     SigninComponent, // 组件-登录
     ForgotComponent, // 组件-忘记密码
     LockscreenComponent, // 组件-锁屏
-    SignupComponent // 组件-注册
+    SignupComponent, // 组件-注册
+    SyseditpasswordComponent
   ],
   providers: [
     UserService, // 服务-用户

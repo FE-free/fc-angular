@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "aot": "ng build --aot",
+    "aot": "ng build --outputPath=docs --aot",
     "release": "standard-version",
     "karma": "karma start"
   },
