@@ -2,17 +2,31 @@
  * @Author: honghong
  * @Date: 2019-10-11 17:55:22
  * @LastEditors: honghong
- * @LastEditTime: 2019-10-12 09:27:03
+ * @LastEditTime: 2019-10-14 10:30:01
  * @Description: 
  * @email: 3300536651@qq.com
  -->
 <div nz-row class="fc-row">
-  <p>
-    <nz-alert nzType="info" nzMessage="Info Text"></nz-alert>
-    更多组件使用 请到: <a href="https://ng.ant.design/docs/introduce/zh">https://ng.ant.design/docs/introduce/zh</a>
+  <p nz-col nzSpan="24">
+    更多组件使用 请跳转到: <a href="https://ng.ant.design/docs/introduce/zh"
+      target="_blank">https://ng.ant.design/docs/introduce/zh</a>
   </p>
   <div nz-col nzSpan="24">
+    <nz-alert nzType="info" nzMessage="Ant Design 组件"></nz-alert>
+  </div>
+  <div nz-col nzSpan="24">
+    <div class="carousel-wrap">
+      <nz-carousel nzAutoPlay>
+        <div nz-carousel-content *ngFor="let item of carsousels">
+          <div class="carsousel-box">
+            <img [src]="item.src" width="100%" height="300" />
+          </div>
+        </div>
+      </nz-carousel>
+    </div>
 
+  </div>
+  <div nz-col nzSpan="24">
     <nz-card nzTitle="按钮" class="fc-card">
       <button nz-button nzType="primary">Primary</button>
       <button nz-button nzType="default">Default</button>
