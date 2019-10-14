@@ -2,7 +2,7 @@
  * @Author: honghong
  * @Date: 2019-10-11 17:55:30
  * @LastEditors: honghong
- * @LastEditTime: 2019-10-14 10:33:31
+ * @LastEditTime: 2019-10-14 16:15:13
  * @Description:
  * @email: 3300536651@qq.com
  */
@@ -35,6 +35,12 @@ import { ActivatedRoute, Router } from '@angular/router';
       }
       [nz-carousel-content] img {
         object-fit: cover;
+      }
+      .ant-tag {
+        margin-bottom: 8px;
+      }
+      nz-alert {
+        margin-bottom: 16px;
       }
     `
   ]

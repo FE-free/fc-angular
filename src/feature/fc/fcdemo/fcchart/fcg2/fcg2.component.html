@@ -1,28 +1,36 @@
 <!--
  * @Author: honghong
  * @LastEditors: honghong
- * @Description: 新增
- * @email: 3300536651@qq.com
- * @Date: 2019-04-12 16:39:30
- * @LastEditTime: 2019-10-14 11:01:42
- -->
-<!--
- * @Author: honghong
- * @LastEditors: honghong
  * @Description: 首页
  * @email: 3300536651@qq.com
  * @Date: 2019-04-12 16:39:30
- * @LastEditTime: 2019-06-13 16:51:37
+ * @LastEditTime: 2019-10-14 15:22:15
  -->
-<div class="fc-chart-page">
-  <div nz-row [nzGutter]="20">
-    <!-- 雷达图 -->
-    <div nz-col [nzSpan]="12">
-      <nz-card class="sys-home-card" nzTitle="雷达图" [nzBordered]="false">
-        <div>
-          <fc-g2radar fcId="chartRadar" [fcData]="chartRadarData"></fc-g2radar>
-        </div>
-      </nz-card>
-    </div>
+<div nz-row [nzGutter]="20" class="fc-row">
+  <!-- 饼图 -->
+  <div nz-col [nzSpan]="12">
+    <nz-card class="fc-chart-card" nzTitle="饼状图" [nzBordered]="false">
+      <div class="fc-chart-box">
+        <fc-g2pie></fc-g2pie>
+      </div>
+    </nz-card>
+  </div>
+
+
+  <!-- 雷达图 -->
+  <div nz-col [nzSpan]="12">
+    <nz-card class="fc-chart-card" nzTitle="雷达图" [nzBordered]="false">
+      <div class="fc-chart-box">
+        <fc-g2radar fcId="chartRadar" [fcData]="chartRadarData"></fc-g2radar>
+      </div>
+    </nz-card>
+  </div>
+  <!-- 柱状图 -->
+  <div nz-col [nzSpan]="24">
+    <nz-card class="fc-chart-card" nzTitle="柱状图" [nzBordered]="false">
+      <div class="fc-chart-box">
+        <fc-g2bar fcId="chartBar2" [fcData]="chartBarData"></fc-g2bar>
+      </div>
+    </nz-card>
   </div>
 </div>

@@ -2,7 +2,7 @@
  * @Author: honghong
  * @Date: 2019-10-11 10:16:13
  * @LastEditors: honghong
- * @LastEditTime: 2019-10-14 11:10:05
+ * @LastEditTime: 2019-10-14 16:28:56
  * @Description:
  * @email: 3300536651@qq.com
  */
@@ -153,7 +153,7 @@ export const menus = {
               PARENT: 'SYSTEM',
               MENUICON: 'fc-icon-jichushezhi',
               SORT: 1152,
-              ROUTER: '/sysmenuList',
+              ROUTER: '/sysbasic',
               P_CHILDMENUS: [
                 {
                   ID: '63fbb2f0708f4fd68db04a92dd5df121',
@@ -183,7 +183,7 @@ export const menus = {
                   MENUICON: 'fc-icon-peizhi',
                   PARENT: 'SYSTEM',
                   SORT: 1152,
-                  ROUTER: '/sysmenuList'
+                  ROUTER: '/sysuserList'
                 },
                 {
                   ID: '63fbb2f0708f4fd68db04a92dd5df121',
