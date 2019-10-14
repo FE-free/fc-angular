@@ -2,23 +2,44 @@
  * @Author: honghong
  * @Date: 2019-10-14 10:50:43
  * @LastEditors: honghong
- * @LastEditTime: 2019-10-14 10:50:43
+ * @LastEditTime: 2019-10-14 14:20:45
  * @Description: 
  * @email: 3300536651@qq.com
  */
-import { Component, AfterViewChecked, AfterViewInit, Input } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, Input, AfterViewInit } from '@angular/core';
 import * as G2 from '@antv/g2';
-import DataSet from '@antv/data-set';
 @Component({
-    selector: 'fcg2bar',
+    selector: 'fc-g2bar',
     templateUrl: './fcg2bar.component.html',
     styles: [``]
 })
-export class Fcg2pieComponent {
+export class Fcg2barComponent implements AfterViewInit {
+    // id
     @Input()
     fcId: string;
+    // 数据
+    @Input()
+    fcData: any;
+    chartBar: any;
     constructor() {
 
+    }
+    ngAfterViewInit(): void {
+        this.createChartBar(this.fcId, this.fcData);
+    }
+    createChartBar(id: string, data: any[]) {
+        this.chartBar = new G2.Chart({
+            container: id,
+            forceFit: true,
+            height: 300,
+            padding: { top: 20, right: 20, bottom: 30, left: 30 }
+        })
+        this.chartBar.source(data);
+        this.chartBar.scale('sales', {
+            tickInterval: 20
+        })
+        this.chartBar.interval().position('year*sales')
+        // 渲染柱状图
+        this.chartBar.render()
     }
 }

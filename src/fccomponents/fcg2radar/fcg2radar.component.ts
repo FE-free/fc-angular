@@ -6,7 +6,7 @@
  * @Description: 
  * @email: 3300536651@qq.com
  */
-import { Component, Input } from '@angular/core';
+import { Component, Input, AfterViewInit } from '@angular/core';
 import DataSet from '@antv/data-set';
 import * as G2 from '@antv/g2';
 @Component({
@@ -14,7 +14,7 @@ import * as G2 from '@antv/g2';
     templateUrl: './fcg2radar.component.html',
     styles: [``]
 })
-export class Fcg2radarComponent {
+export class Fcg2radarComponent implements AfterViewInit {
     @Input()
     fcId: string;
     radarDv: any;
