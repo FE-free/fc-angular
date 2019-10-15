@@ -2,7 +2,7 @@
  * @Author: honghong
  * @Date: 2019-10-14 10:52:47
  * @LastEditors: honghong
- * @LastEditTime: 2019-10-14 14:38:46
+ * @LastEditTime: 2019-10-14 17:22:43
  * @Description: 
  * @email: 3300536651@qq.com
  */
@@ -12,7 +12,46 @@ import * as G2 from '@antv/g2';
 @Component({
     selector: 'fc-g2line',
     templateUrl: './fcg2line.component.html',
-    styles: [``]
+    styles: [`
+    ::ng-deep  .custom-tooltip {
+        width: 100% !important;
+        height: 10% !important;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        box-shadow: none!important;
+    }
+    ::ng-deep  .custom-tooltip-item {
+        width: 150px;
+        height: 50px;
+        position: relative;
+        float: left;
+        margin-left: 20px;
+        border-left-style: solid;
+        border-left-width: 5px;
+    }
+    ::ng-deep  .custom-tooltip-item:first-child {
+         margin-left: 0
+    }
+    ::ng-deep  .custom-tooltip-item-name {
+        width: 80%;
+        height: 20px;
+        position: absolute;
+        top: 0px;
+        left: 10px;
+        color: rgba(0, 0, 0, 0.45);
+        font-size: 14px;
+    }
+    ::ng-deep  .custom-tooltip-item-value {
+        width: 80%;
+        height: 30px;
+        position: absolute;
+        bottom: 0px;
+        left: 10px;
+        color: #262626;
+        font-size: 22px;
+    }
+    `]
 })
 export class Fcg2linerComponent implements AfterViewInit {
     @Input()

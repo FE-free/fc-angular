@@ -4,7 +4,7 @@
  * @Description: 整体布局包括顶部工具栏、左侧菜单、侧边栏、选项卡导航主体内容区
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-10-14 16:45:01
+ * @LastEditTime: 2019-10-15 10:46:54
  */
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -444,26 +444,18 @@ export class LayoutComponent implements OnInit {
     const modal = this.modalService.create({
       nzTitle: '修改密码',
       nzContent: SyseditpasswordComponent,
+      nzWrapClassName: 'edituser-dialog-wrap',
       nzComponentParams: {
-        userName: 'userName',
-        passWord: 'passWord'
+        oldPassword: '',
+        newPassword: 'newPassword'
       },
-      nzFooter: [
-        {
-          label: 'change component title from outside',
-          onClick: componentInstance => {
-            componentInstance!.userName = 'admin';
-          }
-        }
-      ]
+      nzFooter: null
     });
     modal.afterOpen.subscribe(() => console.log('[afterOpen] emitted!'));
-    // Return a result when closed
     modal.afterClose.subscribe(result => console.log('[afterClose] The result is:', result));
-    // delay until modal instance created
     setTimeout(() => {
       const instance = modal.getContentComponent();
-      instance.passWord = 'passWord is changed';
+      instance.newPassword = 'passWord is changed';
     }, 2000);
   }
 }
