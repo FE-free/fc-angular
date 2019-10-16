@@ -2,7 +2,7 @@
  * @Author: honghong
  * @Date: 2019-10-11 10:16:13
  * @LastEditors: honghong
- * @LastEditTime: 2019-10-14 16:28:56
+ * @LastEditTime: 2019-10-16 16:01:15
  * @Description:
  * @email: 3300536651@qq.com
  */
@@ -125,6 +125,79 @@ export const menus = {
           PARENT: 'SYSTEM',
           SORT: 1152,
           ROUTER: '/building'
+        },
+        {
+          ID: '3ae5c74930dab18e877efabee3af0004',
+          PID: 'FC',
+          MENUID: 'SYSTEM',
+          MENUNAME: '模版页面',
+          ENABLE: 'Y',
+          WXMENU: 'N',
+          MENUTYPE: 'MENU',
+          HASCHILD: 'Y',
+          MENUICON: 'fc-icon-peizhi',
+          PARENT: 'FC',
+          SORT: 1150,
+          ROUTER: '/fctemplate',
+          P_CHILDMENUS: [
+            {
+              ID: '63fbb2f0708f4fd68db04a92dd5df121',
+              PID: 'FC',
+              MENUID: 'SYSTEMBASIC',
+              MENUNAME: '列表',
+              ENABLE: 'Y',
+              WXMENU: 'N',
+              MENUTYPE: 'APP',
+              APPID: 'SYSTEMBASIC',
+              HASCHILD: 'N',
+              PARENT: 'SYSTEM',
+              MENUICON: 'fc-icon-jichushezhi',
+              SORT: 1152,
+              ROUTER: '/fctemplatelist',
+            },
+            {
+              ID: '63fbb2f0708f4fd68db04a92dd5df121',
+              PID: 'FC',
+              MENUID: 'SYSTEMBASIC',
+              MENUNAME: '表单',
+              ENABLE: 'Y',
+              WXMENU: 'N',
+              MENUTYPE: 'APP',
+              APPID: 'SYSTEMBASIC',
+              HASCHILD: 'N',
+              PARENT: 'SYSTEM',
+              MENUICON: 'fc-icon-jichushezhi',
+              SORT: 1152,
+              ROUTER: '/fctemplateform',
+            }, {
+              ID: '63fbb2f0708f4fd68db04a92dd5df121',
+              PID: 'FC',
+              MENUID: 'SYSTEMBASIC',
+              MENUNAME: '详情',
+              ENABLE: 'Y',
+              WXMENU: 'N',
+              MENUTYPE: 'APP',
+              APPID: 'SYSTEMBASIC',
+              HASCHILD: 'N',
+              PARENT: 'SYSTEM',
+              MENUICON: 'fc-icon-jichushezhi',
+              SORT: 1152,
+              ROUTER: '/fctemplatedetail',
+            }, {
+              ID: '63fbb2f0708f4fd68db04a92dd5df121',
+              PID: 'FC',
+              MENUID: 'SYSTEMBASIC',
+              MENUNAME: '树列表',
+              ENABLE: 'Y',
+              WXMENU: 'N',
+              MENUTYPE: 'APP',
+              APPID: 'SYSTEMBASIC',
+              HASCHILD: 'N',
+              PARENT: 'SYSTEM',
+              MENUICON: 'fc-icon-jichushezhi',
+              SORT: 1152,
+              ROUTER: '/fctemplatetreelist',
+            }]
         },
         {
           ID: '3ae5c74930dab18e877efabee3af0004',

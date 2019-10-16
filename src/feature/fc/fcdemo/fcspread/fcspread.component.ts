@@ -4,10 +4,11 @@
  * @Description: spread
  * @email: 3300536651@qq.com
  * @Date: 2019-04-12 16:39:30
- * @LastEditTime: 2019-10-12 15:03:04
+ * @LastEditTime: 2019-10-16 10:43:11
  */
 import { Component } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
+import { environment } from 'src/environments/environment.dev';
 
 @Component({
   selector: 'fcspread',

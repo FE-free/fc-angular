@@ -4,7 +4,7 @@
  * @Description: 示例模块的路由
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-10-11 17:58:48
+ * @LastEditTime: 2019-10-16 15:58:10
  */
 import { Routes } from '@angular/router';
 import { FcantdComponent } from './fcantd/fcantd.component';
@@ -39,5 +39,9 @@ export const Routers: Routes = [
   {
     path: 'fcspread', // 
     component: FcspreadComponent
+  },
+  {
+    path: '',
+    loadChildren: './fctemplate/fctemplate.module#FctemplateModule'
   }
 ];

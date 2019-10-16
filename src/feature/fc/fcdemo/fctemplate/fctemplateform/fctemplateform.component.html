@@ -1,0 +1,87 @@
+<!--
+ * @Author: honghong
+ * @Date: 2019-10-16 15:45:53
+ * @LastEditors: honghong
+ * @LastEditTime: 2019-10-16 17:37:31
+ * @Description: 
+ * @email: 3300536651@qq.com
+ -->
+<div class="fc-templateform">
+  <div class="fc-toolbar fc-toolbarform">
+    <button nz-button nzType="default">返回</button>
+    <button nz-button nzType="primary">保存</button>
+  </div>
+  <div class="fc-templateform-content">
+    <div nz-row>
+      <div nz-col nzSpan="12">
+        <nz-card [nzBordered]="false" nzTitle="基本信息">
+          <form nz-form [formGroup]="validateForm">
+            <nz-form-item>
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">E-mail</nz-form-label>
+              <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid E-mail!">
+                <input nz-input formControlName="email" id="email" />
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="password" nzRequired>Password</nz-form-label>
+              <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your password!">
+                <input nz-input type="password" id="password" formControlName="password"
+                  (ngModelChange)="updateConfirmValidator()" />
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="checkPassword" nzRequired>Confirm Password</nz-form-label>
+              <nz-form-control [nzSm]="14" [nzXs]="24" [nzErrorTip]="errorTpl">
+                <input nz-input type="password" formControlName="checkPassword" id="checkPassword" />
+                <ng-template #errorTpl let-control>
+                  <ng-container *ngIf="control.hasError('required')">
+                    Please confirm your password!
+                  </ng-container>
+                  <ng-container *ngIf="control.hasError('confirm')">
+                    Two passwords that you enter is inconsistent!
+                  </ng-container>
+                </ng-template>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="nickname" nzRequired>
+                <span>
+                  Nickname
+                  <i nz-icon nz-tooltip nzTitle="What do you want other to call you" nzType="question-circle"
+                    nzTheme="outline"></i>
+                </span>
+              </nz-form-label>
+              <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your nickname!">
+                <input nz-input id="nickname" formControlName="nickname" />
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="phoneNumber" nzRequired>Phone Number</nz-form-label>
+              <nz-form-control [nzSm]="14" [nzXs]="24" [nzValidateStatus]="validateForm.controls['phoneNumber']"
+                nzErrorTip="Please input your phone number!">
+                <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate">
+                  <ng-template #addOnBeforeTemplate>
+                    <nz-select formControlName="phoneNumberPrefix" class="phone-select">
+                      <nz-option nzLabel="+86" nzValue="+86"></nz-option>
+                      <nz-option nzLabel="+87" nzValue="+87"></nz-option>
+                    </nz-select>
+                  </ng-template>
+                  <input formControlName="phoneNumber" id="'phoneNumber'" nz-input />
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="website" nzRequired>Website</nz-form-label>
+              <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input website!">
+                <input nz-input id="website" formControlName="website" placeholder="website" />
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="captcha" nzRequired>Captcha</nz-form-label>
+            </nz-form-item>
+          </form>
+        </nz-card>
+      </div>
+    </div>
+  </div>
+</div>
