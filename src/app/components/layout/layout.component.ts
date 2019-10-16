@@ -4,16 +4,17 @@
  * @Description: 整体布局包括顶部工具栏、左侧菜单、侧边栏、选项卡导航主体内容区
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-10-15 10:46:54
+ * @LastEditTime: 2019-10-16 17:43:46
  */
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzModalService, NzMessageService } from 'ng-zorro-antd';
 import { LayoutService } from 'src/app/service/layout.service';
 import { ShareService } from 'src/app/share.service';
 import { CommonService } from 'src/fccore/service/common.service';
 import { environment } from '../../../environments/environment.dev';
 import { SyseditpasswordComponent } from '../dialog/syseditpassword.dialog';
+import { CacheService } from 'src/fccore/service/cache.service';
 @Component({
   selector: 'layout',
   templateUrl: './layout.component.html',
@@ -247,7 +248,8 @@ export class LayoutComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private mainService: LayoutService,
     private shareService: ShareService,
-    public modalService: NzModalService
+    public modalService: NzModalService,
+    private message: NzMessageService
   ) {
     this.fcTabs = []
     // 点击左侧导航
@@ -457,5 +459,12 @@ export class LayoutComponent implements OnInit {
       const instance = modal.getContentComponent();
       instance.newPassword = 'passWord is changed';
     }, 2000);
+  }
+  /**
+   * 清除缓存
+   */
+  clearCache() {
+    CacheService.clear();
+    this.message.success('清除缓存成功！');
   }
 }
