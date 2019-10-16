@@ -2,18 +2,24 @@
  * @Author: honghong
  * @Date: 2019-10-14 10:50:43
  * @LastEditors: honghong
- * @LastEditTime: 2019-10-14 14:20:45
+ * @LastEditTime: 2019-10-16 10:21:48
  * @Description: 
  * @email: 3300536651@qq.com
  */
-import { Component, Input, AfterViewInit } from '@angular/core';
+import { Component, Input, AfterViewInit, OnInit, AfterContentInit } from '@angular/core';
 import * as G2 from '@antv/g2';
 @Component({
     selector: 'fc-g2bar',
     templateUrl: './fcg2bar.component.html',
-    styles: [``]
+    styles: [`
+    .fc-chart {
+        width: 100%;
+    }
+    `]
 })
 export class Fcg2barComponent implements AfterViewInit {
+
+
     // id
     @Input()
     fcId: string;
@@ -24,8 +30,11 @@ export class Fcg2barComponent implements AfterViewInit {
     constructor() {
 
     }
+    // 初始化组件视图和子视图后调用，只调用一次 ， 可以进行dom操作
     ngAfterViewInit(): void {
         this.createChartBar(this.fcId, this.fcData);
+        // 自适应宽度
+        this.chartBar.forceFit()
     }
     createChartBar(id: string, data: any[]) {
         this.chartBar = new G2.Chart({
