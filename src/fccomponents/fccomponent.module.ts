@@ -4,7 +4,7 @@
  * @Description: fccomponent平台组件模块
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2019-10-14 14:12:58
+ * @LastEditTime: 2019-10-17 09:58:37
  */
 import { NgModule } from '@angular/core';
 import { SharedModule } from 'src/shared';
@@ -14,6 +14,7 @@ import { Fcg2barComponent } from './fcg2bar/fcg2bar.component';
 import { Fcg2linerComponent } from './fcg2line/fcg2line.component';
 import { Fcg2minibarComponent } from './fcg2minibar/fcg2minibar.component';
 import { Fcg2pieComponent } from './fcg2pie/fcg2pie.component';
+import { Fcverifycode } from './fcverifycode/fcverifycode.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { Fcg2pieComponent } from './fcg2pie/fcg2pie.component';
     Fcg2barComponent,
     Fcg2linerComponent,
     Fcg2minibarComponent,
-    Fcg2pieComponent
+    Fcg2pieComponent,
+    Fcverifycode // 验证码
   ],
   exports: [
     FcimgviewComponent,
@@ -33,7 +35,8 @@ import { Fcg2pieComponent } from './fcg2pie/fcg2pie.component';
     Fcg2barComponent,
     Fcg2linerComponent,
     Fcg2minibarComponent,
-    Fcg2pieComponent
+    Fcg2pieComponent,
+    Fcverifycode
   ]
 })
 export class FccomponentModule { }
