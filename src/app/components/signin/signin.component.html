@@ -30,20 +30,35 @@
           <form>
             <div class="user-box">
               <nz-input-group [nzSuffix]="userIdSuffix" [nzPrefix]="userIdPrefix">
-                <input type="text" nz-input placeholder="请输入用户名admin" [(ngModel)]="userId" name="userId" />
+                <input id="userName" name="userName" required type="text" class="form-control" nz-input
+                  placeholder="请输入用户名admin" [(ngModel)]="userId" #userName="ngModel" />
               </nz-input-group>
               <ng-template #userIdPrefix><i class="icon iconfont fc-icon-personnel"></i></ng-template>
               <ng-template #userIdSuffix><i nz-icon type="close-circle" (click)="userId =''" *ngIf="userId"></i>
               </ng-template>
-
+              <div class="fc-form-error" *ngIf="userName.invalid && (userName.dirty || userName.touched)">
+                <div *ngIf="userName.errors.required">
+                  用户名不能为空.
+                </div>
+              </div>
             </div>
             <div class="user-box">
               <nz-input-group [nzSuffix]="pwdSuffix" [nzPrefix]="pwdPrefix">
-                <input type="password" nz-input placeholder="请输入密码admin" [(ngModel)]="password" name="password" />
+                <input id="passwordValid" name="passwordValid" class="form-control" required type="password"
+                  [(ngModel)]="password" nz-input placeholder="请输入密码admin" #passwordValid="ngModel" />
               </nz-input-group>
               <ng-template #pwdPrefix><i class="icon iconfont fc-icon-password"></i></ng-template>
               <ng-template #pwdSuffix><i nz-icon type="close-circle" (click)="password = ''" *ngIf="password"></i>
               </ng-template>
+              <div class="fc-form-error"
+                *ngIf="passwordValid.invalid && (passwordValid.dirty || passwordValid.touched)">
+                <div *ngIf="passwordValid.errors.required">
+                  密码不能为空.
+                </div>
+              </div>
+            </div>
+            <div class="user-box">
+              <fc-verifycode #verifyCode></fc-verifycode>
             </div>
             <div class="user-box login-btn">
               <button nz-button nzType="primary" (click)="login()" [nzBlock]="true">登录</button>

@@ -8,9 +8,10 @@
  */
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, NG_VALIDATORS } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { ForbiddenValidatorDirective } from './forbidden-name.directive';
 
 @NgModule({
     imports: [
@@ -18,14 +19,19 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
         FormsModule,
         RouterModule,
         ReactiveFormsModule,
-        NgZorroAntdModule
+        NgZorroAntdModule,
+
+    ],
+    declarations: [
+        ForbiddenValidatorDirective, // 模版驱动表单-自定义验证指令
     ],
     exports: [
         CommonModule,
         FormsModule,
         RouterModule,
         ReactiveFormsModule,
-        NgZorroAntdModule
-    ]
+        NgZorroAntdModule,
+        ForbiddenValidatorDirective
+    ],
 })
 export class SharedModule { }

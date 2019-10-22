@@ -31,6 +31,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { LayoutService } from './service/layout.service';
 import { FcRouteReuseStrategy } from './service/routereusestrategy.service';
 import { ShareService } from './share.service';
+import { FccomponentModule } from 'src/fccomponents';
 
 registerLocaleData(zh)
 
@@ -44,7 +45,8 @@ registerLocaleData(zh)
     BrowserAnimationsModule,
     RouterModule.forRoot(AppRoutes),
     FccoreModule,
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    FccomponentModule
   ],
   declarations: [
     AppComponent, // app入口

@@ -6,10 +6,11 @@
  * @Date: 2019-04-16 15:57:43
  * @LastEditTime: 2019-10-11 15:28:50
  */
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.dev';
 import { CacheService } from 'src/fccore/service/cache.service';
+import { Fcverifycode } from 'src/fccomponents/fcverifycode/fcverifycode.component';
 const PROJECT_NAME = environment.projectName;
 
 @Component({
@@ -20,9 +21,14 @@ const PROJECT_NAME = environment.projectName;
 export class SigninComponent implements OnInit {
   hasError = false;
   msg = '用户名或者密码错误';
-  userId = 'admin';
-  password = 'admin';
-  constructor(private router: Router) {}
+  userId = '';
+  password = '';
+  // 显示错误
+  showError = 'N';
+  fcSuccess: string;
+  // 验证码
+  @ViewChild('verifyCode', { static: true }) verifyCode: Fcverifycode;
+  constructor(private router: Router) { }
   ngOnInit() {
     if (this.loginValid(this.userId, this.password)) {
       this.router.navigate([
@@ -34,7 +40,8 @@ export class SigninComponent implements OnInit {
    * 根据用户密码登录，并存储当前用户的相关信息
    */
   login() {
-    if (this.loginValid(this.userId, this.password)) {
+    if (this.verifyCode.fcShowError === 'N'
+      && this.loginValid(this.userId, this.password)) {
       this.hasError = false;
       CacheService.setS('userinfo', { USERCODE: 'admin' });
       CacheService.setS('token', 'ab2be4ef08c0418bab13a6a88c9772e7');

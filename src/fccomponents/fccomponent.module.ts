@@ -15,10 +15,13 @@ import { Fcg2linerComponent } from './fcg2line/fcg2line.component';
 import { Fcg2minibarComponent } from './fcg2minibar/fcg2minibar.component';
 import { Fcg2pieComponent } from './fcg2pie/fcg2pie.component';
 import { Fcverifycode } from './fcverifycode/fcverifycode.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    SharedModule
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   declarations: [
     FcimgviewComponent, // 组件-图片查看

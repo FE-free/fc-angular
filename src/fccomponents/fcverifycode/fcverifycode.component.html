@@ -6,5 +6,18 @@
  * @Description: 
  * @email: 3300536651@qq.com
  -->
-<div id="v_container"></div>
-<input type="text" id="code_input" value="" placeholder="请输入验证码" /><button id="my_button">验证</button>
+<div class="fc-verifycode">
+  <input id="codeValid" name="codeValid" maxlength="4" class="form-control" required #codeValid="ngModel" type="text"
+    nz-input [(ngModel)]="fcCode" [(fcVerifyCodeName)]="validVerifyCode" placeholder="请输入验证码" />
+  <canvas id="verifyCode" #verifyCode width="100" height="28" (click)="draw([]);"></canvas>
+  <div class="fc-form-error" *ngIf="codeValid.invalid && (codeValid.dirty || codeValid.touched)">
+    <div>
+      <div *ngIf="codeValid.errors.required">
+        验证码不能为空.
+      </div>
+      <div *ngIf="codeValid.errors.fcVerifyCodeName">
+        验证码不正确.
+      </div>
+    </div>
+  </div>
+</div>
