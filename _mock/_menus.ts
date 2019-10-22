@@ -6,6 +6,7 @@
  * @Description:
  * @email: 3300536651@qq.com
  */
+import * as Mock from 'mockjs';
 export const menus = {
   P_MENUS: [
     {

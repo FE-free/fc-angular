@@ -30,11 +30,11 @@ registerLocaleData(zh)
   declarations: [
   ],
   providers: [
-   DaoService,
-   LogService,
-   CommonService,
-   CacheService,
-   MessageService
+    DaoService,
+    LogService,
+    CommonService,
+    CacheService,
+    MessageService
   ],
   bootstrap: []
 })

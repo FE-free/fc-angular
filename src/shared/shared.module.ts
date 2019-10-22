@@ -12,15 +12,17 @@ import { FormsModule, ReactiveFormsModule, NG_VALIDATORS } from '@angular/forms'
 import { RouterModule } from '@angular/router';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { ForbiddenValidatorDirective } from './forbidden-name.directive';
-
+import * as MOCKDATA from '../../_mock';
+// 只对开发环境有效
+import { environment } from '../environments/environment';
+const MOCK_MODULES = !environment.production ? [{ data: MOCKDATA }] : [];
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
         RouterModule,
         ReactiveFormsModule,
-        NgZorroAntdModule,
-
+        NgZorroAntdModule
     ],
     declarations: [
         ForbiddenValidatorDirective, // 模版驱动表单-自定义验证指令

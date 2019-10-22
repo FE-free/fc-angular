@@ -40,8 +40,7 @@ export class SigninComponent implements OnInit {
    * 根据用户密码登录，并存储当前用户的相关信息
    */
   login() {
-    if (this.verifyCode.fcShowError === 'N'
-      && this.loginValid(this.userId, this.password)) {
+    if (this.loginValid(this.userId, this.password)) {
       this.hasError = false;
       CacheService.setS('userinfo', { USERCODE: 'admin' });
       CacheService.setS('token', 'ab2be4ef08c0418bab13a6a88c9772e7');
