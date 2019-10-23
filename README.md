@@ -4,9 +4,6 @@ Admin template based on AntDesign and Angular8
     <a href="https://travis-ci.org/fc-angular/fc-angular">
         <img src="https://travis-ci.org/luohong123/fc-angular.svg?branch=dev" alt="Build Status">
     </a>
-     <a href="https://coveralls.io/github/fc-angular/fc-angular?branch=dev">
-        <img src="https://coveralls.io/repos/github/fc-angular/fc-angular/badge.svg?branch=dev" alt="Coverage Status"/>
-    </a>
     <a href="https://github.com/angular/angular">
         <img src="https://img.shields.io/badge/angular-8.1.0-green.svg" alt="angular">
     </a>
