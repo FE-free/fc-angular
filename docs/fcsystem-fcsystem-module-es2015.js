@@ -55,6 +55,47 @@ module.exports = "<!--\n * @Author: honghong\n * @LastEditors: honghong\n * @Des
 
 /***/ }),
 
+/***/ "./src/feature/fc/fcsystem/business/sysuser.business.ts":
+/*!**************************************************************!*\
+  !*** ./src/feature/fc/fcsystem/business/sysuser.business.ts ***!
+  \**************************************************************/
+/*! exports provided: SysuserBusiness */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SysuserBusiness", function() { return SysuserBusiness; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
+
+
+/*
+ * @Author: honghong
+ * @LastEditors: honghong
+ * @Description: 权限管理的业务
+ * @email: 3300536651@qq.com
+ * @Date: 2019-04-12 16:39:30
+ * @LastEditTime: 2019-04-17 12:36:33
+ */
+let SysuserBusiness = class SysuserBusiness {
+    constructor(http) {
+        this.http = http;
+    }
+};
+SysuserBusiness.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+SysuserBusiness = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+], SysuserBusiness);
+
+
+
+/***/ }),
+
 /***/ "./src/feature/fc/fcsystem/components/syslog/syslog.component.ts":
 /*!***********************************************************************!*\
   !*** ./src/feature/fc/fcsystem/components/syslog/syslog.component.ts ***!
@@ -256,6 +297,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _business_sysuser_business__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../business/sysuser.business */ "./src/feature/fc/fcsystem/business/sysuser.business.ts");
 
 /*
  * @Author: honghong
@@ -267,15 +309,20 @@ __webpack_require__.r(__webpack_exports__);
  */
 
 
+
 let SysuserComponent = class SysuserComponent {
-    constructor(router, activedRoute) {
+    constructor(router, activedRoute, sysuserBusiness) {
         this.router = router;
         this.activedRoute = activedRoute;
+        this.sysuserBusiness = sysuserBusiness;
+    }
+    ngOnInit() {
     }
 };
 SysuserComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
+    { type: _business_sysuser_business__WEBPACK_IMPORTED_MODULE_3__["SysuserBusiness"] }
 ];
 SysuserComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -283,7 +330,8 @@ SysuserComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         template: __webpack_require__(/*! raw-loader!./sysuser.component.html */ "./node_modules/raw-loader/index.js!./src/feature/fc/fcsystem/components/sysuser/sysuser.component.html"),
         styles: [""]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+        _business_sysuser_business__WEBPACK_IMPORTED_MODULE_3__["SysuserBusiness"]])
 ], SysuserComponent);
 
 
@@ -305,12 +353,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var src_fccomponents__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/fccomponents */ "./src/fccomponents/index.ts");
 /* harmony import */ var src_shared__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/shared */ "./src/shared/index.ts");
-/* harmony import */ var _components_syslog_syslog_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/syslog/syslog.component */ "./src/feature/fc/fcsystem/components/syslog/syslog.component.ts");
-/* harmony import */ var _components_sysmenu_sysmenu_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/sysmenu/sysmenu.component */ "./src/feature/fc/fcsystem/components/sysmenu/sysmenu.component.ts");
-/* harmony import */ var _components_sysmessage_sysmessagedetail_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/sysmessage/sysmessagedetail.component */ "./src/feature/fc/fcsystem/components/sysmessage/sysmessagedetail.component.ts");
-/* harmony import */ var _components_sysrole_sysrole_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/sysrole/sysrole.component */ "./src/feature/fc/fcsystem/components/sysrole/sysrole.component.ts");
-/* harmony import */ var _components_sysuser_sysuser_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/sysuser/sysuser.component */ "./src/feature/fc/fcsystem/components/sysuser/sysuser.component.ts");
-/* harmony import */ var _fcsystem_route__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./fcsystem.route */ "./src/feature/fc/fcsystem/fcsystem.route.ts");
+/* harmony import */ var _business_sysuser_business__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./business/sysuser.business */ "./src/feature/fc/fcsystem/business/sysuser.business.ts");
+/* harmony import */ var _components_syslog_syslog_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/syslog/syslog.component */ "./src/feature/fc/fcsystem/components/syslog/syslog.component.ts");
+/* harmony import */ var _components_sysmenu_sysmenu_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/sysmenu/sysmenu.component */ "./src/feature/fc/fcsystem/components/sysmenu/sysmenu.component.ts");
+/* harmony import */ var _components_sysmessage_sysmessagedetail_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/sysmessage/sysmessagedetail.component */ "./src/feature/fc/fcsystem/components/sysmessage/sysmessagedetail.component.ts");
+/* harmony import */ var _components_sysrole_sysrole_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/sysrole/sysrole.component */ "./src/feature/fc/fcsystem/components/sysrole/sysrole.component.ts");
+/* harmony import */ var _components_sysuser_sysuser_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/sysuser/sysuser.component */ "./src/feature/fc/fcsystem/components/sysuser/sysuser.component.ts");
+/* harmony import */ var _fcsystem_route__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./fcsystem.route */ "./src/feature/fc/fcsystem/fcsystem.route.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 
 /*
  * @Author: honghong
@@ -330,23 +380,26 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 let FcsystemModule = class FcsystemModule {
 };
 FcsystemModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         imports: [
             src_shared__WEBPACK_IMPORTED_MODULE_4__["SharedModule"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(_fcsystem_route__WEBPACK_IMPORTED_MODULE_10__["Routers"]),
-            src_fccomponents__WEBPACK_IMPORTED_MODULE_3__["FccomponentModule"]
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(_fcsystem_route__WEBPACK_IMPORTED_MODULE_11__["Routers"]),
+            src_fccomponents__WEBPACK_IMPORTED_MODULE_3__["FccomponentModule"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HttpClientModule"]
         ],
         declarations: [
-            _components_sysmessage_sysmessagedetail_component__WEBPACK_IMPORTED_MODULE_7__["SysmessagedetailComponent"],
-            _components_sysuser_sysuser_component__WEBPACK_IMPORTED_MODULE_9__["SysuserComponent"],
-            _components_sysmenu_sysmenu_component__WEBPACK_IMPORTED_MODULE_6__["SysmenuComponent"],
-            _components_sysrole_sysrole_component__WEBPACK_IMPORTED_MODULE_8__["SysroleComponent"],
-            _components_syslog_syslog_component__WEBPACK_IMPORTED_MODULE_5__["SyslogComponent"] // 日志管理
+            _components_sysmessage_sysmessagedetail_component__WEBPACK_IMPORTED_MODULE_8__["SysmessagedetailComponent"],
+            _components_sysuser_sysuser_component__WEBPACK_IMPORTED_MODULE_10__["SysuserComponent"],
+            _components_sysmenu_sysmenu_component__WEBPACK_IMPORTED_MODULE_7__["SysmenuComponent"],
+            _components_sysrole_sysrole_component__WEBPACK_IMPORTED_MODULE_9__["SysroleComponent"],
+            _components_syslog_syslog_component__WEBPACK_IMPORTED_MODULE_6__["SyslogComponent"] // 日志管理
         ],
-        providers: [],
+        providers: [_business_sysuser_business__WEBPACK_IMPORTED_MODULE_5__["SysuserBusiness"]],
         schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["CUSTOM_ELEMENTS_SCHEMA"]] // 自定义组件
     })
 ], FcsystemModule);

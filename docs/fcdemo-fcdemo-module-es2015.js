@@ -2334,6 +2334,10 @@ const Routers = [
     {
         path: 'fcspread',
         component: _fcspread_fcspread_component__WEBPACK_IMPORTED_MODULE_4__["FcspreadComponent"]
+    },
+    {
+        path: '',
+        loadChildren: './fctemplate/fctemplate.module#FctemplateModule'
     }
 ];
 
@@ -2666,8 +2670,22 @@ let FciconComponent = class FciconComponent {
             }, {
                 name: 'fc-icon-menufold-right',
                 icon: 'fc-icon-menufold-right'
-            }
-        ];
+            }, {
+                name: 'fc-icon-clear',
+                icon: 'fc-icon-clear'
+            }, {
+                name: 'fc-icon-tianqi1',
+                icon: 'fc-icon-tianqi1'
+            }, {
+                name: 'fc-icon-icon',
+                icon: 'fc-icon-icon'
+            }, {
+                name: 'fc-icon-threejs',
+                icon: 'fc-icon-threejs'
+            }, {
+                name: 'fc-icon-xiaoxi',
+                icon: 'fc-icon-xiaoxi'
+            }];
     }
     getIconCode(icon) {
         return `<i  nz-icon nzType='${icon.name}' nzTheme='${icon.theme}'></i>`;
@@ -2785,7 +2803,7 @@ __webpack_require__.r(__webpack_exports__);
  * @Description: spread
  * @email: 3300536651@qq.com
  * @Date: 2019-04-12 16:39:30
- * @LastEditTime: 2019-10-12 15:03:04
+ * @LastEditTime: 2019-10-16 10:43:11
  */
 
 

@@ -63,7 +63,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"default~fcdemo-fcdemo-module~fcsystem-fcsystem-module~feature-fc-fc-module":"default~fcdemo-fcdemo-module~fcsystem-fcsystem-module~feature-fc-fc-module","common":"common","fcsystem-fcsystem-module":"fcsystem-fcsystem-module","feature-fc-fc-module":"feature-fc-fc-module","fcdemo-fcdemo-module":"fcdemo-fcdemo-module"}[chunkId]||chunkId) + "-es5.js"
+/******/ 		return __webpack_require__.p + "" + ({"fcdemo-fcdemo-module":"fcdemo-fcdemo-module","fcsystem-fcsystem-module":"fcsystem-fcsystem-module","fctemplate-fctemplate-module":"fctemplate-fctemplate-module","feature-fc-fc-module":"feature-fc-fc-module"}[chunkId]||chunkId) + "-es5.js"
 /******/ 	}
 /******/
 /******/ 	// The require function
