@@ -95,8 +95,8 @@ export class FcRouteReuseStrategy implements RouteReuseStrategy {
    * @return:
    */
   private getRouteUrl(route: ActivatedRouteSnapshot) {
-    let path = environment.pid + '_' + route['routeConfig'].path
-    // let path = route['_routerState'].url.replace(/\//g, '_')
+    // let path = environment.pid + '_' + route['routeConfig'].path
+    let path = route['_routerState'].url.replace(/\//g, '_')
     return path
   }
   /**

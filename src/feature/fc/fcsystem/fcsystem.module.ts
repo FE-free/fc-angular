@@ -10,19 +10,21 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FccomponentModule } from 'src/fccomponents';
 import { SharedModule } from 'src/shared';
-import { HomeComponent } from './components/home/home.component';
+import { SysuserBusiness } from './business/sysuser.business';
 import { SyslogComponent } from './components/syslog/syslog.component';
 import { SysmenuComponent } from './components/sysmenu/sysmenu.component';
 import { SysmessagedetailComponent } from './components/sysmessage/sysmessagedetail.component';
 import { SysroleComponent } from './components/sysrole/sysrole.component';
 import { SysuserComponent } from './components/sysuser/sysuser.component';
 import { Routers } from './fcsystem.route';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     SharedModule,
     RouterModule.forChild(Routers),
-    FccomponentModule
+    FccomponentModule,
+    HttpClientModule
   ],
   declarations: [
     SysmessagedetailComponent, // 消息详情
@@ -31,7 +33,7 @@ import { Routers } from './fcsystem.route';
     SysroleComponent, // 权限管理
     SyslogComponent // 日志管理
   ],
-  providers: [],
+  providers: [SysuserBusiness],
   schemas: [CUSTOM_ELEMENTS_SCHEMA] // 自定义组件
 })
 export class FcsystemModule { }

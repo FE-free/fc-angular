@@ -9,6 +9,8 @@
 import { Injectable } from '@angular/core';
 import { CacheService } from './cache.service';
 import { DaoService } from './dao.service';
+import { environment } from 'src/environments/environment';
+const isDev = !environment.production
 @Injectable({
   providedIn: 'root'
 })
@@ -16,13 +18,13 @@ export class LogService {
   constructor(private daoService: DaoService, private cacheService: CacheService) {
 
   }
-  debug(msg: any): void {
-    if (!this.daoService.FCCONFIG.production) {
-      console.log(msg)
+  static debug(msg: any, describtion?: string): void {
+    if (isDev) {
+      console.log(msg, describtion)
     }
   }
   info(msg: any): void {
-    if (!this.daoService.FCCONFIG.production) {
+    if (isDev) {
       console.log(msg)
     }
   }

@@ -8,15 +8,23 @@
  */
 
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup } from '@angular/forms';
+import { UtilService } from 'src/fccore/util/util.service';
 
 @Component({
     selector: 'fc-templatelist',
     templateUrl: './fctemplatelist.component.html',
     styles: [
         `
+        .fc-templatelist {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+       
         .fc-searchbar-item {
             display: flex;
             flex-direction: row;
@@ -29,6 +37,11 @@ import { FormGroup } from '@angular/forms';
         }
         .fc-searchbar-control {
             width: 75%;
+        }
+        .fc-templatelist-content {
+            padding: 0 10px 10px;
+            flex: 1;
+            overflow: hidden;
         }
     `
     ]
@@ -43,6 +56,8 @@ export class FctemplatelistComponent implements OnInit {
         age: '',
         address: ''
     }
+    // 固定表头
+    tableScroll: Object;
     constructor(public router: Router, public activedRoute: ActivatedRoute) { }
     ngOnInit(): void {
         for (let i = 0; i < 100; i++) {
@@ -52,5 +67,14 @@ export class FctemplatelistComponent implements OnInit {
                 address: `London, Park Lane no. ${i}`
             });
         }
+        this.tableScroll = UtilService.fixedTableHeader(240);
+    }
+    /**
+     * 改变浏览器窗口大小
+     * @param event
+     */
+    @HostListener('window:resize', ['$event'])
+    onResize(event) {
+        this.tableScroll = UtilService.fixedTableHeader(310);
     }
 }

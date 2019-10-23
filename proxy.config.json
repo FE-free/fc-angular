@@ -1,5 +1,5 @@
 {
   "/server": {
-    "target": "http://10.56.23.120:8083/" 
+    "target": "http://localhost:3000/"
   }
 }

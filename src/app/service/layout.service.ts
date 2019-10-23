@@ -12,6 +12,7 @@ import { NzMessageService } from 'ng-zorro-antd';
 import { menus } from '_mock/_menus';
 import { ShareService } from '../share.service';
 import { environment } from 'src/environments/environment.dev';
+import { LogService } from 'src/fccore/service/log.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -42,7 +43,7 @@ export class LayoutService {
     }
     if (menu.MENUTYPE === 'APP') {
       // 开启加载条
-      // this.messageService.startAntLoading();
+      let loadId = this.messageService.loading('loading...').messageId;
       let params = {
         queryParams: {
           refresh: refresh,
@@ -57,7 +58,7 @@ export class LayoutService {
           PARAM: menu.param
         }
       }
-      // LogService.debug(params);
+      LogService.debug(params);
       router
         .navigate(['/' + this.pid + '/' + menu.ROUTER], params)
         .then(() => {
@@ -65,12 +66,10 @@ export class LayoutService {
         })
         .catch(error => {
           console.log(error)
-          // this.providers.msgService.endAntLoading();
+          this.messageService.remove(loadId);
           router.navigate(['/error'])
         })
     } else if (menu.MENUTYPE === 'INURL') {
-      // 开启加载条
-      // this.providers.msgService.startAntLoading();
       router
         .navigate(['/' + this.pid + '/' + menu.ROUTER], {
           queryParams: {

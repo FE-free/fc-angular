@@ -15,7 +15,12 @@ import { ActivatedRoute, Router } from '@angular/router';
     templateUrl: './fctemplatedetail.component.html',
     styles: [
         `
-     
+     .fc-templatedetail {
+         padding: 10px;
+         width: 100%;
+         height: 100%;
+         overflow: auto;
+     }
     `
     ]
 })

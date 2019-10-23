@@ -353,8 +353,19 @@ export class FciconComponent implements OnInit {
     }, {
       name: 'fc-icon-menufold-right',
       icon: 'fc-icon-menufold-right'
-    }
-    ]
+    }, {
+      name: 'fc-icon-clear',
+      icon: 'fc-icon-clear'
+    }, {
+      name: 'fc-icon-tianqi1',
+      icon: 'fc-icon-tianqi1'
+    }, {
+      name: 'fc-icon-icon',
+      icon: 'fc-icon-icon'
+    }, {
+      name: 'fc-icon-threejs',
+      icon: 'fc-icon-threejs'
+    }]
   }
   getIconCode(icon: IconInterface) {
     return `<i  nz-icon nzType='${icon.name}' nzTheme='${icon.theme}'></i>`

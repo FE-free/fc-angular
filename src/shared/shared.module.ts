@@ -15,6 +15,7 @@ import { ForbiddenValidatorDirective } from './forbidden-name.directive';
 import * as MOCKDATA from '../../_mock';
 // 只对开发环境有效
 import { environment } from '../environments/environment';
+import { HttpClientModule } from '@angular/common/http';
 const MOCK_MODULES = !environment.production ? [{ data: MOCKDATA }] : [];
 @NgModule({
     imports: [
@@ -22,7 +23,8 @@ const MOCK_MODULES = !environment.production ? [{ data: MOCKDATA }] : [];
         FormsModule,
         RouterModule,
         ReactiveFormsModule,
-        NgZorroAntdModule
+        NgZorroAntdModule,
+        HttpClientModule
     ],
     declarations: [
         ForbiddenValidatorDirective, // 模版驱动表单-自定义验证指令

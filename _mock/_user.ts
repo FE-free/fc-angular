@@ -36,5 +36,5 @@ function getUserInfo() {
 }
 export const User = {
     '/userInfo': () => userInfo(),
-    'api/user': () => getUsers()
+    '/user': () => getUsers()
 }

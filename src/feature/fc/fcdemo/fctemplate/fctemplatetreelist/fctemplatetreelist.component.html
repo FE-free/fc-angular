@@ -6,4 +6,45 @@
  * @Description: 
  * @email: 3300536651@qq.com
  -->
-treelist
+<div class="fc-templatetreelist">
+  <div class="fc-toolbar">
+    <button nz-button nzType="primary">新增</button>
+    <button nz-button nzType="primary">修改</button>
+    <button nz-button nzType="primary">删除</button>
+    <button nz-button nzType="primary">查看</button>
+  </div>
+  <div class="fc-templatetreelist-content">
+    <div class="fc-left">
+      <div class="fc-tree-search">
+        <nz-input-group [nzSuffix]="suffixIcon">
+          <input type="text" nz-input placeholder="Search" [(ngModel)]="searchValue" />
+        </nz-input-group>
+        <ng-template #suffixIcon>
+          <i nz-icon nzType="search"></i>
+        </ng-template>
+      </div>
+      <nz-tree [nzData]="nodes" nzCheckable nzMultiple [nzCheckedKeys]="defaultCheckedKeys"
+        [nzExpandedKeys]="defaultExpandedKeys" [nzSelectedKeys]="defaultSelectedKeys" (nzClick)="nzEvent($event)"
+        (nzExpandChange)="nzEvent($event)" (nzCheckBoxChange)="nzEvent($event)">
+      </nz-tree>
+    </div>
+    <div class="fc-right">
+      <nz-table #headerTable [nzData]="listOfData" [nzPageSize]="50" [nzScroll]="tableScroll" [nzBordered]="true">
+        <thead>
+          <tr>
+            <th nzWidth="150px">Name</th>
+            <th nzWidth="150px">Age</th>
+            <th>Address</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of headerTable.data">
+            <td>{{ data.name }}</td>
+            <td>{{ data.age }}</td>
+            <td>{{ data.address }}</td>
+          </tr>
+        </tbody>
+      </nz-table>
+    </div>
+  </div>
+</div>
