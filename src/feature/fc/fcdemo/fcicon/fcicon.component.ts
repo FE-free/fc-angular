@@ -365,6 +365,9 @@ export class FciconComponent implements OnInit {
     }, {
       name: 'fc-icon-threejs',
       icon: 'fc-icon-threejs'
+    }, {
+      name: 'fc-icon-xiaoxi',
+      icon: 'fc-icon-xiaoxi'
     }]
   }
   getIconCode(icon: IconInterface) {

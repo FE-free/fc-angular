@@ -112,21 +112,21 @@ export const menus = {
           SORT: 1152,
           ROUTER: '/fciframe'
         },
-        {
-          ID: '63fbb2f0708f4fd68db04a92dd5df121',
-          PID: 'FC',
-          MENUID: 'FCAGGRID',
-          MENUNAME: 'ag-grid表格',
-          ENABLE: 'Y',
-          WXMENU: 'N',
-          MENUTYPE: 'APP',
-          APPID: 'SYSMENU',
-          HASCHILD: 'N',
-          MENUICON: 'fc-icon-datatable',
-          PARENT: 'SYSTEM',
-          SORT: 1152,
-          ROUTER: '/building'
-        },
+        // {
+        //   ID: '63fbb2f0708f4fd68db04a92dd5df121',
+        //   PID: 'FC',
+        //   MENUID: 'FCAGGRID',
+        //   MENUNAME: 'ag-grid表格',
+        //   ENABLE: 'Y',
+        //   WXMENU: 'N',
+        //   MENUTYPE: 'APP',
+        //   APPID: 'SYSMENU',
+        //   HASCHILD: 'N',
+        //   MENUICON: 'fc-icon-datatable',
+        //   PARENT: 'SYSTEM',
+        //   SORT: 1152,
+        //   ROUTER: '/building'
+        // },
         {
           ID: '3ae5c74930dab18e877efabee3af0004',
           PID: 'FC',
@@ -200,97 +200,97 @@ export const menus = {
               ROUTER: '/fctemplatetreelist',
             }]
         },
-        {
-          ID: '3ae5c74930dab18e877efabee3af0004',
-          PID: 'FC',
-          MENUID: 'SYSTEM',
-          MENUNAME: '系统管理',
-          ENABLE: 'Y',
-          WXMENU: 'N',
-          MENUTYPE: 'MENU',
-          HASCHILD: 'Y',
-          MENUICON: 'fc-icon-peizhi',
-          PARENT: 'FC',
-          SORT: 1150,
-          ROUTER: '/system',
-          P_CHILDMENUS: [
-            {
-              ID: '63fbb2f0708f4fd68db04a92dd5df121',
-              PID: 'FC',
-              MENUID: 'SYSTEMBASIC',
-              MENUNAME: '基础设置',
-              ENABLE: 'Y',
-              WXMENU: 'N',
-              MENUTYPE: 'APP',
-              APPID: 'SYSTEMBASIC',
-              HASCHILD: 'Y',
-              PARENT: 'SYSTEM',
-              MENUICON: 'fc-icon-jichushezhi',
-              SORT: 1152,
-              ROUTER: '/sysbasic',
-              P_CHILDMENUS: [
-                {
-                  ID: '63fbb2f0708f4fd68db04a92dd5df121',
-                  PID: 'FC',
-                  MENUID: 'SYSROLE',
-                  MENUNAME: '权限管理',
-                  ENABLE: 'Y',
-                  WXMENU: 'N',
-                  MENUTYPE: 'APP',
-                  APPID: 'SYSROLE',
-                  MENUICON: 'fc-icon-peizhi',
-                  HASCHILD: 'N',
-                  PARENT: 'SYSTEM',
-                  SORT: 1152,
-                  ROUTER: '/sysroleList'
-                },
-                {
-                  ID: '63fbb2f0708f4fd68db04a92dd5df121',
-                  PID: 'FC',
-                  MENUID: 'SYSMENU',
-                  MENUNAME: '用户管理',
-                  ENABLE: 'Y',
-                  WXMENU: 'N',
-                  MENUTYPE: 'APP',
-                  APPID: 'SYSMENU',
-                  HASCHILD: 'N',
-                  MENUICON: 'fc-icon-peizhi',
-                  PARENT: 'SYSTEM',
-                  SORT: 1152,
-                  ROUTER: '/sysuserList'
-                },
-                {
-                  ID: '63fbb2f0708f4fd68db04a92dd5df121',
-                  PID: 'FC',
-                  MENUID: 'SYSMENU',
-                  MENUNAME: '菜单管理',
-                  ENABLE: 'Y',
-                  WXMENU: 'N',
-                  MENUTYPE: 'APP',
-                  APPID: 'SYSMENU',
-                  HASCHILD: 'N',
-                  PARENT: 'SYSTEM',
-                  SORT: 1152,
-                  ROUTER: '/sysmenuList'
-                },
-                {
-                  ID: '63fbb2f0708f4fd68db04a92dd5df121',
-                  PID: 'FC',
-                  MENUID: 'SYSLOG',
-                  MENUNAME: '日志管理',
-                  ENABLE: 'Y',
-                  WXMENU: 'N',
-                  MENUTYPE: 'APP',
-                  APPID: 'SYSMENU',
-                  HASCHILD: 'N',
-                  PARENT: 'SYSTEM',
-                  SORT: 1152,
-                  ROUTER: '/syslogList'
-                }
-              ]
-            }
-          ]
-        }
+        // {
+        //   ID: '3ae5c74930dab18e877efabee3af0004',
+        //   PID: 'FC',
+        //   MENUID: 'SYSTEM',
+        //   MENUNAME: '系统管理',
+        //   ENABLE: 'Y',
+        //   WXMENU: 'N',
+        //   MENUTYPE: 'MENU',
+        //   HASCHILD: 'Y',
+        //   MENUICON: 'fc-icon-peizhi',
+        //   PARENT: 'FC',
+        //   SORT: 1150,
+        //   ROUTER: '/system',
+        //   P_CHILDMENUS: [
+        //     {
+        //       ID: '63fbb2f0708f4fd68db04a92dd5df121',
+        //       PID: 'FC',
+        //       MENUID: 'SYSTEMBASIC',
+        //       MENUNAME: '基础设置',
+        //       ENABLE: 'Y',
+        //       WXMENU: 'N',
+        //       MENUTYPE: 'APP',
+        //       APPID: 'SYSTEMBASIC',
+        //       HASCHILD: 'Y',
+        //       PARENT: 'SYSTEM',
+        //       MENUICON: 'fc-icon-jichushezhi',
+        //       SORT: 1152,
+        //       ROUTER: '/sysbasic',
+        //       P_CHILDMENUS: [
+        //         {
+        //           ID: '63fbb2f0708f4fd68db04a92dd5df121',
+        //           PID: 'FC',
+        //           MENUID: 'SYSROLE',
+        //           MENUNAME: '权限管理',
+        //           ENABLE: 'Y',
+        //           WXMENU: 'N',
+        //           MENUTYPE: 'APP',
+        //           APPID: 'SYSROLE',
+        //           MENUICON: 'fc-icon-peizhi',
+        //           HASCHILD: 'N',
+        //           PARENT: 'SYSTEM',
+        //           SORT: 1152,
+        //           ROUTER: '/sysroleList'
+        //         },
+        //         {
+        //           ID: '63fbb2f0708f4fd68db04a92dd5df121',
+        //           PID: 'FC',
+        //           MENUID: 'SYSMENU',
+        //           MENUNAME: '用户管理',
+        //           ENABLE: 'Y',
+        //           WXMENU: 'N',
+        //           MENUTYPE: 'APP',
+        //           APPID: 'SYSMENU',
+        //           HASCHILD: 'N',
+        //           MENUICON: 'fc-icon-peizhi',
+        //           PARENT: 'SYSTEM',
+        //           SORT: 1152,
+        //           ROUTER: '/sysuserList'
+        //         },
+        //         {
+        //           ID: '63fbb2f0708f4fd68db04a92dd5df121',
+        //           PID: 'FC',
+        //           MENUID: 'SYSMENU',
+        //           MENUNAME: '菜单管理',
+        //           ENABLE: 'Y',
+        //           WXMENU: 'N',
+        //           MENUTYPE: 'APP',
+        //           APPID: 'SYSMENU',
+        //           HASCHILD: 'N',
+        //           PARENT: 'SYSTEM',
+        //           SORT: 1152,
+        //           ROUTER: '/sysmenuList'
+        //         },
+        //         {
+        //           ID: '63fbb2f0708f4fd68db04a92dd5df121',
+        //           PID: 'FC',
+        //           MENUID: 'SYSLOG',
+        //           MENUNAME: '日志管理',
+        //           ENABLE: 'Y',
+        //           WXMENU: 'N',
+        //           MENUTYPE: 'APP',
+        //           APPID: 'SYSMENU',
+        //           HASCHILD: 'N',
+        //           PARENT: 'SYSTEM',
+        //           SORT: 1152,
+        //           ROUTER: '/syslogList'
+        //         }
+        //       ]
+        //     }
+        //   ]
+        // }
       ]
     }
   ]

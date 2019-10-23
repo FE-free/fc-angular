@@ -52,12 +52,7 @@ English | [简体中文](https://github.com/luohong123/fc-angular/blob/master/RE
 - [x] 多 tab 页路由复用策略
 - [x] 退出登录
 - [x] 修改密码
-- [ ] 系统消息(侧边栏消息、消息详情)
-- [ ] 用户管理(用户拥有的菜单权限)
-- [ ] 菜单管理(新增或者修改菜单、路由配置)
-- [ ] 权限管理(admin拥有所有的菜单权限，也可以设置其他角色的权限)
-- [ ] 日志管理
-- [ ] 换肤(default)
+- [x] 系统消息(侧边栏消息)
 - [x] UI 控件（Ant Design）
 - [x] 引入阿里图标库
 - [x] 清除本地缓存
@@ -66,7 +61,6 @@ English | [简体中文](https://github.com/luohong123/fc-angular/blob/master/RE
 - [x]模版页面（列表、表单、详情、树列表）
 - [ ]threejs
 - [x]iframe
-- [ ]表格 ag-grid
 # 二、安装项目
 
 - 在 `git` 、`node`、`npm`、`vscode`  配置好多前提下，克隆代码，命令如下：
@@ -217,6 +211,9 @@ ng build --aot
 - [【ng.ant.design 官网】](https://ng.ant.design/docs/introduce/zh)
 - [【if 我是前端团队 Leader，怎么制定前端协作规范?】](https://juejin.im/post/5d3a7134f265da1b5d57f1ed#heading-18)
 - [【优雅的提交你的 Git Commit Message】](https://zhuanlan.zhihu.com/p/34223150)
+# 十、常见问题
+1、 如何修改组件内部样式？
+> 注意 由于Angular的样式隔离，修改ant.design 组件内的样式 需要用::ng-deep来覆盖NgZorro的样式
 # Contributors
 
 Thanks to everyone who contributed to the source code, comments, scripts, documentation, and test cases.

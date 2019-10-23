@@ -125,6 +125,13 @@
       "unicode_decimal": 58953
     },
     {
+      "icon_id": "1036007",
+      "name": "消息",
+      "font_class": "xiaoxi",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
       "icon_id": "1355320",
       "name": "face",
       "font_class": "face",

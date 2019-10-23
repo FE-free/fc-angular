@@ -208,6 +208,58 @@ import { CacheService } from 'src/fccore/service/cache.service';
       .tab-home {
         padding-right: 15px;
       }
+      ::ng-deep .navside-drawer .ant-tabs-nav .ant-tabs-tab {
+        width: 50%;
+        text-align: center;
+        margin: 0;
+      }
+      ::ng-deep .navside-drawer .ant-drawer-body {
+        height: 100%;
+      }
+      ::ng-deep .navside-drawer .ant-drawer-body .ant-tabs {
+        height: 100%;
+        overflow: hidden;
+      }
+      ::ng-deep .navside-drawer .ant-drawer-body .ant-tabs-content {
+        height: 100%;
+      }
+      .navside-information-icon {
+        padding: 0 10px;
+      }
+      .navside-information-icon .icon {
+       font-size: 22px;
+      }
+      .navside-message-noread .navside-information-icon .icon{
+        color:  #ffd740;
+      }
+      .navside-message-isread .navside-information-icon .icon{
+        color:  #1890ff;
+      }
+      .navside-item-content {
+        flex: 1;
+        overflow: hidden;
+      }
+      .navside-title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .navside-time {
+        font-size: 12px;
+        color: rgba(0,0,0,.54);
+      }
+      ::ng-deep .navside-drawer .ant-list-item:hover {
+        cursor: pointer;
+        background-color: rgba(0,0,0,.04);
+      }
+      ::ng-deep .navside-drawer .ant-tabs-nav {
+        width: 100%;
+      }
+      ::ng-deep .navside-drawer .ant-tabs .ant-tabs-top-content > .ant-tabs-tabpane, 
+      ::ng-deep .navside-drawer .ant-tabs .ant-tabs-bottom-content > .ant-tabs-tabpane {
+        height: calc(100% - 60px);
+        overflow: auto;
+      }
     `
   ]
 })
@@ -242,7 +294,11 @@ export class LayoutComponent implements OnInit {
   @ViewChild('navside', { static: false })
   navside: ElementRef
   // 项目名
-  projectName = environment.projectName
+  projectName = environment.projectName;
+  // 未读消息
+  noReadMessage = [];
+  // 已读消息
+  isReadMessage = [];
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -336,6 +392,31 @@ export class LayoutComponent implements OnInit {
       }
     }
     this.router.navigate(['/' + environment.pid.toLocaleLowerCase() + '/home'])
+    for (let i = 0; i < 50; i++) {
+      if (i % 2 === 0) {
+        this.noReadMessage.push({
+          id: i,
+          title: '这是一条未读消息,这是一条未读消息.',
+          time: '2019-10-01'
+        })
+        this.isReadMessage.push({
+          id: i,
+          title: '这是一条已读消息,这是一条已读消息.',
+          time: '2019-10-01'
+        })
+      } else {
+        this.noReadMessage.push({
+          id: i,
+          title: '这是一条未读消息,超出部分显示省略号,超出部分显示省略号,超出部分显示省略号,超出部分显示省略号,超出部分显示省略号,超出部分显示省略号.',
+          time: '2010-10-01'
+        })
+        this.isReadMessage.push({
+          id: i,
+          title: '这是一条已读消息,超出部分显示省略号,超出部分显示省略号,超出部分显示省略号,超出部分显示省略号,超出部分显示省略号,超出部分显示省略号.',
+          time: '2010-10-01'
+        })
+      }
+    }
   }
   /**
    * 切换项目

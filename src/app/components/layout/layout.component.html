@@ -142,18 +142,45 @@
 </nz-layout>
 <!-- 消息侧边栏 -->
 <div class="navside">
-  <nz-drawer [nzWidth]="300" [nzMaskStyle]="{'height':'auto'}" nzWrapClassName="navside-drawer" [nzClosable]="false"
-    [nzVisible]="navsideVisible" nzPlacement="right" nzTitle="" (nzOnClose)="closeNavSide()" #navside>
+  <nz-drawer [nzWidth]="300" [nzWrapClassName]="'navside-drawer'" [nzMaskStyle]="{'height':'auto'}"
+    nzWrapClassName="navside-drawer" [nzClosable]="false" [nzVisible]="navsideVisible" nzPlacement="right" nzTitle=""
+    (nzOnClose)="closeNavSide()" #navside>
     <nz-tabset>
-      <nz-tab [nzTitle]="titleTemplate">
-        <ng-template #titleTemplate>未读消息</ng-template>
-        <div>
-          content1
+      <nz-tab [nzTitle]="noReadTemplate">
+        <ng-template #noReadTemplate>未读消息</ng-template>
+        <div class="navside-message navside-message-noread">
+          <nz-list [nzDataSource]="noReadMessage" [nzBordered]="false" [nzSplit]="false" [nzFooter]="'共有 50 条消息.'"
+            [nzRenderItem]="noReadItem">
+            <ng-template #noReadItem let-item>
+              <nz-list-item>
+                <span class="ant-typography navside-information-icon"><i
+                    class="icon iconfont fc-header-icon fc-icon-xiaoxi"></i></span>
+                <div class="navside-item-content">
+                  <div class="navside-title"> {{ item.title }}</div>
+                  <div class="navside-time"> {{ item.time }}</div>
+                </div>
+              </nz-list-item>
+            </ng-template>
+          </nz-list>
         </div>
       </nz-tab>
-      <nz-tab [nzTitle]="titleTemplate">
-        <ng-template #titleTemplate>已读消息</ng-template>
-        content2
+      <nz-tab [nzTitle]="isReadTemplate">
+        <ng-template #isReadTemplate>已读消息</ng-template>
+        <div class="navside-message navside-message-isread">
+          <nz-list [nzDataSource]="isReadMessage" [nzBordered]="false" [nzSplit]="false" [nzFooter]="'共有 50 条消息.'"
+            [nzRenderItem]="isReadItem">
+            <ng-template #isReadItem let-item>
+              <nz-list-item>
+                <span class="ant-typography navside-information-icon"><i
+                    class="icon iconfont fc-header-icon fc-icon-xiaoxi"></i></span>
+                <div class="navside-item-content">
+                  <div class="navside-title"> {{ item.title }}</div>
+                  <div class="navside-time"> {{ item.time }}</div>
+                </div>
+              </nz-list-item>
+            </ng-template>
+          </nz-list>
+        </div>
       </nz-tab>
     </nz-tabset>
   </nz-drawer>
