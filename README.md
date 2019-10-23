@@ -31,7 +31,7 @@ English | [简体中文](https://github.com/luohong123/fc-angular/blob/master/RE
 
 # 一、简介
 
-## 项目介绍
+## 1、项目介绍
 
 - 基于 angularV8，ng.ant.design V8.0.1 开发的后台管理系统
 - 【在线预览】[https://fe-free.github.io/fc-angular/index.html](https://fe-free.github.io/fc-angular/index.html)
@@ -44,7 +44,7 @@ English | [简体中文](https://github.com/luohong123/fc-angular/blob/master/RE
 
 ![选项卡切换](./media/2.png)
 
-## 二、平台功能开发进度
+## 2、 平台功能开发进度
 
 - [x] 登录(用户名、密码、验证码)
 - [x] 首页
@@ -58,16 +58,16 @@ English | [简体中文](https://github.com/luohong123/fc-angular/blob/master/RE
 - [ ] 权限管理(admin拥有所有的菜单权限，也可以设置其他角色的权限)
 - [ ] 日志管理
 - [ ] 换肤(default)
-- [ ] UI 控件（Ant Design）
+- [x] UI 控件（Ant Design）
 - [x] 引入阿里图标库
-- [ ] 清除本地缓存
+- [x] 清除本地缓存
 - [x] spreadjs 报表可视化
 - [x] aot 打包
-- [ ]模版页面（列表、表单、详情、树列表）
+- [x]模版页面（列表、表单、详情、树列表）
 - [ ]threejs
 - [x]iframe
-- [ ]表格
-# 三、安装项目
+- [ ]表格 ag-grid
+# 二、安装项目
 
 - 在 `git` 、`node`、`npm`、`vscode`  配置好多前提下，克隆代码，命令如下：
 
@@ -77,31 +77,31 @@ npm install
 npm start
 ```
 
-- 在浏览器中输入  http://localhost:4200 ,项目启动成功。
+- 在浏览器中输入  http://localhost:4200 ,项目启动成功, 在`package.json` 中可修改端口号。
 
-# 四、开发代码
+# 三、开发代码
 
 <a name="98245d55"></a>
 
-## 1. 代码规范
+## 1、 代码规范
 
 - 请按照 angular 官网提出的 `风格指南`  开发代码
 
 【风格指南】[https://angular.cn/guide/styleguide#prevent-re-import-of-the-core-module](https://angular.cn/guide/styleguide#prevent-re-import-of-the-core-module)
 
-## 2. 前后端通信
+## 2、 前后端通信
 
 【 使用 httpclient】[https://angular.cn/guide/http](https://angular.cn/guide/http)
 
-# 五、aot 打包部署
+## 四、aot 打包部署
 
-- 通过    `ng build --aot`  命令生成 dist 文件，命令如下：
+通过    `ng build --aot`  命令生成 dist 文件，命令如下：
 
 ```bash
 ng build --aot
 ```
 
-## 六、代码目录结构
+## 五、代码目录结构
 
 ```markdown
 .
@@ -167,33 +167,22 @@ ng build --aot
 └── tslint 代码检查.READE.md # 介绍文档
 ```
 
-# 四、安装项目
 
-- 在 `git` 、`node`、`npm`、`vscode`  配置好多前提下，克隆代码，命令如下：
-
-```bash
-git clone https://github.com/luohong123/fc-angular.git
-npm install
-npm start
-```
-
-- 在浏览器中输入  http://localhost:4200 ,项目启动成功。
-
-# 五、规范
+# 六、规范
 
 <a name="98245d55"></a>
 
-## 1. 代码规范
+## 1、 代码规范
 
 - 请按照 angular 官网提出的 `风格指南`  开发代码
 
 【风格指南】[https://angular.cn/guide/styleguide#prevent-re-import-of-the-core-module](https://angular.cn/guide/styleguide#prevent-re-import-of-the-core-module)
 
-## 2. 前后端通信
+## 2、前后端通信
 
 【 使用 httpclient】[https://angular.cn/guide/http](https://angular.cn/guide/http)
 
-# 六、aot 打包部署
+# 七、aot 打包部署
 
 - 通过    `ng build --aot`  命令生成 dist 文件，命令如下：
 
@@ -201,36 +190,33 @@ npm start
 ng build --aot
 ```
 
-# 七、前端工程化
+# 八、前端工程化
 
 
 
-### tslint
+## 1、tslint
 
-### stylelint
+## 2、 stylelint
 
-### commitlint
+## 3、 commitlint
 
+## 4、 changelog
 
+- standard-version: 自动生成 CHANGELOG
 
-### changelog
+## 5. travis
 
-standard-version: 自动生成 CHANGELOG
+## 6. 使用 npm version 管理版本
 
-### travis
-### 参考文章
+- 官网：https://docs.npmjs.com/cli/version
+
+# 九、学习帮助
+
+- [【angular 官网】](https://angular.cn/docs)
+- [【typescript 官网】](http://www.typescriptlang.org/index.html)<br/>
+- [【ng.ant.design 官网】](https://ng.ant.design/docs/introduce/zh)
 - [【if 我是前端团队 Leader，怎么制定前端协作规范?】](https://juejin.im/post/5d3a7134f265da1b5d57f1ed#heading-18)
 - [【优雅的提交你的 Git Commit Message】](https://zhuanlan.zhihu.com/p/34223150)
-### 使用 npm version 管理版本
-
-官网：https://docs.npmjs.com/cli/version
-
-# 八、学习帮助
-
-【angular 官网】[https://angular.cn/docs](https://angular.cn/docs)<br/>
-【typescript 官网】[http://www.typescriptlang.org/index.html](http://www.typescriptlang.org/index.html)<br/>
-【ng.ant.design 官网】[https://ng.ant.design/docs/introduce/zh](https://ng.ant.design/docs/introduce/zh)
-
 # Contributors
 
 Thanks to everyone who contributed to the source code, comments, scripts, documentation, and test cases.
