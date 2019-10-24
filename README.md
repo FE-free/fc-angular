@@ -55,9 +55,9 @@ English | [简体中文](https://github.com/luohong123/fc-angular/blob/master/RE
 - [x] 清除本地缓存
 - [x] spreadjs 报表可视化
 - [x] aot 打包
-- [x]模版页面（列表、表单、详情、树列表）
-- [ ]threejs
-- [x]iframe
+- [x] 模版页面（列表、表单、详情、树列表）
+- [x] iframe
+- [ ] threejs
 # 二、安装项目
 
 - 在 `git` 、`node`、`npm`、`vscode`  配置好多前提下，克隆代码，命令如下：
