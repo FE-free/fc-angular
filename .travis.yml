@@ -22,7 +22,7 @@ before_install:
 
 install:
   - chmod +x -R scripts
-  - npm
+  - npm install -g npm@12
 
 cache:
   npm: true
