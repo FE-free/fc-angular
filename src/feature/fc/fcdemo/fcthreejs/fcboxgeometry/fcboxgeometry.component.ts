@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewChild, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as THREE from 'three';
+import '../enableThree';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import "three/examples/js/loaders/ColladaLoader";
 import { LogService } from 'src/fccore/service/log.service';
 @Component({
   selector: 'fc-boxgeometry',
@@ -33,6 +36,7 @@ export class FcboxgeometryComponent implements AfterViewInit {
   mesh;
   // 上次时间
   T0: any = new Date();
+  public controls: OrbitControls;;
   constructor(public router: Router, public activedRoute: ActivatedRoute,
     public renderer2: Renderer2) { }
   ngOnInit(): void {
@@ -88,6 +92,10 @@ export class FcboxgeometryComponent implements AfterViewInit {
     // this.renderer2.appendChild(this.renderer.domElement, this.boxGeometry.nativeElement); //body元素中插入canvas对象
     element.appendChild(this.renderer.domElement); //body元素中插入canvas对象
     this.render();
+    // 创建控件对象 相机对象 camera 作为参数, 控件可以监听鼠标的变化, 改变相机对象的属性
+    this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+    // 监听鼠标事件, 触发渲染函数, 更新 canvas 画布渲染效果
+    this.controls.addEventListener('change', this.render);
   }
   // 渲染函数
   render() {
