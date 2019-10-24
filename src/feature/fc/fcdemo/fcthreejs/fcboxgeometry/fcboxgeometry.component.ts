@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as THREE from 'three';
+import { LogService } from 'src/fccore/service/log.service';
 @Component({
   selector: 'fc-boxgeometry',
   templateUrl: './fcboxgeometry.component.html',
@@ -30,6 +31,8 @@ export class FcboxgeometryComponent implements AfterViewInit {
   camera;
   // 材质
   mesh;
+  // 上次时间
+  T0: any = new Date();
   constructor(public router: Router, public activedRoute: ActivatedRoute,
     public renderer2: Renderer2) { }
   ngOnInit(): void {
@@ -88,6 +91,10 @@ export class FcboxgeometryComponent implements AfterViewInit {
   }
   // 渲染函数
   render() {
+    let T1: any = new Date(); // 本次时间
+    let TDiff = T1 - this.T0; // 时间差
+    LogService.debug(TDiff, 'requestAnimationFrame两帧时间间隔');
+    this.T0 = T1; // 把本次时间赋值给上次的时间
     if (this.renderer) {
       this.renderer.render(this.scene, this.camera);//执行渲染操作
       this.mesh.rotateY(0.01);//每次绕y轴旋转0.01弧度
