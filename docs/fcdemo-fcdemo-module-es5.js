@@ -2345,6 +2345,10 @@ var Routers = [
     {
         path: '',
         loadChildren: './fctemplate/fctemplate.module#FctemplateModule'
+    },
+    {
+        path: '',
+        loadChildren: './fcthreejs/fcthreejs.module#FcthreejsModule'
     }
 ];
 

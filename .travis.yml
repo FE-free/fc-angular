@@ -20,7 +20,9 @@ before_install:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 
-
+install:
+  - npm install -g
+  
 cache:
   directories:
     - ./node_modules
