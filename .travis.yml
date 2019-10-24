@@ -22,10 +22,8 @@ before_install:
 
 install:
   - chmod +x -R scripts
-  - npm install -g npm@12
 
 cache:
-  npm: true
   directories:
     - ./node_modules
 
