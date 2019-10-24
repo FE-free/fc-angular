@@ -14,10 +14,6 @@ addons:
       - google-chrome-stable
       - google-chrome-beta
 
-
-git:
-  depth: 1
-
 before_install:
   - export NG_CLI_ANALYTICS=ci
   - export CHROME_BIN=chromium-browser
