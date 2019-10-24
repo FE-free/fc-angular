@@ -68,6 +68,37 @@ export const menus = {
           ]
         },
         {
+          ID: '3ae5c74930dab18e877efabee3af0004',
+          PID: 'FC',
+          MENUID: 'FCTHREEJS',
+          MENUNAME: 'threejs',
+          ENABLE: 'Y',
+          WXMENU: 'N',
+          MENUTYPE: 'MENU',
+          HASCHILD: 'Y',
+          MENUICON: 'fc-icon-threejs',
+          PARENT: 'FC',
+          SORT: 1150,
+          ROUTER: '/fcthreejs',
+          P_CHILDMENUS: [
+            {
+              ID: '63fbb2f0708f4fd68db04a92dd5df121',
+              PID: 'FC',
+              MENUID: 'FCBOXGEOMETRY',
+              MENUNAME: '立方体',
+              ENABLE: 'Y',
+              WXMENU: 'N',
+              MENUTYPE: 'APP',
+              APPID: 'FCBOXGEOMETRY',
+              HASCHILD: 'N',
+              PARENT: 'FC',
+              MENUICON: '',
+              SORT: 1152,
+              ROUTER: '/fcboxgeometry',
+            },
+          ]
+        },
+        {
           ID: '63fbb2f0708f4fd68db04a92dd5df121',
           PID: 'FC',
           MENUID: 'FCSPREAD',

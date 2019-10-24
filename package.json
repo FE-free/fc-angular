@@ -10,7 +10,7 @@
     "e2e": "ng e2e",
     "aot": "ng build --outputPath=docs --aot",
     "release": "standard-version",
-    "karma": "ng test"
+    "test-coverage": "ng test --code-coverage --watch=false"
   },
   "husky": {
     "hooks": {

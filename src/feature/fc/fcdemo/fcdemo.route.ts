@@ -43,5 +43,9 @@ export const Routers: Routes = [
   {
     path: '',
     loadChildren: './fctemplate/fctemplate.module#FctemplateModule'
+  },
+  {
+    path: '',
+    loadChildren: './fcthreejs/fcthreejs.module#FcthreejsModule'
   }
 ];
