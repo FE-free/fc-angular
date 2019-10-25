@@ -7,31 +7,27 @@
  * @LastEditTime: 2019-10-14 14:15:53
  */
 import { Routes } from '@angular/router';
-import { SyslogComponent } from './components/syslog/syslog.component';
-import { SysmenuComponent } from './components/sysmenu/sysmenu.component';
-import { SysmessagedetailComponent } from './components/sysmessage/sysmessagedetail.component';
-import { SysroleComponent } from './components/sysrole/sysrole.component';
-import { SysuserComponent } from './components/sysuser/sysuser.component';
+import { HomeComponent } from './components/home/home.component';
 
 export const Routers: Routes = [
   {
-    path: 'sysmessageDetail', // 消息详情
-    component: SysmessagedetailComponent
+    path: '', // 消息详情
+    loadChildren: () => import('./components/sysmessage/sysmessage.module').then(res => res.SysmessageModule)
   },
   {
     path: 'sysuserList', // 用户管理
-    component: SysuserComponent
+    loadChildren: () => import('./components/sysuser/sysuser.module').then(res => res.SysuserModule)
   },
   {
     path: 'sysmenuList', // 菜单管理
-    component: SysmenuComponent
+    loadChildren: () => import('./components/sysmenu/sysmenu.module').then(res => res.SysmenuModule)
   },
   {
     path: 'sysroleList', // 权限管理
-    component: SysroleComponent
+    loadChildren: () => import('./components/sysrole/sysrole.module').then(res => res.SysroleModule)
   },
   {
     path: 'syslogList', // 日志管理
-    component: SyslogComponent
+    loadChildren: () => import('./components/syslog/syslog.module').then(res => res.SyslogModule)
   }
 ]

@@ -8,14 +8,19 @@
  */
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { Routers } from './fcdemo.route';
+import { FccomponentModule } from 'src/fccomponents/fccomponent.module';
+import { SharedModule } from 'src/shared';
+import { Routers } from './fctable.route';
+import { FctableComponent } from './fctable.component';
 @NgModule({
   imports: [
+    SharedModule,
     RouterModule.forChild(Routers),
+    FccomponentModule
   ],
   declarations: [
-
+    FctableComponent
   ],
   providers: []
 })
-export class FcdemoModule { }
+export class FctableModule { }

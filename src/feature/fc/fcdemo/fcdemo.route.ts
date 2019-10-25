@@ -17,35 +17,35 @@ import { FctableComponent } from './fctable/fctable.component';
 
 export const Routers: Routes = [
   {
-    path: '',
+    path: '', // AntDesign
+    loadChildren: () => import('./fcantd/fcantd.module').then(res => res.FcantdModule)
+  },
+  {
+    path: '', // 图表
+    loadChildren: () => import('./fcchart/fcchart.module').then(res => res.FcchartModule)
+  },
+  {
+    path: '', // 图标
+    loadChildren: () => import('./fcicon/fcicon.module').then(res => res.FciconModule)
+  },
+  {
+    path: '', // iframe
+    loadChildren: () => import('./fciframe/fciframe.module').then(res => res.FciframeModule)
+  },
+  {
+    path: '', // spread报表
+    loadChildren: () => import('./fcspread/fcspread.module').then(res => res.FcspreadModule)
+  },
+  {
+    path: '', // 表格
+    loadChildren: () => import('./fctable/fctable.module').then(res => res.FctableModule)
+  },
+  {
+    path: '', // 模版页面
     loadChildren: () => import('./fctemplate/fctemplate.module').then(res => res.FctemplateModule)
   },
   {
-    path: '',
+    path: '', // threejs
     loadChildren: () => import('./fcthreejs/fcthreejs.module').then(res => res.FcthreejsModule)
-  },
-  {
-    path: 'fctable', // 表格
-    component: FctableComponent
-  },
-  {
-    path: 'fciframe', // iframe
-    component: FciframeComponent
-  },
-  {
-    path: 'fcg2', // 图表
-    component: Fcg2Component
-  },
-  {
-    path: 'fcantd', // AntDesign
-    component: FcantdComponent
-  },
-  {
-    path: 'fcicon', // 
-    component: FciconComponent
-  },
-  {
-    path: 'fcspread', // 
-    component: FcspreadComponent
-  },
+  }
 ];
