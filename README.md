@@ -174,17 +174,12 @@ ng build --aot
 【 使用 httpclient】[https://angular.cn/guide/http](https://angular.cn/guide/http)
 
 # 七、aot 打包部署
-
-- 通过    `ng build --aot`  命令生成 dist 文件，命令如下：
-
+- 通过    `ng build --aot`  命令生成 `docs` 文件，命令如下：
 ```bash
-ng build --aot
+npm run aot
 ```
 
 # 八、前端工程化
-
-
-
 ## 1、tslint
 
 ## 2、 stylelint
@@ -211,7 +206,13 @@ ng build --aot
 # 十、常见问题
 1、 如何修改组件内部样式？
 > 注意 由于Angular的样式隔离，修改ant.design 组件内的样式 需要用::ng-deep来覆盖NgZorro的样式
-# Contributors
+2. 打包如何优化？
+开启 `aot` 打包，输入以下命令
+```bash
+npm run aot
+```
+`aot` 打包时，优化编译时对ts语法检查非常严谨，如果有错误就一个一个的去改，直到错误修改完成，`aot`打包才能通过
 
+# Contributors
 Thanks to everyone who contributed to the source code, comments, scripts, documentation, and test cases.
 <a href="https://github.com/FE-free/fc-angular/graphs/contributors"><img src="https://opencollective.com/FE-free/fc-angular/contributors.svg?width=890" /></a>
