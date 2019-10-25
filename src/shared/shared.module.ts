@@ -16,7 +16,6 @@ import * as MOCKDATA from '../../_mock';
 // 只对开发环境有效
 import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
-const MOCK_MODULES = !environment.production ? [{ data: MOCKDATA }] : [];
 @NgModule({
     imports: [
         CommonModule,

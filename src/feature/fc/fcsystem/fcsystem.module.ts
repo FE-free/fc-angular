@@ -17,14 +17,12 @@ import { SysmessagedetailComponent } from './components/sysmessage/sysmessagedet
 import { SysroleComponent } from './components/sysrole/sysrole.component';
 import { SysuserComponent } from './components/sysuser/sysuser.component';
 import { Routers } from './fcsystem.route';
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     SharedModule,
     RouterModule.forChild(Routers),
-    FccomponentModule,
-    HttpClientModule
+    FccomponentModule
   ],
   declarations: [
     SysmessagedetailComponent, // 消息详情

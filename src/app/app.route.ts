@@ -8,7 +8,6 @@
  */
 import { Routes } from '@angular/router';
 import { UserService } from 'src/fccore/service/user.service';
-import { BuildingComponent } from './components/building/building.component';
 import { ErrorComponent } from './components/error/error.component';
 import { ForgotComponent } from './components/forgot/forgot.component';
 import { LayoutComponent } from './components/layout/layout.component';
@@ -29,9 +28,10 @@ export const AppRoutes: Routes = [
       },
       {
         path: 'fc', // 项目的业务模块
-        loadChildren: '../feature/fc/fc.module#FcModule'
+        loadChildren: () => import('../feature/fc/fc.module').then(res => res.FcModule)
       }
     ]
+
   },
   {
     path: SignIn, // 登录

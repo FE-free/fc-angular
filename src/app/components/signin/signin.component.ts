@@ -6,11 +6,11 @@
  * @Date: 2019-04-16 15:57:43
  * @LastEditTime: 2019-10-11 15:28:50
  */
-import { Component, OnInit, ViewChild, ViewContainerRef, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.dev';
-import { CacheService } from 'src/fccore/service/cache.service';
 import { Fcverifycode } from 'src/fccomponents/fcverifycode/fcverifycode.component';
+import { CacheService } from 'src/fccore/service/cache.service';
 const PROJECT_NAME = environment.projectName;
 
 @Component({

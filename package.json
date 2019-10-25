@@ -7,7 +7,7 @@
     "build": "ng build --outputPath=docs",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "aot": "ng build --outputPath=docs --prod --aot",
+    "aot": "ng build --outputPath=docs --prod --aot --buildOptimizer=true --extractCss=true --progress=true",
     "release": "standard-version",
     "test-coverage": "ng test --code-coverage --watch=false"
   },

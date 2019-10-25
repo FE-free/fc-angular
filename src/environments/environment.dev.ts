@@ -13,7 +13,6 @@
 // 开发环境
 export const environment = {
   production: false,
-  node_env: 'mock',
   pid: "FC",
   projectName: "fc-angular",
   systemurl: "/server/",

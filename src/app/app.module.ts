@@ -14,9 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
-
 import { NgZorroAntdModule } from 'ng-zorro-antd';
-
+import { FccomponentModule } from 'src/fccomponents';
 import { FccoreModule } from 'src/fccore/fccore.module';
 import { UserService } from 'src/fccore/service/user.service';
 import { AppComponent } from './app.component';
@@ -31,7 +30,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { LayoutService } from './service/layout.service';
 import { FcRouteReuseStrategy } from './service/routereusestrategy.service';
 import { ShareService } from './share.service';
-import { FccomponentModule } from 'src/fccomponents';
+
+
 
 registerLocaleData(zh)
 

@@ -17,6 +17,14 @@ import { FctableComponent } from './fctable/fctable.component';
 
 export const Routers: Routes = [
   {
+    path: '',
+    loadChildren: () => import('./fctemplate/fctemplate.module').then(res => res.FctemplateModule)
+  },
+  {
+    path: '',
+    loadChildren: () => import('./fcthreejs/fcthreejs.module').then(res => res.FcthreejsModule)
+  },
+  {
     path: 'fctable', // 表格
     component: FctableComponent
   },
@@ -40,12 +48,4 @@ export const Routers: Routes = [
     path: 'fcspread', // 
     component: FcspreadComponent
   },
-  {
-    path: '',
-    loadChildren: './fctemplate/fctemplate.module#FctemplateModule'
-  },
-  {
-    path: '',
-    loadChildren: './fcthreejs/fcthreejs.module#FcthreejsModule'
-  }
 ];

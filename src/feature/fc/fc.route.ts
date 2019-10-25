@@ -6,9 +6,9 @@
  * @Date: 2019-04-12 16:39:30
  * @LastEditTime: 2019-04-19 17:19:58
  */
-import { Routes } from '@angular/router'
-import { HomeComponent } from './fcsystem/components/home/home.component';
+import { Routes } from '@angular/router';
 import { BuildingComponent } from 'src/app/components/building/building.component';
+import { HomeComponent } from './fcsystem/components/home/home.component';
 export const Routers: Routes = [
   {
     path: '',
@@ -25,10 +25,10 @@ export const Routers: Routes = [
   },
   {
     path: '', // demo组件
-    loadChildren: './fcdemo/fcdemo.module#FcdemoModule'
+    loadChildren: () => import('./fcdemo/fcdemo.module').then(res => res.FcdemoModule)
   },
   {
     path: '', // system
-    loadChildren: './fcsystem/fcsystem.module#FcsystemModule'
+    loadChildren: () => import('./fcsystem/fcsystem.module').then(res => res.FcsystemModule)
   }
 ]
