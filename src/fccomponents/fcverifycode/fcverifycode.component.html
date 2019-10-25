@@ -8,7 +8,8 @@
  -->
 <div class="fc-verifycode">
   <input id="codeValid" name="codeValid" maxlength="4" class="form-control" required #codeValid="ngModel" type="text"
-    nz-input [(ngModel)]="fcCode" [(fcVerifyCodeName)]="validVerifyCode" placeholder="请输入验证码" />
+    nz-input [(ngModel)]="fcCode" (ngModelChange)="changeValue($event)" [(fcVerifyCodeName)]="validVerifyCode"
+    placeholder="请输入验证码" />
   <canvas id="verifyCode" #verifyCode width="100" height="28" (click)="draw([]);"></canvas>
   <div class="fc-form-error" *ngIf="codeValid.invalid && (codeValid.dirty || codeValid.touched)">
     <div>

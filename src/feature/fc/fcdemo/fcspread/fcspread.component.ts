@@ -6,9 +6,8 @@
  * @Date: 2019-04-12 16:39:30
  * @LastEditTime: 2019-10-16 10:43:11
  */
-import { Component } from '@angular/core'
-import { ActivatedRoute, Router } from '@angular/router'
-import { environment } from 'src/environments/environment.dev';
+import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'fcspread',

@@ -9,11 +9,11 @@
 import { Routes } from '@angular/router';
 import { UserService } from 'src/fccore/service/user.service';
 import { ErrorComponent } from './components/error/error.component';
-import { ForgotComponent } from './components/forgot/forgot.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { LockscreenComponent } from './components/lockscreen/lockscreen.component';
-import { SigninComponent } from './components/signin/signin.component';
-import { SignupComponent } from './components/signup/signup.component';
+import { SyssigninComponent } from 'src/feature/fc/fcsystem/components/syspassword/syssignin/syssignin.component';
+import { SysforgotComponent } from 'src/feature/fc/fcsystem/components/syspassword/sysforgot/sysforgot.component';
+import { SyssignupComponent } from 'src/feature/fc/fcsystem/components/syspassword/syssignup/syssignup.component';
 
 const SignIn: string = 'signin';
 export const AppRoutes: Routes = [
@@ -35,11 +35,11 @@ export const AppRoutes: Routes = [
   },
   {
     path: SignIn, // 登录
-    component: SigninComponent
+    component: SyssigninComponent
   },
   {
     path: 'forgot', // 忘记密码
-    component: ForgotComponent
+    component: SysforgotComponent
   },
   {
     path: 'lockscreen', // 锁屏
@@ -47,6 +47,6 @@ export const AppRoutes: Routes = [
   },
   {
     path: 'signup', // 注册
-    component: SignupComponent
+    component: SyssignupComponent
   }
 ]

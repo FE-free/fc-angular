@@ -49,10 +49,9 @@ export class Fcverifycode implements OnInit {
     @Input()
     fcCode: Array<number>;
     // 验证码
-    validVerifyCode: Array<string>;
+    validVerifyCode: string;
     // 显示错误
-    @Input()
-    fcShowError: string = 'Y';
+    public fcShowError: string = 'Y';
     Constructor() {
 
     }
@@ -111,6 +110,7 @@ export class Fcverifycode implements OnInit {
             context.lineTo(x + 1, y + 1);
             context.stroke();
         }
+
         this.validVerifyCode = show_num.join('');
     }
 
@@ -120,5 +120,13 @@ export class Fcverifycode implements OnInit {
         let g = Math.floor(Math.random() * 256);
         let b = Math.floor(Math.random() * 256);
         return "rgb(" + r + "," + g + "," + b + ")";
+    }
+    /**
+     * 监测输入值是否正确
+     */
+    changeValue(event) {
+        if (event.toLowerCase() === this.validVerifyCode.toLowerCase()) {
+            this.fcShowError = 'N';
+        }
     }
 }

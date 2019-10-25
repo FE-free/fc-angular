@@ -9,10 +9,9 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { NzMessageService } from 'ng-zorro-antd';
-import { menus } from '_mock/_menus';
-import { ShareService } from '../share.service';
 import { environment } from 'src/environments/environment.dev';
 import { LogService } from 'src/fccore/service/log.service';
+import { menus } from '_mock/_menus';
 @Injectable({
   providedIn: 'root'
 })
@@ -20,9 +19,7 @@ export class LayoutService {
   // 项目名称
   pid = environment.pid.toLocaleLowerCase()
   constructor(
-    private Router: Router,
-    private messageService: NzMessageService,
-    private shareService: ShareService
+    private messageService: NzMessageService
   ) {
   }
   /**
@@ -43,7 +40,7 @@ export class LayoutService {
     }
     if (menu.MENUTYPE === 'APP') {
       // 开启加载条
-      let loadId = this.messageService.loading('loading...').messageId;
+      // let loadId = this.messageService.loading('loading...').messageId;
       let params = {
         queryParams: {
           refresh: refresh,
@@ -66,9 +63,11 @@ export class LayoutService {
         })
         .catch(error => {
           console.log(error)
-          this.messageService.remove(loadId);
+          // this.messageService.remove(loadId);
           router.navigate(['/error'])
         })
+    } else if (menu.MENUTYPE === 'OUTURL') {
+      window.open(menu.ROUTER, '_blank')
     } else if (menu.MENUTYPE === 'INURL') {
       router
         .navigate(['/' + this.pid + '/' + menu.ROUTER], {
