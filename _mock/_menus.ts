@@ -10,7 +10,7 @@ import * as Mock from 'mockjs';
 export const menus = {
   P_MENUS: [
     {
-      ID: '3ae5c74930da4b1e877efabee3af0005',
+      ID: '10',
       PID: 'FC',
       MENUID: 'FC',
       MENUNAME: '快速开发平台',
@@ -23,7 +23,7 @@ export const menus = {
       ROUTER: '/fc',
       P_CHILDMENUS: [
         {
-          ID: '3ae5c74930dab18e877efabee3af0004',
+          ID: '100',
           PID: 'FC',
           MENUID: 'FCANTDESIGN',
           MENUNAME: 'Ant Design',
@@ -37,7 +37,7 @@ export const menus = {
           ROUTER: '/fcantd'
         },
         {
-          ID: '3ae5c74930dab18e877efabee3af0004',
+          ID: '200',
           PID: 'FC',
           MENUID: 'FCCHART',
           MENUNAME: '图表',
@@ -51,7 +51,7 @@ export const menus = {
           ROUTER: '/fcchart',
           P_CHILDMENUS: [
             {
-              ID: '63fbb2f0708f4fd68db04a92dd5df121',
+              ID: '210',
               PID: 'FC',
               MENUID: 'FCG2',
               MENUNAME: 'g2',
@@ -68,7 +68,7 @@ export const menus = {
           ]
         },
         {
-          ID: '3ae5c74930dab18e877efabee3af0004',
+          ID: '300',
           PID: 'FC',
           MENUID: 'FCTHREEJS',
           MENUNAME: 'threejs',
@@ -82,7 +82,7 @@ export const menus = {
           ROUTER: '/fcthreejs',
           P_CHILDMENUS: [
             {
-              ID: '63fbb2f0708f4fd68db04a92dd5df121',
+              ID: '310',
               PID: 'FC',
               MENUID: 'FCBOXGEOMETRY',
               MENUNAME: '立方体',
@@ -99,7 +99,7 @@ export const menus = {
           ]
         },
         {
-          ID: '63fbb2f0708f4fd68db04a92dd5df121',
+          ID: '400',
           PID: 'FC',
           MENUID: 'FCSPREAD',
           MENUNAME: 'spread报表',
@@ -114,7 +114,7 @@ export const menus = {
           ROUTER: '/fcspread'
         },
         {
-          ID: '63fbb2f0708f4fd68db04a92dd5df121',
+          ID: '500',
           PID: 'FC',
           MENUID: 'FCICON',
           MENUNAME: 'icon',
@@ -129,7 +129,7 @@ export const menus = {
           ROUTER: '/fcicon'
         },
         {
-          ID: '63fbb2f0708f4fd68db04a92dd5df121',
+          ID: '600',
           PID: 'FC',
           MENUID: 'FCIFRAME',
           MENUNAME: 'iframe',
@@ -144,7 +144,7 @@ export const menus = {
           ROUTER: '/fciframe'
         },
         {
-          ID: '63fbb2f0708f4fd68db04a92dd5df121',
+          ID: '700',
           PID: 'FC',
           MENUID: 'FCOUTURL',
           MENUNAME: '外链',
@@ -174,7 +174,7 @@ export const menus = {
         //   ROUTER: '/building'
         // },
         {
-          ID: '3ae5c74930dab18e877efabee3af0004',
+          ID: '800',
           PID: 'FC',
           MENUID: 'SYSTEM',
           MENUNAME: '模版页面',
@@ -188,7 +188,7 @@ export const menus = {
           ROUTER: '/fctemplate',
           P_CHILDMENUS: [
             {
-              ID: '63fbb2f0708f4fd68db04a92dd5df121',
+              ID: '810',
               PID: 'FC',
               MENUID: 'SYSTEMBASIC',
               MENUNAME: '列表',
@@ -203,7 +203,7 @@ export const menus = {
               ROUTER: '/fctemplatelist',
             },
             {
-              ID: '63fbb2f0708f4fd68db04a92dd5df121',
+              ID: '820',
               PID: 'FC',
               MENUID: 'SYSTEMBASIC',
               MENUNAME: '表单',
@@ -217,7 +217,7 @@ export const menus = {
               SORT: 1152,
               ROUTER: '/fctemplateform',
             }, {
-              ID: '63fbb2f0708f4fd68db04a92dd5df121',
+              ID: '830',
               PID: 'FC',
               MENUID: 'SYSTEMBASIC',
               MENUNAME: '详情',
@@ -231,7 +231,7 @@ export const menus = {
               SORT: 1152,
               ROUTER: '/fctemplatedetail',
             }, {
-              ID: '63fbb2f0708f4fd68db04a92dd5df121',
+              ID: '840',
               PID: 'FC',
               MENUID: 'SYSTEMBASIC',
               MENUNAME: '树列表',
@@ -247,7 +247,7 @@ export const menus = {
             }]
         },
         // {
-        //   ID: '3ae5c74930dab18e877efabee3af0004',
+        //   ID: '900',
         //   PID: 'FC',
         //   MENUID: 'SYSTEM',
         //   MENUNAME: '系统管理',
@@ -261,7 +261,7 @@ export const menus = {
         //   ROUTER: '/system',
         //   P_CHILDMENUS: [
         //     {
-        //       ID: '63fbb2f0708f4fd68db04a92dd5df121',
+        //       ID: '910',
         //       PID: 'FC',
         //       MENUID: 'SYSTEMBASIC',
         //       MENUNAME: '基础设置',
@@ -276,7 +276,7 @@ export const menus = {
         //       ROUTER: '/sysbasic',
         //       P_CHILDMENUS: [
         //         {
-        //           ID: '63fbb2f0708f4fd68db04a92dd5df121',
+        //           ID: '911',
         //           PID: 'FC',
         //           MENUID: 'SYSROLE',
         //           MENUNAME: '权限管理',
@@ -291,7 +291,7 @@ export const menus = {
         //           ROUTER: '/sysroleList'
         //         },
         //         {
-        //           ID: '63fbb2f0708f4fd68db04a92dd5df121',
+        //           ID: '912',
         //           PID: 'FC',
         //           MENUID: 'SYSMENU',
         //           MENUNAME: '用户管理',
@@ -306,7 +306,7 @@ export const menus = {
         //           ROUTER: '/sysuserList'
         //         },
         //         {
-        //           ID: '63fbb2f0708f4fd68db04a92dd5df121',
+        //           ID: '913',
         //           PID: 'FC',
         //           MENUID: 'SYSMENU',
         //           MENUNAME: '菜单管理',
@@ -320,7 +320,7 @@ export const menus = {
         //           ROUTER: '/sysmenuList'
         //         },
         //         {
-        //           ID: '63fbb2f0708f4fd68db04a92dd5df121',
+        //           ID: '914',
         //           PID: 'FC',
         //           MENUID: 'SYSLOG',
         //           MENUNAME: '日志管理',

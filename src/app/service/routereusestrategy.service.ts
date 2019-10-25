@@ -31,7 +31,7 @@ export class FcRouteReuseStrategy implements RouteReuseStrategy {
       return false // 不允许路由复用
     }
     if (!route.routeConfig || route.routeConfig.loadChildren) {
-      return false;
+      return false;  // 不允许路由复用
     }
     return true
   }
@@ -84,10 +84,21 @@ export class FcRouteReuseStrategy implements RouteReuseStrategy {
    * @return:
    */
   public shouldReuseRoute(future: ActivatedRouteSnapshot, curr: ActivatedRouteSnapshot): boolean {
-    return (
-      // 同一路由时复用路由
-      future.routeConfig === curr.routeConfig && JSON.stringify(future.params) === JSON.stringify(curr.params)
-    )
+    // console.log(future.routeConfig === curr.routeConfig && JSON.stringify(future.params) === JSON.stringify(curr.params), '判断是否是同一个路由')
+    // return (
+    //   // 同一路由时复用路由
+    //   future.routeConfig === curr.routeConfig && JSON.stringify(future.params) === JSON.stringify(curr.params)
+    // )
+    let ret = future.routeConfig === curr.routeConfig;
+    if (!ret) return false;
+
+    const path = ((future.routeConfig && future.routeConfig.path) || '') as string;
+    if (path.length > 0 && ~path.indexOf(':')) {
+      const futureUrl = this.getRouteUrl(future);
+      const currUrl = this.getRouteUrl(curr);
+      ret = futureUrl === currUrl;
+    }
+    return ret;
   }
   /**
    * @description:获取路由路径
@@ -95,7 +106,6 @@ export class FcRouteReuseStrategy implements RouteReuseStrategy {
    * @return:
    */
   private getRouteUrl(route: ActivatedRouteSnapshot) {
-    // let path = environment.pid + '_' + route['routeConfig'].path
     let path = route['_routerState'].url.replace(/\//g, '_')
     return path
   }
