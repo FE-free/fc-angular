@@ -36,7 +36,8 @@
               "src/styles.less"
             ],
             "scripts": [
-              "./node_modules/@antv/data-set/dist/data-set.min.js"
+              "./node_modules/@antv/data-set/dist/data-set.min.js",
+              "src/assets/plugin/lodop/LodopFuncs.js"
             ]
           },
           "configurations": {

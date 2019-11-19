@@ -142,6 +142,20 @@ export const menus = {
           PARENT: 'SYSTEM',
           SORT: 1152,
           ROUTER: '/fciframe'
+        },{
+          ID: '1600',
+          PID: 'FC',
+          MENUID: 'FCPRINT',
+          MENUNAME: 'print',
+          ENABLE: 'Y',
+          WXMENU: 'N',
+          MENUTYPE: 'APP',
+          APPID: 'SYSMENU',
+          HASCHILD: 'N',
+          MENUICON: 'fc-icon-print',
+          PARENT: 'SYSTEM',
+          SORT: 1152,
+          ROUTER: '/fcprint'
         },
         {
           ID: '700',

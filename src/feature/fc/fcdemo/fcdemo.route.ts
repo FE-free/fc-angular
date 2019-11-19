@@ -7,13 +7,6 @@
  * @LastEditTime: 2019-10-16 15:58:10
  */
 import { Routes } from '@angular/router';
-import { FcantdComponent } from './fcantd/fcantd.component';
-import { Fcg2Component } from './fcchart/fcg2/fcg2.component';
-import { FciconComponent } from './fcicon/fcicon.component';
-import { FciframeComponent } from './fciframe/fciframe.component';
-import { FcspreadComponent } from './fcspread/fcspread.component';
-import { FctableComponent } from './fctable/fctable.component';
-
 
 export const Routers: Routes = [
   {
@@ -47,5 +40,8 @@ export const Routers: Routes = [
   {
     path: '', // threejs
     loadChildren: () => import('./fcthreejs/fcthreejs.module').then(res => res.FcthreejsModule)
+  }, {
+    path: '', // 打印
+    loadChildren: () => import('./fcprint/fcprint.module').then(res => res.FcprintModule)
   }
 ];

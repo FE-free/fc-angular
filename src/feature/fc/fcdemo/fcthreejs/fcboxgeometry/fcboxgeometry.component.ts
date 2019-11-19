@@ -1,30 +1,38 @@
-import { Component, OnInit, ViewChild, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  ElementRef,
+  Renderer2,
+  AfterViewInit,
+  OnDestroy
+} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as THREE from 'three';
 import '../enableThree';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import "three/examples/js/loaders/ColladaLoader";
+import 'three/examples/js/loaders/ColladaLoader';
 import { LogService } from 'src/fccore/service/log.service';
+
 @Component({
   selector: 'fc-boxgeometry',
   templateUrl: './fcboxgeometry.component.html',
   styles: [
     `
-     .fc-boxgeometry {
-       width: 100%;
-       height: 100%;
-       padding: 20px;
-       overflow: auto;
-     }
-     .fc-boxgeometry #box {
-       width: 500px;
-       height: 500px;
-     }
+      .fc-boxgeometry {
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        overflow: auto;
+      }
+      .fc-boxgeometry #box {
+        width: 500px;
+        height: 500px;
+      }
     `
   ]
 })
-export class FcboxgeometryComponent implements AfterViewInit {
-
+export class FcboxgeometryComponent implements AfterViewInit, OnDestroy {
   @ViewChild('boxGeometry', { static: true }) boxGeometry: ElementRef; // 对视图中某个原生元素的包装器
   // 场景
   scene;
@@ -36,13 +44,22 @@ export class FcboxgeometryComponent implements AfterViewInit {
   mesh;
   // 上次时间
   T0: any = new Date();
-  public controls: OrbitControls;;
-  constructor(public router: Router, public activedRoute: ActivatedRoute,
-    public renderer2: Renderer2) { }
-  ngOnInit(): void {
-  }
+  public controls: OrbitControls;
+  // 渲染对象id
+  renderId;
+  constructor(
+    public router: Router,
+    public activedRoute: ActivatedRoute,
+    public renderer2: Renderer2
+  ) {}
+  ngOnInit(): void {}
   ngAfterViewInit(): void {
     this.createBoxGeometry();
+  }
+  ngOnDestroy(): void {
+    if (this.renderId) {
+      cancelAnimationFrame(this.renderId);
+    }
   }
   /**
    * 创建一个立方体
@@ -87,7 +104,7 @@ export class FcboxgeometryComponent implements AfterViewInit {
      * 创建渲染器对象
      */
     this.renderer = new THREE.WebGLRenderer();
-    this.renderer.setSize(width, height);//设置渲染区域尺寸
+    this.renderer.setSize(width, height); //设置渲染区域尺寸
     this.renderer.setClearColor(0xb9d3ff, 1); //设置背景颜色
     // this.renderer2.appendChild(this.renderer.domElement, this.boxGeometry.nativeElement); //body元素中插入canvas对象
     element.appendChild(this.renderer.domElement); //body元素中插入canvas对象
@@ -104,9 +121,9 @@ export class FcboxgeometryComponent implements AfterViewInit {
     LogService.debug(TDiff, 'requestAnimationFrame两帧时间间隔');
     this.T0 = T1; // 把本次时间赋值给上次的时间
     if (this.renderer) {
-      this.renderer.render(this.scene, this.camera);//执行渲染操作
-      this.mesh.rotateY(0.01);//每次绕y轴旋转0.01弧度
-      requestAnimationFrame(() => this.render());
+      this.renderer.render(this.scene, this.camera); //执行渲染操作
+      this.mesh.rotateY(0.01); //每次绕y轴旋转0.01弧度
+      this.renderId = requestAnimationFrame(() => this.render());
       //请求再次执行渲染函数render，渲染下一帧
     }
   }

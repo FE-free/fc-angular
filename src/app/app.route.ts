@@ -15,7 +15,7 @@ import { SyssigninComponent } from 'src/feature/fc/fcsystem/components/syspasswo
 import { SysforgotComponent } from 'src/feature/fc/fcsystem/components/syspassword/sysforgot/sysforgot.component';
 import { SyssignupComponent } from 'src/feature/fc/fcsystem/components/syspassword/syssignup/syssignup.component';
 
-const SignIn: string = 'signin';
+const SignIn = 'signin';
 export const AppRoutes: Routes = [
   {
     path: '',
