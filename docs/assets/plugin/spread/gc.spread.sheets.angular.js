@@ -1,6 +1,8 @@
+import * as tslib_1 from "tslib";
 import * as GC from '@grapecity/spread-sheets';
-import { OnChanges, SimpleChanges, AfterViewInit, QueryList, OnDestroy, EventEmitter, ElementRef } from '@angular/core';
-export class ColumnComponent {
+import { Component, Input, OnChanges, SimpleChanges, AfterViewInit, QueryList, ContentChildren, OnDestroy, Output, EventEmitter, ElementRef, Inject, NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+let ColumnComponent = class ColumnComponent {
     constructor() {
         this.changes = {};
     }
@@ -61,8 +63,57 @@ export class ColumnComponent {
         }
         this.onColumnChanged();
     }
-}
-export class WorksheetComponent {
+};
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Number)
+], ColumnComponent.prototype, "width", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", String)
+], ColumnComponent.prototype, "dataField", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", String)
+], ColumnComponent.prototype, "headerText", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Boolean)
+], ColumnComponent.prototype, "visible", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Boolean)
+], ColumnComponent.prototype, "resizable", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Boolean)
+], ColumnComponent.prototype, "autoFit", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", GC.Spread.Sheets.Style)
+], ColumnComponent.prototype, "style", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", GC.Spread.Sheets.CellTypes.Base)
+], ColumnComponent.prototype, "cellType", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", GC.Spread.Sheets.Style)
+], ColumnComponent.prototype, "headerStyle", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Object)
+], ColumnComponent.prototype, "formatter", void 0);
+ColumnComponent = tslib_1.__decorate([
+    Component({
+        selector: 'gc-column',
+        template: `
+        <ng-content></ng-content>
+    `
+    })
+], ColumnComponent);
+export { ColumnComponent };
+let WorksheetComponent = class WorksheetComponent {
     constructor() {
         this.sheet = new GC.Spread.Sheets.Worksheet("");
     }
@@ -182,8 +233,146 @@ export class WorksheetComponent {
             }
         }
     }
-}
-export class SpreadSheetsComponent {
+};
+tslib_1.__decorate([
+    ContentChildren(ColumnComponent),
+    tslib_1.__metadata("design:type", QueryList)
+], WorksheetComponent.prototype, "columns", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Number)
+], WorksheetComponent.prototype, "rowCount", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Number)
+], WorksheetComponent.prototype, "colCount", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Object)
+], WorksheetComponent.prototype, "dataSource", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", String)
+], WorksheetComponent.prototype, "name", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Number)
+], WorksheetComponent.prototype, "frozenColumnCount", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Number)
+], WorksheetComponent.prototype, "frozenRowCount", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Number)
+], WorksheetComponent.prototype, "frozenTrailingRowCount", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Number)
+], WorksheetComponent.prototype, "frozenTrailingColumnCount", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Boolean)
+], WorksheetComponent.prototype, "allowCellOverflow", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", String)
+], WorksheetComponent.prototype, "frozenlineColor", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", String)
+], WorksheetComponent.prototype, "sheetTabColor", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Number)
+], WorksheetComponent.prototype, "selectionPolicy", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Number)
+], WorksheetComponent.prototype, "selectionUnit", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Number)
+], WorksheetComponent.prototype, "zoom", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", String)
+], WorksheetComponent.prototype, "currentTheme", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Number)
+], WorksheetComponent.prototype, "clipBoardOptions", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Boolean)
+], WorksheetComponent.prototype, "rowHeaderVisible", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Boolean)
+], WorksheetComponent.prototype, "colHeaderVisible", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Number)
+], WorksheetComponent.prototype, "rowHeaderAutoText", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Number)
+], WorksheetComponent.prototype, "colHeaderAutoText", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Number)
+], WorksheetComponent.prototype, "rowHeaderAutoTextIndex", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Number)
+], WorksheetComponent.prototype, "colHeaderAutoTextIndex", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Boolean)
+], WorksheetComponent.prototype, "isProtected", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Boolean)
+], WorksheetComponent.prototype, "showRowOutline", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Boolean)
+], WorksheetComponent.prototype, "showColumnOutline", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", String)
+], WorksheetComponent.prototype, "selectionBackColor", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", String)
+], WorksheetComponent.prototype, "selectionBorderColor", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", GC.Spread.Sheets.Style)
+], WorksheetComponent.prototype, "defaultStyle", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Array)
+], WorksheetComponent.prototype, "rowOutlineInfo", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Array)
+], WorksheetComponent.prototype, "columnOutlineInfo", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Boolean)
+], WorksheetComponent.prototype, "autoGenerateColumns", void 0);
+WorksheetComponent = tslib_1.__decorate([
+    Component({
+        selector: 'gc-worksheet',
+        template: `
+        <ng-content></ng-content>
+    `
+    }),
+    tslib_1.__metadata("design:paramtypes", [])
+], WorksheetComponent);
+export { WorksheetComponent };
+let SpreadSheetsComponent = class SpreadSheetsComponent {
     constructor(elRef) {
         this.style = {
             width: '800px',
@@ -362,6 +551,387 @@ export class SpreadSheetsComponent {
     ngOnDestroy() {
         this.spread.destroy();
     }
-}
-export class SpreadSheetsModule {
-}
+};
+SpreadSheetsComponent.ctorParameters = () => [
+    { type: ElementRef, decorators: [{ type: Inject, args: [ElementRef,] }] }
+];
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Boolean)
+], SpreadSheetsComponent.prototype, "allowUserResize", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Boolean)
+], SpreadSheetsComponent.prototype, "allowUserZoom", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Boolean)
+], SpreadSheetsComponent.prototype, "allowUserEditFormula", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Boolean)
+], SpreadSheetsComponent.prototype, "allowUserDragFill", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Boolean)
+], SpreadSheetsComponent.prototype, "allowUserDragDrop", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Boolean)
+], SpreadSheetsComponent.prototype, "highlightInvalidData", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Boolean)
+], SpreadSheetsComponent.prototype, "newTabVisible", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Boolean)
+], SpreadSheetsComponent.prototype, "tabStripVisible", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Boolean)
+], SpreadSheetsComponent.prototype, "tabEditable", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Number)
+], SpreadSheetsComponent.prototype, "autoFitType", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Number)
+], SpreadSheetsComponent.prototype, "referenceStyle", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", String)
+], SpreadSheetsComponent.prototype, "backColor", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", String)
+], SpreadSheetsComponent.prototype, "grayAreaBackColor", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Boolean)
+], SpreadSheetsComponent.prototype, "showVerticalScrollbar", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Boolean)
+], SpreadSheetsComponent.prototype, "showHorizontalScrollbar", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "hostStyle", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", String)
+], SpreadSheetsComponent.prototype, "hostClass", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", String)
+], SpreadSheetsComponent.prototype, "name", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", String)
+], SpreadSheetsComponent.prototype, "backgroundImage", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Number)
+], SpreadSheetsComponent.prototype, "backgroundImageLayout", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Number)
+], SpreadSheetsComponent.prototype, "showScrollTip", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Number)
+], SpreadSheetsComponent.prototype, "showResizeTip", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Boolean)
+], SpreadSheetsComponent.prototype, "showDragDropTip", void 0);
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", Boolean)
+], SpreadSheetsComponent.prototype, "showDragFillTip", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "workbookInitialized", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "validationError", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "cellClick", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "cellDoubleClick", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "enterCell", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "leaveCell", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "valueChanged", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "topRowChanged", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "leftColumnChanged", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "invalidOperation", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "rangeFiltering", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "rangeFiltered", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "tableFiltering", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "tableFiltered", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "rangeSorting", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "rangeSorted", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "clipboardChanging", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "clipboardChanged", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "clipboardPasting", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "clipboardPasted", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "columnWidthChanging", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "columnWidthChanged", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "rowHeightChanging", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "rowHeightChanged", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "dragDropBlock", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "dragDropBlockCompleted", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "dragFillBlock", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "dragFillBlockCompleted", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "editStarting", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "editChange", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "editEnding", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "editEnd", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "editEnded", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "rangeGroupStateChanging", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "rangeGroupStateChanged", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "selectionChanging", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "selectionChanged", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "sheetTabClick", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "sheetTabDoubleClick", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "sheetNameChanging", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "sheetNameChanged", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "userZooming", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "userFormulaEntered", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "cellChanged", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "columnChanged", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "rowChanged", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "activeSheetChanging", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "activeSheetChanged", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "sparklineChanged", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "rangeChanged", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "buttonClicked", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "editorStatusChanged", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "floatingObjectChanged", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "floatingObjectSelectionChanged", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "pictureChanged", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "floatingObjectRemoving", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "floatingObjectRemoved", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "pictureSelectionChanged", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "floatingObjectLoaded", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "touchToolStripOpening", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "commentChanged", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "commentRemoving", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "commentRemoved", void 0);
+tslib_1.__decorate([
+    Output(),
+    tslib_1.__metadata("design:type", Object)
+], SpreadSheetsComponent.prototype, "slicerChanged", void 0);
+tslib_1.__decorate([
+    ContentChildren(WorksheetComponent),
+    tslib_1.__metadata("design:type", QueryList)
+], SpreadSheetsComponent.prototype, "sheets", void 0);
+SpreadSheetsComponent = tslib_1.__decorate([
+    Component({
+        selector: 'gc-spread-sheets',
+        template: `
+        <div [ngStyle]="style" [ngClass]="hostClass">
+            <ng-content></ng-content>
+        </div>
+    `
+    }),
+    tslib_1.__param(0, Inject(ElementRef)),
+    tslib_1.__metadata("design:paramtypes", [ElementRef])
+], SpreadSheetsComponent);
+export { SpreadSheetsComponent };
+let SpreadSheetsModule = class SpreadSheetsModule {
+};
+SpreadSheetsModule = tslib_1.__decorate([
+    NgModule({
+        imports: [CommonModule],
+        declarations: [SpreadSheetsComponent, WorksheetComponent, ColumnComponent],
+        exports: [SpreadSheetsComponent, WorksheetComponent, ColumnComponent]
+    })
+], SpreadSheetsModule);
+export { SpreadSheetsModule };
+//# sourceMappingURL=gc.spread.sheets.angular.js.map
