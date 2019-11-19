@@ -63,7 +63,7 @@ English | [简体中文](https://github.com/luohong123/fc-angular/blob/master/RE
 - 在 `git` 、`node`、`npm`、`vscode`  配置好多前提下，克隆代码，命令如下：
 
 ```bash
-git clone https://github.com/luohong123/fc-angular.git
+git clone https://github.com/FE-free/fc-angular.git
 npm install
 npm start
 ```
@@ -84,7 +84,7 @@ npm start
 
 【 使用 httpclient】[https://angular.cn/guide/http](https://angular.cn/guide/http)
 
-## 四、aot 打包部署
+# 四、aot 打包部署
 
 通过    `ng build --aot`  命令生成 dist 文件，命令如下：
 
@@ -92,7 +92,7 @@ npm start
 ng build --aot
 ```
 
-## 五、代码目录结构
+# 五、代码目录结构
 
 ```markdown
 .
