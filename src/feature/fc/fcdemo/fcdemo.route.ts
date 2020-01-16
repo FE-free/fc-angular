@@ -43,5 +43,8 @@ export const Routers: Routes = [
   }, {
     path: '', // 打印
     loadChildren: () => import('./fcprint/fcprint.module').then(res => res.FcprintModule)
+  }, {
+    path: '', // 打印-套打
+    loadChildren: () => import('./fccoverup/fccoverup.module').then(res => res.FccoverupModule)
   }
 ];

@@ -63,8 +63,8 @@ export const menus = {
               PARENT: 'FC',
               MENUICON: '',
               SORT: 1152,
-              ROUTER: '/fcg2',
-            },
+              ROUTER: '/fcg2'
+            }
           ]
         },
         {
@@ -94,8 +94,8 @@ export const menus = {
               PARENT: 'FC',
               MENUICON: '',
               SORT: 1152,
-              ROUTER: '/fcboxgeometry',
-            },
+              ROUTER: '/fcboxgeometry'
+            }
           ]
         },
         {
@@ -142,7 +142,8 @@ export const menus = {
           PARENT: 'SYSTEM',
           SORT: 1152,
           ROUTER: '/fciframe'
-        },{
+        },
+        {
           ID: '1600',
           PID: 'FC',
           MENUID: 'FCPRINT',
@@ -156,6 +157,21 @@ export const menus = {
           PARENT: 'SYSTEM',
           SORT: 1152,
           ROUTER: '/fcprint'
+        },
+        {
+          ID: '1700',
+          PID: 'FC',
+          MENUID: 'FCCOVERUP',
+          MENUNAME: '套打',
+          ENABLE: 'Y',
+          WXMENU: 'N',
+          MENUTYPE: 'APP',
+          APPID: 'SYSMENU',
+          HASCHILD: 'N',
+          MENUICON: 'fc-icon-print',
+          PARENT: 'SYSTEM',
+          SORT: 1152,
+          ROUTER: '/fccoverup'
         },
         {
           ID: '700',
@@ -214,7 +230,7 @@ export const menus = {
               PARENT: 'FCTEMPLATE',
               MENUICON: 'fc-icon-jichushezhi',
               SORT: 1152,
-              ROUTER: '/fctemplatelist',
+              ROUTER: '/fctemplatelist'
             },
             {
               ID: '820',
@@ -229,8 +245,9 @@ export const menus = {
               PARENT: 'FCTEMPLATE',
               MENUICON: 'fc-icon-jichushezhi',
               SORT: 1152,
-              ROUTER: '/fctemplateform',
-            }, {
+              ROUTER: '/fctemplateform'
+            },
+            {
               ID: '830',
               PID: 'FC',
               MENUID: 'FCTEMPLATEDETAIL',
@@ -243,8 +260,9 @@ export const menus = {
               PARENT: 'FCTEMPLATE',
               MENUICON: 'fc-icon-jichushezhi',
               SORT: 1152,
-              ROUTER: '/fctemplatedetail',
-            }, {
+              ROUTER: '/fctemplatedetail'
+            },
+            {
               ID: '840',
               PID: 'FC',
               MENUID: 'FCTEMPLATETREELIST',
@@ -257,9 +275,10 @@ export const menus = {
               PARENT: 'FCTEMPLATE',
               MENUICON: 'fc-icon-jichushezhi',
               SORT: 1152,
-              ROUTER: '/fctemplatetreelist',
-            }]
-        },
+              ROUTER: '/fctemplatetreelist'
+            }
+          ]
+        }
         // {
         //   ID: '900',
         //   PID: 'FC',
