@@ -1,0 +1,218 @@
+<div class="fc-print">
+  <div>
+    <p>
+      1：若只打印《表单一》,看一下<a
+        href="javascript:;"
+        (click)="printPreview()"
+        >打印预览</a
+      >,可<a href="javascript:;" (click)="directPrint()">直接打印</a>也可
+      <a href="javascript:;" (click)="printerSelect()">选择打印机</a
+      >打印。<br /><br />
+      2：若《表单一》和《表单二》一起并列输出,看一下<a
+        href="javascript:;" (click)="prn2_preview()"
+        >打印预览</a
+      >,其布局风格可<a href="javascript:;" (click)="prn2_manage()">打印维护</a>调整。
+    </p>
+
+    <p>
+      3：若打印整个页面,看看<a href="javascript:;" (click)="prn3_preview()">打印预览</a
+      >。<br /><br />
+      本例要点是用Document的innerHTML方法把打印目标的超文本送给控件。
+    </p>
+  </div>
+
+  <div class="fc-conetent">
+    <!-- 需要打印的内容 -->
+    <form id="form1">
+      <table border="1">
+        <tr>
+          <th>Month</th>
+          <th>Savings</th>
+          <th>Month</th>
+          <th>Savings</th>
+          <th>Month</th>
+          <th>Savings</th>
+          <th>Month</th>
+          <th>Savings</th>
+          <th>Month</th>
+          <th>Savings</th>
+          <th>Month</th>
+          <th>Savings</th>
+          <th>Savings</th>
+          <th>Savings</th>
+        </tr>
+        <tr>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+        </tr>
+        <tr>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+        </tr>
+        <tr>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+        </tr>
+        <tr>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+        </tr>
+        <tr>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+        </tr>
+        <tr>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+          <td>January</td>
+          <td>$100</td>
+        </tr>
+      </table>
+    </form>
+
+    <div id="form2">
+      <table
+        border="1"
+        width="100%"
+        id="tb01"
+        bgcolor="#CCFFCC"
+        style="border:solid 1px black;border-collapse:collapse"
+      >
+        <tr>
+          <td width="133" id="mtb001">
+            <font face="黑体" color="#FF0000" size="3">《表单二》&copy;</font>
+          </td>
+        </tr>
+      </table>
+
+      <table
+        border="1"
+        width="100%"
+        height="106"
+        cellspacing="0"
+        bgcolor="#CCFFFF"
+        style="border:solid 1px black;border-collapse:collapse"
+      >
+        <tr>
+          <td width="66" height="16" style="border:solid 1px black">
+            <font color="#0000FF">X</font><font color="#0000FF">等</font>
+          </td>
+          <td width="51" height="16" style="border:solid 1px black">
+            <font color="#0000FF">Y等</font>
+          </td>
+          <td width="51" height="16" style="border:solid 1px black">
+            <font color="#0000FF">Z等</font>
+          </td>
+        </tr>
+        <tr>
+          <td width="66" height="12" style="border:solid 1px black">
+            <span style="font-family:Wingdings;font-size:25px;">&#254;</span
+            >X001
+          </td>
+          <td width="51" height="12" style="border:solid 1px black">
+            <strike>Y001</strike>
+          </td>
+          <td width="51" height="44" rowspan="3" style="border:solid 1px black">
+            <ol style="list-style-type:upper-alpha;list-style-position:inside;">
+              <li>Z001</li>
+              <li>Z002</li>
+              <li>Z003</li>
+              <li>Z004</li>
+              <li>Z005</li>
+            </ol>
+          </td>
+        </tr>
+        <tr>
+          <td width="30%" height="16" style="border:solid 1px black">
+            <strong>X002</strong>
+          </td>
+          <td width="51" height="16" style="border:solid 1px black">
+            <u>Y002</u><span style="visibility: hidden">hidesome</span>
+          </td>
+        </tr>
+        <tr>
+          <td width="30%" height="16" style="border:solid 1px black">
+            <span style="text-decoration: overline">X003</span>
+          </td>
+          <td width="40%" height="16" style="border:solid 1px black">
+            <em>Y003</em><input type="radio" name="R1" /><input
+              type="radio"
+              name="R1"
+              checked
+            />
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

@@ -31,8 +31,8 @@ English | [简体中文](https://github.com/luohong123/fc-angular/blob/master/RE
 ## 1、项目介绍
 
 - 基于 angularV8，ng.ant.design V8.0.1 开发的后台管理系统
-- 【在线预览】[https://fe-free.github.io/fc-angular/index.html](https://fe-free.github.io/fc-angular/index.html)
 - 【码云在线预览-国内访问更快】[http://perfect_l.gitee.io/fc-angular](http://perfect_l.gitee.io/fc-angular)
+- 【在线预览】[https://fe-free.github.io/fc-angular/index.html](https://fe-free.github.io/fc-angular/index.html)
 - 【源码地址】[https://github.com/FE-free/fc-angular](https://github.com/FE-free/fc-angular)
 
 > 预览效果图
@@ -64,7 +64,7 @@ English | [简体中文](https://github.com/luohong123/fc-angular/blob/master/RE
 - 在 `git` 、`node`、`npm`、`vscode`  配置好多前提下，克隆代码，命令如下：
 
 ```bash
-git clone https://github.com/luohong123/fc-angular.git
+git clone https://github.com/FE-free/fc-angular.git
 npm install
 npm start
 ```
@@ -85,7 +85,7 @@ npm start
 
 【 使用 httpclient】[https://angular.cn/guide/http](https://angular.cn/guide/http)
 
-## 四、aot 打包部署
+# 四、aot 打包部署
 
 通过    `ng build --aot`  命令生成 dist 文件，命令如下：
 
@@ -93,7 +93,7 @@ npm start
 ng build --aot
 ```
 
-## 五、代码目录结构
+# 五、代码目录结构
 
 ```markdown
 .
@@ -225,4 +225,4 @@ npm run aot
 # Contributors
 
 Thanks to everyone who contributed to the source code, comments, scripts, documentation, and test cases.
-<a href="https://github.com/FE-free/fc-angular/graphs/contributors"><img src="https://opencollective.com/FE-free/fc-angular/contributors.svg?width=890" /></a>
+<a href="https://github.com/FE-free/fc-angular/graphs/contributors"><img src="https://opencollective.com/fc-angular/contributors.svg?width=890" /></a>
