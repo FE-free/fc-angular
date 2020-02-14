@@ -1,3 +1,11 @@
+/*
+ * @Author: honghong
+ * @Date: 2019-07-05 16:11:36
+ * @LastEditors: honghong
+ * @LastEditTime: 2020-02-14 12:32:47
+ * @Description: 
+ * @email: 3300536651@qq.com
+ */
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/1.0/config/configuration-file.html
 
@@ -18,7 +26,13 @@ module.exports = function (config) {
     coverageIstanbulReporter: {
       dir: require('path').join(__dirname, './coverage/fc-angular'),
       reports: ['html', 'lcovonly', 'text-summary'],
-      fixWebpackSourcePaths: true
+      fixWebpackSourcePaths: true,
+      // thresholds: { // 假设你希望代码有最少 80% 的代码覆盖率。 要启用它
+      //   statements: 80,
+      //   lines: 80,
+      //   branches: 80,
+      //   functions: 80
+      // }
     },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
