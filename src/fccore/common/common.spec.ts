@@ -4,7 +4,7 @@ import { CommonService } from './common';
  * @Author: honghong
  * @Date: 2020-02-13 17:36:24
  * @LastEditors: honghong
- * @LastEditTime : 2020-02-14 12:30:46
+ * @LastEditTime: 2020-02-23 11:15:26
  * @Description:
  * @email: 3300536651@qq.com
  */
@@ -36,6 +36,7 @@ describe('commonService', () => {
     const getGuidTest1 = CommonService.getGuid();
     const getGuidTest2 = CommonService.getGuid();
     const getGuidTest3 = CommonService.getGuid();
+    // test 
     it('should get a guid', () => {
       expect(typeof getGuidTest1).toBe('string');
       expect(typeof getGuidTest2).toBe('string');
