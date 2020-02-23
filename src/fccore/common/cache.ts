@@ -59,4 +59,37 @@ export class CacheService {
     static clearSByKey(key: any): void {
         window.sessionStorage.removeItem(key);
     };
+    static objToString(obj: any): string {
+        let _this = this;
+        if (obj && obj !== null) {
+            if (typeof (obj) === 'string') {
+                return obj;
+            }
+            if (typeof (obj) === 'object') {
+                /** @type {?} */
+                let rtn_1 = {};
+                Object.keys(obj).forEach((/**
+                 * @param {?} key
+                 * @return {?}
+                 */
+                function (key) {
+                    /** @type {?} */
+                    let value = obj[key];
+                    if (typeof (value) === 'object') {
+                        rtn_1[key] = _this.objToString(value);
+                    }
+                    else {
+                        rtn_1[key] = value;
+                    }
+                }));
+                return JSON.stringify(rtn_1);
+            }
+            if (typeof (obj) === 'number') {
+                return obj + "";
+            }
+        }
+        else {
+            return "";
+        }
+    };
 }

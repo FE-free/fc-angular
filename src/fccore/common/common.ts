@@ -1,159 +1,37 @@
 /*
  * @Author: honghong
- * @LastEditors  : honghong
+ * @LastEditors: honghong
  * @Description: 公共方法
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
  * @LastEditTime : 2020-02-13 12:04:13
  */
 import { EventEmitter, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { concat } from 'rxjs/operators';
 import { forkJoin } from 'rxjs';
+import { concat } from 'rxjs/operators';
 @Injectable({ providedIn: 'root' })
 export class CommonService {
   static eventEmit: EventEmitter<any> = new EventEmitter();
-  static base64EncodeChars =
-    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+  static base64EncodeChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
   static base64DecodeChars = new Array(
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    62,
-    -1,
-    -1,
-    -1,
-    63,
-    52,
-    53,
-    54,
-    55,
-    56,
-    57,
-    58,
-    59,
-    60,
-    61,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    0,
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21,
-    22,
-    23,
-    24,
-    25,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    26,
-    27,
-    28,
-    29,
-    30,
-    31,
-    32,
-    33,
-    34,
-    35,
-    36,
-    37,
-    38,
-    39,
-    40,
-    41,
-    42,
-    43,
-    44,
-    45,
-    46,
-    47,
-    48,
-    49,
-    50,
-    51,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1
-  );
+-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 62, -1, -1, -1, 63,
+52, 53, 54, 55, 56, 57, 58, 59, 60, 61, -1, -1, -1, -1, -1, -1,
+-1, 0, 1, 2, 3,  4,  5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
+15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, -1, -1, -1, -1, -1,
+-1, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
+41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, -1, -1, -1, -1, -1);
 
-  constructor() {}
   /**
    * 发生事件
    * @param actCode 事件名称
    */
   static event(eventName: string, param: any): void {
     this.eventEmit.emit({
+      // tslint:disable-next-line: object-literal-shorthand
       eventName: eventName,
+      // tslint:disable-next-line: object-literal-shorthand
       param: param
     });
   }
@@ -174,28 +52,15 @@ export class CommonService {
   /**
    * 生成guid
    */
-  static getGuid() {
-    function S4() {
-      return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+  static getGuid(): string {
+    function S4(): string {
+      return (((Math.random() + 1) * 0x10000) | 0).toString(16).substring(1);
     }
-    return (
-      S4() +
-      S4() +
-      '-' +
-      S4() +
-      '-' +
-      S4() +
-      '-' +
-      S4() +
-      '-' +
-      S4() +
-      S4() +
-      S4()
-    );
+    return S4() + S4() + '-' + S4() + '-' + S4() + '-' + S4() + '-' + S4() + S4() + S4();
   }
-  static getUuid() {
-    let s = [];
-    let hexDigits = '0123456789abcdef';
+  static getUuid(): string {
+    const s = [];
+    const hexDigits = '0123456789abcdef';
     for (let i = 0; i < 36; i++) {
       s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
     }
@@ -203,18 +68,18 @@ export class CommonService {
     s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1);
     s[8] = s[13] = s[18] = s[23] = '-';
 
-    let uuid = s.join('');
+    const uuid = s.join('');
     return uuid;
   }
   /**
    * 设置cookie
-   * @param key 键
+   * @param key 键 名称
    * @param value 值
    * @param t 时间(秒)
    */
-  static setCookie(key, value, t) {
+  static addCookie(key, value, expiredays) {
     let oDate = new Date();
-    oDate.setDate(oDate.getDate() + t);
+    oDate.setDate(oDate.getDate() + expiredays);
     document.cookie = key + '=' + value + '; expires=' + oDate.toDateString();
   }
   /**
@@ -231,10 +96,22 @@ export class CommonService {
     }
   }
   /**
+   * 
+   * @param key 名称
+   * @param value 值
+   * @param expiredays 时间（秒）
+   */
+  static setCookie(key, value, expiredays?:number) {
+    let exdate = new Date()
+    exdate.setDate(exdate.getDate() + expiredays)
+    document.cookie = key + "=" + escape(value) +
+    ((expiredays == null) ? "" : ";expires=" + exdate.toDateString())
+  }
+  /**
    * [removeCookie 移除cookie]
    */
   static removeCookie(key) {
-    this.setCookie(key, '', -1); // 把cookie设置为过期
+    this.addCookie(key, '', -1); // 把cookie设置为过期
   }
   static base64encode(str) {
     let out, i, len;
@@ -253,21 +130,15 @@ export class CommonService {
       c2 = str.charCodeAt(i++);
       if (i == len) {
         out += CommonService.base64EncodeChars.charAt(c1 >> 2);
-        out += CommonService.base64EncodeChars.charAt(
-          ((c1 & 0x3) << 4) | ((c2 & 0xf0) >> 4)
-        );
+        out += CommonService.base64EncodeChars.charAt(((c1 & 0x3) << 4) | ((c2 & 0xf0) >> 4));
         out += CommonService.base64EncodeChars.charAt((c2 & 0xf) << 2);
         out += '=';
         break;
       }
       c3 = str.charCodeAt(i++);
       out += CommonService.base64EncodeChars.charAt(c1 >> 2);
-      out += CommonService.base64EncodeChars.charAt(
-        ((c1 & 0x3) << 4) | ((c2 & 0xf0) >> 4)
-      );
-      out += CommonService.base64EncodeChars.charAt(
-        ((c2 & 0xf) << 2) | ((c3 & 0xc0) >> 6)
-      );
+      out += CommonService.base64EncodeChars.charAt(((c1 & 0x3) << 4) | ((c2 & 0xf0) >> 4));
+      out += CommonService.base64EncodeChars.charAt(((c2 & 0xf) << 2) | ((c3 & 0xc0) >> 6));
       out += CommonService.base64EncodeChars.charAt(c3 & 0x3f);
     }
     return out;
@@ -367,9 +238,7 @@ export class CommonService {
           // 1110 xxxx10xx xxxx10xx xxxx
           char2 = str.charCodeAt(i++);
           char3 = str.charCodeAt(i++);
-          out += String.fromCharCode(
-            ((c & 0x0f) << 12) | ((char2 & 0x3f) << 6) | ((char3 & 0x3f) << 0)
-          );
+          out += String.fromCharCode(((c & 0x0f) << 12) | ((char2 & 0x3f) << 6) | ((char3 & 0x3f) << 0));
           break;
       }
     }
@@ -488,19 +357,10 @@ export class CommonService {
       'q+': Math.floor((date.getMonth() + 3) / 3),
       S: date.getMilliseconds() //毫秒
     };
-    if (/(y+)/.test(fmt))
-      fmt = fmt.replace(
-        RegExp.$1,
-        (date.getFullYear() + '').substr(4 - RegExp.$1.length)
-      );
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length));
     for (var k in o)
       if (new RegExp('(' + k + ')').test(fmt))
-        fmt = fmt.replace(
-          RegExp.$1,
-          RegExp.$1.length == 1
-            ? o[k]
-            : ('00' + o[k]).substr(('' + o[k]).length)
-        );
+        fmt = fmt.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ('00' + o[k]).substr(('' + o[k]).length));
     return fmt;
   }
   /**
@@ -553,18 +413,9 @@ export class CommonService {
     if (fDate.length > 13) {
       second = fDate.substr(12, 2);
     }
-    if (fDate.length === 8)
-      return new Date(Date.parse(year + '/' + month + '/' + day));
-    if (fDate.length === 12)
-      return new Date(
-        Date.parse(year + '/' + month + '/' + day + ' ' + hour + ':' + min)
-      );
-    if (fDate.length === 14)
-      return new Date(
-        Date.parse(
-          year + '/' + month + '/' + day + ' ' + hour + ':' + min + ':' + second
-        )
-      );
+    if (fDate.length === 8) return new Date(Date.parse(year + '/' + month + '/' + day));
+    if (fDate.length === 12) return new Date(Date.parse(year + '/' + month + '/' + day + ' ' + hour + ':' + min));
+    if (fDate.length === 14) return new Date(Date.parse(year + '/' + month + '/' + day + ' ' + hour + ':' + min + ':' + second));
   }
   /**
    * 数值格式化
@@ -650,4 +501,5 @@ export class CommonService {
     );
     return datas;
   }
+
 }

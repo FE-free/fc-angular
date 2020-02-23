@@ -21,6 +21,9 @@ module.exports = function (config) {
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     client: {
+      // jasmine: {
+      //   timeoutInterval: 10000 // 在 10000 毫秒内未调用异步回调（由jasmine设置。默认超时间隔）
+      // },
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
     coverageIstanbulReporter: {

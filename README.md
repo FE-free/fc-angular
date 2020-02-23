@@ -226,3 +226,5 @@ npm run aot
 
 Thanks to everyone who contributed to the source code, comments, scripts, documentation, and test cases.
 <a href="https://github.com/FE-free/fc-angular/graphs/contributors"><img src="https://opencollective.com/fc-angular/contributors.svg?width=890" /></a>
+
+`.prettierrc`、`.editorconfig` 文件配置参考自 [ng.ant.design 官方源码](https://github.com/NG-ZORRO/ng-zorro-antd/blob/master/.editorconfig)

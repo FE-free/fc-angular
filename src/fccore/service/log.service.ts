@@ -7,7 +7,7 @@
  * @LastEditTime: 2019-04-17 11:43:44
  */
 import { Injectable } from '@angular/core';
-import { CacheService } from './cache.service';
+import { CacheService } from '../common/cache';
 import { DaoService } from './dao.service';
 import { environment } from 'src/environments/environment';
 const isDev = !environment.production

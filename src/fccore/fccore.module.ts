@@ -16,8 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { DaoService } from './service/dao.service';
 import { LogService } from './service/log.service';
-import { CommonService } from './service/common.service';
-import { CacheService } from './service/cache.service';
+import { CommonService } from './common/common';
+import { CacheService } from './common/cache';
 import { MessageService } from './service/message.service';
 registerLocaleData(zh)
 @NgModule({

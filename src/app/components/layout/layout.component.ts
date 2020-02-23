@@ -11,8 +11,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { LayoutService } from 'src/app/service/layout.service';
 import { ShareService } from 'src/app/share.service';
-import { CacheService } from 'src/fccore/service/cache.service';
-import { CommonService } from 'src/fccore/service/common.service';
+import { CacheService } from 'src/fccore/common/cache';
+import { CommonService } from 'src/fccore/common/common';
 import { environment } from '../../../environments/environment.dev';
 import { SyseditpasswordComponent } from './dialog/syseditpassword.dialog';
 @Component({

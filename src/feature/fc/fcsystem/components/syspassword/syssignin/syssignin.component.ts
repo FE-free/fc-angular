@@ -10,7 +10,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.dev';
 import { Fcverifycode } from 'src/fccomponents/fcverifycode/fcverifycode.component';
-import { CacheService } from 'src/fccore/service/cache.service';
+import { CacheService } from 'src/fccore/common/cache';
 const PROJECT_NAME = environment.projectName;
 
 @Component({
