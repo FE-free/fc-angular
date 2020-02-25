@@ -4,7 +4,7 @@
  * @Description: 公共方法
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime : 2020-02-13 12:04:13
+ * @LastEditTime: 2020-02-25 21:18:35
  */
 import { EventEmitter, Injectable } from '@angular/core';
 import { forkJoin } from 'rxjs';
@@ -14,14 +14,14 @@ export class CommonService {
   static eventEmit: EventEmitter<any> = new EventEmitter();
   static base64EncodeChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
   static base64DecodeChars = new Array(
--1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
--1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
--1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 62, -1, -1, -1, 63,
-52, 53, 54, 55, 56, 57, 58, 59, 60, 61, -1, -1, -1, -1, -1, -1,
--1, 0, 1, 2, 3,  4,  5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
-15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, -1, -1, -1, -1, -1,
--1, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
-41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, -1, -1, -1, -1, -1);
+    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 62, -1, -1, -1, 63,
+    52, 53, 54, 55, 56, 57, 58, 59, 60, 61, -1, -1, -1, -1, -1, -1,
+    -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
+    15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, -1, -1, -1, -1, -1,
+    -1, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
+    41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, -1, -1, -1, -1, -1);
 
   /**
    * 发生事件
@@ -101,11 +101,11 @@ export class CommonService {
    * @param value 值
    * @param expiredays 时间（秒）
    */
-  static setCookie(key, value, expiredays?:number) {
+  static setCookie(key, value, expiredays?: number) {
     let exdate = new Date()
     exdate.setDate(exdate.getDate() + expiredays)
     document.cookie = key + "=" + escape(value) +
-    ((expiredays == null) ? "" : ";expires=" + exdate.toDateString())
+      ((expiredays == null) ? "" : ";expires=" + exdate.toDateString())
   }
   /**
    * [removeCookie 移除cookie]
@@ -192,15 +192,15 @@ export class CommonService {
     len = str.length;
     for (i = 0; i < len; i++) {
       c = str.charCodeAt(i);
-      if (c >= 0x0001 && c <= 0x007f) {
+      if ((c >= 0x0001) && (c <= 0x007F)) {
         out += str.charAt(i);
-      } else if (c > 0x07ff) {
-        out += String.fromCharCode(0xe0 | ((c >> 12) & 0x0f));
-        out += String.fromCharCode(0x80 | ((c >> 6) & 0x3f));
-        out += String.fromCharCode(0x80 | ((c >> 0) & 0x3f));
+      } else if (c > 0x07FF) {
+        out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));
+        out += String.fromCharCode(0x80 | ((c >> 6) & 0x3F));
+        out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
       } else {
-        out += String.fromCharCode(0xc0 | ((c >> 6) & 0x1f));
-        out += String.fromCharCode(0x80 | ((c >> 0) & 0x3f));
+        out += String.fromCharCode(0xC0 | ((c >> 6) & 0x1F));
+        out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
       }
     }
     return out;
@@ -247,7 +247,7 @@ export class CommonService {
   /**
    * 加密
    */
-  static enCode64 = function(str) {
+  static enCode64 = function (str) {
     if (str == undefined) {
       return '';
     }
@@ -257,7 +257,7 @@ export class CommonService {
    * base64解密
    */
   static deCode64(str) {
-    if (str == undefined) {
+    if (str === undefined) {
       return '';
     }
     return CommonService.utf8to16(CommonService.base64decode(str));
@@ -274,6 +274,7 @@ export class CommonService {
    */
   static getMillisecondsFromDate(date) {
     return Date.parse(date);
+    // return new Date(date).valueOf();
   }
   /**
    * 秒数转时间
@@ -307,6 +308,8 @@ export class CommonService {
    * @param seg 分隔符 / -
    */
   static getYearMonth(seg) {
+    // 无论void后的表达式是什么, void操作符都会返回undefined.
+    // 既然(void 0) === undefined，为什么不直接写undefined,因为undefined在javascript中不是保留字
     if (seg === void 0) {
       seg = '-';
     }
@@ -358,7 +361,7 @@ export class CommonService {
       S: date.getMilliseconds() //毫秒
     };
     if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length));
-    for (var k in o)
+    for (let k in o)
       if (new RegExp('(' + k + ')').test(fmt))
         fmt = fmt.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ('00' + o[k]).substr(('' + o[k]).length));
     return fmt;

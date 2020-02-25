@@ -4,31 +4,69 @@ import { CommonService } from './common';
  * @Author: honghong
  * @Date: 2020-02-13 17:36:24
  * @LastEditors: honghong
- * @LastEditTime: 2020-02-23 11:15:26
+ * @LastEditTime: 2020-02-25 21:14:26
  * @Description:
  * @email: 3300536651@qq.com
  */
 describe('commonService', () => {
   // 发生事件 待研究
-  // describe('观察者模式', () => {
+  //  describe('观察者模式', () => {
+  //   let subscribeTest1;
+  //   let subscribeTest2;
+  //   let subscribeTest3;
+
   //   it('event1 should be describe', (done) => {
   //     // 订阅事件
-  //     const subscribeTest1 = CommonService.subscribe('testEvent1', (result) => {
-  //       // expect(true).toBe(true);
-  //       expect(result.eventName).toBe('testEvent1');
-  //       expect(result.param.number).toBe(18);
+  //     subscribeTest1 = CommonService.subscribe('testEvent1', (result) => {
+  //       if (result) {
+  //         expect(result['eventName']).toBe('testEvent1');
+  //         expect(result['param']['number']).toBe(18);
+  //       }
   //       done();
   //     });
-  //     CommonService.subscribe('testEventNull1', null);
-  //     // 发起事件
   //     CommonService.event('testEvent1', {
   //       number: 18,
   //       title: 'hello1'
   //     });
-  //     // if (subscribeTest1) {
-  //     //   subscribeTest1.unsubscribe();
-  //     // }
-  //     done();
+  //     if (subscribeTest1) {
+  //       subscribeTest1.unsubscribe();
+  //     }
+  //   });
+  //   it('event2 should be describe', (done) => {
+  //     // 订阅事件
+  //     subscribeTest2 = CommonService.subscribe('testEvent2', (result) => {
+  //       if (result) {
+  //         expect(result['eventName']).toBe('testEvent2');
+  //         expect(result['param']['number']).toBe(18);
+  //       }
+  //       done();
+  //     });
+  //     CommonService.event('testEvent2', {
+  //       number: 18,
+  //       title: 'hello2'
+  //     });
+  //     if (subscribeTest2) {
+  //       subscribeTest2.unsubscribe();
+  //     }
+  //   });
+  //   it('event3 should be describe', (done) => {
+  //     // 订阅事件
+  //     subscribeTest3 = CommonService.subscribe('testEvent3', (result) => {
+  //       if (result) {
+  //         expect(result['eventName']).toBe('testEvent3');
+  //         expect(result['param']['number']).toBe(18);
+  //       }
+  //       done();
+  //     });
+  //     // 找不到事件名
+  //     CommonService.subscribe('testEventNull1', null);
+  //     CommonService.event('testEvent3', {
+  //       number: 18,
+  //       title: 'hello3'
+  //     });
+  //     if (subscribeTest3) {
+  //       subscribeTest3.unsubscribe();
+  //     }
   //   });
   // });
   // 测试getGuid()
@@ -36,7 +74,6 @@ describe('commonService', () => {
     const getGuidTest1 = CommonService.getGuid();
     const getGuidTest2 = CommonService.getGuid();
     const getGuidTest3 = CommonService.getGuid();
-    // test 
     it('should get a guid', () => {
       expect(typeof getGuidTest1).toBe('string');
       expect(typeof getGuidTest2).toBe('string');
@@ -53,7 +90,86 @@ describe('commonService', () => {
       expect(typeof getUuidTest2).toBe('string');
       expect(typeof getUuidTest3).toBe('string');
     });
-  })
+  });
+  // 测试解码
+  describe('#base64decode function', () => {
+    it('base64 should decode', () => {
+      expect(CommonService.base64decode('R0ZHLCBBIGNvbXB1dGVyIFNjaWVuY2UgUG9ydGFsIEZvciBHZWVrcw==')).toBe(
+        'GFG, A computer Science Portal For Geeks'
+      );
+      expect(CommonService.base64decode('aGVsbG8gd29ybGQ=')).toBe('hello world');
+      expect(CommonService.base64decode('SSdtIGEgZnJvbnQtZW5kIGRldmVsb3BtZW50IGVuZ2luZWVyLiBJIGxpa2UgY29kaW5n')).toBe(
+        'I\'m a front-end development engineer. I like coding'
+      );
+    });
+  });
+  // 测试编码
+  describe('#base64encode function', () => {
+    it('base64 should encode', () => {
+      expect(CommonService.base64encode('GFG, A computer Science Portal For Geeks')).toEqual(
+        'R0ZHLCBBIGNvbXB1dGVyIFNjaWVuY2UgUG9ydGFsIEZvciBHZWVrcw=='
+      );
+      expect(CommonService.base64encode('hello world')).toEqual('aGVsbG8gd29ybGQ=');
+      expect(CommonService.base64encode('I\'m a front-end development engineer. I like coding')).toEqual(
+        'SSdtIGEgZnJvbnQtZW5kIGRldmVsb3BtZW50IGVuZ2luZWVyLiBJIGxpa2UgY29kaW5n'
+      );
+    });
+  });
+  // 测试utf16to8
+  describe('#utf16to8 function', () => {
+    it('utf16to8', () => {
+      const utf16to8Test1 = CommonService.utf16to8(
+        '0042 0069 0067 0020 0065 006e 0064 0020 0063 006f 006d 0065 0073 0020 0066 0069 0072 0073 0074 0021'
+      );
+      const utf16to8Test2 = CommonService.utf16to8('中文');
+      const utf16to8Test3 = CommonService.utf16to8('中文2');
+      expect(utf16to8Test1).toBe('0042 0069 0067 0020 0065 006e 0064 0020 0063 006f 006d 0065 0073 0020 0066 0069 0072 0073 0074 0021');
+      expect(utf16to8Test2).toBe(utf16to8Test2);
+      expect(utf16to8Test3).toBe(utf16to8Test3);
+    });
+  });
+
+  // 测试utf8to16
+
+  describe('#utf8to16 function', () => {
+    it('utf8to16', () => {
+      const utf8to16Test1 = CommonService.utf8to16(
+        '0042 0069 0067 0020 0065 006e 0064 0020 0063 006f 006d 0065 0073 0020 0066 0069 0072 0073 0074 0021'
+      );
+      const utf8to16Test2 = CommonService.utf8to16('中文1');
+      const utf8to16Test3 = CommonService.utf8to16('1101 1001 1010 006f');
+      expect(utf8to16Test1).toBe(utf8to16Test1);
+      expect(utf8to16Test2).toBe(utf8to16Test2);
+      expect(utf8to16Test3).toBe(utf8to16Test3);
+    });
+  });
+  // 测试加密
+  describe('#enCode64 deCode64 function', () => {
+    let enCode64Test1: string;
+    let enCode64Test2: string;
+    let enCode64Test3: string;
+    let enCode64Test4: string;
+    beforeAll(() => {
+      enCode64Test1 = CommonService.enCode64('你好，世界');
+      enCode64Test2 = CommonService.enCode64('我喜欢编程');
+      enCode64Test3 = CommonService.enCode64('前端开发工程师');
+      enCode64Test4 = CommonService.enCode64(undefined);
+    });
+    // 测试加密
+    it('code should enCode64', () => {
+      expect(enCode64Test1).toBe('5L2g5aW977yM5LiW55WM');
+      expect(enCode64Test2).toBe('5oiR5Zac5qyi57yW56iL');
+      expect(enCode64Test3).toBe('5YmN56uv5byA5Y+R5bel56iL5biI');
+      expect(enCode64Test4).toBe('');
+    });
+    // 测试解密
+    it('code should deCode64', () => {
+      expect(CommonService.deCode64(enCode64Test1)).toBe('你好，世界');
+      expect(CommonService.deCode64(enCode64Test2)).toBe('我喜欢编程');
+      expect(CommonService.deCode64(enCode64Test3)).toBe('前端开发工程师');
+      expect(CommonService.deCode64(undefined)).toBe('');
+    });
+  });
   // 添加cookie
   describe('addCookie() function', () => {
     beforeEach(() => {
@@ -102,12 +218,202 @@ describe('commonService', () => {
       expect(typeof getMillisecondsTest1).toBe('number');
     });
   });
+  // 测试获取时间戳
+  describe('#getMillisecondsFromDate function', () => {
+    it('should get millliseconds base on date', () => {
+      const test1 = CommonService.getMillisecondsFromDate('2020-02-24 20:47:45');
+      const test2 = CommonService.getMillisecondsFromDate('2020-02-24 21:04:09');
+      const test3 = CommonService.getMillisecondsFromDate('18940-12-31');
+      const test4 = CommonService.getMillisecondsFromDate('18940-12-31');
+      expect(test1).toBe(1582548465000);
+      expect(test2).toBe(1582549449000);
+      // 待测试
+      // expect(test3).toBe(-2366795878);
+      // expect(test4).toBe(-2366795878);
+    });
+  });
   // 秒数转时间
   describe('#getDateByMilliseconds function', () => {
     const test1 = CommonService.getDateByMilliseconds(1530802447067);
-    // console.log(test1); // 例如Thu Jul 05 2018 22:54:07 GMT+0800 (China Standard Time)
     it('getDateByMilliseconds type should be Date', () => {
       expect(test1 instanceof Date).toBe(true);
     });
   });
+  // 获取当前时间秒数
+  describe('#getTimestamp', () => {
+    const test1 = CommonService.getTimestamp();
+    const test2 = CommonService.getTimestamp();
+    const test3 = CommonService.getTimestamp();
+    it('should get timestamp', () => {
+      expect(typeof test1).toBe('number');
+      expect(typeof test2).toBe('number');
+      expect(typeof test3).toBe('number');
+    });
+  });
+  // 根据指定日期获取秒数
+  describe('#getTimestampFromDate function', () => {
+    const test1 = CommonService.getTimestampFromDate('2020-02-24 20:47:45');
+    const test2 = CommonService.getTimestampFromDate('1920-02-21 16:47:45');
+    const test3 = CommonService.getTimestampFromDate('2001-10-19 00:47:45');
+    it('date should translate to timestamp', () => {
+      expect(test1).toBe(1582548465);
+      expect(test2).toBe(-1573485135);
+      expect(test3).toBe(1003423665);
+    });
+  });
+  // 秒数转日期
+  describe('#getDateByTimetamp function', () => {
+    it('timestamp should translate to date', () => {
+      const test1 = CommonService.getDateByTimetamp(1582548465);
+      const test2 = CommonService.getDateByTimetamp(-1573485135);
+      const test3 = CommonService.getDateByTimetamp(1003423665);
+      expect(test1.toString()).toBe('Mon Feb 24 2020 20:47:45 GMT+0800 (China Standard Time)');
+      expect(test2.toString()).toBe('Sat Feb 21 1920 16:47:45 GMT+0800 (China Standard Time)');
+      expect(test3.toString()).toBe('Fri Oct 19 2001 00:47:45 GMT+0800 (China Standard Time)');
+    });
+  });
+  // 获取当前年月
+  describe('#getYearMonth function', () => {
+    it('should get yearMonth', () => {
+      const test1 = CommonService.getYearMonth('-');
+      const test2 = CommonService.getYearMonth('/');
+      const test3 = CommonService.getYearMonth('-');
+      const test4 = CommonService.getYearMonth(undefined);
+      expect(test1.indexOf('-')).toBe(4);
+      expect(test2.indexOf('/')).toBe(4);
+      expect(test3.indexOf('-')).toBe(4);
+      expect(test4.indexOf('-')).toBe(4);
+    });
+  });
+  // 获取当前年月日
+  describe('#getDate function', () => {
+    it('should get date', () => {
+      const test1 = CommonService.getDate('-');
+      const test2 = CommonService.getDate('/');
+      const test3 = CommonService.getDate('-');
+      const test4 = CommonService.getDate(undefined);
+      expect(test1.indexOf('-')).toBe(4);
+      expect(test2.indexOf('/')).toBe(4);
+      expect(test3.indexOf('-')).toBe(4);
+      expect(test4.indexOf('-')).toBe(4);
+    });
+  });
+  // 时间格式化处理 传入Date格式的时间
+  describe('#dateFormat function', () => {
+    it('date should format', () => {
+      const formatTypes = {
+        // 连接符类型（Connect）
+        CT_D: 'yyyy-MM-dd',
+        CT_H: 'yyyy-MM-dd HH',
+        CT_M: 'yyyy-MM',
+        CT_MM: 'yyyy-MM-dd HH:mm',
+        CT_S: 'yyyy-MM-dd HH:mm:ss',
+        CT_SS: 'HH:mm:ss',
+        // 紧凑类型（Compact）
+        // tslint:disable-next-line: object-literal-sort-keys
+        CP_M: 'yyyyMM',
+        CP_D: 'yyyyMMdd',
+        CP_H: 'yyyyMMddHH',
+        CP_MM: 'yyyyMMddHHmm',
+        CP_S: 'yyyyMMddHHmmss',
+        CP_SS: 'HHmmss',
+        // 中文类型（Chinese）
+        CN_M: 'yyyy年MM月',
+        CN_D: 'yyyy年MM月dd日',
+        CN_H: 'yyyy年MM月dd日 HH时',
+        CN_MM: 'yyyy年MM月dd日 HH时mm分',
+        CN_S: 'yyyy年MM月dd日 HH时mm分ss秒'
+      };
+      const date1 = new Date('Mon Feb 24 2020 20:47:45 GMT+0800 (China Standard Time');
+      let testDate;
+      for (const key in formatTypes) {
+        if (formatTypes.hasOwnProperty) {
+          testDate = CommonService.dateFormat(date1, formatTypes[key]);
+          switch (key) {
+            // 连接（Connect）
+            case 'yyyy-MM-dd':
+              expect(testDate).toBe('2020-02-24');
+              break;
+            case 'yyyy-MM-dd HH':
+              expect(testDate).toBe('2020-02-24 20');
+              break;
+            case 'yyyy-MM':
+              expect(testDate).toBe('2020-02');
+              break;
+            case 'yyyy-MM-dd HH:mm':
+              expect(testDate).toBe('2020-02-24 20:47');
+              break;
+            case 'yyyy-MM-dd HH:mm:ss':
+              expect(testDate).toBe('2020-02-24 20:47:45');
+              break;
+            case 'HH:mm:ss':
+              expect(testDate).toBe('20:47:45');
+              break;
+            // 紧凑类型（Compact）
+            case 'yyyyMM':
+              expect(testDate).toBe('202002');
+              break;
+            case 'yyyyMMdd':
+              expect(testDate).toBe('20200224');
+              break;
+            case 'yyyyMMddHH':
+              expect(testDate).toBe('2020022420');
+              break;
+            case 'yyyyMMddHHmm':
+              expect(testDate).toBe('202002242047');
+              break;
+            case 'yyyyMMddHHmmss':
+              expect(testDate).toBe('20200224204745');
+              break;
+            case 'HHmmss':
+              expect(testDate).toBe('204745');
+              break;
+            // 中文类型（Chinese）
+            case 'yyyy年MM月':
+              expect(testDate).toBe('2020年02月');
+              break;
+            case 'yyyy年MM月dd日':
+              expect(testDate).toBe('2020年02月24日');
+              break;
+            case 'yyyy年MM月dd日 HH时':
+              expect(testDate).toBe('2020年02月24日 20时47分45秒');
+              break;
+            case 'yyyy年MM月dd日 HH时mm分':
+              expect(testDate).toBe('2020年02月24日 20时47分45秒');
+              break;
+            case 'yyyy年MM月dd日 HH时mm分ss秒':
+              expect(testDate).toBe('2020年02月24日 20时47分45秒');
+              break;
+            default:
+              break;
+          }
+        }
+      }
+    });
+  });
+  // 时间格式化处理 传入字符串格式时间
+  describe('#stringDateFormat function', () => {
+    it('stringDate should formate', () => {
+      const date1 = '2020-01-01 12:01:55';
+      const test1 = CommonService.stringDateFormat(date1, 'yyyy/MM/dd');
+      const test2 = CommonService.stringDateFormat(date1, 'yyyy-MM-dd hh');
+      const test3 = CommonService.stringDateFormat(date1, 'yyyy-MM-dd hh:mm');
+      const test4 = CommonService.stringDateFormat(date1, 'yyyy年MM月dd日 hh时mm分ss秒');
+      expect(test1).toBe('2020/01/01');
+      expect(test2).toBe('2020-01-01 12');
+      expect(test3).toBe('2020-01-01 12:01');
+      expect(test4).toBe('2020年01月01日 12时01分55秒');
+    });
+  });
+  // 时间戳格式化处理
+  describe('#timestampFormat function', () => {
+    it('timestamp should formate', () => {
+      const timestamp1 = 976454034;
+      const test1 = CommonService.timestampFormat(timestamp1, 'yyyy-MM-dd hh:mm:ss');
+      const test2 = CommonService.timestampFormat(timestamp1, 'yyyy-MM-dd');
+      const test3 = CommonService.timestampFormat(timestamp1, 'yyyy-MM-dd');
+      expect(test1).toBe('2020-12-23 11:06:48');
+    })
+  })
+
 });
