@@ -1,10 +1,13 @@
 import { fakeAsync, async, tick } from '@angular/core/testing';
 import { CommonService } from './common';
+import { HeroService } from '_mock/hero.service';
+import { merge, interval } from 'rxjs';
+import { take } from 'rxjs/operators';
 /*
  * @Author: honghong
  * @Date: 2020-02-13 17:36:24
  * @LastEditors: honghong
- * @LastEditTime: 2020-02-25 21:14:26
+ * @LastEditTime: 2020-03-01 11:37:34
  * @Description:
  * @email: 3300536651@qq.com
  */
@@ -300,96 +303,36 @@ describe('commonService', () => {
   });
   // 时间格式化处理 传入Date格式的时间
   describe('#dateFormat function', () => {
-    it('date should format', () => {
-      const formatTypes = {
-        // 连接符类型（Connect）
-        CT_D: 'yyyy-MM-dd',
-        CT_H: 'yyyy-MM-dd HH',
-        CT_M: 'yyyy-MM',
-        CT_MM: 'yyyy-MM-dd HH:mm',
-        CT_S: 'yyyy-MM-dd HH:mm:ss',
-        CT_SS: 'HH:mm:ss',
-        // 紧凑类型（Compact）
-        // tslint:disable-next-line: object-literal-sort-keys
-        CP_M: 'yyyyMM',
-        CP_D: 'yyyyMMdd',
-        CP_H: 'yyyyMMddHH',
-        CP_MM: 'yyyyMMddHHmm',
-        CP_S: 'yyyyMMddHHmmss',
-        CP_SS: 'HHmmss',
-        // 中文类型（Chinese）
-        CN_M: 'yyyy年MM月',
-        CN_D: 'yyyy年MM月dd日',
-        CN_H: 'yyyy年MM月dd日 HH时',
-        CN_MM: 'yyyy年MM月dd日 HH时mm分',
-        CN_S: 'yyyy年MM月dd日 HH时mm分ss秒'
-      };
-      const date1 = new Date('Mon Feb 24 2020 20:47:45 GMT+0800 (China Standard Time');
-      let testDate;
-      for (const key in formatTypes) {
-        if (formatTypes.hasOwnProperty) {
-          testDate = CommonService.dateFormat(date1, formatTypes[key]);
-          switch (key) {
-            // 连接（Connect）
-            case 'yyyy-MM-dd':
-              expect(testDate).toBe('2020-02-24');
-              break;
-            case 'yyyy-MM-dd HH':
-              expect(testDate).toBe('2020-02-24 20');
-              break;
-            case 'yyyy-MM':
-              expect(testDate).toBe('2020-02');
-              break;
-            case 'yyyy-MM-dd HH:mm':
-              expect(testDate).toBe('2020-02-24 20:47');
-              break;
-            case 'yyyy-MM-dd HH:mm:ss':
-              expect(testDate).toBe('2020-02-24 20:47:45');
-              break;
-            case 'HH:mm:ss':
-              expect(testDate).toBe('20:47:45');
-              break;
-            // 紧凑类型（Compact）
-            case 'yyyyMM':
-              expect(testDate).toBe('202002');
-              break;
-            case 'yyyyMMdd':
-              expect(testDate).toBe('20200224');
-              break;
-            case 'yyyyMMddHH':
-              expect(testDate).toBe('2020022420');
-              break;
-            case 'yyyyMMddHHmm':
-              expect(testDate).toBe('202002242047');
-              break;
-            case 'yyyyMMddHHmmss':
-              expect(testDate).toBe('20200224204745');
-              break;
-            case 'HHmmss':
-              expect(testDate).toBe('204745');
-              break;
-            // 中文类型（Chinese）
-            case 'yyyy年MM月':
-              expect(testDate).toBe('2020年02月');
-              break;
-            case 'yyyy年MM月dd日':
-              expect(testDate).toBe('2020年02月24日');
-              break;
-            case 'yyyy年MM月dd日 HH时':
-              expect(testDate).toBe('2020年02月24日 20时47分45秒');
-              break;
-            case 'yyyy年MM月dd日 HH时mm分':
-              expect(testDate).toBe('2020年02月24日 20时47分45秒');
-              break;
-            case 'yyyy年MM月dd日 HH时mm分ss秒':
-              expect(testDate).toBe('2020年02月24日 20时47分45秒');
-              break;
-            default:
-              break;
-          }
-        }
-      }
-    });
+    const date1 = new Date('Mon Feb 24 2020 20:47:45 GMT+0800 (China Standard Time');
+    // 连接（Connect）
+    const tests = [
+      ['yyyy-MM-dd', '2020-02-24'],
+      ['yyyy-MM-dd hh', '2020-02-24 20'],
+      ['yyyy-MM', '2020-02'],
+      ['yyyy-MM-dd hh:mm', '2020-02-24 20:47'],
+      ['yyyy-MM-dd hh:mm:ss', '2020-02-24 20:47:45'],
+      ['hh:mm:ss', '20:47:45'],
+      // 紧凑类型（Compact）
+      ['yyyyMM', '202002'],
+      ['yyyyMMdd', '20200224'],
+      ['yyyyMMddhh', '2020022420'],
+      ['yyyyMMddhhmm', '202002242047'],
+      ['yyyyMMddhhmmss', '20200224204745'],
+      ['hhmmss', '204745'],
+      // 中文类型（Chinese）
+      ['yyyy年MM月', '2020年02月'],
+      ['yyyy年MM月dd日', '2020年02月24日'],
+      ['yyyy年MM月dd日 hh时', '2020年02月24日 20时'],
+      ['yyyy年MM月dd日 hh时mm分', '2020年02月24日 20时47分'],
+      ['yyyy年MM月dd日 hh时mm分ss秒', '2020年02月24日 20时47分45秒']
+    ];
+    let output;
+    for (let i = 0; i < tests.length; i++) {
+      it(`date should format typeof ${tests[i][0]}`, () => {
+        output = CommonService.dateFormat(date1, tests[i][0]);
+        expect(output).toBe(tests[i][1]);
+      });
+    }
   });
   // 时间格式化处理 传入字符串格式时间
   describe('#stringDateFormat function', () => {
@@ -408,12 +351,191 @@ describe('commonService', () => {
   // 时间戳格式化处理
   describe('#timestampFormat function', () => {
     it('timestamp should formate', () => {
-      const timestamp1 = 976454034;
+      const timestamp1 = 1582548465000;
+      const timestamp2 = 944057579000;
       const test1 = CommonService.timestampFormat(timestamp1, 'yyyy-MM-dd hh:mm:ss');
-      const test2 = CommonService.timestampFormat(timestamp1, 'yyyy-MM-dd');
-      const test3 = CommonService.timestampFormat(timestamp1, 'yyyy-MM-dd');
-      expect(test1).toBe('2020-12-23 11:06:48');
-    })
-  })
-
+      const test2 = CommonService.timestampFormat(timestamp1, 'yyyy/MM/dd');
+      const test3 = CommonService.timestampFormat(timestamp1, 'yyyy年MM月dd日 hh时mm分ss秒');
+      const test4 = CommonService.timestampFormat(timestamp2, 'yyyy-MM-dd hh:mm:ss');
+      const test5 = CommonService.timestampFormat(timestamp2, 'yyyy/MM/dd hh:mm:ss');
+      const test6 = CommonService.timestampFormat(timestamp2, 'yyyy年MM月dd日 hh时mm分ss秒');
+      expect(test1).toBe('2020-02-24 20:47:45');
+      expect(test2).toBe('2020/02/24');
+      expect(test3).toBe('2020年02月24日 20时47分45秒');
+      expect(test4).toBe('1999-12-01 22:12:59');
+      expect(test5).toBe('1999/12/01 22:12:59');
+      expect(test6).toBe('1999年12月01日 22时12分59秒');
+    });
+  });
+  // 字符串转时间（yyyy-MM-dd HH:mm:ss、yyyy/M/d HH:mm:ss、yyyyMMddHHmmss、yyyyMMddHHmm、yyyyMMdd）
+  describe('#stringToDate function', () => {
+    const tests = [
+      ['1999-12-01 22:12:59', 'Wed Dec 01 1999 22:12:59 GMT+0800 (China Standard Time)'],
+      ['1999/12/1 22:12:59', 'Wed Dec 01 1999 22:12:59 GMT+0800 (China Standard Time)'],
+      ['19991201221259', 'Wed Dec 01 1999 22:12:59 GMT+0800 (China Standard Time)'],
+      ['199912012212', 'Wed Dec 01 1999 22:12:00 GMT+0800 (China Standard Time)'],
+      ['19991201', 'Wed Dec 01 1999 00:00:00 GMT+0800 (China Standard Time)']
+    ];
+    let output;
+    for (let i = 0; i < tests.length; i++) {
+      it(`type is ${tests[i][0]} `, () => {
+        output = CommonService.stringToDate(tests[i][0]);
+        expect(output.toString()).toBe(tests[i][1]);
+      });
+    }
+  });
+  // 数值格式化
+  describe('#numberFormat function', () => {
+    it('should return format value', () => {
+      let tests = [
+        [0, null, '0'],
+        [0, '0.00', '0.00'],
+        [null, null, '0'],
+        [NaN, '0.0', '0.0'],
+        [1.23, '0,0', '1'],
+        [10000, '0,0.0000', '10,000.0000'],
+        [10000.23, '0,0', '10,000'],
+        [-10000, '0,0.0', '-10,000.0'],
+        [10000.1234, '0.000', '10000.123'],
+        [10000, '0[.]00', '10000'],
+        [10000.1, '0[.]00', '10000.10'],
+        [10000.123, '0[.]00', '10000.12'],
+        [10000.456, '0[.]00', '10000.46'],
+        [10000.001, '0[.]00', '10000'],
+        [10000.45, '0[.]00[0]', '10000.45'],
+        [10000.456, '0[.]00[0]', '10000.456'],
+        [10000, '(0,0.0000)', '10,000.0000'],
+        [-10000, '(0,0.0000)', '(10,000.0000)'],
+        [-12300, '+0,0.0000', '-12,300.0000'],
+        [1230, '+0,0', '+1,230'],
+        [1230, '-0,0', '1,230'],
+        [-1230, '-0,0', '-1,230'],
+        [-1230.4, '0,0.0+', '1,230.4-'],
+        [-1230.4, '0,0.0-', '1,230.4-'],
+        [1230.4, '0,0.0-', '1,230.4'],
+        [100.78, '0', '101'],
+        [100.28, '0', '100'],
+        [1.932, '0.0', '1.9'],
+        [1.9687, '0', '2'],
+        [1.9687, '0.0', '2.0'],
+        [-0.23, '.00', '-.23'],
+        [-0.23, '(.00)', '(.23)'],
+        [0.23, '0.00000', '0.23000'],
+        [0.67, '0.0[0000]', '0.67'],
+        [3162.63, '0.0[00000000000000]', '3162.63'],
+        [1.99, '0.[0]', '2'],
+        [1.0501, '0.00[0]', '1.05'],
+        [1.005, '0.00', '1.01'],
+        // leading zero
+        [0, '00.0', '00.0'],
+        [0.23, '000.[00]', '000.23'],
+        [4, '000', '004'],
+        [10, '00000', '00010'],
+        [1000, '000,0', '1,000'],
+        [1000, '00000,0', '01,000'],
+        [1000, '0000000,0', '0,001,000'],
+        // abbreviations
+        [2000000000, '0.0a', '2.0b'],
+        [1230974, '0.0a', '1.2m'],
+        [1460, '0a', '1k'],
+        [-104000, '0 a', '-104 k'],
+        [999950, '0.0a', '1.0m'],
+        [999999999, '0a', '1b'],
+        // forced abbreviations
+        [-5444333222111, '0,0 ak', '-5,444,333,222 k'],
+        [5444333222111, '0,0 am', '5,444,333 m'],
+        [-5444333222111, '0,0 ab', '-5,444 b'],
+        [-5444333222111, '0,0 at', '-5 t'],
+        [123456, '0.0[0] ak', '123.46 k'],
+        [150, '0.0 ak', '0.2 k']
+      ],
+        i,
+        output;
+      for (i = 0; i < tests.length; i++) {
+        output = CommonService.numberFormat(tests[i][0], tests[i][1]);
+        expect(output).toBe(tests[i][2]);
+        expect(typeof output).toBe('string');
+      }
+    });
+  });
+  // 复制对象
+  describe('#cloneObj function', () => {
+    const cloneObjTests = [
+      ['abcdefg', '', 'abcdefg'],
+      [{
+        animal: 'dog',
+        fruit: 'apple'
+      }, 'animal', { fruit: 'apple' }]
+    ];
+    let output;
+    for (let i = 0; i < cloneObjTests.length; i++) {
+      it('should clone obj', () => {
+        output = CommonService.cloneObj(cloneObjTests[i][0], cloneObjTests[i][1]);
+        expect(output).toEqual(cloneObjTests[i][2]);
+      });
+    }
+  });
+  // 复制对象
+  describe('#cloneArray function', () => {
+    const cloneArrayTests: any = [
+      ['abcdefg', '', 'abcdefg'],
+      [
+        [
+          {
+            animal: 'dog',
+            fruit: 'apple'
+          }],
+        '',
+        [{
+          animal: 'dog',
+          fruit: 'apple'
+        }]
+      ],
+    ];
+    let output;
+    for (let i = 0; i < cloneArrayTests.length; i++) {
+      it('should clone array', () => {
+        output = CommonService.cloneArray(cloneArrayTests[i][0], cloneArrayTests[i][1]);
+        expect(output).toEqual(cloneArrayTests[i][2]);
+      });
+    }
+  });
+  // 串行执行两个订阅任务
+  describe('#createObservableConcat function', () => {
+    it('should describe two task', () => {
+      const obs1 = HeroService.getFruitsCategories();
+      const obs2 = HeroService.getCitysCategories();
+      const r = [1, 2, 3, 4, 5, 6, 7, 8];
+      let log = [];
+      CommonService.createObservableConcat(obs1, obs2).subscribe(concat => {
+        expect(true).toBe(true);
+        log.push(concat);
+      });
+      expect(log[0]).toEqual(['Achene', 'Berry', 'Caryopisis', 'Drupe', 'Legume', 'Nut']);
+      expect(log[1]).toEqual(['Beijing', 'Tianjing', 'Shanghai', 'Hangzhou', 'Nanjing', 'Chengdu',
+        'Shenzhen']);
+    });
+  });
+  // 并行执行多个订阅任务
+  describe('#createObservableJoin function', () => {
+    it('should describe mutiple', () => {
+      const obs1 = HeroService.getFruitsCategories();
+      const obs2 = HeroService.getAnimalsCategories();
+      const obs3 = HeroService.getCitysCategories();
+      let output;
+      // 两个订阅任务
+      CommonService.createObservableJoin([obs1, obs2]).subscribe(result => {
+        output = [['Achene', 'Berry', 'Caryopisis', 'Drupe', 'Legume', 'Nut'],
+        ['Mammals', 'Birds', 'Reptiles', 'Amphibians', 'Fishes', 'Insects', 'Crustaceans']];
+        expect(result).toEqual(output);
+      });
+      // 两个以上订阅任务
+      CommonService.createObservableJoin([obs1, obs2, obs3]).subscribe(result => {
+        output = [['Achene', 'Berry', 'Caryopisis', 'Drupe', 'Legume', 'Nut'],
+        ['Mammals', 'Birds', 'Reptiles', 'Amphibians', 'Fishes', 'Insects', 'Crustaceans'],
+        ['Beijing', 'Tianjing', 'Shanghai', 'Hangzhou', 'Nanjing', 'Chengdu', 'Shenzhen']]
+        expect(result).toEqual(output);
+      });
+    });
+  });
 });

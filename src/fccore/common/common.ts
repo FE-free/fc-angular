@@ -4,11 +4,11 @@
  * @Description: 公共方法
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2020-02-25 21:18:35
+ * @LastEditTime: 2020-03-01 11:26:55
  */
 import { EventEmitter, Injectable } from '@angular/core';
-import { forkJoin } from 'rxjs';
-import { concat } from 'rxjs/operators';
+import * as numeral from 'numeral';
+import { forkJoin, concat, Observable, ObservableInput, asyncScheduler } from 'rxjs';
 @Injectable({ providedIn: 'root' })
 export class CommonService {
   static eventEmit: EventEmitter<any> = new EventEmitter();
@@ -426,6 +426,7 @@ export class CommonService {
    * @param format 格式化
    */
   static numberFormat(num, format) {
+    window['numeral'] = numeral;
     let numberal = window['numeral'](num);
     return numberal.format(format);
   }
@@ -433,6 +434,8 @@ export class CommonService {
    * 复制对象
    * @param obj 复制对象
    */
+
+
   static cloneObj(obj, exceptKey?: any) {
     if (typeof obj === 'string') {
       return obj + '';
@@ -457,27 +460,10 @@ export class CommonService {
     return datas;
   }
   /**
-   * 串行执行两个订阅任务
-   * @param obs1 Observable
-   * @param obs2 Observable
-   */
-  createObservableConcat(obs1, obs2) {
-    return concat(obs1, obs1);
-  }
-  /**
-   * 并行执行多个订阅任务
-   * @param obs1 Observable
-   * @param obs2 Observable
-   */
-  createObservableJoin(obs1) {
-    let result = {};
-    return forkJoin(obs1);
-  }
-  /**
    * 复制对象
    * @param obj 复制对象
    */
-  static cloneArray(objs, exceptKey) {
+  static cloneArray(objs, exceptKey?: string) {
     if (typeof objs === 'string') {
       return objs + '';
     }
@@ -504,5 +490,24 @@ export class CommonService {
     );
     return datas;
   }
-
+  /**
+     * 串行执行两个订阅任务
+     * @param obs1 Observable
+     * @param obs2 Observable
+     */
+  static createObservableConcat(observable1, observable2): Observable<any> {
+    // 注意最新的官方文档和RxJS v5.x 到 6 的更新指南中指出不推荐使用 
+    // merge、concat、combineLatest、race、zip 这些操作符方法，
+    // 而是推荐使用对应的静态方法 ，参考Scheduled和concatAll
+    return concat(observable1, observable2);
+  }
+  /**
+   * 并行执行多个订阅任务
+   * @param obs1 Observable
+   * @param obs2 Observable
+   */
+  static createObservableJoin(obs1: Observable<any>[]): Observable<any> {
+    // RxJS 版本的 Promise.all()
+    return forkJoin(obs1);
+  }
 }
