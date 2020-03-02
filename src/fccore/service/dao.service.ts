@@ -9,8 +9,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.dev';
-import { CacheService } from './cache.service';
-import { CommonService } from './common.service';
+import { CacheService } from '../common/cache';
+import { CommonService } from '../common/common';
 export const FCCONFIG = environment
 @Injectable({ providedIn: 'root' })
 export class DaoService {

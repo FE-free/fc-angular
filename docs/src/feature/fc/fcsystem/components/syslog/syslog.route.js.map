@@ -1,0 +1,1 @@
+{"version":3,"file":"syslog.route.js","sourceRoot":"","sources":["../../../../../../../src/feature/fc/fcsystem/components/syslog/syslog.route.ts"],"names":[],"mappings":"AASA,OAAO,EAAE,eAAe,EAAE,MAAM,oBAAoB,CAAC;AAErD,MAAM,CAAC,MAAM,OAAO,GAAW;IAC7B;QACE,IAAI,EAAE,YAAY;QAClB,SAAS,EAAE,eAAe;KAC3B;CACF,CAAC"}
