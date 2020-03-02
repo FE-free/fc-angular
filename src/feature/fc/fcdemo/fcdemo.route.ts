@@ -11,6 +11,7 @@ import { Routes } from '@angular/router';
 export const Routers: Routes = [
   {
     path: '', // AntDesign
+    // tslint:disable-next-line:object-literal-sort-keys
     loadChildren: () =>
       import('./fcantd/fcantd.module').then(res => res.FcantdModule)
   },

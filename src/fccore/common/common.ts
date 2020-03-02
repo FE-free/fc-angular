@@ -1,10 +1,10 @@
 /*
  * @Author: honghong
- * @LastEditors: honghong
+ * @LastEditors  : Please set LastEditors
  * @Description: 公共方法
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime: 2020-03-01 11:26:55
+ * @LastEditTime : 2020-03-02 16:49:27
  */
 import { EventEmitter, Injectable } from '@angular/core';
 import * as numeral from 'numeral';
@@ -77,10 +77,10 @@ export class CommonService {
    * @param value 值
    * @param t 时间(秒)
    */
-  static addCookie(key, value, expiredays) {
-    let oDate = new Date();
+  static addCookie(key: string, value: any, expiredays: any): void {
+    const oDate = new Date();
     oDate.setDate(oDate.getDate() + expiredays);
-    document.cookie = key + '=' + value + '; expires=' + oDate.toDateString();
+    document.cookie = `${key}  = ${value} ; expires= ${oDate.toDateString()}`;
   }
   /**
    * 获取cookie
@@ -90,7 +90,7 @@ export class CommonService {
     let arr1 = document.cookie.split('; '); // 由于cookie是通过一个分号+空格的形式串联起来的，所以这里需要先按分号空格截断,变成[name=Jack,pwd=123456,age=22]数组类型；
     for (var i = 0; i < arr1.length; i++) {
       var arr2 = arr1[i].split('='); //通过=截断，把name=Jack截断成[name,Jack]数组；
-      if (arr2[0] == key) {
+      if (arr2[0] === key) {
         return decodeURI(arr2[1]);
       }
     }
@@ -419,6 +419,51 @@ export class CommonService {
     if (fDate.length === 8) return new Date(Date.parse(year + '/' + month + '/' + day));
     if (fDate.length === 12) return new Date(Date.parse(year + '/' + month + '/' + day + ' ' + hour + ':' + min));
     if (fDate.length === 14) return new Date(Date.parse(year + '/' + month + '/' + day + ' ' + hour + ':' + min + ':' + second));
+  }
+
+  /**
+   * 时间相差天数
+   * @param 时间1
+   * @param 时间2
+   */
+  static diffDays(day1: any, day2: any): number {
+    const dateStart: any = new Date(day1).getTime();
+    const dateEnd: any = new Date(day2).getTime();
+    return Math.abs((dateStart - dateEnd) / (24 * 3600 * 1000));
+  }
+  /**
+   * 时间相差小时
+   * @param 时间1
+   * @param 时间2
+   */
+  static diffHours(day1: any, day2: any): number {
+    const dateStart: any = new Date(day1).getTime();
+    const dateEnd: any = new Date(day2).getTime();
+    const leave = Math.abs((dateStart - dateEnd) / (24 * 3600 * 1000));
+    return Math.floor(leave / (3600 * 1000));
+  }
+  /**
+   * 时间相差分钟数
+   * @param 时间1
+   * @param 时间2
+   */
+  static diffMinutes(day1: any, day2: any): number {
+    const dateStart: any = new Date(day1).getTime();
+    const dateEnd: any = new Date(day2).getTime();
+    const leave = Math.abs((dateStart - dateEnd) / (3600 * 1000));
+    return Math.floor(leave / (60 * 1000));
+  }
+  /**
+   * 时间相差毫秒数
+   * @param 时间1
+   * @param 时间2
+   */
+  static diffSeconds(day1: any, day2: any): number {
+    const dateStart: any = new Date(day1).getTime();
+    const dateEnd: any = new Date(day2).getTime();
+    const leave = (Math.abs(dateStart - dateEnd)) / (60 * 1000);
+    console.log(leave,'==============>diffSeconds;leave')
+    return Math.round(leave / (60 * 1000));
   }
   /**
    * 数值格式化

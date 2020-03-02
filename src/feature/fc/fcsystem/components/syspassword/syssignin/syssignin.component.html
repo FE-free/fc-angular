@@ -1,10 +1,10 @@
 <!--
  * @Author: honghong
- * @LastEditors: honghong
+ * @LastEditors  : Please set LastEditors
  * @Description: 登录
  * @email: 3300536651@qq.com
  * @Date: 2019-02-18 10:59:15
- * @LastEditTime: 2019-10-17 09:39:27
+ * @LastEditTime : 2020-03-02 15:08:19
  -->
 <img src="#" id="code" alt="">
 <button id="recognize">识别</button>
@@ -60,7 +60,11 @@
             <div class="user-box">
               <fc-verifycode #verifyCode></fc-verifycode>
             </div>
+            <div class="user-box remember-user">
+              <label nz-checkbox [(ngModel)]="remember" name="remember">记住密码</label>
+            </div>
             <div class="user-box login-btn">
+              
               <button nz-button nzType="primary" (click)="login()" [nzBlock]="true">登录</button>
             </div>
             <div class="google-download">
