@@ -38,11 +38,14 @@ export class UserService implements CanActivate {
       LOGINDATE: loginDate
     };
     // 登录信息mock数据
-    CommonService.addCookie('loginInfo', JSON.stringify({
+    const info = JSON.stringify({
       PASSWORD: CommonService.enCode64('admin'), // admin
       USERID: CommonService.enCode64('admin') // admin
-    }), 0);
-    const validateData = JSON.parse(CommonService.getCookie('loginInfo'));
+    });
+    CommonService.addCookie('loginInfo', info, 0);
+    const loginInfo =  CommonService.getCookie('loginInfo');
+    console.log(loginInfo, '=====loginInfo');
+    const validateData = JSON.parse(loginInfo);
     /** @type {?} */
     const data = {
       PASSWORD: CommonService.enCode64(password),

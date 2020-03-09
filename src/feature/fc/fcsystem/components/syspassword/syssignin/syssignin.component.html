@@ -1,10 +1,10 @@
 <!--
  * @Author: honghong
- * @LastEditors  : Please set LastEditors
+ * @LastEditors: honghong
  * @Description: 登录
  * @email: 3300536651@qq.com
  * @Date: 2019-02-18 10:59:15
- * @LastEditTime : 2020-03-02 15:08:19
+ * @LastEditTime: 2020-03-06 14:52:49
  -->
 <img src="#" id="code" alt="">
 <button id="recognize">识别</button>
@@ -45,7 +45,7 @@
             <div class="user-box">
               <nz-input-group [nzSuffix]="pwdSuffix" [nzPrefix]="pwdPrefix">
                 <input id="passwordValid" name="passwordValid" class="form-control" required type="password"
-                  [(ngModel)]="password" nz-input placeholder="请输入密码admin" #passwordValid="ngModel" />
+                  [(ngModel)]="password" (keyup)="checkStrong($event)" nz-input placeholder="请输入密码admin" #passwordValid="ngModel" />
               </nz-input-group>
               <ng-template #pwdPrefix><i class="icon iconfont fc-icon-password"></i></ng-template>
               <ng-template #pwdSuffix><i nz-icon type="close-circle" (click)="password = ''" *ngIf="password"></i>
@@ -60,11 +60,25 @@
             <div class="user-box">
               <fc-verifycode #verifyCode></fc-verifycode>
             </div>
+            <div class="user-box pwd-strength">
+              <div class="pwd-strength-show">
+                <span class="pwd-strength-box pwd-strength-box1 " [ngClass]="{'pwd-strength-weak': checkColors.weak === 'active' }"></span>
+                <span class="pwd-strength-box pwd-strength-box2" [ngClass]="{'pwd-strength-mid' :checkColors.mid === 'active' }"></span>
+                <span class="pwd-strength-box pwd-strength-box3" [ngClass]="{ 'pwd-strength-strong':checkColors.strong === 'active' }"></span>
+              </div>
+              <div class="pwd-strength-describe">
+                <span class="pwd-strength-text"
+                  >弱</span>
+                <span class="pwd-strength-text" >中</span>
+                <span class="pwd-strength-text"
+                  >强</span>
+              </div>
+            </div>
             <div class="user-box remember-user">
               <label nz-checkbox [(ngModel)]="remember" name="remember">记住密码</label>
             </div>
             <div class="user-box login-btn">
-              
+
               <button nz-button nzType="primary" (click)="login()" [nzBlock]="true">登录</button>
             </div>
             <div class="google-download">

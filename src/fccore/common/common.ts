@@ -1,10 +1,10 @@
 /*
  * @Author: honghong
- * @LastEditors  : Please set LastEditors
+ * @LastEditors: honghong
  * @Description: 公共方法
  * @email: 3300536651@qq.com
  * @Date: 2019-04-16 15:57:43
- * @LastEditTime : 2020-03-02 16:49:27
+ * @LastEditTime: 2020-03-03 15:20:39
  */
 import { EventEmitter, Injectable } from '@angular/core';
 import * as numeral from 'numeral';
@@ -437,10 +437,10 @@ export class CommonService {
    * @param 时间2
    */
   static diffHours(day1: any, day2: any): number {
-    const dateStart: any = new Date(day1).getTime();
-    const dateEnd: any = new Date(day2).getTime();
-    const leave = Math.abs((dateStart - dateEnd) / (24 * 3600 * 1000));
-    return Math.floor(leave / (3600 * 1000));
+    const dateStart: any = (new Date(day1)).getTime();
+    const dateEnd: any = (new Date(day2)).getTime();
+    const diff = (dateStart - dateEnd) / (3600 * 1000);
+    return Math.abs(Math.round(diff));
   }
   /**
    * 时间相差分钟数
@@ -450,8 +450,8 @@ export class CommonService {
   static diffMinutes(day1: any, day2: any): number {
     const dateStart: any = new Date(day1).getTime();
     const dateEnd: any = new Date(day2).getTime();
-    const leave = Math.abs((dateStart - dateEnd) / (3600 * 1000));
-    return Math.floor(leave / (60 * 1000));
+    const diff = (dateStart - dateEnd) / (1000 * 60);
+    return Math.abs(Math.round(diff));
   }
   /**
    * 时间相差毫秒数
@@ -461,9 +461,9 @@ export class CommonService {
   static diffSeconds(day1: any, day2: any): number {
     const dateStart: any = new Date(day1).getTime();
     const dateEnd: any = new Date(day2).getTime();
-    const leave = (Math.abs(dateStart - dateEnd)) / (60 * 1000);
-    console.log(leave,'==============>diffSeconds;leave')
-    return Math.round(leave / (60 * 1000));
+    const diff = (dateStart - dateEnd) / (1000);
+    console.log(diff,'==============>diffSeconds;diff')
+    return Math.abs(Math.round(diff));
   }
   /**
    * 数值格式化

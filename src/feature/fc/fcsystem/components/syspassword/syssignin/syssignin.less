@@ -1,10 +1,10 @@
 /*
  * @Author: honghong
- * @LastEditors  : Please set LastEditors
+ * @LastEditors: honghong
  * @Description: 登录页面的样式
  * @email: 3300536651@qq.com
  * @Date: 2019-04-01 14:01:49
- * @LastEditTime : 2020-03-02 15:06:41
+ * @LastEditTime: 2020-03-05 17:38:00
  */
 .login-in {
   position: fixed;
@@ -267,5 +267,62 @@
   & .ant-input {
     background-color: #fff;
     border-color: #f5222d;
+  }
+}
+.pwd-strength {
+  .pwd-strength-show{
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    background-color: #ffffff;
+    padding: 2px;
+    width: 133px;
+    &::after{
+      content: '';
+      display: block;
+      clear: both;
+    }
+  }
+  .pwd-strength-box {
+    width: 40px;
+    height: 6px;
+    display: block;
+    background-color: #d9d9d9;
+    margin-left: 3px;
+    float: left;
+  }
+  .pwd-strength-box1 {
+    margin-left: 0;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+  .pwd-strength-box3 {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+  //  弱
+  .pwd-strength-weak {
+    background-color: red;
+  }
+  // 中
+  .pwd-strength-mid {
+    background-color: orange;
+  }
+  // 强
+  .pwd-strength-strong{
+    background-color: green;
+  }
+  .pwd-strength-describe {
+    &::after {
+      content:'';
+      display: block;
+      clear: both;
+    }
+  }
+  .pwd-strength-text {
+    width: 40px;
+    display: block;
+    float: left;
+    text-align: center;
+    font-size: 12px;
   }
 }
