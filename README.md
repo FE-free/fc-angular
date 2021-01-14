@@ -39,8 +39,6 @@ English | [简体中文](https://github.com/luohong123/fc-angular/blob/master/RE
 
 ![首页](./media/1.png)
 
-![选项卡切换](./media/2.png)
-
 ## 2、 平台功能开发进度
 
 - [x] 登录(用户名、密码、验证码)
