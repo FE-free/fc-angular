@@ -45,7 +45,7 @@
     "ag-grid-community": "^21.0.1",
     "ag-grid-enterprise": "^21.0.1",
     "clipboard": "^2.0.4",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "mockjs": "^1.1.0",
     "ng-zorro-antd": "^8.5.2",
     "numeral": "^2.0.6",
